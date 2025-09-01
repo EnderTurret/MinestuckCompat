@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "create:red_toolbox"
+  },
+  "sources": [
+    "#c:dyes/red",
+    "create:brown_toolbox"
+  ]
+}

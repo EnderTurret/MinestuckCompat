@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:rust": 186
+  },
+  "ingredient": {
+    "item": "minecraft:chipped_anvil"
+  }
+}

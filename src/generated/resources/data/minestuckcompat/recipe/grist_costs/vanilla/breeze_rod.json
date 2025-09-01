@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 20,
+    "minestuck:diamond": 50,
+    "minestuck:marble": 20
+  },
+  "ingredient": {
+    "item": "minecraft:breeze_rod"
+  }
+}

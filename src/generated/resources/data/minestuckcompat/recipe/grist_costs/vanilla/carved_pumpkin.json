@@ -1,0 +1,10 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 9,
+    "minestuck:caulk": 4
+  },
+  "ingredient": {
+    "item": "minecraft:carved_pumpkin"
+  }
+}

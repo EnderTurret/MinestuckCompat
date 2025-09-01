@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.enderturret.minestuckcompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "perf.MixinCodecs",
+    "perf.MixinDefaultImmutableGristSet",
+    "perf.MixinGristSet",
+    "perf.MixinMutableGristSet",
+    "GeneratorProcessAccess",
+    "MixinDefaultInterpreter",
+    "MixinGristCostGenerator",
+    "MixinRecipeGeneratedCostHandler",
+    "MixinRecipeGeneratedCostProcess"
+  ]
+}

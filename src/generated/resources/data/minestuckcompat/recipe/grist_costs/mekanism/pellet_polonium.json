@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amethyst": 18,
+    "minestuck:build": 100,
+    "minestuck:cobalt": 106,
+    "minestuck:mercury": 4,
+    "minestuck:quartz": 36,
+    "minestuck:sulfur": 30,
+    "minestuck:uranium": 150
+  },
+  "ingredient": {
+    "item": "mekanism:pellet_polonium"
+  }
+}

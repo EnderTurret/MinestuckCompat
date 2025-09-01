@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:rust": 27
+  },
+  "ingredient": {
+    "item": "create:chocolate_bucket"
+  },
+  "multiplier": 4.0,
+  "sources": [
+    "create:bar_of_chocolate"
+  ]
+}

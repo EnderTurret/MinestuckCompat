@@ -1,0 +1,13 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 81
+  },
+  "ingredient": {
+    "item": "minecraft:bolt_armor_trim_smithing_template"
+  },
+  "multiplier": 5.0,
+  "sources": [
+    "minecraft:diamond"
+  ]
+}

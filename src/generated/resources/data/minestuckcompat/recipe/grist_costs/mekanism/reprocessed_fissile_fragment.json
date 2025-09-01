@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "mekanism:reprocessed_fissile_fragment"
+  },
+  "multiplier": 0.25,
+  "sources": [
+    "mekanism:pellet_plutonium"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 2,
+    "minestuck:cobalt": 1,
+    "minestuck:mercury": 2
+  },
+  "ingredient": {
+    "item": "mekanism:substrate"
+  }
+}

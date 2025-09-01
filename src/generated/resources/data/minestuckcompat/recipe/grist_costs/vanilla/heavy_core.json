@@ -1,0 +1,10 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 96,
+    "minestuck:rust": 144
+  },
+  "ingredient": {
+    "item": "minecraft:heavy_core"
+  }
+}

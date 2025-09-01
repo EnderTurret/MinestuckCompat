@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "tag": "minecraft:decorated_pot_sherds"
+  },
+  "multiplier": 4.0,
+  "sources": [
+    "minecraft:brick"
+  ]
+}

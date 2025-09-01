@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "ae2:quantum_entangled_singularity"
+  },
+  "multiplier": 0.5,
+  "sources": [
+    "ae2:singularity",
+    "ae2:ender_dust"
+  ]
+}

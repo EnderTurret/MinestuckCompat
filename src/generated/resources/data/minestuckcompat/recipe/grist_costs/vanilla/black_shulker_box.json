@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "minecraft:black_shulker_box"
+  },
+  "sources": [
+    "minecraft:black_dye",
+    "minecraft:shulker_box"
+  ]
+}

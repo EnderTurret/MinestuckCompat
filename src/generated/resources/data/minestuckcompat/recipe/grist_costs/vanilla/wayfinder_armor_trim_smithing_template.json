@@ -1,0 +1,14 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4,
+    "minestuck:shale": 4
+  },
+  "ingredient": {
+    "item": "minecraft:wayfinder_armor_trim_smithing_template"
+  },
+  "multiplier": 5.0,
+  "sources": [
+    "minecraft:diamond"
+  ]
+}

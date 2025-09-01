@@ -1,0 +1,14 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 1,
+    "minestuck:tar": 1
+  },
+  "ingredient": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "multiplier": 5.0,
+  "sources": [
+    "minecraft:diamond"
+  ]
+}

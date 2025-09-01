@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 6,
+    "minestuck:build": 15,
+    "minestuck:gold": 6
+  },
+  "ingredient": {
+    "item": "minecraft:bee_nest"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:iodine": 16,
+    "minestuck:sulfur": 16,
+    "minestuck:uranium": 16
+  },
+  "ingredient": {
+    "item": "mekanism:uranium_hexafluoride_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

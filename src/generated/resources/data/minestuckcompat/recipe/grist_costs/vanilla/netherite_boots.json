@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "minecraft:netherite_boots"
+  },
+  "sources": [
+    "minecraft:diamond_boots",
+    "minecraft:netherite_ingot"
+  ]
+}

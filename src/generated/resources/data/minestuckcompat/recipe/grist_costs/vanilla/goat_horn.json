@@ -1,0 +1,10 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:caulk": 5,
+    "minestuck:mercury": 10
+  },
+  "ingredient": {
+    "item": "minecraft:goat_horn"
+  }
+}

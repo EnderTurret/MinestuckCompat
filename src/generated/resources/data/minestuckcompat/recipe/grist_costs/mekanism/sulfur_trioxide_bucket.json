@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 4,
+    "minestuck:sulfur": 16
+  },
+  "ingredient": {
+    "item": "mekanism:sulfur_trioxide_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

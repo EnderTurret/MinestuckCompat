@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 7,
+    "minestuck:quartz": 7
+  },
+  "ingredient": {
+    "item": "ae2:large_quartz_bud"
+  }
+}

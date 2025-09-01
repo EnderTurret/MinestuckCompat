@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="LGPL v2.1"
+[[mods]]
+    modId="minestuckcompat"
+    displayName="Minestuck Compat"
+    description='''
+    Adds additional compatibility for mods like Mekanism to Minestuck.
+    '''
+    version="${file.jarVersion}"
+    authors="EnderTurret"
+
+[[mixins]]
+    config="mixins.minestuckcompat.json"
+
+[[dependencies.minestuckcompat]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1,21.2)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.minestuckcompat]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21,1.21.2)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.minestuckcompat]]
+    modId="minestuck"
+    type="required"
+    versionRange="[1.21.1-1.13.1.0,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 4,
+    "minestuck:gold": 4
+  },
+  "ingredient": {
+    "item": "create:honey_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

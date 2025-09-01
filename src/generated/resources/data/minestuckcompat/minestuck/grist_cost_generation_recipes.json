@@ -1,0 +1,149 @@
+[
+  {
+    "interpreter": {
+      "type": "minestuck:default"
+    },
+    "source": {
+      "type": "recipe_serializer",
+      "serializer": "mekanism:mek_data"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_chemical_to_item"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:compressing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_chemical_to_item"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:injecting"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_chemical_to_item"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:purifying"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_chemical_to_item"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:metallurgic_infusing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_chemical_to_item"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:nucleosynthesizing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_to_item",
+      "added_cost": {
+        "minestuck:cobalt": 10
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:enriching"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:item_to_item",
+      "added_cost": {
+        "minestuck:mercury": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "mekanism:crushing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:charger",
+      "added_cost": {
+        "minestuck:uranium": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "ae2:charger"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:inscriber",
+      "added_cost": {
+        "minestuck:garnet": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "ae2:inscriber"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:item_application"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:pressing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:mercury": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:sandpaper_polishing"
+    }
+  },
+  {
+    "interpreter": {
+      "type": "minestuckcompat:sequenced_assembly",
+      "press_cost": {
+        "minestuck:mercury": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:sequenced_assembly"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 20,
+    "minestuck:diamond": 50,
+    "minestuck:marble": 20
+  },
+  "ingredient": {
+    "item": "minecraft:flow_armor_trim_smithing_template"
+  },
+  "multiplier": 5.0,
+  "sources": [
+    "minecraft:diamond"
+  ]
+}

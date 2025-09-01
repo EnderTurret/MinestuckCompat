@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 4,
+    "minestuck:rust": 12
+  },
+  "ingredient": {
+    "tag": "c:raw_materials/osmium"
+  }
+}

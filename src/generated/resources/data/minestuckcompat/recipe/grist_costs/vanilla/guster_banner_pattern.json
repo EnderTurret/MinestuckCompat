@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 120,
+    "minestuck:diamond": 17,
+    "minestuck:marble": 13
+  },
+  "ingredient": {
+    "item": "minecraft:guster_banner_pattern"
+  }
+}
