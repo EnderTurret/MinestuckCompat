@@ -97,7 +97,7 @@ public final class MinestuckCompat {
 				"com.llamalad7.mixinextras.injector.v2.WrapWithCondition",
 				"com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation"
 				);
-		final Set<String> kinds = new HashSet<>();
+		//final Set<String> kinds = new HashSet<>();
 		int removed = 0;
 
 		for (ModFileScanData scan : ModList.get().getAllScanData()) {
@@ -108,11 +108,11 @@ public final class MinestuckCompat {
 					it.remove();
 					removed++;
 				}
-				else kinds.add(cls);
+				//else kinds.add(cls);
 			}
 		}
 
-		MinestuckCompat.LOGGER.info("Annotations types: {}", kinds);
+		//MinestuckCompat.LOGGER.info("Annotations types: {}", kinds);
 		MinestuckCompat.LOGGER.info("Nuked {} annotations from the scan data!", removed);
 	}
 }

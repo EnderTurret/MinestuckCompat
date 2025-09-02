@@ -22,9 +22,4 @@ public abstract class MixinDefaultImmutableGristSet {
 	public static GristSet.Immutable create(List<GristAmount> amounts) {
 		return SmallImmutableGristSet.create(amounts);
 	}
-
-	@Inject(at = @At("TAIL"), method = { "<init>(Ljava/util/Map;)V", "<init>(Lcom/google/common/collect/ImmutableMap$Builder;)V" })
-	private void minestuckcompat$logCreation(CallbackInfo ci) {
-		MinestuckCompat.LOGGER.info("DefaultImmutableGristSet created!"/*, new Throwable("stacktrace")*/);
-	}
 }

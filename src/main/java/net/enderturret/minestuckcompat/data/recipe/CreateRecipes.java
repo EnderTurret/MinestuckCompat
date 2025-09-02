@@ -8,12 +8,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -137,10 +133,6 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		sourceGristCost(HAUNTED_BELL).grist(SHALE, 1).source(PECULIAR_BELL.asItem()).build(output);
 	}
 
-	private static TagKey<Item> c(String path) {
-		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
-	}
-
 	private void variantSet(RecipeOutput output, String baseTypeDomain, String baseTypeName) {
 		final Item baseItem = lookup(baseTypeDomain, baseTypeName);
 		if ("dripstone_block".equals(baseTypeName)) baseTypeName = "dripstone";
@@ -150,9 +142,5 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 			final Item item = lookup("create", itemKind);
 			sourceGristCost(item).source(baseItem).build(output);
 		}
-	}
-
-	private static Item lookup(String namespace, String path) {
-		return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(namespace, path));
 	}
 }

@@ -6,13 +6,8 @@ import static mekanism.common.registries.MekanismItems.*;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
@@ -73,13 +68,5 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		sourceGristCost(lookup("mekanism", "hydrofluoric_acid_bucket")).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
 		sourceGristCost(lookup("mekanism", "uranium_oxide_bucket")).grist(URANIUM, 16).source(Items.BUCKET).build(output);
 		sourceGristCost(lookup("mekanism", "uranium_hexafluoride_bucket")).grist(URANIUM, 16).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
-	}
-
-	private static TagKey<Item> c(String path) {
-		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
-	}
-
-	private static Item lookup(String namespace, String path) {
-		return BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(namespace, path));
 	}
 }
