@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:quartz": 5,
+    "minestuck:ruby": 5
+  },
+  "ingredient": {
+    "item": "biomesoplenty:medium_rose_quartz_bud"
+  }
+}

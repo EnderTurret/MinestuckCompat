@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:empyreal_door"
+  },
+  "input2": {
+    "item": "biomesoplenty:empyreal_slab"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:empyreal_trapdoor"
+}

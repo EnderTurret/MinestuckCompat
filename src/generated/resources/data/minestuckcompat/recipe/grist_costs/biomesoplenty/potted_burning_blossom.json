@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "biomesoplenty:potted_burning_blossom"
+  },
+  "sources": [
+    "biomesoplenty:burning_blossom",
+    "minecraft:flower_pot"
+  ]
+}

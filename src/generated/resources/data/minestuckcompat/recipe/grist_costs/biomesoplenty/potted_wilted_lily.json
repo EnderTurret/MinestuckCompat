@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "biomesoplenty:potted_wilted_lily"
+  },
+  "sources": [
+    "biomesoplenty:wilted_lily",
+    "minecraft:flower_pot"
+  ]
+}

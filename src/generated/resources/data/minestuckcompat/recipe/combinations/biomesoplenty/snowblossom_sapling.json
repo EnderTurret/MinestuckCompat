@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cherry_log"
+  },
+  "input2": {
+    "item": "biomesoplenty:snowblossom_leaves"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:snowblossom_sapling"
+}

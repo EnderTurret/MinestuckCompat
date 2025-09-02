@@ -1,0 +1,217 @@
+package net.enderturret.minestuckcompat.data.recipe;
+
+import static biomesoplenty.api.item.BOPItems.*;
+import static com.mraof.minestuck.api.alchemy.GristTypes.*;
+
+import java.util.concurrent.CompletableFuture;
+
+import com.mraof.minestuck.item.MSItems;
+
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Items;
+
+import net.enderturret.minestuckcompat.MinestuckCompat;
+
+public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
+
+	public BiomesOPlentyRecipes(PackOutput output, CompletableFuture<Provider> registries) {
+		super(output, registries);
+	}
+
+	@Override
+	protected void buildRecipes(RecipeOutput _recipeOutput) {
+		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "biomesoplenty")
+				.withConditions(modLoaded("biomesoplenty"));
+
+		gristCost(MUSIC_DISC_WANDERER).grist(BUILD, 15).grist(AMBER, 5).grist(COBALT, 5).grist(CHALK, 8).build(output);
+
+		// Small Plants
+
+		gristCost(SPROUT).grist(BUILD, 1).build(output);
+		gristCost(BUSH).grist(BUILD, 1).build(output);
+		gristCost(CLOVER).grist(BUILD, 1).build(output);
+		gristCost(DUNE_GRASS).grist(BUILD, 1).build(output);
+		gristCost(DESERT_GRASS).grist(BUILD, 1).build(output);
+		gristCost(DEAD_GRASS).grist(BUILD, 1).build(output);
+		gristCost(TUNDRA_SHRUB).grist(BUILD, 1).build(output);
+		gristCost(ENDERPHYTE).grist(BUILD, 1).build(output);
+
+		// Tall Plants
+
+		gristCost(HIGH_GRASS).grist(AMBER, 1).build(output);
+		gristCost(HIGH_GRASS_PLANT).grist(AMBER, 1).build(output);
+		sourceGristCost(HUGE_LILY_PAD).multiplier(4).source(Items.LILY_PAD).build(output);
+		gristCost(HUGE_CLOVER_PETAL).grist(AMBER, 1).build(output);
+		gristCost(BARLEY).grist(AMBER, 2).build(output);
+		gristCost(SEA_OATS).grist(AMBER, 2).build(output);
+		gristCost(CATTAIL).grist(AMBER, 2).build(output);
+		gristCost(REED).grist(AMBER, 2).build(output);
+		gristCost(WATERGRASS).grist(AMBER, 2).build(output);
+
+		// Miscellaneous Plants
+
+		gristCost(DEAD_BRANCH).grist(BUILD, 1).build(output);
+		gristCost(WILLOW_VINE).grist(BUILD, 2).grist(AMBER, 1).build(output);
+		gristCost(SPANISH_MOSS).grist(BUILD, 2).grist(AMBER, 1).build(output);
+		gristCost(SPANISH_MOSS_PLANT).grist(BUILD, 2).grist(AMBER, 1).build(output);
+
+		// Environmental Blocks
+
+		sourceGristCost(ORIGIN_GRASS_BLOCK).source(Items.GRASS_BLOCK).build(output);
+		gristCost(BARNACLES).grist(CAULK, 3).build(output);
+		gristCost(DRIED_SALT).grist(BUILD, 4).grist(CHALK, 8).grist(SULFUR, 1).build(output);
+		gristCost(WISPJELLY).grist(BUILD, 2).grist(CAULK, 6).build(output);
+
+		gristCost(WEBBING).grist(BUILD, 9).build(output);
+		gristCost(HANGING_COBWEB).grist(BUILD, 9).build(output);
+		gristCost(HANGING_COBWEB_STRAND).grist(BUILD, 9).build(output);
+		gristCost(STRINGY_COBWEB).grist(BUILD, 6).build(output);
+		gristCost(SPIDER_EGG).grist(BUILD, 27).build(output);
+
+		gristCost(BRAMBLE).grist(BUILD, 1).grist(SULFUR, 1).build(output);
+		gristCost(BRAMBLE_LEAVES).grist(BUILD, 1).grist(SULFUR, 1).build(output);
+		sourceGristCost(THERMAL_CALCITE).grist(SULFUR, 4).source(Items.CALCITE).build(output);
+		sourceGristCost(THERMAL_CALCITE_VENT).source(THERMAL_CALCITE).build(output);
+		gristCost(BRIMSTONE).grist(BUILD, 2).grist(SULFUR, 1).build(output);
+
+		sourceGristCost(BLOOD_BUCKET).source(MSItems.BLOOD_BUCKET.asItem()).build(output);
+		gristCost(BLOOD).grist(IODINE, 8).grist(GARNET, 8).build(output);
+		sourceGristCost(FLESH).grist(BUILD, 1).multiplier(2).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(POROUS_FLESH).grist(BUILD, 1).multiplier(2).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(FLESH_TENDONS).grist(BUILD, 1).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(FLESH_TENDONS_STRAND).grist(BUILD, 1).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(EYEBULB).grist(AMBER, 2).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(HAIR).grist(BUILD, 1).source(Items.ROTTEN_FLESH).build(output);
+		sourceGristCost(PUS_BUBBLE).grist(BUILD, 1).source(Items.ROTTEN_FLESH).build(output);
+
+		gristCost(TOADSTOOL).grist(IODINE, 5).build(output);
+		gristCost(TOADSTOOL_BLOCK).grist(BUILD, 2).grist(IODINE, 5).build(output);
+		gristCost(GLOWSHROOM).grist(IODINE, 3).grist(COBALT, 1).build(output);
+		gristCost(GLOWSHROOM_BLOCK).grist(BUILD, 2).grist(IODINE, 3).grist(COBALT, 1).build(output);
+		gristCost(GLOWING_MOSS_BLOCK).grist(MARBLE, 1).grist(COBALT, 1).build(output);
+		gristCost(GLOWING_MOSS_CARPET).grist(MARBLE, 1).grist(COBALT, 1).build(output);
+		gristCost(GLOWWORM_SILK).grist(MARBLE, 1).grist(COBALT, 1).build(output);
+		gristCost(GLOWWORM_SILK_STRAND).grist(MARBLE, 1).grist(COBALT, 1).build(output);
+
+		gristCost(LAVENDER).grist(IODINE, 1).grist(AMETHYST, 3).build(output);
+		sourceGristCost(TALL_LAVENDER).multiplier(2).source(LAVENDER).build(output);
+		gristCost(WHITE_LAVENDER).grist(IODINE, 1).grist(CHALK, 3).build(output);
+		sourceGristCost(TALL_WHITE_LAVENDER).multiplier(2).source(WHITE_LAVENDER).build(output);
+		gristCost(BLUE_HYDRANGEA).grist(IODINE, 2).grist(COBALT, 2).grist(CHALK, 2).build(output);
+		gristCost(GOLDENROD).grist(IODINE, 2).grist(AMBER, 6).build(output);
+		gristCost(ORANGE_COSMOS).grist(IODINE, 1).grist(AMBER, 2).grist(GARNET, 2).build(output);
+		gristCost(PINK_DAFFODIL).grist(IODINE, 1).grist(GARNET, 2).grist(CHALK, 2).build(output);
+		gristCost(WILDFLOWER).grist(IODINE, 1).grist(AMETHYST, 1).build(output);
+		gristCost(WHITE_PETALS).grist(IODINE, 1).grist(CHALK, 1).build(output);
+		gristCost(ICY_IRIS).grist(IODINE, 1).grist(COBALT, 1).grist(CHALK, 1).build(output);
+		gristCost(VIOLET).grist(IODINE, 1).grist(AMETHYST, 1).build(output);
+		sourceGristCost(ROSE).source(Items.POPPY).build(output);
+		sourceGristCost(WILTED_LILY).grist(TAR, 1).source(Items.LILY_OF_THE_VALLEY).build(output);
+		gristCost(BURNING_BLOSSOM).grist(IODINE, 1).grist(SULFUR, 3).build(output);
+		gristCost(PINK_HIBISCUS).grist(IODINE, 1).grist(GARNET, 2).grist(CHALK, 2).build(output);
+		gristCost(WATERLILY).grist(IODINE, 1).grist(GARNET, 2).grist(CHALK, 2).build(output);
+		gristCost(ENDBLOOM).grist(IODINE, 1).grist(AMBER, 1).build(output);
+		gristCost(GLOWFLOWER).grist(IODINE, 2).grist(MERCURY, 2).build(output);
+		gristCost(LUMALOOP).grist(IODINE, 3).build(output);
+		gristCost(LUMALOOP_PLANT).grist(IODINE, 3).build(output);
+		gristCost(TINY_CACTUS).grist(IODINE, 1).grist(AMBER, 1).build(output);
+
+		// Glitchy Items
+
+		gristCost(NULL_PLANT).grist(BUILD, 1).build(output);
+		gristCost(NULL_LEAVES).grist(BUILD, 1).build(output);
+		gristCost(NULL_BLOCK).grist(BUILD, 2).build(output);
+		gristCost(LIQUID_NULL).grist(BUILD, 8).build(output);
+		sourceGristCost(LIQUID_NULL_BUCKET).grist(BUILD, 8).source(Items.BUCKET).build(output);
+		gristCost(ANOMALY).grist(BUILD, 32).build(output);
+
+		// Rose Quartz
+
+		gristCost(ROSE_QUARTZ_CHUNK).grist(QUARTZ, 4).grist(RUBY, 4).build(output);
+		gristCost(ROSE_QUARTZ_CLUSTER).grist(QUARTZ, 9).grist(RUBY, 9).build(output);
+		gristCost(LARGE_ROSE_QUARTZ_BUD).grist(QUARTZ, 7).grist(RUBY, 7).build(output);
+		gristCost(MEDIUM_ROSE_QUARTZ_BUD).grist(QUARTZ, 5).grist(RUBY, 5).build(output);
+		gristCost(SMALL_ROSE_QUARTZ_BUD).grist(QUARTZ, 3).grist(RUBY, 3).build(output);
+
+		// Potted Plants (why do these have items)
+
+		sourceGristCost(POTTED_BURNING_BLOSSOM).source(BURNING_BLOSSOM).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_CYPRESS_SAPLING).source(CYPRESS_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_DEAD_SAPLING).source(DEAD_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_EMPYREAL_SAPLING).source(EMPYREAL_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_ENDBLOOM).source(ENDBLOOM).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_FIR_SAPLING).source(FIR_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_FLOWERING_OAK_SAPLING).source(FLOWERING_OAK_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_GLOWFLOWER).source(GLOWFLOWER).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_GLOWSHROOM).source(GLOWSHROOM).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_HELLBARK_SAPLING).source(HELLBARK_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_JACARANDA_SAPLING).source(JACARANDA_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_LAVENDER).source(LAVENDER).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_MAGIC_SAPLING).source(MAGIC_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_MAHOGANY_SAPLING).source(MAHOGANY_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_ORANGE_COSMOS).source(ORANGE_COSMOS).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_ORANGE_MAPLE_SAPLING).source(ORANGE_MAPLE_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_ORIGIN_SAPLING).source(ORIGIN_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_PALM_SAPLING).source(PALM_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_PINE_SAPLING).source(PINE_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_PINK_DAFFODIL).source(PINK_DAFFODIL).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_PINK_HIBISCUS).source(PINK_HIBISCUS).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_RAINBOW_BIRCH_SAPLING).source(RAINBOW_BIRCH_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_RED_MAPLE_SAPLING).source(RED_MAPLE_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_REDWOOD_SAPLING).source(REDWOOD_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_ROSE).source(ROSE).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_SNOWBLOSSOM_SAPLING).source(SNOWBLOSSOM_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_SPROUT).source(SPROUT).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_TINY_CACTUS).source(TINY_CACTUS).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_TOADSTOOL).source(TOADSTOOL).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_UMBRAN_SAPLING).source(UMBRAN_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_VIOLET).source(VIOLET).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_WHITE_LAVENDER).source(WHITE_LAVENDER).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_WILLOW_SAPLING).source(WILLOW_SAPLING).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_WILTED_LILY).source(WILTED_LILY).source(Items.FLOWER_POT).build(output);
+		sourceGristCost(POTTED_YELLOW_MAPLE_SAPLING).source(YELLOW_MAPLE_SAPLING).source(Items.FLOWER_POT).build(output);
+
+		gristCost(BOP_ICON).grist(BUILD, 1000).grist(ZILLIUM, 3).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		saplingCombinations(output, ORIGIN_SAPLING, Items.OAK_LOG, ORIGIN_LEAVES);
+		saplingCombinations(output, FLOWERING_OAK_SAPLING, Items.OAK_LOG, FLOWERING_OAK_LEAVES);
+		saplingCombinations(output, CYPRESS_SAPLING, Items.SPRUCE_LOG, CYPRESS_LEAVES);
+		saplingCombinations(output, SNOWBLOSSOM_SAPLING, Items.CHERRY_LOG, SNOWBLOSSOM_LEAVES);
+		saplingCombinations(output, RAINBOW_BIRCH_SAPLING, Items.BIRCH_LOG, RAINBOW_BIRCH_LEAVES);
+		saplingCombinations(output, FIR_SAPLING, FIR_LOG, FIR_LEAVES);
+		saplingCombinations(output, PINE_SAPLING, PINE_LOG, PINE_LEAVES);
+		saplingCombinations(output, RED_MAPLE_SAPLING, MAPLE_LOG, RED_MAPLE_LEAVES);
+		saplingCombinations(output, ORANGE_MAPLE_SAPLING, MAPLE_LOG, ORANGE_MAPLE_LEAVES);
+		saplingCombinations(output, YELLOW_MAPLE_SAPLING, MAPLE_LOG, YELLOW_MAPLE_LEAVES);
+		saplingCombinations(output, REDWOOD_SAPLING, REDWOOD_LOG, REDWOOD_LEAVES);
+		saplingCombinations(output, MAHOGANY_SAPLING, MAHOGANY_LOG, MAHOGANY_LEAVES);
+		saplingCombinations(output, JACARANDA_SAPLING, JACARANDA_LOG, JACARANDA_LEAVES);
+		saplingCombinations(output, PALM_SAPLING, PALM_LOG, PALM_LEAVES);
+		saplingCombinations(output, WILLOW_SAPLING, WILLOW_LOG, WILLOW_LEAVES);
+		saplingCombinations(output, DEAD_SAPLING, DEAD_LOG, DEAD_LEAVES);
+		saplingCombinations(output, MAGIC_SAPLING, MAGIC_LOG, MAGIC_LEAVES);
+		saplingCombinations(output, UMBRAN_SAPLING, UMBRAN_LOG, UMBRAN_LEAVES);
+		saplingCombinations(output, HELLBARK_SAPLING, HELLBARK_LOG, HELLBARK_LEAVES);
+		saplingCombinations(output, EMPYREAL_SAPLING, EMPYREAL_LOG, EMPYREAL_LEAVES);
+
+		woodCombinations(output, FIR_PLANKS, FIR_SLAB, FIR_STAIRS, FIR_DOOR, FIR_FENCE, FIR_FENCE_GATE, FIR_TRAPDOOR);
+		woodCombinations(output, PINE_PLANKS, PINE_SLAB, PINE_STAIRS, PINE_DOOR, PINE_FENCE, PINE_FENCE_GATE, PINE_TRAPDOOR);
+		woodCombinations(output, MAPLE_PLANKS, MAPLE_SLAB, MAPLE_STAIRS, MAPLE_DOOR, MAPLE_FENCE, MAPLE_FENCE_GATE, MAPLE_TRAPDOOR);
+		woodCombinations(output, REDWOOD_PLANKS, REDWOOD_SLAB, REDWOOD_STAIRS, REDWOOD_DOOR, REDWOOD_FENCE, REDWOOD_FENCE_GATE, REDWOOD_TRAPDOOR);
+		woodCombinations(output, MAHOGANY_PLANKS, MAHOGANY_SLAB, MAHOGANY_STAIRS, MAHOGANY_DOOR, MAHOGANY_FENCE, MAHOGANY_FENCE_GATE, MAHOGANY_TRAPDOOR);
+		woodCombinations(output, JACARANDA_PLANKS, JACARANDA_SLAB, JACARANDA_STAIRS, JACARANDA_DOOR, JACARANDA_FENCE, JACARANDA_FENCE_GATE, JACARANDA_TRAPDOOR);
+		woodCombinations(output, PALM_PLANKS, PALM_SLAB, PALM_STAIRS, PALM_DOOR, PALM_FENCE, PALM_FENCE_GATE, PALM_TRAPDOOR);
+		woodCombinations(output, WILLOW_PLANKS, WILLOW_SLAB, WILLOW_STAIRS, WILLOW_DOOR, WILLOW_FENCE, WILLOW_FENCE_GATE, WILLOW_TRAPDOOR);
+		woodCombinations(output, DEAD_PLANKS, DEAD_SLAB, DEAD_STAIRS, DEAD_DOOR, DEAD_FENCE, DEAD_FENCE_GATE, DEAD_TRAPDOOR);
+		woodCombinations(output, MAGIC_PLANKS, MAGIC_SLAB, MAGIC_STAIRS, MAGIC_DOOR, MAGIC_FENCE, MAGIC_FENCE_GATE, MAGIC_TRAPDOOR);
+		woodCombinations(output, UMBRAN_PLANKS, UMBRAN_SLAB, UMBRAN_STAIRS, UMBRAN_DOOR, UMBRAN_FENCE, UMBRAN_FENCE_GATE, UMBRAN_TRAPDOOR);
+		woodCombinations(output, HELLBARK_PLANKS, HELLBARK_SLAB, HELLBARK_STAIRS, HELLBARK_DOOR, HELLBARK_FENCE, HELLBARK_FENCE_GATE, HELLBARK_TRAPDOOR);
+		woodCombinations(output, EMPYREAL_PLANKS, EMPYREAL_SLAB, EMPYREAL_STAIRS, EMPYREAL_DOOR, EMPYREAL_FENCE, EMPYREAL_FENCE_GATE, EMPYREAL_TRAPDOOR);
+	}
+}

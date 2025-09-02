@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:birch_log"
+  },
+  "input2": {
+    "item": "biomesoplenty:rainbow_birch_leaves"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:rainbow_birch_sapling"
+}

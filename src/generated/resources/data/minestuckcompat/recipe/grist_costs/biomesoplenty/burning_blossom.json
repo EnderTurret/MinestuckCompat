@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:iodine": 1,
+    "minestuck:sulfur": 3
+  },
+  "ingredient": {
+    "item": "biomesoplenty:burning_blossom"
+  }
+}

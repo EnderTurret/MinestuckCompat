@@ -13,6 +13,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.data.recipe.Ae2Recipes;
+import net.enderturret.minestuckcompat.data.recipe.BiomesOPlentyRecipes;
 import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
@@ -38,5 +39,8 @@ public final class MCDatagen {
 
 		if (ModList.get().isLoaded("create"))
 			e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new CreateRecipes(output, lookup), "Create Recipes"));
+
+		if (ModList.get().isLoaded("biomesoplenty"))
+			e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new BiomesOPlentyRecipes(output, lookup), "Biomes O' Plenty Recipes"));
 	}
 }

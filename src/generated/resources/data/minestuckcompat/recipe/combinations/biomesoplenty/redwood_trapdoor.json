@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:redwood_door"
+  },
+  "input2": {
+    "item": "biomesoplenty:redwood_slab"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:redwood_trapdoor"
+}

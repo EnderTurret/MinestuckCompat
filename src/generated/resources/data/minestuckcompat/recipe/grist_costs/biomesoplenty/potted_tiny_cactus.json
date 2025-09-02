@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "biomesoplenty:potted_tiny_cactus"
+  },
+  "sources": [
+    "biomesoplenty:tiny_cactus",
+    "minecraft:flower_pot"
+  ]
+}

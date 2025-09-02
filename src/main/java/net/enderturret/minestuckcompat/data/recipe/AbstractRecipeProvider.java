@@ -54,6 +54,22 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 		combination(ore).and().input(ingot).input(Items.STONE).build(output);
 	}
 
+	protected static void saplingCombinations(RecipeOutput output, ItemLike sapling, ItemLike log, ItemLike leaves, boolean includePrimary) {
+		combination(sapling).or().input(log).input(leaves).build(output);
+		combination(sapling).and().namedInput(Items.STICK).input(leaves).build(output);
+		combination(sapling).and().namedInput(Items.WHEAT_SEEDS).input(leaves).build(output);
+	}
+
+	protected static void saplingCombinations(RecipeOutput output, ItemLike sapling, ItemLike log, ItemLike leaves) {
+		saplingCombinations(output, sapling, log, leaves, true);
+	}
+
+	protected static void woodCombinations(RecipeOutput output, ItemLike planks, ItemLike slab, ItemLike stairs, ItemLike door, ItemLike fence, ItemLike fenceGate, ItemLike trapdoor) {
+		combination(stairs).or().input(planks).input(slab).build(output);
+		combination(fenceGate).or().input(door).input(fence).build(output);
+		combination(trapdoor).or().input(door).input(slab).build(output);
+	}
+
 	protected static TagKey<Item> c(String path) {
 		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
 	}

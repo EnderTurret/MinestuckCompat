@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stick"
+  },
+  "input2": {
+    "item": "biomesoplenty:mahogany_leaves"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:mahogany_sapling"
+}

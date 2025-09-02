@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:oak_log"
+  },
+  "input2": {
+    "item": "biomesoplenty:flowering_oak_leaves"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:flowering_oak_sapling"
+}

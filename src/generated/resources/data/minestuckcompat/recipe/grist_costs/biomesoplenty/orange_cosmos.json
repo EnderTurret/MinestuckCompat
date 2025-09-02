@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 2,
+    "minestuck:garnet": 2,
+    "minestuck:iodine": 1
+  },
+  "ingredient": {
+    "item": "biomesoplenty:orange_cosmos"
+  }
+}

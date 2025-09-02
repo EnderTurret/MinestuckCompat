@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:jacaranda_log"
+  },
+  "input2": {
+    "item": "biomesoplenty:jacaranda_leaves"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:jacaranda_sapling"
+}

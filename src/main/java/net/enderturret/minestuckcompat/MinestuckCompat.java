@@ -1,6 +1,5 @@
 package net.enderturret.minestuckcompat;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import org.slf4j.Logger;

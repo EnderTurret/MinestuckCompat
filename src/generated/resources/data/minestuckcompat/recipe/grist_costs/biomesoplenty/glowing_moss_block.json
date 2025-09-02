@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 1,
+    "minestuck:marble": 1
+  },
+  "ingredient": {
+    "item": "biomesoplenty:glowing_moss_block"
+  }
+}

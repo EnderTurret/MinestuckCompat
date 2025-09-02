@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:fir_planks"
+  },
+  "input2": {
+    "item": "biomesoplenty:fir_slab"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:fir_stairs"
+}

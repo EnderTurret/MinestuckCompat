@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "input2": {
+    "item": "biomesoplenty:fir_leaves"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:fir_sapling"
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 2,
+    "minestuck:caulk": 6
+  },
+  "ingredient": {
+    "item": "biomesoplenty:wispjelly"
+  }
+}

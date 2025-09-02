@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:garnet": 8,
+    "minestuck:iodine": 8
+  },
+  "ingredient": {
+    "item": "biomesoplenty:blood"
+  }
+}
