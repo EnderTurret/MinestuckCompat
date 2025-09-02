@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:heart_pottery_sherd"
+  },
+  "input2": {
+    "tag": "minecraft:swords"
+  },
+  "mode": "or",
+  "output": "minecraft:heartbreak_pottery_sherd"
+}

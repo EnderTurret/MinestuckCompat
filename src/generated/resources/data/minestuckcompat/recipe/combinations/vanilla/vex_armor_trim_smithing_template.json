@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cobblestone"
+  },
+  "input2": {
+    "item": "minecraft:totem_of_undying"
+  },
+  "mode": "or",
+  "output": "minecraft:vex_armor_trim_smithing_template"
+}

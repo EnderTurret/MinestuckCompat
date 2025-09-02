@@ -1,4 +1,16 @@
-// 1.21.1	2025-08-31T19:27:23.751230081	Mekanism Recipes
+// 1.21.1	2025-09-01T20:36:00.634178331	Mekanism Recipes
+e3a29b0cad86a28982de282fcbff2c6b40de0162 data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
+5c1bd6e2d64204164beb512bfc8ef5adf0cf4106 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
+9437f9d2904ef324986a4cd506447d3fff952788 data/minestuckcompat/recipe/combinations/mekanism/block_tin.json
+af5423e710ccdfdd34edbb777424ead034a0a3df data/minestuckcompat/recipe/combinations/mekanism/block_uranium.json
+600013db682f155099598d308cb09ad084140de6 data/minestuckcompat/recipe/combinations/mekanism/ingot_lead.json
+e9e9f8fb623477ed19ba41a48d4bd74dc9f1bfac data/minestuckcompat/recipe/combinations/mekanism/ingot_osmium.json
+f032b5c918657b71d22fcac03116ad1e74d59429 data/minestuckcompat/recipe/combinations/mekanism/ingot_tin.json
+0d2b2dd95f0cd26d67385fcb9916b3480bd8c37e data/minestuckcompat/recipe/combinations/mekanism/ingot_uranium.json
+aed4ef89536144a0cb3a316153a2f1b58f0d42c8 data/minestuckcompat/recipe/combinations/mekanism/lead_ore.json
+324b44d1a43324f542fe2ffb923aa104ef5691d4 data/minestuckcompat/recipe/combinations/mekanism/osmium_ore.json
+0cd877ac12163508bec18ae49d67572fd63af007 data/minestuckcompat/recipe/combinations/mekanism/tin_ore.json
+f9a56f570adca019f8538f2103b05a05060b9a10 data/minestuckcompat/recipe/combinations/mekanism/uranium_ore.json
 94514934aa7fb45ec77677acebaf051e749efc2e data/minestuckcompat/recipe/grist_costs/mekanism/block_salt.json
 404c8f9d7cb683302357a2bd21258ac06990631d data/minestuckcompat/recipe/grist_costs/mekanism/brine_bucket.json
 4f4fa5e534437fe15fc10dae0d52a4a0a9ab1179 data/minestuckcompat/recipe/grist_costs/mekanism/chlorine_bucket.json

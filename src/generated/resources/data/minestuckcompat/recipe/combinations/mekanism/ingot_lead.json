@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input2": {
+    "tag": "c:dyes/gray"
+  },
+  "mode": "and",
+  "output": "mekanism:ingot_lead"
+}

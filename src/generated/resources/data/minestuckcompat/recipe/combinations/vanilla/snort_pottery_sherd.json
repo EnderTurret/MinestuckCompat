@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:sniffer_egg"
+  },
+  "mode": "or",
+  "output": "minecraft:snort_pottery_sherd"
+}

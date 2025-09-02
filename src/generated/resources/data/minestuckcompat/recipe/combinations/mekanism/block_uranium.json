@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "mekanism:ingot_uranium"
+  },
+  "input2": {
+    "item": "minecraft:stone"
+  },
+  "mode": "or",
+  "output": "mekanism:block_uranium"
+}

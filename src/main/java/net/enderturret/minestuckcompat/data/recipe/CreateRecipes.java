@@ -131,6 +131,13 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		sourceGristCost(POTATO_CANNON).source(ANDESITE_ALLOY.asItem()).source(PRECISION_MECHANISM.asItem()).source(FLUID_PIPE.asItem())
 				.source(FLUID_PIPE.asItem()).source(FLUID_PIPE.asItem()).source(Items.COPPER_INGOT).source(Items.COPPER_INGOT).build(output);
 		sourceGristCost(HAUNTED_BELL).grist(SHALE, 1).source(PECULIAR_BELL.asItem()).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		oreCombinations(output, ZINC_INGOT, ZINC_BLOCK, ZINC_ORE);
+		combination(ZINC_INGOT).and().input(Items.COPPER_INGOT).input(c("gems/emerald")).build(output);
 	}
 
 	private void variantSet(RecipeOutput output, String baseTypeDomain, String baseTypeName) {

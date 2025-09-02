@@ -5,10 +5,14 @@ import static mekanism.common.registries.MekanismItems.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.mraof.minestuck.item.MSItems;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.Items;
+
+import net.neoforged.neoforge.common.Tags;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 
@@ -68,5 +72,18 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		sourceGristCost(lookup("mekanism", "hydrofluoric_acid_bucket")).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
 		sourceGristCost(lookup("mekanism", "uranium_oxide_bucket")).grist(URANIUM, 16).source(Items.BUCKET).build(output);
 		sourceGristCost(lookup("mekanism", "uranium_hexafluoride_bucket")).grist(URANIUM, 16).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		oreCombinations(output, lookup("mekanism", "ingot_lead"), lookup("mekanism", "block_lead"), lookup("mekanism", "lead_ore"));
+		combination(lookup("mekanism", "ingot_lead")).and().input(Items.IRON_INGOT).input(Tags.Items.DYES_GRAY).build(output);
+		oreCombinations(output, lookup("mekanism", "ingot_osmium"), lookup("mekanism", "block_osmium"), lookup("mekanism", "osmium_ore"));
+		combination(lookup("mekanism", "ingot_osmium")).and().input(Items.IRON_INGOT).input(MSItems.RAW_CRUXITE).build(output);
+		oreCombinations(output, lookup("mekanism", "ingot_tin"), lookup("mekanism", "block_tin"), lookup("mekanism", "tin_ore"));
+		combination(lookup("mekanism", "ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
+		oreCombinations(output, lookup("mekanism", "ingot_uranium"), lookup("mekanism", "block_uranium"), lookup("mekanism", "uranium_ore"));
+		combination(lookup("mekanism", "ingot_uranium")).and().input(lookup("mekanism", "ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
 	}
 }

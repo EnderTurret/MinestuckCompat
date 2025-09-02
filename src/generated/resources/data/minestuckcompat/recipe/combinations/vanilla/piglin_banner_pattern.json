@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:paper"
+  },
+  "input2": {
+    "item": "minecraft:piglin_head"
+  },
+  "mode": "and",
+  "output": "minecraft:piglin_banner_pattern"
+}

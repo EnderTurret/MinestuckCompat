@@ -1,4 +1,7 @@
-// 1.21.1	2025-08-31T19:27:23.751682149	Create Recipes
+// 1.21.1	2025-09-01T20:36:00.634876256	Create Recipes
+594f01dd33a79025dd1e4c072c33eb49c1d2cb86 data/minestuckcompat/recipe/combinations/create/zinc_block.json
+4df8987eb7c90e8a8b38245514963345f79da6dc data/minestuckcompat/recipe/combinations/create/zinc_ingot.json
+b5adc98d61a951f4fc93f8dd2d1c564e390b0565 data/minestuckcompat/recipe/combinations/create/zinc_ore.json
 3f03d29d79adbeb0706f3ffc7e771c92d9b404ac data/minestuckcompat/recipe/grist_costs/create/andesite_pillar.json
 a110de0ebcfc07c60da688dcb97a6d3cbbd768c4 data/minestuckcompat/recipe/grist_costs/create/asurine.json
 3423826fd964bb6690ba1cbee7416bd7531d4d3f data/minestuckcompat/recipe/grist_costs/create/asurine_pillar.json

@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cobblestone"
+  },
+  "input2": {
+    "item": "minecraft:tripwire_hook"
+  },
+  "mode": "or",
+  "output": "minecraft:sentry_armor_trim_smithing_template"
+}

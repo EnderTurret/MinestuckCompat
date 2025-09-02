@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:guster_banner_pattern"
+  },
+  "mode": "or",
+  "output": "minecraft:guster_pottery_sherd"
+}

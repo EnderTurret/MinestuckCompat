@@ -1,4 +1,7 @@
-// 1.21.1	2025-08-31T19:27:23.752481412	AE2 Recipes
+// 1.21.1	2025-09-01T20:36:00.636090922	AE2 Recipes
+eb4a8af335324f0842cc58e10d45d3f8766db683 data/minestuckcompat/recipe/combinations/ae2/flawless_budding_quartz.json
+1c35f677d074ac870f2fd1ad0388cb5d06fb3aa1 data/minestuckcompat/recipe/combinations/ae2/mysterious_cube.json
+fd12662d8f40569ddbaa6466a2b9600fe25c3789 data/minestuckcompat/recipe/combinations/ae2/sky_stone_block.json
 264f70ff91a2a666a8b088f2bcfd3cbf03e3a77e data/minestuckcompat/recipe/grist_costs/ae2/cable_anchor.json
 feb5afa60aa7dd9afdc49b0482b6abfe6b076d9a data/minestuckcompat/recipe/grist_costs/ae2/certus_quartz_crystal.json
 99f7483f6eedd5808240e028fed67a183ea34de5 data/minestuckcompat/recipe/grist_costs/ae2/chipped_budding_quartz.json

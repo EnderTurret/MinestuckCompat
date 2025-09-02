@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:basalt"
+  },
+  "input2": {
+    "item": "minestuck:space_aspect_planks"
+  },
+  "mode": "or",
+  "output": "ae2:sky_stone_block"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:zombie_head"
+  },
+  "input2": {
+    "item": "minecraft:carrot"
+  },
+  "mode": "or",
+  "output": "minecraft:piglin_head"
+}

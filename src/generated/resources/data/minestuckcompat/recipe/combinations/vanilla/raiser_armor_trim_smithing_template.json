@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:carrot"
+  },
+  "mode": "or",
+  "output": "minecraft:raiser_armor_trim_smithing_template"
+}

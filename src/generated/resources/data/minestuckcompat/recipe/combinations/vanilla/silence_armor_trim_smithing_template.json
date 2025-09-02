@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cobbled_deepslate"
+  },
+  "input2": {
+    "item": "minecraft:sculk_sensor"
+  },
+  "mode": "or",
+  "output": "minecraft:silence_armor_trim_smithing_template"
+}

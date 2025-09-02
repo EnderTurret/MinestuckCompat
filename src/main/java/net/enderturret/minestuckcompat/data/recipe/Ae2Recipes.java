@@ -6,9 +6,12 @@ import static com.mraof.minestuck.api.alchemy.GristTypes.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.mraof.minestuck.item.MSItems;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
@@ -73,5 +76,13 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		gristCost(AEParts.CABLE_ANCHOR.get()).grist(BUILD, 2).build(output);
 		sourceGristCost(FACADE).grist(BUILD, 2).source(AEParts.CABLE_ANCHOR.get()).build(output);
 		gristCost(NAME_PRESS).grist(RUST, 9).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		combination(SKY_STONE_BLOCK).or().input(Items.BASALT).input(lookup("minestuck", "space_aspect_planks")).build(output);
+		combination(MYSTERIOUS_CUBE).and().input(SKY_STONE_BLOCK).input(CERTUS_QUARTZ_CRYSTAL).build(output);
+		combination(FLAWLESS_BUDDING_QUARTZ).or().input(MSItems.CRUXITE_BLOCK).input(ItemTags.SWORDS).build(output);
 	}
 }

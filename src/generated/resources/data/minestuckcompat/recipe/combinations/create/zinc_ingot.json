@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input2": {
+    "tag": "c:gems/emerald"
+  },
+  "mode": "and",
+  "output": "create:zinc_ingot"
+}

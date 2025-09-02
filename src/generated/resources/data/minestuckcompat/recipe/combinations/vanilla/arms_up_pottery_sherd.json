@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:armor_stand"
+  },
+  "mode": "or",
+  "output": "minecraft:arms_up_pottery_sherd"
+}

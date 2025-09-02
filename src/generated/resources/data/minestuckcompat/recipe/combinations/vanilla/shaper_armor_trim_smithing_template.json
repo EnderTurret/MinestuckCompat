@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:crafting_table"
+  },
+  "mode": "or",
+  "output": "minecraft:shaper_armor_trim_smithing_template"
+}

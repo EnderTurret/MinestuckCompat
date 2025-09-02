@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:flow_banner_pattern"
+  },
+  "mode": "or",
+  "output": "minecraft:flow_pottery_sherd"
+}

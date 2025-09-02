@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:blackstone"
+  },
+  "input2": {
+    "item": "minecraft:piglin_banner_pattern"
+  },
+  "mode": "or",
+  "output": "minecraft:snout_armor_trim_smithing_template"
+}

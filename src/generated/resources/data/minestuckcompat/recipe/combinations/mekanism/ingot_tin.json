@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input2": {
+    "item": "minestuck:chalk"
+  },
+  "mode": "or",
+  "output": "mekanism:ingot_tin"
+}

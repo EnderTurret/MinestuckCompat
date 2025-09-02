@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:diamond"
+  },
+  "mode": "or",
+  "output": "minecraft:prize_pottery_sherd"
+}

@@ -107,5 +107,69 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		sourceGristCost(ItemTags.DECORATED_POT_SHERDS).source(BRICK).multiplier(4).build(output);
 		gristCost(FLOW_BANNER_PATTERN).grist(BUILD, 120).grist(MARBLE, 17).grist(GristTypes.DIAMOND, 13).build(output);
 		gristCost(GUSTER_BANNER_PATTERN).grist(BUILD, 120).grist(MARBLE, 13).grist(GristTypes.DIAMOND, 17).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		// Sherds
+
+		combination(ANGLER_POTTERY_SHERD).or().input(TERRACOTTA).input(FISHING_ROD).build(output);
+		combination(ARCHER_POTTERY_SHERD).or().input(TERRACOTTA).input(BOW).build(output);
+		combination(ARMS_UP_POTTERY_SHERD).or().input(TERRACOTTA).input(ARMOR_STAND).build(output);
+		combination(BLADE_POTTERY_SHERD).or().input(TERRACOTTA).input(ItemTags.SWORDS).build(output);
+		combination(BREWER_POTTERY_SHERD).or().input(TERRACOTTA).input(POTION).build(output);
+		combination(BURN_POTTERY_SHERD).or().input(TERRACOTTA).input(FLINT_AND_STEEL).build(output);
+		combination(DANGER_POTTERY_SHERD).or().input(TERRACOTTA).input(GUNPOWDER).build(output);
+		combination(FLOW_POTTERY_SHERD).or().input(TERRACOTTA).input(FLOW_BANNER_PATTERN).build(output);
+		combination(EXPLORER_POTTERY_SHERD).or().input(TERRACOTTA).input(MAP).build(output);
+		// I think this one depicts an iron golem?
+		combination(FRIEND_POTTERY_SHERD).or().input(TERRACOTTA).input(IRON_BLOCK).build(output);
+		combination(GUSTER_POTTERY_SHERD).or().input(TERRACOTTA).input(GUSTER_BANNER_PATTERN).build(output);
+		combination(HEART_POTTERY_SHERD).or().input(TERRACOTTA).input(BEETROOT).build(output);
+		combination(HEARTBREAK_POTTERY_SHERD).or().input(HEART_POTTERY_SHERD).input(ItemTags.SWORDS).build(output);
+		combination(HOWL_POTTERY_SHERD).or().input(TERRACOTTA).input(BONE).build(output);
+		combination(MINER_POTTERY_SHERD).or().input(TERRACOTTA).input(ItemTags.PICKAXES).build(output);
+		combination(MOURNER_POTTERY_SHERD).or().input(TERRACOTTA).input(SCULK_CATALYST).build(output);
+		combination(PLENTY_POTTERY_SHERD).or().input(TERRACOTTA).input(CHEST).build(output);
+		combination(PRIZE_POTTERY_SHERD).or().input(TERRACOTTA).input(Items.DIAMOND).build(output);
+		combination(SCRAPE_POTTERY_SHERD).or().input(TERRACOTTA).input(ItemTags.AXES).build(output);
+		combination(SHEAF_POTTERY_SHERD).or().input(TERRACOTTA).input(WHEAT).build(output);
+		combination(SHELTER_POTTERY_SHERD).or().input(TERRACOTTA).input(ItemTags.SAPLINGS).build(output);
+		combination(SKULL_POTTERY_SHERD).or().input(TERRACOTTA).input(WITHER_SKELETON_SKULL).build(output);
+		combination(SNORT_POTTERY_SHERD).or().input(TERRACOTTA).input(SNIFFER_EGG).build(output);
+
+		// Trims
+
+		combination(SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COBBLESTONE).input(TRIPWIRE_HOOK).build(output);
+		combination(VEX_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COBBLESTONE).input(TOTEM_OF_UNDYING).build(output);
+		combination(WILD_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(MOSSY_COBBLESTONE).input(MANGROVE_PROPAGULE).build(output);
+		combination(COAST_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COBBLESTONE).input(WATER_BUCKET).build(output);
+		combination(DUNE_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(SANDSTONE).input(SAND).build(output);
+		combination(WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(TERRACOTTA).input(LEATHER_BOOTS).build(output);
+		combination(RAISER_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(TERRACOTTA).input(CARROT).build(output);
+		combination(SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(TERRACOTTA).input(CRAFTING_TABLE).build(output);
+		// I have absolutely no idea what to do with this one.
+		combination(HOST_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(TERRACOTTA).input(ItemTags.SIGNS).build(output);
+		combination(WARD_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COBBLED_DEEPSLATE).input(SCULK_CATALYST).build(output);
+		combination(SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COBBLED_DEEPSLATE).input(SCULK_SENSOR).build(output);
+		combination(TIDE_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(PRISMARINE).input(HEART_OF_THE_SEA).build(output);
+		combination(SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(BLACKSTONE).input(PIGLIN_BANNER_PATTERN).build(output);
+		combination(RIB_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(NETHERRACK).input(WITHER_SKELETON_SKULL).build(output);
+		combination(EYE_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(END_STONE).input(ENDER_EYE).build(output);
+		combination(SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(PURPUR_BLOCK).input(END_ROD).build(output);
+		combination(FLOW_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(BREEZE_ROD).input(WIND_CHARGE).build(output);
+		combination(BOLT_ARMOR_TRIM_SMITHING_TEMPLATE).or().input(COPPER_BLOCK).input(LIGHTNING_ROD).build(output);
+
+		// Banner Patterns
+
+		combination(GLOBE_BANNER_PATTERN).and().input(PAPER).input(DIRT).build(output);
+		combination(PIGLIN_BANNER_PATTERN).and().input(PAPER).input(PIGLIN_HEAD).build(output);
+		combination(FLOW_BANNER_PATTERN).and().input(PAPER).input(WIND_CHARGE).build(output);
+		combination(GUSTER_BANNER_PATTERN).and().input(PAPER).input(BREEZE_ROD).build(output);
+
+		// Miscellaneous
+
+		combination(PIGLIN_HEAD).or().input(ZOMBIE_HEAD).input(CARROT).build(output);
 	}
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:bow"
+  },
+  "mode": "or",
+  "output": "minecraft:archer_pottery_sherd"
+}

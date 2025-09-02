@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "ae2:sky_stone_block"
+  },
+  "input2": {
+    "item": "ae2:certus_quartz_crystal"
+  },
+  "mode": "and",
+  "output": "ae2:mysterious_cube"
+}

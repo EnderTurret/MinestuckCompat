@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:end_stone"
+  },
+  "input2": {
+    "item": "minecraft:ender_eye"
+  },
+  "mode": "or",
+  "output": "minecraft:eye_armor_trim_smithing_template"
+}

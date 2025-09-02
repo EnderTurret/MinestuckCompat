@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:terracotta"
+  },
+  "input2": {
+    "item": "minecraft:wheat"
+  },
+  "mode": "or",
+  "output": "minecraft:sheaf_pottery_sherd"
+}

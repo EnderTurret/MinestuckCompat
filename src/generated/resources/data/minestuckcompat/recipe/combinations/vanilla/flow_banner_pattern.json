@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:paper"
+  },
+  "input2": {
+    "item": "minecraft:wind_charge"
+  },
+  "mode": "and",
+  "output": "minecraft:flow_banner_pattern"
+}
