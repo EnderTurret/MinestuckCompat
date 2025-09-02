@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:nether_wart"
+  },
+  "input2": {
+    "item": "minecraft:rose_bush"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:bramble"
+}

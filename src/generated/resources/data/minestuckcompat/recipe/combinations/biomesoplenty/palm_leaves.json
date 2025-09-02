@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:jungle_leaves"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:palm_leaves"
+}

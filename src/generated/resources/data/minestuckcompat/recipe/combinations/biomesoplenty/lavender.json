@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:fern"
+  },
+  "input2": {
+    "item": "minecraft:allium"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:lavender"
+}

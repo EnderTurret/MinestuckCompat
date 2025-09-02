@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:pink_petals"
+  },
+  "input2": {
+    "item": "minecraft:white_dye"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:white_petals"
+}

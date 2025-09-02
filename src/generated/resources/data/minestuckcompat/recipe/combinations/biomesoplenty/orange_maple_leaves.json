@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:spruce_leaves"
+  },
+  "input2": {
+    "item": "minecraft:orange_dye"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:orange_maple_leaves"
+}

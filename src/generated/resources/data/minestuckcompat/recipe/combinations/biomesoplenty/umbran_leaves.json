@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "minecraft:leaves"
+  },
+  "input2": {
+    "item": "minestuck:grimoire"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:umbran_leaves"
+}

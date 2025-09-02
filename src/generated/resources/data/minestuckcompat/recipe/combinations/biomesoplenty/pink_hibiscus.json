@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:gamegrl_magazine"
+  },
+  "input2": {
+    "item": "minecraft:cookie"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:pink_hibiscus"
+}

@@ -10,7 +10,10 @@ import com.mraof.minestuck.item.MSItems;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+
+import net.neoforged.neoforge.common.Tags;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 
@@ -213,5 +216,68 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		woodCombinations(output, UMBRAN_PLANKS, UMBRAN_SLAB, UMBRAN_STAIRS, UMBRAN_DOOR, UMBRAN_FENCE, UMBRAN_FENCE_GATE, UMBRAN_TRAPDOOR);
 		woodCombinations(output, HELLBARK_PLANKS, HELLBARK_SLAB, HELLBARK_STAIRS, HELLBARK_DOOR, HELLBARK_FENCE, HELLBARK_FENCE_GATE, HELLBARK_TRAPDOOR);
 		woodCombinations(output, EMPYREAL_PLANKS, EMPYREAL_SLAB, EMPYREAL_STAIRS, EMPYREAL_DOOR, EMPYREAL_FENCE, EMPYREAL_FENCE_GATE, EMPYREAL_TRAPDOOR);
+
+		combination(ORIGIN_LEAVES).or().input(Items.OAK_LEAVES).input(Items.CLOCK).build(output);
+		combination(FLOWERING_OAK_LEAVES).and().input(Items.OAK_LEAVES).input(ItemTags.FLOWERS).build(output);
+		combination(CYPRESS_LEAVES).or().input(Items.SPRUCE_LEAVES).input(Items.TALL_GRASS).build(output);
+		combination(SNOWBLOSSOM_LEAVES).and().input(Items.CHERRY_LEAVES).input(Items.SNOWBALL).build(output);
+		combination(RAINBOW_BIRCH_LEAVES).and().input(Items.BIRCH_LEAVES).input(MSItems.BI_DYE).build(output);
+		combination(FIR_LEAVES).or().input(CYPRESS_LEAVES).input(Items.TALL_GRASS).build(output);
+		combination(PINE_LEAVES).or().input(ItemTags.LEAVES).input(Items.STICK).build(output);
+		combination(RED_MAPLE_LEAVES).and().input(Items.SPRUCE_LEAVES).input(Items.RED_DYE).build(output);
+		combination(ORANGE_MAPLE_LEAVES).and().input(Items.SPRUCE_LEAVES).input(Items.ORANGE_DYE).build(output);
+		combination(YELLOW_MAPLE_LEAVES).and().input(Items.SPRUCE_LEAVES).input(Items.YELLOW_DYE).build(output);
+		combination(REDWOOD_LEAVES).or().input(Items.BIRCH_LEAVES).input(Items.TALL_GRASS).build(output);
+		combination(MAHOGANY_LEAVES).or().input(Items.JUNGLE_LEAVES).input(Items.MANGROVE_LEAVES).build(output);
+		combination(JACARANDA_LEAVES).or().input(Items.CHERRY_LEAVES).input(LAVENDER).build(output);
+		combination(PALM_LEAVES).or().input(Items.JUNGLE_LEAVES).input(Items.WATER_BUCKET).build(output);
+		combination(WILLOW_LEAVES).or().input(Items.MANGROVE_LEAVES).input(Items.VINE).build(output);
+		combination(DEAD_LEAVES).and().input(ItemTags.LEAVES).input(Items.DEAD_BUSH).build(output);
+		combination(MAGIC_LEAVES).or().input(ItemTags.LEAVES).input(MSItems.EIGHTBALL).build(output);
+		combination(UMBRAN_LEAVES).or().input(ItemTags.LEAVES).input(MSItems.GRIMOIRE).build(output);
+		combination(HELLBARK_LEAVES).and().input(Items.MANGROVE_LEAVES).input(BRAMBLE).build(output);
+		combination(EMPYREAL_LEAVES).or().input(Items.OAK_LEAVES).input(Items.QUARTZ).build(output);
+		combination(BRAMBLE_LEAVES).and().input(Items.OAK_LEAVES).input(BRAMBLE).build(output);
+
+		combination(ROSE).or().input(Items.POPPY).input(Items.CLOCK).build(output);
+		combination(VIOLET).or().input(Items.SMALL_AMETHYST_BUD).input(Items.TORCHFLOWER).build(output);
+		combination(LAVENDER).or().input(Items.FERN).input(Items.ALLIUM).build(output);
+		combination(WHITE_LAVENDER).and().input(LAVENDER).input(Items.WHITE_DYE).build(output);
+		combination(TALL_WHITE_LAVENDER).and().namedInput(TALL_LAVENDER).input(Items.WHITE_DYE).build(output);
+		combination(TALL_WHITE_LAVENDER).or().namedInput(WHITE_LAVENDER).input(Items.TALL_GRASS).build(output);
+		combination(BLUE_HYDRANGEA).or().input(Items.PEONY).input(Items.BLUE_ORCHID).build(output);
+		combination(GOLDENROD).and().input(Items.ROSE_BUSH).input(Items.YELLOW_DYE).build(output);
+		combination(ORANGE_COSMOS).or().input(Items.OXEYE_DAISY).input(Items.YELLOW_GLAZED_TERRACOTTA).build(output);
+		combination(PINK_DAFFODIL).and().input(Items.SPORE_BLOSSOM).input(Items.PINK_TULIP).build(output);
+		combination(PINK_HIBISCUS).or().input(MSItems.GAMEGRL_MAGAZINE).input(Items.COOKIE).build(output);
+		combination(WILDFLOWER).or().input(Items.PINK_PETALS).input(MSItems.BI_DYE).build(output);
+		combination(WHITE_PETALS).or().input(Items.PINK_PETALS).input(Items.WHITE_DYE).build(output);
+		combination(ICY_IRIS).or().input(Items.TALL_GRASS).input(Items.ICE).build(output);
+		combination(GLOWFLOWER).or().input(Items.LILY_OF_THE_VALLEY).input(GLOWSHROOM).build(output);
+		combination(WILTED_LILY).and().input(Items.LILY_OF_THE_VALLEY).input(Items.DEAD_BUSH).build(output);
+		combination(BURNING_BLOSSOM).or().input(ORANGE_COSMOS).input(Items.FLINT_AND_STEEL).build(output);
+		combination(ENDBLOOM).or().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
+
+		combination(SPROUT).and().input(Items.SHORT_GRASS).input(ItemTags.SAPLINGS).build(output);
+		combination(BUSH).or().input(Items.SHORT_GRASS).input(Items.SWEET_BERRIES).build(output);
+		combination(HIGH_GRASS).and().input(Items.TALL_GRASS).input(Items.LARGE_FERN).build(output);
+		combination(CLOVER).and().input(Items.PINK_PETALS).input(Tags.Items.DYES_GREEN).build(output);
+		combination(HUGE_CLOVER_PETAL).or().input(CLOVER).input(HIGH_GRASS).build(output);
+		combination(HUGE_LILY_PAD).and().input(Items.LILY_PAD).input(HUGE_CLOVER_PETAL).build(output);
+		combination(WATERLILY).or().input(Items.SPORE_BLOSSOM).input(Items.LILY_PAD).build(output);
+		combination(DUNE_GRASS).or().input(Items.SHORT_GRASS).input(Items.SAND).build(output);
+		combination(DESERT_GRASS).or().input(DUNE_GRASS).input(Items.SHEARS).build(output);
+		combination(DEAD_GRASS).and().input(Items.DEAD_BUSH).input(Items.SHORT_GRASS).build(output);
+		combination(TUNDRA_SHRUB).or().input(Items.DEAD_BUSH).input(Items.SNOWBALL).build(output);
+		combination(ENDERPHYTE).or().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
+		combination(LUMALOOP).or().input(HIGH_GRASS).input(Items.END_STONE).build(output);
+		combination(BARLEY).and().input(Items.WHEAT).input(Items.TALL_GRASS).build(output);
+		combination(SEA_OATS).or().input(BARLEY).input(Items.SAND).build(output);
+		combination(CATTAIL).or().input(BARLEY).input(Items.WATER_BUCKET).build(output);
+		combination(REED).or().input(Items.SUGAR_CANE).input(Items.DEAD_BUSH).build(output);
+		combination(WATERGRASS).and().input(Items.TALL_GRASS).input(Items.WATER_BUCKET).build(output);
+		combination(TINY_CACTUS).or().input(Items.CACTUS).input(SPROUT).build(output);
+
+		combination(BRAMBLE).or().input(Items.NETHER_WART).input(Items.ROSE_BUSH).build(output);
 	}
 }

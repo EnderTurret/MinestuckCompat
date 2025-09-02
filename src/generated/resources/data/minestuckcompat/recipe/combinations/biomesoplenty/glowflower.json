@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:lily_of_the_valley"
+  },
+  "input2": {
+    "item": "biomesoplenty:glowshroom"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:glowflower"
+}

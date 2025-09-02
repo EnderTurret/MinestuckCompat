@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:tall_grass"
+  },
+  "input2": {
+    "item": "minecraft:ice"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:icy_iris"
+}

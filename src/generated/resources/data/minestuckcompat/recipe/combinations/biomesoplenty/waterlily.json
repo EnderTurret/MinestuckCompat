@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:spore_blossom"
+  },
+  "input2": {
+    "item": "minecraft:lily_pad"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:waterlily"
+}

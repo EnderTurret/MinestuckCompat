@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:spore_blossom"
+  },
+  "input2": {
+    "item": "minecraft:pink_tulip"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:pink_daffodil"
+}

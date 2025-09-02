@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:peony"
+  },
+  "input2": {
+    "item": "minecraft:blue_orchid"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:blue_hydrangea"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:barley"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:cattail"
+}

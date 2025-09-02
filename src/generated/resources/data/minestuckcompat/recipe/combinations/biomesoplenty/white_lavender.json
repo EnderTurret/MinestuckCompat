@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:lavender"
+  },
+  "input2": {
+    "item": "minecraft:white_dye"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:white_lavender"
+}
