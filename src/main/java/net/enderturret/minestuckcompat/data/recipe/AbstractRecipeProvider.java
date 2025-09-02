@@ -55,7 +55,8 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 	}
 
 	protected static void saplingCombinations(RecipeOutput output, ItemLike sapling, ItemLike log, ItemLike leaves, boolean includePrimary) {
-		combination(sapling).or().input(log).input(leaves).build(output);
+		if (includePrimary)
+			combination(sapling).or().input(log).input(leaves).build(output);
 		combination(sapling).and().namedInput(Items.STICK).input(leaves).build(output);
 		combination(sapling).and().namedInput(Items.WHEAT_SEEDS).input(leaves).build(output);
 	}
