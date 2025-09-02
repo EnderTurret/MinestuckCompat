@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stick"
+  },
+  "input2": {
+    "item": "minestuck:life_aspect_leaves"
+  },
+  "mode": "and",
+  "output": "minestuck:life_aspect_sapling"
+}

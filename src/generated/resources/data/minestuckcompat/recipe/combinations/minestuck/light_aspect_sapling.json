@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:light_aspect_log"
+  },
+  "input2": {
+    "item": "minestuck:light_aspect_leaves"
+  },
+  "mode": "or",
+  "output": "minestuck:light_aspect_sapling"
+}

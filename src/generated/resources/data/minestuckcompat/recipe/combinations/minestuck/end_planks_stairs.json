@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:end_planks"
+  },
+  "input2": {
+    "item": "minestuck:end_planks_slab"
+  },
+  "mode": "or",
+  "output": "minestuck:end_planks_stairs"
+}

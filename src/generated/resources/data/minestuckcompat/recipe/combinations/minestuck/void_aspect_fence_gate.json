@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:void_aspect_door"
+  },
+  "input2": {
+    "item": "minestuck:void_aspect_fence"
+  },
+  "mode": "or",
+  "output": "minestuck:void_aspect_fence_gate"
+}

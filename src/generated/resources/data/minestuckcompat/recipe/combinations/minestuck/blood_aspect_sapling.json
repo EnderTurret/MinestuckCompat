@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:blood_aspect_log"
+  },
+  "input2": {
+    "item": "minestuck:blood_aspect_leaves"
+  },
+  "mode": "or",
+  "output": "minestuck:blood_aspect_sapling"
+}

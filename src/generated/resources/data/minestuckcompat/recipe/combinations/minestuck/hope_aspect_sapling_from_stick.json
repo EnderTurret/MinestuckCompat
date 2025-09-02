@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stick"
+  },
+  "input2": {
+    "item": "minestuck:hope_aspect_leaves"
+  },
+  "mode": "and",
+  "output": "minestuck:hope_aspect_sapling"
+}

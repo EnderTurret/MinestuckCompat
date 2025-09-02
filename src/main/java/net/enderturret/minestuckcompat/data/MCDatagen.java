@@ -16,6 +16,7 @@ import net.enderturret.minestuckcompat.data.recipe.Ae2Recipes;
 import net.enderturret.minestuckcompat.data.recipe.BiomesOPlentyRecipes;
 import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
+import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
 
 @EventBusSubscriber(modid = MinestuckCompat.MOD_ID)
@@ -30,6 +31,7 @@ public final class MCDatagen {
 		e.getGenerator().addProvider(server, (Factory<MCGeneratedGristCostConfig>) MCGeneratedGristCostConfig::new);
 
 		e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new VanillaRecipes(output, lookup), "Vanilla Recipes"));
+		e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new MinestuckRecipes(output, lookup), "Minestuck Recipes"));
 
 		if (ModList.get().isLoaded("mekanism"))
 			e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new MekanismRecipes(output, lookup), "Mekanism Recipes"));

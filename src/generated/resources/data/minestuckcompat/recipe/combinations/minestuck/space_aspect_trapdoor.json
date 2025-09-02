@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:space_aspect_door"
+  },
+  "input2": {
+    "item": "minestuck:space_aspect_slab"
+  },
+  "mode": "or",
+  "output": "minestuck:space_aspect_trapdoor"
+}

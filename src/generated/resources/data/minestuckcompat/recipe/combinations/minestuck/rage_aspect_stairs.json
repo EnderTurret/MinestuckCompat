@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:rage_aspect_planks"
+  },
+  "input2": {
+    "item": "minestuck:rage_aspect_slab"
+  },
+  "mode": "or",
+  "output": "minestuck:rage_aspect_stairs"
+}

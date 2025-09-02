@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:rainbow_door"
+  },
+  "input2": {
+    "item": "minestuck:rainbow_planks_slab"
+  },
+  "mode": "or",
+  "output": "minestuck:rainbow_trapdoor"
+}
