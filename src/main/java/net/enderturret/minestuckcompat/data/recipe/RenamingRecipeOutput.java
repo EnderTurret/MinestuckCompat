@@ -22,16 +22,19 @@ public final class RenamingRecipeOutput implements RecipeOutput {
 		this.prefix = prefix;
 	}
 
+	private ResourceLocation rename(ResourceLocation input) {
+		final String path = input.getPath();
+		return ResourceLocation.fromNamespaceAndPath(modId, path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/"));
+	}
+
 	@Override
 	public void accept(ResourceLocation id, Recipe<?> recipe, @Nullable AdvancementHolder advancement, ICondition... conditions) {
-		id = ResourceLocation.fromNamespaceAndPath(modId, id.getPath().replace("grist_costs/", "grist_costs/" + prefix + "/"));
-		parent.accept(id, recipe, advancement, conditions);
+		parent.accept(rename(id), recipe, advancement, conditions);
 	}
 
 	@Override
 	public void accept(ResourceLocation location, Recipe<?> recipe, AdvancementHolder advancement) {
-		location = ResourceLocation.fromNamespaceAndPath(modId, location.getPath().replace("grist_costs/", "grist_costs/" + prefix + "/"));
-		parent.accept(location, recipe, advancement);
+		parent.accept(rename(location), recipe, advancement);
 	}
 
 	@Override
