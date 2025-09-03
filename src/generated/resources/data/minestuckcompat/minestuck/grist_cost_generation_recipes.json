@@ -22,7 +22,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_chemical_to_item"
+      "type": "minestuckcompat:mekanism/item_chemical_to_item"
     },
     "source": {
       "type": "recipe_type",
@@ -37,7 +37,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_chemical_to_item"
+      "type": "minestuckcompat:mekanism/item_chemical_to_item"
     },
     "source": {
       "type": "recipe_type",
@@ -52,7 +52,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_chemical_to_item"
+      "type": "minestuckcompat:mekanism/item_chemical_to_item"
     },
     "source": {
       "type": "recipe_type",
@@ -67,7 +67,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_chemical_to_item"
+      "type": "minestuckcompat:mekanism/item_chemical_to_item"
     },
     "source": {
       "type": "recipe_type",
@@ -82,7 +82,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_chemical_to_item"
+      "type": "minestuckcompat:mekanism/item_chemical_to_item"
     },
     "source": {
       "type": "recipe_type",
@@ -97,7 +97,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_to_item",
+      "type": "minestuckcompat:mekanism/item_to_item",
       "added_cost": {
         "minestuck:cobalt": 10
       }
@@ -115,7 +115,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:item_to_item",
+      "type": "minestuckcompat:mekanism/item_to_item",
       "added_cost": {
         "minestuck:mercury": 1
       }
@@ -133,7 +133,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:charger",
+      "type": "minestuckcompat:ae2/charger",
       "added_cost": {
         "minestuck:uranium": 1
       }
@@ -151,7 +151,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:inscriber",
+      "type": "minestuckcompat:ae2/inscriber",
       "added_cost": {
         "minestuck:garnet": 1
       }
@@ -220,7 +220,7 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:sequenced_assembly",
+      "type": "minestuckcompat:create/sequenced_assembly",
       "press_cost": {
         "minestuck:mercury": 1
       }

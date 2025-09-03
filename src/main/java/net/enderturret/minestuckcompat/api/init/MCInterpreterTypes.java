@@ -32,41 +32,40 @@ public final class MCInterpreterTypes {
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> SIMPLE;
 
 	@Nullable
-	public static final Holder<MapCodec<? extends RecipeInterpreter>> ITEM_CHEMICAL_TO_ITEM;
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> AE2_CHARGER;
 	@Nullable
-	public static final Holder<MapCodec<? extends RecipeInterpreter>> ITEM_TO_ITEM;
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> AE2_INSCRIBER;
 
 	@Nullable
-	public static final Holder<MapCodec<? extends RecipeInterpreter>> CHARGER;
-	@Nullable
-	public static final Holder<MapCodec<? extends RecipeInterpreter>> INSCRIBER;
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
 
 	@Nullable
-	public static final Holder<MapCodec<? extends RecipeInterpreter>> SEQUENCED_ASSEMBLY;
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_CHEMICAL_TO_ITEM;
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_TO_ITEM;
 
 	static {
 		SIMPLE = REGISTRY.register("simple", () -> SimpleRecipeInterpreter.CODEC);
 
-		if (ModList.get().isLoaded("mekanism")) {
-			ITEM_CHEMICAL_TO_ITEM = REGISTRY.register("item_chemical_to_item", () -> ItemChemical2ItemInterpreter.CODEC);
-			ITEM_TO_ITEM = REGISTRY.register("item_to_item", () -> Item2ItemInterpreter.CODEC);
-		} else {
-			ITEM_CHEMICAL_TO_ITEM = null;
-			ITEM_TO_ITEM = null;
-		}
-
 		if (ModList.get().isLoaded("ae2")) {
-			CHARGER = REGISTRY.register("charger", () -> ChargerInterpreter.CODEC);
-			INSCRIBER = REGISTRY.register("inscriber", () -> InscriberInterpreter.CODEC);
+			AE2_CHARGER = REGISTRY.register("ae2/charger", () -> ChargerInterpreter.CODEC);
+			AE2_INSCRIBER = REGISTRY.register("ae2/inscriber", () -> InscriberInterpreter.CODEC);
 		} else {
-			CHARGER = null;
-			INSCRIBER = null;
+			AE2_CHARGER = null;
+			AE2_INSCRIBER = null;
 		}
 
-		if (ModList.get().isLoaded("create")) {
-			SEQUENCED_ASSEMBLY = REGISTRY.register("sequenced_assembly", () -> SequencedAssemblyInterpreter.CODEC);
+		if (ModList.get().isLoaded("create"))
+			CREATE_SEQUENCED_ASSEMBLY = REGISTRY.register("create/sequenced_assembly", () -> SequencedAssemblyInterpreter.CODEC);
+		else
+			CREATE_SEQUENCED_ASSEMBLY = null;
+
+		if (ModList.get().isLoaded("mekanism")) {
+			MEKANISM_ITEM_CHEMICAL_TO_ITEM = REGISTRY.register("mekanism/item_chemical_to_item", () -> ItemChemical2ItemInterpreter.CODEC);
+			MEKANISM_ITEM_TO_ITEM = REGISTRY.register("mekanism/item_to_item", () -> Item2ItemInterpreter.CODEC);
 		} else {
-			SEQUENCED_ASSEMBLY = null;
+			MEKANISM_ITEM_CHEMICAL_TO_ITEM = null;
+			MEKANISM_ITEM_TO_ITEM = null;
 		}
 	}
 }
