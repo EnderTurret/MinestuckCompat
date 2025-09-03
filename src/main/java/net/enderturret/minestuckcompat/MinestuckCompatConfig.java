@@ -59,7 +59,7 @@ public final class MinestuckCompatConfig {
 				"the \"minestuckcompat:simple\" interpreter, which can be instructed to allow \"special\"",
 				"recipes by adding `\"ignore_simple\": false` to its definition. The interpreter is otherwise",
 				"a one-to-one clone of Minestuck's default interpreter (besides allowing an added cost)."
-				).define("dubugDefaultInterpreterRecipeEligibility", false);
+				).define("debugDefaultInterpreterRecipeEligibility", false);
 
 		builder.pop();
 	}
