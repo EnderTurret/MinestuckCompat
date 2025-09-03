@@ -29,12 +29,12 @@ public final class RenamingRecipeOutput implements RecipeOutput {
 
 	@Override
 	public void accept(ResourceLocation id, Recipe<?> recipe, @Nullable AdvancementHolder advancement, ICondition... conditions) {
-		parent.accept(rename(id), recipe, advancement, conditions);
+		parent.accept(rename(id), recipe, null, conditions);
 	}
 
 	@Override
 	public void accept(ResourceLocation location, Recipe<?> recipe, AdvancementHolder advancement) {
-		parent.accept(rename(location), recipe, advancement);
+		parent.accept(rename(location), recipe, null);
 	}
 
 	@Override
