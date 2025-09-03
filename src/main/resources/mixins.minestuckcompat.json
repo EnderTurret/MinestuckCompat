@@ -4,6 +4,7 @@
   "package": "net.enderturret.minestuckcompat.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "data.MixinGeneratedGristCostConfigProvider",
     "perf.MixinCodecs",
     "perf.MixinDefaultImmutableGristSet",
     "perf.MixinGristSet",
