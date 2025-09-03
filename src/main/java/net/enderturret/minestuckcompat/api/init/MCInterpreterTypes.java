@@ -1,5 +1,6 @@
 package net.enderturret.minestuckcompat.api.init;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.Nullable;
 
 import com.mojang.serialization.MapCodec;
@@ -19,11 +20,15 @@ import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 
+/**
+ * MinestuckCompat's interpreter types.
+ * @author EnderTurret
+ */
 public final class MCInterpreterTypes {
 
+	@Internal
 	public static final DeferredRegister<MapCodec<? extends RecipeInterpreter>> REGISTRY = DeferredRegister.create(InterpreterTypes.REGISTRY, MinestuckCompat.MOD_ID);
 
-	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> SIMPLE;
 
 	@Nullable

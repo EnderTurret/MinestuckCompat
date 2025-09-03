@@ -18,6 +18,10 @@ import net.minecraft.world.item.crafting.Recipe;
 
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 
+/**
+ * MinestuckCompat's base implementation of {@link RecipeInterpreter}.
+ * @author EnderTurret
+ */
 public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 
 	@Override
@@ -35,11 +39,36 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return finalizeGristCosts(ingredientCost(recipe, callback), recipe.getResultItem(getLookupProvider()).getCount());
 	}
 
+	@Override
+	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
+		for (Ingredient ing : recipe.getIngredients())
+			tracker.report(ing);
+	}
+
+	/**
+	 * <p>
+	 * Returns the lookup provider to pass to {@link Recipe#getResultItem(net.minecraft.core.HolderLookup.Provider) Recipe.getResultItem(HolderLookup.Provider)}.
+	 * </p>
+	 * <p>
+	 * This method by default returns {@code null} as few if any recipes actually use the lookup provider, and
+	 * creating one adds significant time to grist cost generation.
+	 * </p>
+	 * @return The lookup provider.
+	 */
+	@Nullable
 	protected HolderLookup.Provider getLookupProvider() {
 		//return VanillaRegistries.createLookup();
 		return null;
 	}
 
+	/**
+	 * Tallies the cost of all ingredients in the specified recipe and returns the total grist set.
+	 * If any of the ingredients lack a grist cost, {@code null} is returned.
+	 * @param recipe The recipe.
+	 * @param callback The callback for looking up grist costs.
+	 * @return The total grist set, or {@code null} if an ingredient lacks a cost.
+	 */
+	@Nullable
 	protected MutableGristSet ingredientCost(Recipe<?> recipe, GeneratorCallback callback) {
 		final MutableGristSet totalCost = MutableGristSet.newDefault();
 
@@ -50,6 +79,28 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return totalCost;
 	}
 
+	/**
+	 * Called to finalize the grist cost — currently just to scale it to the result size.
+	 * @param totalCost The total grist cost of the item.
+	 * @param resultCount The number of items the recipe produces.
+	 * @return The finalized grist set.
+	 */
+	@Nullable
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, int resultCount) {
+		if (totalCost != null)
+			// Do not round down because it's better to have something cost a little to much than it possibly costing nothing.
+			totalCost.scale(1F / resultCount, false);
+
+		return totalCost;
+	}
+
+	/**
+	 * Adds the grist cost of the specified {@code SizedIngredient} to the specified grist set.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient The ingredient.
+	 * @return {@code true} if a cost was added, or {@code false} if one was not found.
+	 */
 	public static boolean account(MutableGristSet total, GeneratorCallback callback, SizedIngredient ingredient) {
 		final GristSet ingredientCost = callback.lookupCostFor(ingredient.ingredient());
 		if (ingredientCost == null) return false;
@@ -60,6 +111,13 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return true;
 	}
 
+	/**
+	 * Adds the grist cost of the specified {@code Ingredient} to the specified grist set.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient The ingredient.
+	 * @return {@code true} if a cost was added, or {@code false} if one was not found.
+	 */
 	public static boolean account(MutableGristSet total, GeneratorCallback callback, Ingredient ingredient) {
 		final GristSet ingredientCost = callback.lookupCostFor(ingredient);
 		if (ingredientCost == null) return false;
@@ -69,6 +127,13 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return true;
 	}
 
+	/**
+	 * Adds the grist cost of the specified {@code Item} to the specified grist set.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param item The item.
+	 * @return {@code true} if a cost was added, or {@code false} if one was not found.
+	 */
 	public static boolean account(MutableGristSet total, GeneratorCallback callback, Item item) {
 		final GristSet ingredientCost = callback.lookupCostFor(item);
 		if (ingredientCost == null) return false;
@@ -78,21 +143,14 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return true;
 	}
 
+	/**
+	 * Scales the specified grist set by the specified amount.
+	 * @param cost The grist set to scale.
+	 * @param scale The scale.
+	 * @param roundDown Whether to round down versus round up.
+	 * @return The scaled grist set.
+	 */
 	public static GristSet scale(GristSet cost, float scale, boolean roundDown) {
 		return scale == 1 ? cost : cost.mutableCopy().scale(scale, roundDown).asImmutable();
-	}
-
-	protected GristSet finalizeGristCosts(MutableGristSet totalCost, int resultCount) {
-		if (totalCost != null)
-			// Do not round down because it's better to have something cost a little to much than it possibly costing nothing.
-			totalCost.scale(1F / resultCount, false);
-
-		return totalCost;
-	}
-
-	@Override
-	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
-		for (Ingredient ing : recipe.getIngredients())
-			tracker.report(ing);
 	}
 }

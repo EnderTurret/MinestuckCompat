@@ -18,6 +18,12 @@ import net.neoforged.bus.api.Event;
 import net.enderturret.minestuckcompat.alchemy.SimpleCostProvider;
 import net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs.GeneratorProcessAccess;
 
+/**
+ * {@code RegisterGristCostProvidersEvent} allows registering custom {@link GristCostProvider GristCostProviders}, which can provide items with grist costs.
+ * This is intended for scenarios where a mod does not use Minecraft's recipe system for its own recipes or gameplay behavior, to still allow compatibility
+ * mods to make those available to Minestuck's grist cost generator.
+ * @author EnderTurret
+ */
 public final class RegisterGristCostProvidersEvent extends Event {
 
 	private final Map<Item, GristSet.Immutable> generatedCosts;
@@ -29,14 +35,30 @@ public final class RegisterGristCostProvidersEvent extends Event {
 		this.access = access;
 	}
 
+	/**
+	 * Registers a grist cost for the given item.
+	 * @param item The item to register the grist cost for.
+	 * @param cost The grist cost the item should have.
+	 */
 	public void registerGristCostProvider(Item item, GristSet.Immutable cost) {
 		registerGristCostProvider(item, (i, callback) -> cost);
 	}
 
+	/**
+	 * Registers a source grist cost for the given item.
+	 * In other words, makes {@code item} inherit its grist cost from {@code source}.
+	 * @param item The item to register the grist cost for.
+	 * @param source The source item to inherit the grist cost from.
+	 */
 	public void registerGristCostProvider(Item item, Item source) {
 		registerGristCostProvider(item, (i, callback) -> callback.lookupCostFor(source));
 	}
 
+	/**
+	 * Registers a grist cost provider for the given item.
+	 * @param item The item to register the grist cost provider for.
+	 * @param provider The grist cost provider.
+	 */
 	public void registerGristCostProvider(Item item, GristCostProvider provider) {
 		register(item, new SimpleCostProvider() {
 			@Override
@@ -57,7 +79,19 @@ public final class RegisterGristCostProvidersEvent extends Event {
 		access.minestuckcompat$getProviders().add(provider);
 	}
 
+	/**
+	 * Provides an item with its grist cost.
+	 * @author EnderTurret
+	 */
 	public static interface GristCostProvider {
+
+		/**
+		 * Generates a grist cost for the specified item.
+		 * @param item The item to generate a grist cost for.
+		 * @param callback The callback for looking up grist costs.
+		 * @return A grist cost for the item, or {@code null} if one could not be generated.
+		 */
+		@Nullable
 		public GristSet generate(Item item, GeneratorCallback callback);
 	}
 }

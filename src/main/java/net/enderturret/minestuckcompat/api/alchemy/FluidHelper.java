@@ -12,10 +12,22 @@ import net.minecraft.world.item.ItemStack;
 
 import net.neoforged.neoforge.fluids.FluidStack;
 
+/**
+ * Utilities for calculating fluid grist costs.
+ * @author EnderTurret
+ */
 public final class FluidHelper {
 
 	private static final int BUCKET_SIZE = 1000;
 
+	/**
+	 * Adds the cheapest fluid's grist cost to the specified {@code MutableGristSet}, scaled to its amount.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient A collection of fluids to find a grist cost for. The {@code FluidStack}'s count is ignored.
+	 * @param count The fluid count.
+	 * @return {@code true} if a grist cost was added, or {@code false} if one could not be found.
+	 */
 	public static boolean account(MutableGristSet total, GeneratorCallback callback, Collection<FluidStack> ingredient, int count) {
 		MutableGristSet best = null;
 		for (FluidStack stack : ingredient) {
@@ -34,6 +46,12 @@ public final class FluidHelper {
 		return false;
 	}
 
+	/**
+	 * Looks up the grist cost for the specified fluid, based on its bucket grist cost.
+	 * @param fluid The fluid to lookup the cost for.
+	 * @param callback The callback for looking up grist costs.
+	 * @return The grist cost for the specified fluid, or {@code null} if its bucket has no cost.
+	 */
 	@Nullable
 	public static MutableGristSet lookup(FluidStack fluid, GeneratorCallback callback) {
 		final ItemStack bucket = fluid.getFluidType().getBucket(fluid);

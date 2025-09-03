@@ -10,6 +10,10 @@ import net.minecraft.world.item.crafting.Recipe;
 
 import net.neoforged.neoforge.common.conditions.ICondition;
 
+/**
+ * A {@link RecipeOutput} wrapper that moves generated recipes into subfolders.
+ * @author EnderTurret
+ */
 public final class RenamingRecipeOutput implements RecipeOutput {
 
 	private final RecipeOutput parent;
@@ -24,7 +28,8 @@ public final class RenamingRecipeOutput implements RecipeOutput {
 
 	private ResourceLocation rename(ResourceLocation input) {
 		final String path = input.getPath();
-		return ResourceLocation.fromNamespaceAndPath(modId, path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/"));
+		return ResourceLocation.fromNamespaceAndPath(modId,
+				path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/"));
 	}
 
 	@Override

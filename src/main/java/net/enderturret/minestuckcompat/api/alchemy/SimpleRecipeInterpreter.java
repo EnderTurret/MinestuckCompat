@@ -13,6 +13,10 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
+/**
+ * A {@link RecipeInterpreter} that functions like the default, but with support for added costs and including special recipes.
+ * @author EnderTurret
+ */
 public final class SimpleRecipeInterpreter extends AbstractRecipeInterpreter {
 
 	public static final MapCodec<SimpleRecipeInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(

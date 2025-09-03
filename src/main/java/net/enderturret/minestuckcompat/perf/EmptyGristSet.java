@@ -7,6 +7,11 @@ import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
 
+/**
+ * Empty implementation of {@link com.mraof.minestuck.api.alchemy.GristSet.Immutable}.
+ * @author EnderTurret
+ * @see SmallImmutableGristSet
+ */
 public final class EmptyGristSet implements GristSet.Immutable {
 
 	public static final EmptyGristSet INSTANCE = new EmptyGristSet();

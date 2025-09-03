@@ -2,6 +2,7 @@ package net.enderturret.minestuckcompat.perf;
 
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
@@ -9,6 +10,22 @@ import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.GristTypes;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
+/**
+ * <p>
+ * {@code SmallMutableGristSet} is the mutable version of {@link SmallImmutableGristSet}.
+ * </p>
+ * <p>
+ * The default mutable grist set is somehow more expensive than the immutable version,
+ * with the fact that it uses a {@link TreeMap}(!) to store the grist types. Instead,
+ * both small implementations are already ordered correctly (without needing a {@code TreeMap}).
+ * </p>
+ * <p>
+ * There is no need to go out of your way to construct these; all the relevant code paths have already been altered to use this class.
+ * Just call {@link MutableGristSet#newDefault()} or {@link GristSet#mutableCopy()} as normal.
+ * </p>
+ * @author EnderTurret
+ * @see SmallImmutableGristSet
+ */
 public final class SmallMutableGristSet extends AbstractSmallGristSet implements MutableGristSet {
 
 	SmallMutableGristSet(int[] gristByType) {
