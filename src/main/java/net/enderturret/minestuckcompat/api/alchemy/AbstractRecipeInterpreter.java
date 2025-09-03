@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.alchemy;
+package net.enderturret.minestuckcompat.api.alchemy;
 
 import java.util.List;
 

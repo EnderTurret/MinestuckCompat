@@ -7,7 +7,7 @@ import com.google.gson.JsonElement;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mraof.minestuck.data.GeneratedGristCostConfigProvider;
 
-import net.enderturret.minestuckcompat.data.IGeneratedGristCostConfigProviderExtensions;
+import net.enderturret.minestuckcompat.api.data.IGeneratedGristCostConfigProviderExtensions;
 
 @Mixin(GeneratedGristCostConfigProvider.class)
 public abstract class MixinGeneratedGristCostConfigProvider implements IGeneratedGristCostConfigProviderExtensions {

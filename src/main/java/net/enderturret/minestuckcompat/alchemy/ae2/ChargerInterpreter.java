@@ -12,7 +12,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
 
 import appeng.recipes.handlers.ChargerRecipe;
 

@@ -20,8 +20,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.alchemy.AbstractRecipeInterpreter;
-import net.enderturret.minestuckcompat.alchemy.FluidHelper;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 
 public final class SequencedAssemblyInterpreter extends AbstractRecipeInterpreter {
 

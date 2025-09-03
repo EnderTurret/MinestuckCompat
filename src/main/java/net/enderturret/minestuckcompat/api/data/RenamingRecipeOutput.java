@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.data.recipe;
+package net.enderturret.minestuckcompat.api.data;
 
 import org.jetbrains.annotations.Nullable;
 

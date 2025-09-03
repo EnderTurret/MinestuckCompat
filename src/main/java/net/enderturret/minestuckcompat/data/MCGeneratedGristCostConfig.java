@@ -17,12 +17,13 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.fml.ModList;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.alchemy.SimpleRecipeInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.data.IGeneratedGristCostConfigProviderExtensions;
 import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 
 import appeng.recipes.AERecipeTypes;

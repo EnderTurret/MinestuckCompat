@@ -14,7 +14,7 @@ import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.neoforgespi.language.ModFileScanData;
 import net.neoforged.neoforgespi.language.ModFileScanData.AnnotationData;
 
-import net.enderturret.minestuckcompat.alchemy.MCInterpreterTypes;
+import net.enderturret.minestuckcompat.api.init.MCInterpreterTypes;
 
 @Mod(MinestuckCompat.MOD_ID)
 public final class MinestuckCompat {

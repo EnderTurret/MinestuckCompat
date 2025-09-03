@@ -10,6 +10,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
+import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
+import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 
 public final class MinestuckRecipes extends AbstractRecipeProvider {
 

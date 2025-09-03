@@ -8,7 +8,7 @@ import com.mraof.minestuck.api.alchemy.GristTypes;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
-public final class GristTypeHelper {
+final class GristTypeHelper {
 
 	private static GristType[] orderedTypes = null;
 	private static final Object2IntMap<GristType> IDS_BY_TYPE = new Object2IntOpenHashMap<>();

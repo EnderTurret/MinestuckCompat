@@ -15,7 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
 
 import mekanism.api.recipes.ItemStackToItemStackRecipe;
 

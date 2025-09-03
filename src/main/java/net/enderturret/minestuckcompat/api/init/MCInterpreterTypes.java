@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.alchemy;
+package net.enderturret.minestuckcompat.api.init;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -17,6 +17,7 @@ import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 
 public final class MCInterpreterTypes {
 
