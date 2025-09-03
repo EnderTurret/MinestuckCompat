@@ -10,6 +10,7 @@ import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratedCostProvider;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GristCostResult;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
 
@@ -51,7 +52,18 @@ public final class RegisterGristCostProvidersEvent extends Event {
 	 * @param source The source item to inherit the grist cost from.
 	 */
 	public void registerGristCostProvider(Item item, Item source) {
-		registerGristCostProvider(item, (i, callback) -> callback.lookupCostFor(source));
+		registerGristCostProvider(item, new GristCostProvider() {
+			@Override
+			@Nullable
+			public GristSet generate(Item item, GeneratorCallback callback) {
+				return callback.lookupCostFor(source);
+			}
+
+			@Override
+			public void reportPreliminaryLookups(LookupTracker tracker) {
+				tracker.report(source);
+			}
+		});
 	}
 
 	/**
@@ -70,6 +82,11 @@ public final class RegisterGristCostProvidersEvent extends Event {
 			protected void putResult(Item item, @Nullable GristCostResult result) {
 				if (result == null) return;
 				generatedCosts.putIfAbsent(item, result.cost().asImmutable());
+			}
+
+			@Override
+			public void reportPreliminaryLookups(LookupTracker tracker) {
+				provider.reportPreliminaryLookups(tracker);
 			}
 		});
 	}
@@ -93,5 +110,11 @@ public final class RegisterGristCostProvidersEvent extends Event {
 		 */
 		@Nullable
 		public GristSet generate(Item item, GeneratorCallback callback);
+
+		/**
+		 * Reports any dependent items to the {@link LookupTracker}, so grist costs can be generated for them first.
+		 * @param tracker The {@code LookupTracker}.
+		 */
+		public default void reportPreliminaryLookups(LookupTracker tracker) {}
 	}
 }
