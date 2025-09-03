@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:flesh"
+  },
+  "input2": {
+    "item": "minecraft:vine"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:flesh_tendons"
+}

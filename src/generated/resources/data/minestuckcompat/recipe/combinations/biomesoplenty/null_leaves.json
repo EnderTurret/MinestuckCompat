@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "minecraft:leaves"
+  },
+  "input2": {
+    "item": "biomesoplenty:null_block"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:null_leaves"
+}

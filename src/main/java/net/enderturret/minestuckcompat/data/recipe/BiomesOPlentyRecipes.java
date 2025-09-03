@@ -305,6 +305,14 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(WEBBING).and().input(Items.COBWEB).input(Items.GLOW_LICHEN).build(output);
 		combination(ORIGIN_GRASS_BLOCK).or().input(Items.GRASS_BLOCK).input(Items.CLOCK).build(output);
 		combination(DEAD_BRANCH).and().input(DEAD_LOG).input(Items.STICK).build(output);
+		combination(NULL_LEAVES).and().input(ItemTags.LEAVES).input(NULL_BLOCK).build(output);
+		combination(NULL_PLANT).and().input(Items.SHORT_GRASS).input(NULL_BLOCK).build(output);
+		combination(LIQUID_NULL_BUCKET).and().input(NULL_BLOCK).input(Items.WATER_BUCKET).build(output);
+		// This one's a joke about old unobtainable items (and how easy it was to typo and get a missing texture one).
+		combination(NULL_BLOCK).and().input(Items.SMOOTH_STONE).input(Items.RED_MUSHROOM_BLOCK).build(output);
+		combination(BLOOD_BUCKET).and().input(MSItems.BLOOD_BUCKET).input(Items.ROTTEN_FLESH).build(output);
+		combination(POROUS_FLESH).and().input(FLESH).input(Items.MAGMA_BLOCK).build(output);
+		combination(FLESH_TENDONS).and().input(FLESH).input(Items.VINE).build(output);
 
 		// Miscellaneous Recipes
 

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:blood_bucket"
+  },
+  "input2": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:blood_bucket"
+}
