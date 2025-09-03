@@ -242,6 +242,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(ROSE).or().input(Items.POPPY).input(Items.CLOCK).build(output);
 		combination(VIOLET).or().input(Items.SMALL_AMETHYST_BUD).input(Items.TORCHFLOWER).build(output);
 		combination(LAVENDER).or().input(Items.FERN).input(Items.ALLIUM).build(output);
+		combination(TALL_LAVENDER).or().input(LAVENDER).input(Items.TALL_GRASS).build(output);
 		combination(WHITE_LAVENDER).and().input(LAVENDER).input(Items.WHITE_DYE).build(output);
 		combination(TALL_WHITE_LAVENDER).and().namedInput(TALL_LAVENDER).input(Items.WHITE_DYE).build(output);
 		combination(TALL_WHITE_LAVENDER).or().namedInput(WHITE_LAVENDER).input(Items.TALL_GRASS).build(output);
