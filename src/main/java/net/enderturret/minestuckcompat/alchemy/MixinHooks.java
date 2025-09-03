@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.Nullable;
 
+import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
@@ -34,6 +36,7 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.conditions.ConditionalOps;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.MinestuckCompatConfig;
@@ -42,6 +45,9 @@ import net.enderturret.minestuckcompat.mixin.GeneratorProcessAccess;
 
 @Internal
 public final class MixinHooks {
+
+	public static final Codec<Optional<SourceEntry>> CONDITIONAL_SOURCE_ENTRY = ConditionalOps.createConditionalCodec(SourceEntry.CODEC);
+	public static final Codec<List<Optional<SourceEntry>>> CONDITIONAL_SOURCE_ENTRY_LIST = CONDITIONAL_SOURCE_ENTRY.listOf();
 
 	public static Map<Item, GristSet.Immutable> generatedCosts;
 

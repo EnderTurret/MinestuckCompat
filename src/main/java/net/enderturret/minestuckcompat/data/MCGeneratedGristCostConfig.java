@@ -2,6 +2,9 @@ package net.enderturret.minestuckcompat.data;
 
 import java.util.function.Supplier;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
@@ -26,7 +29,7 @@ import appeng.recipes.AERecipeTypes;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismRecipeSerializersInternal;
 
-public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigProvider {
+public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigProvider implements IGeneratedGristCostConfigProviderExtensions {
 
 	public MCGeneratedGristCostConfig(PackOutput output) {
 		super(output, MinestuckCompat.MOD_ID);
@@ -56,6 +59,32 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 			type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
 			type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(GristSet.EMPTY, grist(GristTypes.MERCURY, 1)));
 		}
+	}
+
+	@Override
+	public JsonElement modify(JsonElement root) {
+		final JsonArray array = (JsonArray) root;
+		for (JsonElement child : array)
+			if (child instanceof JsonObject obj) {
+				final JsonObject interpreter = obj.getAsJsonObject("interpreter");
+				final JsonObject source = obj.getAsJsonObject("source");
+				final String type = (source.has("recipe_type") ? source.get("recipe_type") : source.get("serializer")).getAsString();
+				final String namespace = type.substring(0, type.indexOf(':'));
+
+				final JsonArray neoforgeConditions = new JsonArray();
+				final JsonObject condition = new JsonObject();
+				condition.addProperty("type", "neoforge:mod_loaded");
+				condition.addProperty("modid", namespace);
+				neoforgeConditions.add(condition);
+
+				obj.remove("interpreter");
+				obj.remove("source");
+				obj.add("neoforge:conditions", neoforgeConditions);
+				obj.add("interpreter", interpreter);
+				obj.add("source", source);
+			}
+
+		return root;
 	}
 
 	private static GristSet.Immutable grist(Supplier<GristType> type, int count) {

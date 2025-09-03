@@ -1,5 +1,11 @@
 [
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuck:default"
     },
@@ -9,6 +15,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_chemical_to_item"
     },
@@ -18,6 +30,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_chemical_to_item"
     },
@@ -27,6 +45,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_chemical_to_item"
     },
@@ -36,6 +60,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_chemical_to_item"
     },
@@ -45,6 +75,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_chemical_to_item"
     },
@@ -54,6 +90,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_to_item",
       "added_cost": {
@@ -66,6 +108,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "mekanism"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:item_to_item",
       "added_cost": {
@@ -78,6 +126,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "ae2"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:charger",
       "added_cost": {
@@ -90,6 +144,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "ae2"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:inscriber",
       "added_cost": {
@@ -102,6 +162,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:simple",
       "ignore_special": false
@@ -112,6 +178,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:simple",
       "ignore_special": false
@@ -122,6 +194,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:simple",
       "added_cost": {
@@ -135,6 +213,12 @@
     }
   },
   {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      }
+    ],
     "interpreter": {
       "type": "minestuckcompat:sequenced_assembly",
       "press_cost": {
