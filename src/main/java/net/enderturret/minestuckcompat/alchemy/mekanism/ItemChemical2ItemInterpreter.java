@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
@@ -20,8 +21,19 @@ import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
 
 public final class ItemChemical2ItemInterpreter extends AbstractRecipeInterpreter {
 
-	public static final ItemChemical2ItemInterpreter INSTANCE = new ItemChemical2ItemInterpreter();
-	public static final MapCodec<ItemChemical2ItemInterpreter> CODEC = MapCodec.unit(INSTANCE);
+	public static final MapCodec<ItemChemical2ItemInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(ItemChemical2ItemInterpreter::addedCost)
+			).apply(instance, ItemChemical2ItemInterpreter::new));
+
+	private final GristSet.Immutable addedCost;
+
+	public ItemChemical2ItemInterpreter(GristSet.Immutable addedCost) {
+		this.addedCost = addedCost;
+	}
+
+	public GristSet.Immutable addedCost() {
+		return addedCost;
+	}
 
 	@Override
 	public MapCodec<? extends RecipeInterpreter> codec() {
@@ -56,6 +68,8 @@ public final class ItemChemical2ItemInterpreter extends AbstractRecipeInterprete
 					.max().orElse(1);
 		}
 		else resultCount = recipe.getResultItem(getLookupProvider()).getCount();
+
+		totalCost.add(addedCost);
 
 		return finalizeGristCosts(totalCost, resultCount);
 	}

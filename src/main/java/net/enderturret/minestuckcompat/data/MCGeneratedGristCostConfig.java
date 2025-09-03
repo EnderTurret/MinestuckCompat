@@ -43,11 +43,11 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 	protected void addEntries() {
 		if (ModList.get().isLoaded("mekanism")) {
 			serializer(MekanismRecipeSerializersInternal.MEK_DATA.get());
-			type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), ItemChemical2ItemInterpreter.INSTANCE);
-			type(MekanismRecipeTypes.TYPE_INJECTING.get(), ItemChemical2ItemInterpreter.INSTANCE);
-			type(MekanismRecipeTypes.TYPE_PURIFYING.get(), ItemChemical2ItemInterpreter.INSTANCE);
-			type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), ItemChemical2ItemInterpreter.INSTANCE);
-			type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), ItemChemical2ItemInterpreter.INSTANCE);
+			type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+			type(MekanismRecipeTypes.TYPE_INJECTING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+			type(MekanismRecipeTypes.TYPE_PURIFYING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+			type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+			type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
 			type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(GristTypes.COBALT, 10)));
 			type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(GristTypes.MERCURY, 1)));
 		}
