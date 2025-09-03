@@ -5,6 +5,8 @@ import static mekanism.common.registries.MekanismItems.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
@@ -20,6 +22,7 @@ import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 
 import mekanism.common.registries.MekanismBlocks;
 
+@Internal
 public final class MekanismRecipes extends AbstractRecipeProvider {
 
 	public MekanismRecipes(PackOutput output, CompletableFuture<Provider> registries) {

@@ -2,6 +2,8 @@ package net.enderturret.minestuckcompat.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataProvider.Factory;
 
@@ -20,6 +22,7 @@ import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
 
+@Internal
 @EventBusSubscriber(modid = MinestuckCompat.MOD_ID)
 public final class MCDatagen {
 

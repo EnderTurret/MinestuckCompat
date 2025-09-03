@@ -1,8 +1,11 @@
 package net.enderturret.minestuckcompat;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
+@Internal
 public final class MinestuckCompatConfig {
 
 	static final ModConfigSpec COMMON_SPEC;

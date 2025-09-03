@@ -1,5 +1,6 @@
 package net.enderturret.minestuckcompat.alchemy;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.Nullable;
 
 import com.mraof.minestuck.api.alchemy.GristSet;
@@ -10,6 +11,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
 
+@Internal
 public abstract class SimpleCostProvider implements GeneratedCostProvider {
 
 	private GristCostResult result;

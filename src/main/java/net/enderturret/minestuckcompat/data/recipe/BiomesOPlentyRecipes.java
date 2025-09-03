@@ -5,6 +5,8 @@ import static com.mraof.minestuck.api.alchemy.GristTypes.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
@@ -22,6 +24,7 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 
+@Internal
 public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 
 	public BiomesOPlentyRecipes(PackOutput output, CompletableFuture<Provider> registries) {

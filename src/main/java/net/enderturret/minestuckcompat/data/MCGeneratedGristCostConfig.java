@@ -2,6 +2,8 @@ package net.enderturret.minestuckcompat.data;
 
 import java.util.function.Supplier;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -30,6 +32,7 @@ import appeng.recipes.AERecipeTypes;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismRecipeSerializersInternal;
 
+@Internal
 public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigProvider implements IGeneratedGristCostConfigProviderExtensions {
 
 	public MCGeneratedGristCostConfig(PackOutput output) {

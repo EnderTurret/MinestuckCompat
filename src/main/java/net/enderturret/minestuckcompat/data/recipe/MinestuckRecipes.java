@@ -5,6 +5,8 @@ import static com.mraof.minestuck.item.MSItems.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -13,6 +15,7 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 
+@Internal
 public final class MinestuckRecipes extends AbstractRecipeProvider {
 
 	public MinestuckRecipes(PackOutput output, CompletableFuture<Provider> registries) {

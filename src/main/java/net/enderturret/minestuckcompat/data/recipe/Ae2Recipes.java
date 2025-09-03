@@ -6,6 +6,8 @@ import static com.mraof.minestuck.api.alchemy.GristTypes.*;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
@@ -20,6 +22,7 @@ import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 
 import appeng.core.definitions.AEParts;
 
+@Internal
 public final class Ae2Recipes extends AbstractRecipeProvider {
 
 	public Ae2Recipes(PackOutput output, CompletableFuture<Provider> registries) {
