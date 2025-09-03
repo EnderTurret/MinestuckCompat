@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:mud"
+  },
+  "input2": {
+    "item": "minecraft:coarse_dirt"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:dried_salt"
+}

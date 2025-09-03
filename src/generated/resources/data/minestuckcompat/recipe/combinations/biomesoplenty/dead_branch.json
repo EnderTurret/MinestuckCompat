@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:dead_log"
+  },
+  "input2": {
+    "item": "minecraft:stick"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:dead_branch"
+}

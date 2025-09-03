@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:sand"
+  },
+  "input2": {
+    "tag": "c:dyes/black"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:black_sand"
+}

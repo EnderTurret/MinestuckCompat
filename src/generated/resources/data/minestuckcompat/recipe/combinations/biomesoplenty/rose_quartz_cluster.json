@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:pointed_dripstone"
+  },
+  "input2": {
+    "item": "biomesoplenty:rose_quartz_chunk"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:rose_quartz_cluster"
+}

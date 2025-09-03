@@ -9,8 +9,11 @@ import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import net.neoforged.neoforge.common.Tags;
@@ -280,5 +283,34 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(TINY_CACTUS).or().input(Items.CACTUS).input(SPROUT).build(output);
 
 		combination(BRAMBLE).or().input(Items.NETHER_WART).input(Items.ROSE_BUSH).build(output);
+		combination(WHITE_SAND).and().input(Items.SAND).input(Tags.Items.DYES_WHITE).build(output);
+		combination(ORANGE_SAND).and().input(Items.SAND).input(Tags.Items.DYES_ORANGE).build(output);
+		combination(BLACK_SAND).and().input(Items.SAND).input(Tags.Items.DYES_BLACK).build(output);
+		combination(THERMAL_CALCITE).or().input(Items.CALCITE).input(Items.FIRE_CHARGE).build(output);
+		combination(DRIED_SALT).or().input(Items.MUD).input(Items.COARSE_DIRT).build(output);
+		combination(EYEBULB).and().input(Items.TALL_GRASS).input(Items.ENDER_EYE).build(output);
+		combination(HAIR).and().input(Items.SHORT_GRASS).input(Items.ROTTEN_FLESH).build(output);
+		combination(BRIMSTONE).or().input(Items.DRIPSTONE_BLOCK).input(Items.HONEYCOMB).build(output);
+		combination(ROSE_QUARTZ_BLOCK).or().input(Items.GLASS).input(Items.RED_DYE).build(output);
+		combination(ROSE_QUARTZ_CLUSTER).or().input(Items.POINTED_DRIPSTONE).input(ROSE_QUARTZ_CHUNK).build(output);
+		combination(ROSE_QUARTZ_CHUNK).and().input(Items.AMETHYST_SHARD).input(Tags.Items.DYES_RED).build(output);
+		combination(WISPJELLY).or().input(Items.SLIME_BLOCK).input(Items.WIND_CHARGE).build(output);
+		combination(TOADSTOOL).or().input(TOADSTOOL_BLOCK).input(Items.SHEARS).build(output);
+		combination(TOADSTOOL_BLOCK).or().input(Tags.Items.MUSHROOMS).input(SMOOTH_ORANGE_SANDSTONE).build(output);
+		combination(GLOWSHROOM).or().input(Items.BROWN_MUSHROOM).input(Items.GLOWSTONE_DUST).build(output);
+		combination(GLOWING_MOSS_BLOCK).and().input(Items.GRASS_BLOCK).input(GLOWSHROOM).build(output);
+		combination(GLOWWORM_SILK).and().input(GLOWING_MOSS_BLOCK).input(Items.STRING).build(output);
+		combination(SPIDER_EGG).and().input(Items.COBWEB).input(Items.EGG).build(output);
+		combination(HANGING_COBWEB).or().input(Items.COBWEB).input(Items.VINE).build(output);
+		combination(WEBBING).and().input(Items.COBWEB).input(Items.GLOW_LICHEN).build(output);
+		combination(ORIGIN_GRASS_BLOCK).or().input(Items.GRASS_BLOCK).input(Items.CLOCK).build(output);
+		combination(DEAD_BRANCH).and().input(DEAD_LOG).input(Items.STICK).build(output);
+
+		// Miscellaneous Recipes
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, new ItemStack(GLOWING_MOSS_CARPET, 3))
+				.pattern("##").define('#', GLOWING_MOSS_BLOCK)
+				.unlockedBy(getHasName(GLOWING_MOSS_BLOCK), has(GLOWING_MOSS_BLOCK))
+				.save(output);
 	}
 }

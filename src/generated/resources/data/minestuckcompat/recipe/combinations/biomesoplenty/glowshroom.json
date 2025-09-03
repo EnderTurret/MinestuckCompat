@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:brown_mushroom"
+  },
+  "input2": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:glowshroom"
+}

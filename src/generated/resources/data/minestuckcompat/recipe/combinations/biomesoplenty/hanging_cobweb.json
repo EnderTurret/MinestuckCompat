@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cobweb"
+  },
+  "input2": {
+    "item": "minecraft:vine"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:hanging_cobweb"
+}

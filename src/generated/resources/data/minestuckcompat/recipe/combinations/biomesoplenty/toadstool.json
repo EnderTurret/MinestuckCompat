@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:toadstool_block"
+  },
+  "input2": {
+    "item": "minecraft:shears"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:toadstool"
+}

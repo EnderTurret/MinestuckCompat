@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:slime_block"
+  },
+  "input2": {
+    "item": "minecraft:wind_charge"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:wispjelly"
+}
