@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin.perf;
+package net.enderturret.minestuckcompat.mixin.perf.allocations;
 
 import java.util.Map;
 
@@ -10,21 +10,8 @@ import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
-import net.enderturret.minestuckcompat.perf.SmallMutableGristSet;
-
 @Mixin(MutableGristSet.class)
 public interface MixinMutableGristSet {
-
-	@Overwrite
-	public static MutableGristSet newDefault() {
-		return new SmallMutableGristSet();
-	}
-
-	@Overwrite
-	public default GristSet.Immutable asImmutable() {
-		return SmallImmutableGristSet.create((MutableGristSet) this);
-	}
 
 	@Overwrite
 	public default MutableGristSet add(GristSet set) {

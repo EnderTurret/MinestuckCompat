@@ -1,7 +1,6 @@
-package net.enderturret.minestuckcompat.mixin.perf;
+package net.enderturret.minestuckcompat.mixin.perf.allocations;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +10,6 @@ import org.spongepowered.asm.mixin.Overwrite;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
-
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 
 @Mixin(GristSet.class)
 public interface MixinGristSet {
@@ -49,10 +46,5 @@ public interface MixinGristSet {
 			list.add(new GristAmount(entry.getKey(), entry.getValue()));
 
 		return list;
-	}
-
-	@Overwrite
-	public static GristSet.Immutable of(GristAmount... amounts) {
-		return SmallImmutableGristSet.create(Arrays.asList(amounts));
 	}
 }

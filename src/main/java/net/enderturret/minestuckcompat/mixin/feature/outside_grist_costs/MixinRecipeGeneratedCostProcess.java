@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin;
+package net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs;
 
 import java.util.Map;
 

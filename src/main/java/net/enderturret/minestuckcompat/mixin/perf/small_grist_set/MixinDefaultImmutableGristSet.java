@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin.perf;
+package net.enderturret.minestuckcompat.mixin.perf.small_grist_set;
 
 import java.util.List;
 

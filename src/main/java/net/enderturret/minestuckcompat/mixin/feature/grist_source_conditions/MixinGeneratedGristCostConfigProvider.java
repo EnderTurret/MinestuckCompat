@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin.data;
+package net.enderturret.minestuckcompat.mixin.feature.grist_source_conditions;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

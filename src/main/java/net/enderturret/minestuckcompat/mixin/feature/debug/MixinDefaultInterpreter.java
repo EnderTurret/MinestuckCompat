@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin;
+package net.enderturret.minestuckcompat.mixin.feature.debug;
 
 import java.util.List;
 

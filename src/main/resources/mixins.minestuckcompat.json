@@ -4,15 +4,19 @@
   "package": "net.enderturret.minestuckcompat.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "data.MixinGeneratedGristCostConfigProvider",
-    "perf.MixinCodecs",
-    "perf.MixinDefaultImmutableGristSet",
-    "perf.MixinGristSet",
-    "perf.MixinMutableGristSet",
-    "GeneratorProcessAccess",
-    "MixinDefaultInterpreter",
-    "MixinGristCostGenerator",
-    "MixinRecipeGeneratedCostHandler",
-    "MixinRecipeGeneratedCostProcess"
+    "feature.debug.MixinDefaultInterpreter",
+    "feature.debug.MixinGristCostGenerator",
+    "feature.debug.MixinRecipeGeneratedCostHandler",
+    "feature.grist_source_conditions.MixinGeneratedGristCostConfigProvider",
+    "feature.grist_source_conditions.MixinRecipeGeneratedCostHandler",
+    "feature.outside_grist_costs.GeneratorProcessAccess",
+    "feature.outside_grist_costs.MixinGristCostGenerator",
+    "feature.outside_grist_costs.MixinRecipeGeneratedCostProcess",
+    "perf.allocations.MixinGristSet",
+    "perf.allocations.MixinMutableGristSet",
+    "perf.small_grist_set.MixinCodecs",
+    "perf.small_grist_set.MixinDefaultImmutableGristSet",
+    "perf.small_grist_set.MixinGristSet",
+    "perf.small_grist_set.MixinMutableGristSet"
   ]
 }

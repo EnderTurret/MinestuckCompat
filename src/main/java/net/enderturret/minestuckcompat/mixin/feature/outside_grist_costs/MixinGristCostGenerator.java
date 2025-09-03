@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin;
+package net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,11 +15,6 @@ import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 
 @Mixin(GristCostGenerator.class)
 public abstract class MixinGristCostGenerator {
-
-	@Inject(at = @At("TAIL"), method = "run")
-	private static void minestuckcompat$printUnalchemizableItems(RecipeManager recipeManager, CallbackInfo ci) {
-		MixinHooks.checkItemsWithoutGristCost(recipeManager);
-	}
 
 	private static Object minestuckcompat$process;
 

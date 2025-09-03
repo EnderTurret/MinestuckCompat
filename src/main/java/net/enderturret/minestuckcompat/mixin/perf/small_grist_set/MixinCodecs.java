@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.mixin.perf;
+package net.enderturret.minestuckcompat.mixin.perf.small_grist_set;
 
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;

@@ -41,7 +41,7 @@ import net.neoforged.neoforge.common.conditions.ConditionalOps;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.MinestuckCompatConfig;
 import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
-import net.enderturret.minestuckcompat.mixin.GeneratorProcessAccess;
+import net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs.GeneratorProcessAccess;
 
 @Internal
 public final class MixinHooks {
