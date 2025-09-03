@@ -1,6 +1,10 @@
-// 1.21.1	2025-09-01T20:36:00.634178331	Mekanism Recipes
+// 1.21.1	2025-09-03T04:38:04.569168487	Mekanism Recipes
 e3a29b0cad86a28982de282fcbff2c6b40de0162 data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
 5c1bd6e2d64204164beb512bfc8ef5adf0cf4106 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
+583fd2caab68e3d181ae97c3bb8c3c01cc79718c data/minestuckcompat/recipe/combinations/mekanism/block_raw_lead.json
+9b89c0e058f4cb835798218d43128b18501a32b6 data/minestuckcompat/recipe/combinations/mekanism/block_raw_osmium.json
+5402391de8c7d29545d00103dc6350c962202728 data/minestuckcompat/recipe/combinations/mekanism/block_raw_tin.json
+c5681a62a23fdbddefc7db8388e64291a2f6c0c0 data/minestuckcompat/recipe/combinations/mekanism/block_raw_uranium.json
 9437f9d2904ef324986a4cd506447d3fff952788 data/minestuckcompat/recipe/combinations/mekanism/block_tin.json
 af5423e710ccdfdd34edbb777424ead034a0a3df data/minestuckcompat/recipe/combinations/mekanism/block_uranium.json
 600013db682f155099598d308cb09ad084140de6 data/minestuckcompat/recipe/combinations/mekanism/ingot_lead.json

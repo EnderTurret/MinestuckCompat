@@ -2,6 +2,8 @@ package net.enderturret.minestuckcompat.api.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipeBuilder;
 import com.mraof.minestuck.api.alchemy.recipe.SourceGristCostBuilder;
 import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationRecipeBuilder;
@@ -49,9 +51,11 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 		return CombinationRecipeBuilder.of(item);
 	}
 
-	protected static void oreCombinations(RecipeOutput output, ItemLike ingot, ItemLike block, ItemLike ore) {
+	protected static void oreCombinations(RecipeOutput output, ItemLike ingot, ItemLike block, ItemLike ore, @Nullable ItemLike rawOre, @Nullable ItemLike rawOreBlock) {
 		combination(block).or().input(ingot).input(Items.STONE).build(output);
 		combination(ore).and().input(ingot).input(Items.STONE).build(output);
+		if (rawOre != null && rawOreBlock != null)
+			combination(rawOreBlock).and().input(rawOre).input(Items.STONE).build(output);
 	}
 
 	protected static void saplingCombinations(RecipeOutput output, ItemLike sapling, ItemLike log, ItemLike leaves, boolean includePrimary) {

@@ -141,7 +141,7 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		// Combination Recipes
 		//
 
-		oreCombinations(output, ZINC_INGOT, ZINC_BLOCK, ZINC_ORE);
+		oreCombinations(output, ZINC_INGOT, ZINC_BLOCK, ZINC_ORE, RAW_ZINC, RAW_ZINC_BLOCK);
 		combination(ZINC_INGOT).and().input(Items.COPPER_INGOT).input(c("gems/emerald")).build(output);
 	}
 

@@ -82,13 +82,13 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		// Combination Recipes
 		//
 
-		oreCombinations(output, lookup("mekanism", "ingot_lead"), lookup("mekanism", "block_lead"), lookup("mekanism", "lead_ore"));
+		oreCombinations(output, lookup("mekanism", "ingot_lead"), lookup("mekanism", "block_lead"), lookup("mekanism", "lead_ore"), lookup("mekanism", "raw_lead"), lookup("mekanism", "block_raw_lead"));
 		combination(lookup("mekanism", "ingot_lead")).and().input(Items.IRON_INGOT).input(Tags.Items.DYES_GRAY).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_osmium"), lookup("mekanism", "block_osmium"), lookup("mekanism", "osmium_ore"));
+		oreCombinations(output, lookup("mekanism", "ingot_osmium"), lookup("mekanism", "block_osmium"), lookup("mekanism", "osmium_ore"), lookup("mekanism", "raw_osmium"), lookup("mekanism", "block_raw_osmium"));
 		combination(lookup("mekanism", "ingot_osmium")).and().input(Items.IRON_INGOT).input(MSItems.RAW_CRUXITE).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_tin"), lookup("mekanism", "block_tin"), lookup("mekanism", "tin_ore"));
+		oreCombinations(output, lookup("mekanism", "ingot_tin"), lookup("mekanism", "block_tin"), lookup("mekanism", "tin_ore"), lookup("mekanism", "raw_tin"), lookup("mekanism", "block_raw_tin"));
 		combination(lookup("mekanism", "ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_uranium"), lookup("mekanism", "block_uranium"), lookup("mekanism", "uranium_ore"));
+		oreCombinations(output, lookup("mekanism", "ingot_uranium"), lookup("mekanism", "block_uranium"), lookup("mekanism", "uranium_ore"), lookup("mekanism", "raw_uranium"), lookup("mekanism", "block_raw_uranium"));
 		combination(lookup("mekanism", "ingot_uranium")).and().input(lookup("mekanism", "ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
 	}
 }
