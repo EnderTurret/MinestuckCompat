@@ -11,9 +11,11 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforgespi.language.ModFileScanData;
 import net.neoforged.neoforgespi.language.ModFileScanData.AnnotationData;
 
+import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
 import net.enderturret.minestuckcompat.api.init.MCInterpreterTypes;
 
 @Mod(MinestuckCompat.MOD_ID)
@@ -27,6 +29,9 @@ public final class MinestuckCompat {
 		MCInterpreterTypes.REGISTRY.register(modBus);
 
 		modBus.addListener(this::onLoadComplete);
+
+		if (ModList.get().isLoaded("rechiseled"))
+			NeoForge.EVENT_BUS.register(RechiseledGristCosts.class);
 	}
 
 	private void onLoadComplete(FMLLoadCompleteEvent e) {

@@ -7,18 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
-import org.jetbrains.annotations.Nullable;
 
 import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
-import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratedCostProvider;
-import com.mraof.minestuck.api.alchemy.recipe.generator.GristCostResult;
 import com.mraof.minestuck.item.crafting.MSRecipeTypes;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,12 +31,12 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 
-import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.MinestuckCompatConfig;
-import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
+import net.enderturret.minestuckcompat.api.alchemy.RegisterGristCostProvidersEvent;
 import net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs.GeneratorProcessAccess;
 
 @Internal
@@ -52,20 +48,8 @@ public final class MixinHooks {
 	public static Map<Item, GristSet.Immutable> generatedCosts;
 
 	public static void generateAdditionalGristCosts(GeneratorProcessAccess access) {
-		MinestuckCompat.LOGGER.info("Discovering additional grist costs!");
-
-		final BiConsumer<Item, GeneratedCostProvider> registrar = (item, provider) -> {
-			access.minestuckcompat$getProvidersByItem().computeIfAbsent(item, k -> new ArrayList<>()).add(provider);
-			access.minestuckcompat$getProviders().add(provider);
-		};
-
-		final BiConsumer<Item, @Nullable GristCostResult> callback = (item, result) -> {
-			if (result == null) return;
-			generatedCosts.putIfAbsent(item, result.cost().asImmutable());
-		};
-
-		if (ModList.get().isLoaded("rechiseled"))
-			RechiseledGristCosts.generateAdditionalGristCosts(registrar, callback);
+		MinestuckCompat.LOGGER.info("Discovering additional grist cost providers!");
+		NeoForge.EVENT_BUS.post(new RegisterGristCostProvidersEvent(generatedCosts, access));
 	}
 
 	@SuppressWarnings("deprecation")
