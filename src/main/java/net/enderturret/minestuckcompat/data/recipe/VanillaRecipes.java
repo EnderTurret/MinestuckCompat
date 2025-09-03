@@ -6,6 +6,7 @@ import static net.minecraft.world.item.Items.*;
 import java.util.concurrent.CompletableFuture;
 
 import com.mraof.minestuck.api.alchemy.GristTypes;
+import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -171,5 +172,7 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		// Miscellaneous
 
 		combination(PIGLIN_HEAD).or().input(ZOMBIE_HEAD).input(CARROT).build(output);
+		combination(SNIFFER_EGG).or().input(EGG).input(CLOCK).build(output);
+		combination(WIND_CHARGE).or().input(FIRE_CHARGE).input(MSItems.FAN).build(output);
 	}
 }
