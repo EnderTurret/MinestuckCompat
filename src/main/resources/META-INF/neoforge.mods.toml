@@ -5,7 +5,19 @@ license="LGPL v2.1"
     modId="minestuckcompat"
     displayName="Minestuck Compat"
     description='''
-    Adds additional compatibility for mods like Mekanism to Minestuck.
+    A comprehensive Minestuck addon that provides grist costs and combination recipes for:
+    * Applied Energistics 2
+    * Biomes O' Plenty
+    * Create
+    * Mekanism
+    * Minestuck (its trees)
+    * Rechiseled
+    * Vanilla (trims, sherds, 1.21.1 content, among other things)
+
+    Also includes recipe interpreters (for use with the grist cost generator) for:
+    * Applied Energistics 2
+    * Create
+    * Mekanism
     '''
     version="${file.jarVersion}"
     authors="EnderTurret"
