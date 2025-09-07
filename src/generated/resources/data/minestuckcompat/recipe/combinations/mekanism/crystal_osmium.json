@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:quartz"
+  },
+  "input2": {
+    "item": "mekanism:ingot_osmium"
+  },
+  "mode": "and",
+  "output": "mekanism:crystal_osmium"
+}

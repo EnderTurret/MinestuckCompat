@@ -12,6 +12,7 @@ import com.mraof.minestuck.item.MSItems;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import net.neoforged.neoforge.common.Tags;
@@ -47,13 +48,13 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		gristCost(c("raw_materials/osmium")).grist(RUST, 12).grist(COBALT, 4).build(output);
 		gristCost(c("raw_materials/uranium")).grist(URANIUM, 3).build(output);
 
-		sourceGristCost(lookup("mekanism", "crystal_iron")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.IRON_INGOT).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_gold")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.GOLD_INGOT).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_osmium")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_osmium")).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_copper")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.COPPER_INGOT).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_tin")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_tin")).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_lead")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_lead")).build(output);
-		sourceGristCost(lookup("mekanism", "crystal_uranium")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_uranium")).build(output);
+		sourceGristCost(mek("crystal_iron")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.IRON_INGOT).build(output);
+		sourceGristCost(mek("crystal_gold")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.GOLD_INGOT).build(output);
+		sourceGristCost(mek("crystal_osmium")).grist(QUARTZ, 1).multiplier(0.2F).source(mek("ingot_osmium")).build(output);
+		sourceGristCost(mek("crystal_copper")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.COPPER_INGOT).build(output);
+		sourceGristCost(mek("crystal_tin")).grist(QUARTZ, 1).multiplier(0.2F).source(mek("ingot_tin")).build(output);
+		sourceGristCost(mek("crystal_lead")).grist(QUARTZ, 1).multiplier(0.2F).source(mek("ingot_lead")).build(output);
+		sourceGristCost(mek("crystal_uranium")).grist(QUARTZ, 1).multiplier(0.2F).source(mek("ingot_uranium")).build(output);
 
 		// Materials
 
@@ -74,36 +75,64 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 
 		// Buckets
 
-		sourceGristCost(lookup("mekanism", "chlorine_bucket")).grist(AMBER, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "nutritional_paste_bucket")).grist(AMBER, 80).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "sodium_bucket")).grist(CAULK, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "superheated_sodium_bucket")).grist(CAULK, 16).grist(SULFUR, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "hydrogen_chloride_bucket")).grist(CHALK, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "oxygen_bucket")).grist(COBALT, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "heavy_water_bucket")).grist(COBALT, 40).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "lithium_bucket")).grist(IODINE, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "hydrogen_bucket")).grist(MERCURY, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "steam_bucket")).grist(MERCURY, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "ethene_bucket")).grist(SHALE, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "brine_bucket")).grist(SULFUR, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "sulfur_dioxide_bucket")).grist(SULFUR, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "sulfur_trioxide_bucket")).grist(SULFUR, 16).grist(COBALT, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "sulfuric_acid_bucket")).grist(SULFUR, 16).grist(COBALT, 4).grist(MERCURY, 4).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "hydrofluoric_acid_bucket")).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "uranium_oxide_bucket")).grist(URANIUM, 16).source(Items.BUCKET).build(output);
-		sourceGristCost(lookup("mekanism", "uranium_hexafluoride_bucket")).grist(URANIUM, 16).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("chlorine_bucket")).grist(AMBER, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("nutritional_paste_bucket")).grist(AMBER, 80).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("sodium_bucket")).grist(CAULK, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("superheated_sodium_bucket")).grist(CAULK, 16).grist(SULFUR, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("hydrogen_chloride_bucket")).grist(CHALK, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("oxygen_bucket")).grist(COBALT, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("heavy_water_bucket")).grist(COBALT, 40).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("lithium_bucket")).grist(IODINE, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("hydrogen_bucket")).grist(MERCURY, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("steam_bucket")).grist(MERCURY, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("ethene_bucket")).grist(SHALE, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("brine_bucket")).grist(SULFUR, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("sulfur_dioxide_bucket")).grist(SULFUR, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("sulfur_trioxide_bucket")).grist(SULFUR, 16).grist(COBALT, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("sulfuric_acid_bucket")).grist(SULFUR, 16).grist(COBALT, 4).grist(MERCURY, 4).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("hydrofluoric_acid_bucket")).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("uranium_oxide_bucket")).grist(URANIUM, 16).source(Items.BUCKET).build(output);
+		sourceGristCost(mek("uranium_hexafluoride_bucket")).grist(URANIUM, 16).grist(SULFUR, 16).grist(IODINE, 16).source(Items.BUCKET).build(output);
 
 		//
 		// Combination Recipes
 		//
 
-		oreCombinations(output, lookup("mekanism", "ingot_lead"), lookup("mekanism", "block_lead"), lookup("mekanism", "lead_ore"), lookup("mekanism", "raw_lead"), lookup("mekanism", "block_raw_lead"));
-		combination(lookup("mekanism", "ingot_lead")).and().input(Items.IRON_INGOT).input(Tags.Items.DYES_GRAY).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_osmium"), lookup("mekanism", "block_osmium"), lookup("mekanism", "osmium_ore"), lookup("mekanism", "raw_osmium"), lookup("mekanism", "block_raw_osmium"));
-		combination(lookup("mekanism", "ingot_osmium")).and().input(Items.IRON_INGOT).input(MSItems.RAW_CRUXITE).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_tin"), lookup("mekanism", "block_tin"), lookup("mekanism", "tin_ore"), lookup("mekanism", "raw_tin"), lookup("mekanism", "block_raw_tin"));
-		combination(lookup("mekanism", "ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
-		oreCombinations(output, lookup("mekanism", "ingot_uranium"), lookup("mekanism", "block_uranium"), lookup("mekanism", "uranium_ore"), lookup("mekanism", "raw_uranium"), lookup("mekanism", "block_raw_uranium"));
-		combination(lookup("mekanism", "ingot_uranium")).and().input(lookup("mekanism", "ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
+		oreCombinations(output, mek("ingot_lead"), mek("block_lead"), mek("lead_ore"), mek("raw_lead"), mek("block_raw_lead"));
+		combination(mek("ingot_lead")).and().input(Items.IRON_INGOT).input(Tags.Items.DYES_GRAY).build(output);
+		oreCombinations(output, mek("ingot_osmium"), mek("block_osmium"), mek("osmium_ore"), mek("raw_osmium"), mek("block_raw_osmium"));
+		combination(mek("ingot_osmium")).and().input(Items.IRON_INGOT).input(MSItems.RAW_CRUXITE).build(output);
+		oreCombinations(output, mek("ingot_tin"), mek("block_tin"), mek("tin_ore"), mek("raw_tin"), mek("block_raw_tin"));
+		combination(mek("ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
+		oreCombinations(output, mek("ingot_uranium"), mek("block_uranium"), mek("uranium_ore"), mek("raw_uranium"), mek("block_raw_uranium"));
+		combination(mek("ingot_uranium")).and().input(mek("ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
+
+		combination(mek("crystal_iron")).and().input(Items.QUARTZ).input(Items.IRON_INGOT).build(output);
+		combination(mek("crystal_gold")).and().input(Items.QUARTZ).input(Items.GOLD_INGOT).build(output);
+		combination(mek("crystal_osmium")).and().input(Items.QUARTZ).input(mek("ingot_osmium")).build(output);
+		combination(mek("crystal_copper")).and().input(Items.QUARTZ).input(Items.COPPER_INGOT).build(output);
+		combination(mek("crystal_tin")).and().input(Items.QUARTZ).input(mek("ingot_tin")).build(output);
+		combination(mek("crystal_lead")).and().input(Items.QUARTZ).input(mek("ingot_lead")).build(output);
+		combination(mek("crystal_uranium")).and().input(Items.QUARTZ).input(mek("ingot_uranium")).build(output);
+
+		combination(mek("dust_iron")).and().input(Items.REDSTONE).input(Items.IRON_INGOT).build(output);
+		combination(mek("dust_gold")).and().input(Items.REDSTONE).input(Items.GOLD_INGOT).build(output);
+		combination(mek("dust_osmium")).and().input(Items.REDSTONE).input(mek("ingot_osmium")).build(output);
+		combination(mek("dust_copper")).and().input(Items.REDSTONE).input(Items.COPPER_INGOT).build(output);
+		combination(mek("dust_tin")).and().input(Items.REDSTONE).input(mek("ingot_tin")).build(output);
+		combination(mek("dust_lead")).and().input(Items.REDSTONE).input(mek("ingot_lead")).build(output);
+		combination(mek("dust_uranium")).and().input(Items.REDSTONE).input(mek("ingot_uranium")).build(output);
+
+		combination(mek("shard_iron")).and().input(Items.AMETHYST_SHARD).input(Items.IRON_INGOT).build(output);
+		combination(mek("shard_gold")).and().input(Items.AMETHYST_SHARD).input(Items.GOLD_INGOT).build(output);
+		combination(mek("shard_osmium")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_osmium")).build(output);
+		combination(mek("shard_copper")).and().input(Items.AMETHYST_SHARD).input(Items.COPPER_INGOT).build(output);
+		combination(mek("shard_tin")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_tin")).build(output);
+		combination(mek("shard_lead")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_lead")).build(output);
+		combination(mek("shard_uranium")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_uranium")).build(output);
+	}
+
+	private static Item mek(String id) {
+		return lookup("mekanism", id);
 	}
 }

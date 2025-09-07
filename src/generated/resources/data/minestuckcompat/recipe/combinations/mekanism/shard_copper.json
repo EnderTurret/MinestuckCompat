@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "input2": {
+    "item": "minecraft:copper_ingot"
+  },
+  "mode": "and",
+  "output": "mekanism:shard_copper"
+}
