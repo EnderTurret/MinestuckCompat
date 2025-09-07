@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "minecraft:ominous_trial_key"
+  },
+  "sources": [
+    "minecraft:ominous_bottle",
+    "minecraft:trial_key"
+  ]
+}

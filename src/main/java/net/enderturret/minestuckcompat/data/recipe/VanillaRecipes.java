@@ -113,6 +113,9 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		sourceGristCost(ItemTags.DECORATED_POT_SHERDS).source(BRICK).multiplier(4).build(output);
 		gristCost(FLOW_BANNER_PATTERN).grist(BUILD, 120).grist(MARBLE, 17).grist(GristTypes.DIAMOND, 13).build(output);
 		gristCost(GUSTER_BANNER_PATTERN).grist(BUILD, 120).grist(MARBLE, 13).grist(GristTypes.DIAMOND, 17).build(output);
+		gristCost(TRIAL_KEY).grist(SHALE, 9).grist(TAR, 48).build(output);
+		sourceGristCost(OMINOUS_BOTTLE).grist(TAR, 16).source(GLASS_BOTTLE).build(output);
+		sourceGristCost(OMINOUS_TRIAL_KEY).source(OMINOUS_BOTTLE).source(TRIAL_KEY).build(output);
 
 		//
 		// Combination Recipes
@@ -179,5 +182,8 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(PIGLIN_HEAD).or().input(ZOMBIE_HEAD).input(CARROT).build(output);
 		combination(SNIFFER_EGG).or().input(EGG).input(CLOCK).build(output);
 		combination(WIND_CHARGE).or().input(FIRE_CHARGE).input(MSItems.FAN).build(output);
+		combination(OMINOUS_TRIAL_KEY).or().input(TRIAL_KEY).input(OMINOUS_BOTTLE).build(output);
+		combination(OMINOUS_BOTTLE).or().input(Items.GLASS_BOTTLE).input(Items.CROSSBOW).build(output);
+		combination(TRIAL_KEY).or().input(Items.COPPER_INGOT).input(Items.WITHER_SKELETON_SKULL).build(output);
 	}
 }

@@ -18,6 +18,8 @@
     "minecraft:tipped_arrow",
     "minecraft:written_book",
 
+    "minecraft:bundle",
+
     { "id": "mekanism:bounding_block", "required": false },
 
     { "id": "ae2:debug_card", "required": false },
