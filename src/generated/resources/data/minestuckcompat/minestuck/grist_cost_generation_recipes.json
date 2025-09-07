@@ -305,7 +305,7 @@
       "type": "minestuck:default"
     },
     "source": {
-      "type": "serializer",
+      "type": "recipe_serializer",
       "serializer": "dankstorage:upgrade"
     }
   }

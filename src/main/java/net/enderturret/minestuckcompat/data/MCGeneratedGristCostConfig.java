@@ -97,7 +97,7 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		ret.add("interpreter", encodeInterpreter(interpreter));
 
 		final JsonObject source = new JsonObject();
-		source.addProperty("type", "serializer");
+		source.addProperty("type", "recipe_serializer");
 		source.addProperty("serializer", id);
 		ret.add("source", source);
 
