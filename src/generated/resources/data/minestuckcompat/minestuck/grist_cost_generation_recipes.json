@@ -229,5 +229,39 @@
       "type": "recipe_type",
       "recipe_type": "create:sequenced_assembly"
     }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "farmersdelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuck:default"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "farmersdelight:cooking"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "farmersdelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:rust": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "farmersdelight:cutting"
+    }
   }
 ]

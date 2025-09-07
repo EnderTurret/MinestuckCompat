@@ -6,6 +6,7 @@ Minestuck Compat has specific support for:
 * [Applied Energistics 2](https://modrinth.com/mod/ae2)
 * [Biomes O' Plenty](https://modrinth.com/mod/biomes-o-plenty)
 * [Create](https://modrinth.com/mod/create)
+* [Farmer's Delight](https://modrinth.com/mod/farmers-delight)
 * [Mekanism](https://modrinth.com/mod/mekanism)
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
 

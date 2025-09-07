@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 1,
+    "minestuck:rust": 1
+  },
+  "ingredient": {
+    "item": "farmersdelight:tomato_seeds"
+  }
+}

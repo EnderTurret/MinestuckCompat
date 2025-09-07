@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 1
+  },
+  "ingredient": {
+    "item": "farmersdelight:honey_glazed_ham"
+  },
+  "multiplier": 0.25,
+  "sources": [
+    "farmersdelight:honey_glazed_ham_block"
+  ]
+}

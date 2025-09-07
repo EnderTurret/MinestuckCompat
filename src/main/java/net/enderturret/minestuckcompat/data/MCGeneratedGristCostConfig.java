@@ -31,6 +31,7 @@ import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 import appeng.recipes.AERecipeTypes;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismRecipeSerializersInternal;
+import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 
 @Internal
 public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigProvider implements IGeneratedGristCostConfigProviderExtensions {
@@ -41,54 +42,59 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 
 	@Override
 	protected void addEntries() {
-		if (ModList.get().isLoaded("mekanism")) {
-			serializer(MekanismRecipeSerializersInternal.MEK_DATA.get());
-			type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-			type(MekanismRecipeTypes.TYPE_INJECTING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-			type(MekanismRecipeTypes.TYPE_PURIFYING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-			type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-			type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-			type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(GristTypes.COBALT, 10)));
-			type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(GristTypes.MERCURY, 1)));
-		}
+		// Mekanism
+		serializer(MekanismRecipeSerializersInternal.MEK_DATA.get());
+		type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+		type(MekanismRecipeTypes.TYPE_INJECTING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+		type(MekanismRecipeTypes.TYPE_PURIFYING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+		type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+		type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
+		type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(GristTypes.COBALT, 10)));
+		type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(GristTypes.MERCURY, 1)));
 
-		if (ModList.get().isLoaded("ae2")) {
-			type(AERecipeTypes.CHARGER, new ChargerInterpreter(grist(GristTypes.URANIUM, 1)));
-			type(AERecipeTypes.INSCRIBER, new InscriberInterpreter(grist(GristTypes.GARNET, 1)));
-		}
+		// Applied Energistics 2
+		type(AERecipeTypes.CHARGER, new ChargerInterpreter(grist(GristTypes.URANIUM, 1)));
+		type(AERecipeTypes.INSCRIBER, new InscriberInterpreter(grist(GristTypes.GARNET, 1)));
 
-		if (ModList.get().isLoaded("create")) {
-			type(AllRecipeTypes.ITEM_APPLICATION.getType(), new SimpleRecipeInterpreter(false));
-			type(AllRecipeTypes.PRESSING.getType(), new SimpleRecipeInterpreter(false));
-			type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
-			type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(GristSet.EMPTY, grist(GristTypes.MERCURY, 1)));
-		}
+		// Create
+		type(AllRecipeTypes.ITEM_APPLICATION.getType(), new SimpleRecipeInterpreter(false));
+		type(AllRecipeTypes.PRESSING.getType(), new SimpleRecipeInterpreter(false));
+		type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
+		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(GristSet.EMPTY, grist(GristTypes.MERCURY, 1)));
+
+		// Farmers Delight
+		type(ModRecipeTypes.COOKING.get());
+		type(ModRecipeTypes.CUTTING.get(), new SimpleRecipeInterpreter(false, grist(GristTypes.RUST, 1)));
 	}
 
 	@Override
 	public JsonElement modify(JsonElement root) {
-		final JsonArray array = (JsonArray) root;
-		for (JsonElement child : array)
+		final JsonArray rootA = root.getAsJsonArray();
+		for (JsonElement child : rootA)
 			if (child instanceof JsonObject obj) {
-				final JsonObject interpreter = obj.getAsJsonObject("interpreter");
 				final JsonObject source = obj.getAsJsonObject("source");
 				final String type = (source.has("recipe_type") ? source.get("recipe_type") : source.get("serializer")).getAsString();
-				final String namespace = type.substring(0, type.indexOf(':'));
-
-				final JsonArray neoforgeConditions = new JsonArray();
-				final JsonObject condition = new JsonObject();
-				condition.addProperty("type", "neoforge:mod_loaded");
-				condition.addProperty("modid", namespace);
-				neoforgeConditions.add(condition);
-
-				obj.remove("interpreter");
-				obj.remove("source");
-				obj.add("neoforge:conditions", neoforgeConditions);
-				obj.add("interpreter", interpreter);
-				obj.add("source", source);
+				addModLoadedCondition(obj, type.substring(0, type.indexOf(':')));
 			}
 
 		return root;
+	}
+
+	private static void addModLoadedCondition(JsonObject obj, String modId) {
+		final JsonObject interpreter = obj.getAsJsonObject("interpreter");
+		final JsonObject source = obj.getAsJsonObject("source");
+
+		final JsonArray neoforgeConditions = new JsonArray();
+		final JsonObject condition = new JsonObject();
+		condition.addProperty("type", "neoforge:mod_loaded");
+		condition.addProperty("modid", modId);
+		neoforgeConditions.add(condition);
+
+		obj.remove("interpreter");
+		obj.remove("source");
+		obj.add("neoforge:conditions", neoforgeConditions);
+		obj.add("interpreter", interpreter);
+		obj.add("source", source);
 	}
 
 	private static GristSet.Immutable grist(Supplier<GristType> type, int count) {

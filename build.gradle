@@ -42,6 +42,8 @@ dependencies {
     implementation 'biomesoplenty:BiomesOPlenty-neoforge-1.21.1:21.1.0.12'
     runtimeOnly 'terrablender:TerraBlender-neoforge-1.21.1:4.1.0.8'
     runtimeOnly 'glitchcore:GlitchCore-neoforge-1.21.1:2.1.0.0'
+
+    implementation 'vectorwing:FarmersDelight-1.21.1:1.2.9'
 }
 
 neoForge {

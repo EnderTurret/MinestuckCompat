@@ -18,6 +18,7 @@ import net.enderturret.minestuckcompat.api.data.WrappedDataProvider;
 import net.enderturret.minestuckcompat.data.recipe.Ae2Recipes;
 import net.enderturret.minestuckcompat.data.recipe.BiomesOPlentyRecipes;
 import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
+import net.enderturret.minestuckcompat.data.recipe.FarmersDelightRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
@@ -48,5 +49,8 @@ public final class MCDatagen {
 
 		if (ModList.get().isLoaded("biomesoplenty"))
 			e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new BiomesOPlentyRecipes(output, lookup), "Biomes O' Plenty Recipes"));
+
+		if (ModList.get().isLoaded("farmersdelight"))
+			e.getGenerator().addProvider(server, (Factory<WrappedDataProvider>) output -> new WrappedDataProvider(new FarmersDelightRecipes(output, lookup), "Farmers Delight Recipes"));
 	}
 }

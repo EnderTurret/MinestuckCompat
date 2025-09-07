@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "farmersdelight:black_canvas_sign"
+  },
+  "sources": [
+    "farmersdelight:canvas_sign",
+    "#c:dyes/black"
+  ]
+}

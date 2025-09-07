@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 1
+  },
+  "ingredient": {
+    "item": "farmersdelight:stuffed_pumpkin"
+  },
+  "multiplier": 0.25,
+  "sources": [
+    "farmersdelight:stuffed_pumpkin_block"
+  ]
+}

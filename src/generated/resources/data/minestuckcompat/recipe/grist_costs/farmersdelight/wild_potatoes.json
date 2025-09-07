@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 2
+  },
+  "ingredient": {
+    "item": "farmersdelight:wild_potatoes"
+  },
+  "sources": [
+    "minecraft:potato"
+  ]
+}
