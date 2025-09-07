@@ -101,5 +101,24 @@ public final class FarmersDelightRecipes extends AbstractRecipeProvider {
 		sourceGristCost(YELLOW_HANGING_CANVAS_SIGN.get()).source(HANGING_CANVAS_SIGN.get()).source(Tags.Items.DYES_YELLOW).build(output);
 
 		sourceGristCost(RICH_SOIL.get()).source(ORGANIC_COMPOST.get()).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		combination(WILD_CABBAGES.get()).or().input(Items.SHORT_GRASS).input(CABBAGE.get()).build(output);
+		combination(WILD_TOMATOES.get()).or().input(Items.SHORT_GRASS).input(TOMATO.get()).build(output);
+		combination(WILD_ONIONS.get()).or().input(Items.SHORT_GRASS).input(ONION.get()).build(output);
+		combination(WILD_CARROTS.get()).or().input(Items.SHORT_GRASS).input(Items.CARROT).build(output);
+		combination(WILD_POTATOES.get()).or().input(Items.SHORT_GRASS).input(Items.POTATO).build(output);
+		combination(WILD_BEETROOTS.get()).or().input(Items.SHORT_GRASS).input(Items.BEETROOT).build(output);
+		combination(SANDY_SHRUB.get()).or().input(Items.SHORT_GRASS).input(Items.DEAD_BUSH).build(output);
+		combination(WILD_RICE.get()).or().input(Items.SHORT_GRASS).input(RICE.get()).build(output);
+		combination(BROWN_MUSHROOM_COLONY.get()).or().input(Items.SHORT_GRASS).input(Items.BROWN_MUSHROOM).build(output);
+		combination(RED_MUSHROOM_COLONY.get()).or().input(Items.SHORT_GRASS).input(Items.RED_MUSHROOM).build(output);
+		combination(CABBAGE.get()).or().input(ItemTags.LEAVES).input(Items.APPLE).build(output);
+		combination(ONION.get()).or().input(Items.BEETROOT).input(Items.POTATO).build(output);
+		combination(TOMATO.get()).or().input(Items.POTATO).input(Tags.Items.DYES_RED).build(output);
+		combination(ROTTEN_TOMATO.get()).or().input(TOMATO.get()).input(Items.ROTTEN_FLESH).build(output);
 	}
 }

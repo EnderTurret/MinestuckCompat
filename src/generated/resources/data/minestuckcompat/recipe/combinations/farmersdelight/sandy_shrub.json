@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:short_grass"
+  },
+  "input2": {
+    "item": "minecraft:dead_bush"
+  },
+  "mode": "or",
+  "output": "farmersdelight:sandy_shrub"
+}
