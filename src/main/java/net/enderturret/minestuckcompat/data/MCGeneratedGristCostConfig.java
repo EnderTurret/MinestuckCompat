@@ -31,6 +31,7 @@ import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 import appeng.recipes.AERecipeTypes;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismRecipeSerializersInternal;
+import mekanism.tools.common.registries.ToolsRecipeSerializers;
 import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 
 @Internal
@@ -51,6 +52,8 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
 		type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(GristTypes.COBALT, 10)));
 		type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(GristTypes.MERCURY, 1)));
+		// Mekanism Tools
+		serializer(ToolsRecipeSerializers.PAXEL.get());
 
 		// Applied Energistics 2
 		type(AERecipeTypes.CHARGER, new ChargerInterpreter(grist(GristTypes.URANIUM, 1)));

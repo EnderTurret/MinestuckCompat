@@ -129,6 +129,21 @@
     "neoforge:conditions": [
       {
         "type": "neoforge:mod_loaded",
+        "modid": "mekanismtools"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuck:default"
+    },
+    "source": {
+      "type": "recipe_serializer",
+      "serializer": "mekanismtools:paxel"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
         "modid": "ae2"
       }
     ],

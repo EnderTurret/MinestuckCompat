@@ -27,6 +27,7 @@ dependencies {
     runtimeOnly 'net.commoble:infiniverse-1.21:2.0.1.0'
 
     implementation 'mekanism:Mekanism-1.21.1:10.7.15.81'
+    implementation 'mekanism:MekanismTools-1.21.1:10.7.15.81'
 
     implementation 'com.supermartijn642:rechiseled-1.1.6a-neoforge:mc1.21'
     runtimeOnly 'com.supermartijn642:fusion-1.2.11a-neoforge:mc1.21'
