@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "create:empty_blaze_burner"
+  },
+  "input2": {
+    "item": "minecraft:blaze_rod"
+  },
+  "mode": "or",
+  "output": "create:blaze_burner"
+}

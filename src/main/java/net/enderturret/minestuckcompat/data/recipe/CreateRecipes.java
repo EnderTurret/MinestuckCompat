@@ -136,6 +136,7 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		sourceGristCost(POTATO_CANNON).source(ANDESITE_ALLOY.asItem()).source(PRECISION_MECHANISM.asItem()).source(FLUID_PIPE.asItem())
 				.source(FLUID_PIPE.asItem()).source(FLUID_PIPE.asItem()).source(Items.COPPER_INGOT).source(Items.COPPER_INGOT).build(output);
 		sourceGristCost(HAUNTED_BELL).grist(SHALE, 1).source(PECULIAR_BELL.asItem()).build(output);
+		sourceGristCost(BLAZE_BURNER).grist(SULFUR, 20).source(Items.BLAZE_ROD).source(EMPTY_BLAZE_BURNER.asItem()).build(output);
 
 		//
 		// Combination Recipes
@@ -143,6 +144,8 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 
 		oreCombinations(output, ZINC_INGOT, ZINC_BLOCK, ZINC_ORE, RAW_ZINC, RAW_ZINC_BLOCK);
 		combination(ZINC_INGOT).and().input(Items.COPPER_INGOT).input(c("gems/emerald")).build(output);
+
+		combination(BLAZE_BURNER).or().input(EMPTY_BLAZE_BURNER.asItem()).input(Items.BLAZE_ROD).build(output);
 	}
 
 	private void variantSet(RecipeOutput output, String baseTypeDomain, String baseTypeName) {

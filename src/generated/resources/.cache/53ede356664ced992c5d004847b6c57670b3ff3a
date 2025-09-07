@@ -1,4 +1,5 @@
-// 1.21.1	2025-09-03T04:38:04.57004041	Create Recipes
+// 1.21.1	2025-09-07T19:00:56.605812351	Create Recipes
+2751e3cdcd0aea64fbd332cb0b7680790cf26e0d data/minestuckcompat/recipe/combinations/create/blaze_burner.json
 a0ce8989b81a34828ea9d656d93a2d2c6e1270e3 data/minestuckcompat/recipe/combinations/create/raw_zinc_block.json
 594f01dd33a79025dd1e4c072c33eb49c1d2cb86 data/minestuckcompat/recipe/combinations/create/zinc_block.json
 4df8987eb7c90e8a8b38245514963345f79da6dc data/minestuckcompat/recipe/combinations/create/zinc_ingot.json
@@ -9,6 +10,7 @@ a110de0ebcfc07c60da688dcb97a6d3cbbd768c4 data/minestuckcompat/recipe/grist_costs
 7b7f37267412f867213bc73a4d8821bd5df06332 data/minestuckcompat/recipe/grist_costs/create/bar_of_chocolate.json
 d864f46693483bcaf44eb22e195637c03a33dd1a data/minestuckcompat/recipe/grist_costs/create/black_toolbox.json
 6f712075a04d2090717dd236d0718e1132ed6fc7 data/minestuckcompat/recipe/grist_costs/create/black_valve_handle.json
+8f5af3d0da258005249daf491f562ad6f4385915 data/minestuckcompat/recipe/grist_costs/create/blaze_burner.json
 0fcdb2f893cda6e064f2d2eb46401c3cf53c1765 data/minestuckcompat/recipe/grist_costs/create/blaze_cake.json
 8cace417725e81f10e95e9ed1330dfba425e596b data/minestuckcompat/recipe/grist_costs/create/blaze_cake_base.json
 ec8a2526b4e55a06a504cc70e8c88bd15b835a33 data/minestuckcompat/recipe/grist_costs/create/blue_toolbox.json

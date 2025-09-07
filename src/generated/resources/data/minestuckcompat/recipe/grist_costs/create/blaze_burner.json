@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:sulfur": 20
+  },
+  "ingredient": {
+    "item": "create:blaze_burner"
+  },
+  "sources": [
+    "minecraft:blaze_rod",
+    "create:empty_blaze_burner"
+  ]
+}
