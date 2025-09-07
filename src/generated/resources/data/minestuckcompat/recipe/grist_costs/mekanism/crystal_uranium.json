@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:quartz": 1
+  },
+  "ingredient": {
+    "item": "mekanism:crystal_uranium"
+  },
+  "multiplier": 0.2,
+  "sources": [
+    "mekanism:ingot_uranium"
+  ]
+}

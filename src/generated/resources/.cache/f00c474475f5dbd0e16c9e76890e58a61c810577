@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-03T04:38:04.569168487	Mekanism Recipes
+// 1.21.1	2025-09-07T17:46:22.750146621	Mekanism Recipes
 e3a29b0cad86a28982de282fcbff2c6b40de0162 data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
 5c1bd6e2d64204164beb512bfc8ef5adf0cf4106 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
 583fd2caab68e3d181ae97c3bb8c3c01cc79718c data/minestuckcompat/recipe/combinations/mekanism/block_raw_lead.json
@@ -18,6 +18,13 @@ f9a56f570adca019f8538f2103b05a05060b9a10 data/minestuckcompat/recipe/combination
 94514934aa7fb45ec77677acebaf051e749efc2e data/minestuckcompat/recipe/grist_costs/mekanism/block_salt.json
 404c8f9d7cb683302357a2bd21258ac06990631d data/minestuckcompat/recipe/grist_costs/mekanism/brine_bucket.json
 4f4fa5e534437fe15fc10dae0d52a4a0a9ab1179 data/minestuckcompat/recipe/grist_costs/mekanism/chlorine_bucket.json
+b30e8f06fef7dc2d544ea81929ff8fdbacac0f49 data/minestuckcompat/recipe/grist_costs/mekanism/crystal_copper.json
+8364853150e01b906d55093ac91213647d17c0c8 data/minestuckcompat/recipe/grist_costs/mekanism/crystal_gold.json
+21f7c215d9126415e8451ab8b77b21f46c60316f data/minestuckcompat/recipe/grist_costs/mekanism/crystal_iron.json
+8de97ead11accd52f6fc1edbc8966a67f77ac98f data/minestuckcompat/recipe/grist_costs/mekanism/crystal_lead.json
+30bd29bde9607aa48a9854592519f45780ad92c5 data/minestuckcompat/recipe/grist_costs/mekanism/crystal_osmium.json
+d15fe49d275f637fbadbac3ddf8ea028770d55ea data/minestuckcompat/recipe/grist_costs/mekanism/crystal_tin.json
+c241411dd63b09994f6ac85358bcd8b0f74aac9a data/minestuckcompat/recipe/grist_costs/mekanism/crystal_uranium.json
 f60551530d776ce18139cf8d7eaf29e8ab67fbba data/minestuckcompat/recipe/grist_costs/mekanism/dust_lithium.json
 3badd6f2902d1be6abba3f74ecdbb9b6009acbab data/minestuckcompat/recipe/grist_costs/mekanism/dust_sulfur.json
 36e6a8720eef79d546a718cadec04f6ce7c44397 data/minestuckcompat/recipe/grist_costs/mekanism/ethene_bucket.json

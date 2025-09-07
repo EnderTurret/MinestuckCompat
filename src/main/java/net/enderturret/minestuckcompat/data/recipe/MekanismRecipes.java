@@ -34,6 +34,8 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "mekanism")
 				.withConditions(modLoaded("mekanism"));
 
+		// Ores
+
 		gristCost(c("gems/fluorite")).grist(AMETHYST, 3).grist(QUARTZ, 6).build(output);
 		sourceGristCost(c("ingots/osmium")).source(c("raw_materials/osmium")).build(output);
 		sourceGristCost(c("ingots/uranium")).source(c("raw_materials/uranium")).build(output);
@@ -45,16 +47,29 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		gristCost(c("raw_materials/osmium")).grist(RUST, 12).grist(COBALT, 4).build(output);
 		gristCost(c("raw_materials/uranium")).grist(URANIUM, 3).build(output);
 
-		gristCost(ANTIMATTER_PELLET).grist(URANIUM, 400).grist(ZILLIUM, 20).build(output);
-		gristCost(HDPE_PELLET).grist(CHALK, 5).grist(MERCURY, 2).grist(BUILD, 2).grist(COBALT, 1).build(output);
-		gristCost(LITHIUM_DUST).grist(IODINE, 12).build(output);
-		gristCost(POLONIUM_PELLET).grist(URANIUM, 150).grist(COBALT, 106).grist(BUILD, 100).grist(QUARTZ, 36).grist(SULFUR, 30).grist(AMETHYST, 18).grist(MERCURY, 4).build(output);
-		sourceGristCost(PLUTONIUM_PELLET).source(POLONIUM_PELLET.asItem()).build(output);
-		sourceGristCost(REPROCESSED_FISSILE_FRAGMENT).multiplier(0.25F).source(PLUTONIUM_PELLET.asItem()).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_iron")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.IRON_INGOT).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_gold")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.GOLD_INGOT).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_osmium")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_osmium")).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_copper")).grist(QUARTZ, 1).multiplier(0.2F).source(Items.COPPER_INGOT).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_tin")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_tin")).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_lead")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_lead")).build(output);
+		sourceGristCost(lookup("mekanism", "crystal_uranium")).grist(QUARTZ, 1).multiplier(0.2F).source(lookup("mekanism", "ingot_uranium")).build(output);
+
+		// Materials
+
 		gristCost(SALT).grist(CHALK, 2).build(output);
 		sourceGristCost(MekanismBlocks.SALT_BLOCK).grist(BUILD, 4).multiplier(4).source(SALT.asItem()).build(output);
 		sourceGristCost(SAWDUST).grist(MERCURY, 1).source(Items.STICK).build(output);
+
 		gristCost(SUBSTRATE).grist(MERCURY, 2).grist(BUILD, 2).grist(COBALT, 1).build(output);
+		gristCost(HDPE_PELLET).grist(CHALK, 5).grist(MERCURY, 2).grist(BUILD, 2).grist(COBALT, 1).build(output);
+
+		gristCost(POLONIUM_PELLET).grist(URANIUM, 150).grist(COBALT, 106).grist(BUILD, 100).grist(QUARTZ, 36).grist(SULFUR, 30).grist(AMETHYST, 18).grist(MERCURY, 4).build(output);
+		sourceGristCost(PLUTONIUM_PELLET).source(POLONIUM_PELLET.asItem()).build(output);
+		sourceGristCost(REPROCESSED_FISSILE_FRAGMENT).multiplier(0.25F).source(PLUTONIUM_PELLET.asItem()).build(output);
+		gristCost(ANTIMATTER_PELLET).grist(URANIUM, 400).grist(ZILLIUM, 20).build(output);
+
+		gristCost(LITHIUM_DUST).grist(IODINE, 12).build(output);
 		gristCost(SULFUR_DUST).grist(SULFUR, 6).build(output);
 
 		// Buckets
