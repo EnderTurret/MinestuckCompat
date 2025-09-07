@@ -2,6 +2,7 @@ package net.enderturret.minestuckcompat;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
@@ -30,7 +31,7 @@ public final class MinestuckCompatConfig {
 				"This can be useful when building compatibility data packs.",
 				"",
 				"Unlike Minestuck's config option, this lists *all* items, not just those which are ingredients."
-				).define("dumpGristlessItems", false);
+				).define("dumpGristlessItems", !FMLEnvironment.production);
 
 		dumpUnhandledRecipeTypes = builder.comment(
 				"Whether or not to print a list of all recipe types that lack interpreters to the log.",
