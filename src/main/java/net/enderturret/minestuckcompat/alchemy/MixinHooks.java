@@ -18,8 +18,10 @@ import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
 import com.mraof.minestuck.item.crafting.MSRecipeTypes;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.GameMasterBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -56,50 +58,12 @@ public final class MixinHooks {
 	public static void checkItemsWithoutGristCost(RecipeManager recipeManager) {
 		if (!MinestuckCompatConfig.common().dumpGristlessItems.getAsBoolean()) return;
 
-		final Set<String> badVanillaItems = Set.of(
-				// Technical items
-				"air", "filled_map",
-				// Cheat/debug items
-				"command_block_minecart", "debug_stick", "spawner", "trial_spawner", "structure_void",
-				// Unobtainable items
-				"bedrock", "light", "knowledge_book", "petrified_oak_slab", "reinforced_deepslate", "end_portal_frame", "frogspawn", "budding_amethyst",
-				"vault",
-				// Not traditionally obtainable
-				"farmland", "dirt_path", "chorus_plant", "infested_chiseled_stone_bricks",
-				"infested_cracked_stone_bricks", "infested_deepslate", "infested_mossy_stone_bricks", "infested_stone", "infested_stone_bricks",
-				// Items that would be useless alchemized
-				"axolotl_bucket", "tadpole_bucket", "potion", "splash_potion", "lingering_potion", "suspicious_stew", "tipped_arrow", "written_book"
-				);
-
-		final Set<String> badMekanismItems = Set.of(
-				"bounding_block", "creative_bin", "creative_chemical_tank", "creative_energy_cube", "creative_fluid_tank"
-				);
-
-		final Set<String> badAe2Items = Set.of(
-				"debug_card", "debug_cube_gen", "debug_energy_gen", "debug_eraser", "debug_item_gen", "debug_meteorite_placer", "debug_phantom_node",
-				"debug_replicator_card", "cable_bus", "matrix_frame", "paint", "wrapped_generic_stack", "missing_content",
-				"creative_energy_cell", "creative_storage_cell"
-				);
-
-		final Set<String> badCreateItems = Set.of(
-				// Technical items
-				"andesite_encased_cogwheel", "andesite_encased_large_cogwheel", "andesite_encased_shaft",
-				"brass_encased_cogwheel", "brass_encased_large_cogwheel", "brass_encased_shaft",
-				"chest_minecart_contraption", "furnace_minecart_contraption", "minecart_contraption",
-				"elevator_contact", "copper_backtank_placeable", "netherite_backtank_placeable", "shopping_list", "schematic",
-				// Cheat items
-				"creative_blaze_cake", "creative_crate", "creative_fluid_tank", "creative_motor", "handheld_worldshaper",
-				// Unobtainable items
-				"chromatic_compound", "refined_radiance", "refined_radiance_casing", "shadow_steel", "shadow_steel_casing",
-				// Obtainable technical items
-				"cardboard_package_10x12", "cardboard_package_10x8", "cardboard_package_12x10", "cardboard_package_12x12",
-				"rare_creeper_package", "rare_darcy_package", "rare_evan_package", "rare_jinx_package", "rare_kryppers_package",
-				"rare_simi_package", "rare_starlotte_package", "rare_thunder_package", "rare_up_package", "rare_vector_package",
-				// We already provide grist costs for these based on their parent metals.
-				"crushed_raw_aluminum", "crushed_raw_nickel", "crushed_raw_platinum", "crushed_raw_quicksilver", "crushed_raw_silver"
-				);
+		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
+		final TagKey<Item> unobtainableItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "unobtainable_items"));
 
 		final var sherds = BuiltInRegistries.ITEM.getTag(ItemTags.DECORATED_POT_SHERDS).orElseThrow();
+		final var technicalItems = BuiltInRegistries.ITEM.getTag(technicalItemsTag).orElseThrow();
+		final var unobtainableItems = BuiltInRegistries.ITEM.getTag(unobtainableItemsTag).orElseThrow();
 
 		final List<ResourceLocation> items = new ArrayList<>();
 		final List<ResourceLocation> collectibles = new ArrayList<>();
@@ -110,11 +74,8 @@ public final class MixinHooks {
 			final ResourceLocation id = item.builtInRegistryHolder().getKey().location();
 
 			if ("minestuck".equals(id.getNamespace())) continue;
-			if ("minecraft".equals(id.getNamespace()) && badVanillaItems.contains(id.getPath())) continue;
-			if ("mekanism".equals(id.getNamespace()) && badMekanismItems.contains(id.getPath())) continue;
-			if ("ae2".equals(id.getNamespace()) && badAe2Items.contains(id.getPath())) continue;
-			if ("create".equals(id.getNamespace()) && badCreateItems.contains(id.getPath())) continue;
-			if ("guideme".equals(id.getNamespace())) continue;
+			if (technicalItems.contains(item.builtInRegistryHolder())) continue;
+			if (unobtainableItems.contains(item.builtInRegistryHolder())) continue;
 
 			if (!hasGristCost(item.getDefaultInstance(), recipeManager))
 				(item instanceof SmithingTemplateItem || sherds.contains(item.builtInRegistryHolder()) ? collectibles : items)

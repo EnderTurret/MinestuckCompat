@@ -1,0 +1,48 @@
+{
+  "values": [
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+
+    "minecraft:bedrock",
+    "minecraft:light",
+    "minecraft:petrified_oak_slab",
+    "minecraft:reinforced_deepslate",
+    "minecraft:end_portal_frame",
+    "minecraft:budding_amethyst",
+    "minecraft:vault",
+
+    "minecraft:farmland",
+    "minecraft:dirt_path",
+    "minecraft:chorus_plant",
+    "minecraft:infested_chiseled_stone_bricks",
+    "minecraft:infested_cracked_stone_bricks",
+    "minecraft:infested_deepslate",
+    "minecraft:infested_mossy_stone_bricks",
+    "minecraft:infested_stone",
+    "minecraft:infested_stone_bricks",
+
+    { "id": "mekanism:creative_bin", "required": false },
+    { "id": "mekanism:creative_chemical_tank", "required": false },
+    { "id": "mekanism:creative_energy_cube", "required": false },
+    { "id": "mekanism:creative_fluid_tank", "required": false },
+
+    { "id": "ae2:creative_energy_cell", "required": false },
+    { "id": "ae2:creative_storage_cell", "required": false },
+
+    { "id": "create:creative_blaze_cake", "required": false },
+    { "id": "create:creative_crate", "required": false },
+    { "id": "create:creative_fluid_tank", "required": false },
+    { "id": "create:creative_motor", "required": false },
+    { "id": "create:handheld_worldshaper", "required": false },
+    { "id": "create:chromatic_compound", "required": false },
+    { "id": "create:refined_radiance", "required": false },
+    { "id": "create:refined_radiance_casing", "required": false },
+    { "id": "create:shadow_steel", "required": false },
+    { "id": "create:shadow_steel_casing", "required": false },
+
+    { "id": "supplementaries:raked_gravel", "required": false },
+    { "id": "supplementaries:suspicious_gravel_bricks", "required": false },
+
+    { "id": "farmersdelight:rich_soil_farmland", "required": false }
+  ]
+}
