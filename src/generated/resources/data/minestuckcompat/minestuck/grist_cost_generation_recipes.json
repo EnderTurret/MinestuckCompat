@@ -278,5 +278,35 @@
       "type": "recipe_type",
       "recipe_type": "farmersdelight:cutting"
     }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "buildersaddition2"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuck:default"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "buildersaddition2:carpenter"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "dankstorage"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuck:default"
+    },
+    "source": {
+      "type": "serializer",
+      "serializer": "dankstorage:upgrade"
+    }
   }
 ]

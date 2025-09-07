@@ -10,6 +10,10 @@ Minestuck Compat has specific support for:
 * [Mekanism](https://modrinth.com/mod/mekanism)
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
 
+Minestuck Compat also has partial support for:
+* [Builders Crafts & Additions 2](https://modrinth.com/mod/buildersaddition)
+* [Dank Storage](https://www.curseforge.com/minecraft/mc-mods/dank-storage)
+
 Additionally, Minestuck Compat fills out some missing grist costs and combinations of both vanilla Minecraft as well as Minestuck itself. In particular, Minestuck Compat adds:
 * Grist costs for all vanilla content that lacks them
 * Combination recipes for pottery sherds

@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus.Internal;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.JsonOps;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.DefaultInterpreter;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
@@ -73,6 +78,9 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 	@Override
 	public JsonElement modify(JsonElement root) {
 		final JsonArray rootA = root.getAsJsonArray();
+		rootA.add(rawType("buildersaddition2:carpenter", DefaultInterpreter.INSTANCE));
+		rootA.add(rawSerializer("dankstorage:upgrade", DefaultInterpreter.INSTANCE));
+
 		for (JsonElement child : rootA)
 			if (child instanceof JsonObject obj) {
 				final JsonObject source = obj.getAsJsonObject("source");
@@ -81,6 +89,37 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 			}
 
 		return root;
+	}
+
+	private static JsonObject rawSerializer(String id, RecipeInterpreter interpreter) {
+		final JsonObject ret = new JsonObject();
+
+		ret.add("interpreter", encodeInterpreter(interpreter));
+
+		final JsonObject source = new JsonObject();
+		source.addProperty("type", "serializer");
+		source.addProperty("serializer", id);
+		ret.add("source", source);
+
+		return ret;
+	}
+
+	private static JsonObject rawType(String id, RecipeInterpreter interpreter) {
+		final JsonObject ret = new JsonObject();
+
+		ret.add("interpreter", encodeInterpreter(interpreter));
+
+		final JsonObject source = new JsonObject();
+		source.addProperty("type", "recipe_type");
+		source.addProperty("recipe_type", id);
+		ret.add("source", source);
+
+		return ret;
+	}
+
+	private static JsonElement encodeInterpreter(RecipeInterpreter interpreter) {
+		final DataResult<JsonElement> interp = RecipeInterpreter.DISPATCH_CODEC.encodeStart(JsonOps.INSTANCE, interpreter);
+		return interp.getOrThrow();
 	}
 
 	private static void addModLoadedCondition(JsonObject obj, String modId) {
