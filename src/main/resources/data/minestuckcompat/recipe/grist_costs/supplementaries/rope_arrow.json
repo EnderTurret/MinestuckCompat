@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:chalk": 4
+  },
+  "ingredient": {
+    "item": "supplementaries:rope_arrow"
+  },
+  "sources": [
+    "minecraft:arrow"
+  ]
+}

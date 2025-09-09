@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "framedblocks"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "framedblocks:framed_layered_cube"
+  },
+  "multiplier": 8,
+  "sources": [
+    "framedblocks:framed_cube"
+  ]
+}

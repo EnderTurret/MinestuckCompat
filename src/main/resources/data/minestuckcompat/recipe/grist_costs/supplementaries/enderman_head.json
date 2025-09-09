@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:tar": 35,
+    "minestuck:uranium": 10
+  },
+  "ingredient": {
+    "item": "supplementaries:enderman_head"
+  }
+}

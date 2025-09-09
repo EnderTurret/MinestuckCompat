@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:ruby": 12,
+    "minestuck:uranium": 12
+  },
+  "ingredient": {
+    "item": "mekanismgenerators:fusion_fuel_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "expandedstorage"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 1
+  },
+  "ingredient": {
+    "item": "expandedstorage:metallic_obsidian_chest"
+  },
+  "sources": [
+    "expandedstorage:obsidian_chest"
+  ],
+  "__comment": "This is a storage mutator recipe."
+}

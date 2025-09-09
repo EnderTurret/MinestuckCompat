@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "framedblocks"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "framedblocks:framed_hopper"
+  },
+  "sources": [
+    "framedblocks:framed_cube",
+    "#c:chests/wooden"
+  ]
+}

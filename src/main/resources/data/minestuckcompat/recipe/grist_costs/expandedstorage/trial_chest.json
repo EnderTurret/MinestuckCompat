@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "expandedstorage"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 1
+  },
+  "ingredient": {
+    "item": "expandedstorage:trial_chest"
+  },
+  "sources": [
+    "expandedstorage:copper_chest"
+  ],
+  "__comment": "This is a storage mutator recipe."
+}

@@ -13,6 +13,7 @@ license="LGPL v2.1"
     * Mekanism
     * Minestuck (its trees)
     * Rechiseled
+    * Supplementaries
     * Vanilla (trims, sherds, 1.21.1 content, among other things)
 
     Also includes recipe interpreters (for use with the grist cost generator) for:
@@ -23,6 +24,11 @@ license="LGPL v2.1"
     Additionally, it also includes partial support for:
     * Builders Crafts & Additions 2
     * Dank Storage
+    * Expanded Storage
+    * FramedBlocks
+    * GraveStone Mod
+    * Hostile Neural Networks
+    * Lootr
     '''
     version="${file.jarVersion}"
     authors="EnderTurret"

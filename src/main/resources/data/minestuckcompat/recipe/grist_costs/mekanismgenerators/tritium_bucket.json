@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:uranium": 12
+  },
+  "ingredient": {
+    "item": "mekanismgenerators:tritium_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

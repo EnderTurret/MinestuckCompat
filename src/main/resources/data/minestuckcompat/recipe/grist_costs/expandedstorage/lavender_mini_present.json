@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "expandedstorage"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 1
+  },
+  "ingredient": {
+    "item": "expandedstorage:lavender_mini_present"
+  },
+  "sources": [
+    "expandedstorage:green_mini_present"
+  ],
+  "__comment": "This is a storage mutator recipe."
+}

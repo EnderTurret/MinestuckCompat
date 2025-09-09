@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "hostilenetworks"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 32,
+    "minestuck:tar": 4
+  },
+  "ingredient": {
+    "item": "hostilenetworks:end_prediction"
+  }
+}

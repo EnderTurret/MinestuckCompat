@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {},
+  "ingredient": {
+    "item": "supplementaries:present_gray"
+  },
+  "sources": [
+    "supplementaries:present",
+    "#c:dyes/gray"
+  ]
+}

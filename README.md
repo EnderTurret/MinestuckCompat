@@ -9,10 +9,16 @@ Minestuck Compat has specific support for:
 * [Farmer's Delight](https://modrinth.com/mod/farmers-delight)
 * [Mekanism](https://modrinth.com/mod/mekanism)
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
+* [Supplementaries](https://modrinth.com/mod/supplementaries)
 
 Minestuck Compat also has partial support for:
 * [Builders Crafts & Additions 2](https://modrinth.com/mod/buildersaddition)
 * [Dank Storage](https://www.curseforge.com/minecraft/mc-mods/dank-storage)
+* [Expanded Storage](https://modrinth.com/mod/expanded-storage)
+* [FramedBlocks](https://modrinth.com/mod/framedblocks)
+* [GraveStone Mod](https://modrinth.com/mod/gravestone-mod)
+* [Hostile Neural Networks](https://www.curseforge.com/minecraft/mc-mods/hostile-neural-networks)
+* [Lootr](https://modrinth.com/mod/lootr)
 
 Additionally, Minestuck Compat fills out some missing grist costs and combinations of both vanilla Minecraft as well as Minestuck itself. In particular, Minestuck Compat adds:
 * Grist costs for all vanilla content that lacks them

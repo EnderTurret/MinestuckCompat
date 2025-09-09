@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 9
+  },
+  "ingredient": {
+    "item": "supplementaries:urn"
+  },
+  "multiplier": 3,
+  "sources": [
+    "supplementaries:ash"
+  ]
+}
