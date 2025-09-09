@@ -25,6 +25,7 @@
     { "id": "mekanism:creative_chemical_tank", "required": false },
     { "id": "mekanism:creative_energy_cube", "required": false },
     { "id": "mekanism:creative_fluid_tank", "required": false },
+    { "id": "mekanismgenerators:bioethanol_bucket", "required": false },
 
     { "id": "ae2:creative_energy_cell", "required": false },
     { "id": "ae2:creative_storage_cell", "required": false },
@@ -42,7 +43,11 @@
 
     { "id": "supplementaries:raked_gravel", "required": false },
     { "id": "supplementaries:suspicious_gravel_bricks", "required": false },
+    { "id": "supplementaries:sconce_green", "required": false },
 
-    { "id": "farmersdelight:rich_soil_farmland", "required": false }
+    { "id": "farmersdelight:rich_soil_farmland", "required": false },
+
+    { "id": "bibliocraft:soul_fancy_gold_lantern", "required": false },
+    { "id": "bibliocraft:soul_fancy_iron_lantern", "required": false }
   ]
 }

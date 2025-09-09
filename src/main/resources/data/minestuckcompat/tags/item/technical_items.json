@@ -72,7 +72,11 @@
     { "id": "create:crushed_raw_quicksilver", "required": false },
     { "id": "create:crushed_raw_silver", "required": false },
 
+    { "id": "amendments:dye_bottle", "required": false },
+    { "id": "bibliocraft:typewriter_page", "required": false },
     { "id": "bibliocraft:written_big_book", "required": false },
+    { "id": "buildinggadgets2:redprint", "required": false },
+    { "id": "buildinggadgets2:template", "required": false },
     { "id": "lootr:lootr_barrel", "required": false },
     { "id": "lootr:lootr_chest", "required": false },
     { "id": "lootr:lootr_inventory", "required": false },
