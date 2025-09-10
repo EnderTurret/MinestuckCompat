@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedGristCost;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
 import com.mraof.minestuck.item.crafting.MSRecipeTypes;
@@ -67,6 +69,7 @@ public final class MixinHooks {
 
 		final List<ResourceLocation> items = new ArrayList<>();
 		final List<ResourceLocation> collectibles = new ArrayList<>();
+		final Map<ResourceLocation, List<ResourceLocation>> multiSources = new TreeMap<>(ResourceLocation::compareNamespaced);
 
 		for (Item item : BuiltInRegistries.ITEM) {
 			if (item instanceof GameMasterBlockItem || item instanceof SpawnEggItem) continue;
@@ -77,9 +80,17 @@ public final class MixinHooks {
 			if (technicalItems.contains(item.builtInRegistryHolder())) continue;
 			if (unobtainableItems.contains(item.builtInRegistryHolder())) continue;
 
-			if (!hasGristCost(item.getDefaultInstance(), recipeManager))
+			final List<RecipeHolder<GristCostRecipe>> recipes = hasGristCost(item.getDefaultInstance(), recipeManager);
+			if (recipes.isEmpty())
 				(item instanceof SmithingTemplateItem || sherds.contains(item.builtInRegistryHolder()) ? collectibles : items)
 				.add(id);
+
+			if (recipes.size() > 1) {
+				// Remove the generated recipe, if present.
+				recipes.removeIf(holder -> holder.value() instanceof RecipeGeneratedGristCost);
+				if (recipes.size() > 1)
+					multiSources.put(id, recipes.stream().map(RecipeHolder::id).sorted(ResourceLocation::compareNamespaced).toList());
+			}
 		}
 
 		if (!items.isEmpty()) {
@@ -91,6 +102,21 @@ public final class MixinHooks {
 			collectibles.sort(ResourceLocation::compareNamespaced);
 			MinestuckCompat.LOGGER.info("Collectibles without grist costs:\n{}", collectibles.stream().map(ResourceLocation::toString).collect(Collectors.joining("\n")));
 		}
+
+		if (!multiSources.isEmpty())
+			MinestuckCompat.LOGGER.info("Items with multiple non-generated grist costs:\n{}", multiSources.entrySet().stream()
+					.map(MixinHooks::formatRecipeList)
+					.collect(Collectors.joining("\n")));
+	}
+
+	private static String formatRecipeList(Map.Entry<ResourceLocation, List<ResourceLocation>> entry) {
+		final String id = entry.getKey().toString();
+		final StringBuilder ret = new StringBuilder(id);
+
+		for (ResourceLocation rl : entry.getValue())
+			ret.append('\n').append("  ==> ").append(rl.toString());
+
+		return ret.toString();
 	}
 
 	public static void checkRecipesWithoutInterpreters(RecipeManager recipeManager, List<SourceEntry> sources) {
@@ -172,14 +198,15 @@ public final class MixinHooks {
 				.collect(Collectors.joining("\n")));
 	}
 
-	private static boolean hasGristCost(ItemStack item, RecipeManager recipeManager) {
+	private static List<RecipeHolder<GristCostRecipe>> hasGristCost(ItemStack item, RecipeManager recipeManager) {
 		final List<RecipeHolder<GristCostRecipe>> list = recipeManager.getAllRecipesFor(GristCostRecipe.RECIPE_TYPE.get());
 		final SingleRecipeInput input = new SingleRecipeInput(item);
 
+		final List<RecipeHolder<GristCostRecipe>> ret = new ArrayList<>(1);
 		for (RecipeHolder<GristCostRecipe> elem : list)
 			if (elem.value().matches(input, null))
-				return true;
+				ret.add(elem);
 
-		return false;
+		return ret;
 	}
 }
