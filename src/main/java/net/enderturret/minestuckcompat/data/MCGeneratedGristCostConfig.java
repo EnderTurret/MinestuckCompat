@@ -123,15 +123,25 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 	}
 
 	private static void addModLoadedCondition(JsonObject obj, String modId) {
+		final JsonArray neoforgeConditions = new JsonArray();
+
+		{
+			final JsonObject condition = new JsonObject();
+			condition.addProperty("type", "neoforge:mod_loaded");
+			condition.addProperty("modid", modId);
+			neoforgeConditions.add(condition);
+		}
+
+		{
+			final JsonObject condition = new JsonObject();
+			condition.addProperty("type", "minestuckcompat:config");
+			condition.addProperty("modid", "mekanismtools".equals(modId) ? "mekanism" : modId);
+			neoforgeConditions.add(condition);
+		}
+
+		// Make sure the conditions are the first element, for readability.
 		final JsonObject interpreter = obj.getAsJsonObject("interpreter");
 		final JsonObject source = obj.getAsJsonObject("source");
-
-		final JsonArray neoforgeConditions = new JsonArray();
-		final JsonObject condition = new JsonObject();
-		condition.addProperty("type", "neoforge:mod_loaded");
-		condition.addProperty("modid", modId);
-		neoforgeConditions.add(condition);
-
 		obj.remove("interpreter");
 		obj.remove("source");
 		obj.add("neoforge:conditions", neoforgeConditions);

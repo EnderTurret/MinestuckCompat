@@ -91,6 +91,8 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "minecraft", "Minecraft");
 
 		defineEnabledRecipes(builder, "appmek", "Applied Mekanistics");
+		defineEnabledRecipes(builder, "buildersaddition2", "Builders Crafts & Additions 2");
+		defineEnabledRecipes(builder, "dankstorage", "Dank Storage");
 		defineEnabledRecipes(builder, "expandedstorage", "Expanded Storage");
 		defineEnabledRecipes(builder, "framedblocks", "FramedBlocks");
 		defineEnabledRecipes(builder, "gravestone", "GraveStone Mod");
