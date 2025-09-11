@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/red_alloy"
+      }
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:garnet": 32,
+    "minestuck:rust": 18
+  },
+  "ingredient": {
+    "tag": "c:ingots/red_alloy"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/electrum"
+      }
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:gold": 6,
+    "minestuck:mercury": 6,
+    "minestuck:rust": 10
+  },
+  "ingredient": {
+    "tag": "c:ingots/electrum"
+  }
+}

@@ -18,18 +18,22 @@ public final class RenamingRecipeOutput implements RecipeOutput {
 
 	private final RecipeOutput parent;
 	private final String modId;
+	@Nullable
 	private final String prefix;
 
-	public RenamingRecipeOutput(RecipeOutput parent, String modId, String prefix) {
+	public RenamingRecipeOutput(RecipeOutput parent, String modId, @Nullable String prefix) {
 		this.parent = parent;
 		this.modId = modId;
 		this.prefix = prefix;
 	}
 
 	private ResourceLocation rename(ResourceLocation input) {
-		final String path = input.getPath();
-		return ResourceLocation.fromNamespaceAndPath(modId,
-				path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/"));
+		String path = input.getPath();
+
+		if (prefix != null)
+			path = path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/");
+
+		return ResourceLocation.fromNamespaceAndPath(modId, path);
 	}
 
 	@Override

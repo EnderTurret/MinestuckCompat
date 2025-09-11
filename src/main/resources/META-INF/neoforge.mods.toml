@@ -54,7 +54,7 @@ license="LGPL v2.1"
     modId="minestuck"
     type="required"
     versionRange="[1.21.1-1.13.1.0,)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
 
 [[dependencies.minestuckcompat]]
