@@ -75,6 +75,10 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 		combination(trapdoor).or().input(door).input(slab).build(output);
 	}
 
+	protected static TagKey<Item> tag(String namespace, String path) {
+		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, path));
+	}
+
 	protected static TagKey<Item> c(String path) {
 		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
 	}

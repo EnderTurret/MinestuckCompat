@@ -13,6 +13,7 @@ import com.mraof.minestuck.api.alchemy.GristTypes;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
@@ -58,6 +59,9 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		gristCost(c("raw_materials/silver")).grist(MERCURY, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/silver")))));
 		gristCost(c("raw_materials/tin")).grist(CAULK, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/tin")))));
 		gristCost(c("raw_materials/zinc")).grist(RUST, 12).grist(SHALE, 4).build(output2.withConditions(not(tagEmpty(c("raw_materials/zinc")))));
+
+		// Fix sand also including suspicious sand.
+		gristCost(tag(MinestuckCompat.MOD_ID, "unsuspicious_sand")).grist(BUILD, 1).build(output2, ResourceLocation.fromNamespaceAndPath("minestuck", "sand_tag"));
 
 		//
 		// Combination Recipes

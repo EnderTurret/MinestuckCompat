@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:sand"
+  ],
+  "remove": [
+    "minecraft:suspicious_sand"
+  ]
+}

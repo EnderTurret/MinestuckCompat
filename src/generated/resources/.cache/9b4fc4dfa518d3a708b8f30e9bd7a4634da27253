@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-10T21:05:06.190936142	Minestuck Recipes
+// 1.21.1	2025-09-10T21:15:57.167549568	Minestuck Recipes
 f961184023e0bde56f06670309c5f50052eb3af3 data/minestuck/recipe/grist_costs/ingots/aluminium_tag.json
 6ed34ab995c03fd6b9dd71538deef7c88c9a97d5 data/minestuck/recipe/grist_costs/ingots/aluminum_tag.json
 220202e44cfd129fdbbbd29ad9b03fd6cd6235b7 data/minestuck/recipe/grist_costs/ingots/ardite_tag.json
@@ -22,6 +22,7 @@ c6d92c0f1221e44c713d31cc837f7747c98b01d7 data/minestuck/recipe/grist_costs/raw_m
 546847be9b55f3782e14b986357cec3cadbbe5bf data/minestuck/recipe/grist_costs/raw_materials/silver_tag.json
 e8994dd5f5eba0b1abdbf06b17884421829fbc8f data/minestuck/recipe/grist_costs/raw_materials/tin_tag.json
 025a9d690aec7fa3e4e78b9b1b89ba6bab33f69e data/minestuck/recipe/grist_costs/raw_materials/zinc_tag.json
+3c06393414e957e0bb73dbc540dc94e8de7269ba data/minestuck/recipe/grist_costs/sand_tag.json
 346181ce39f5b992ef8508b8a9d3ecf118223279 data/minestuckcompat/recipe/combinations/minestuck/blood_aspect_fence_gate.json
 c45d9205d5dbe21e13ccc11688f929ad61785f8c data/minestuckcompat/recipe/combinations/minestuck/blood_aspect_sapling.json
 7386d290a9c16c461619fce4aec1a19679de90b3 data/minestuckcompat/recipe/combinations/minestuck/blood_aspect_sapling_from_stick.json
