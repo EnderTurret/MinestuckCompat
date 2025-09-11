@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
   "type": "minestuck:grist_cost",
   "grist_cost": {
     "minestuck:build": 120,

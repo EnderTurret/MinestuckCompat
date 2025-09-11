@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "hostilenetworks"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "hostilenetworks"
     }
   ],
   "type": "minestuck:grist_cost",

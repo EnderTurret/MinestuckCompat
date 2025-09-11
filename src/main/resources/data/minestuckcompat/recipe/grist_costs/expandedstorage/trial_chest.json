@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "expandedstorage"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "expandedstorage"
     }
   ],
   "type": "minestuck:source_grist_cost",

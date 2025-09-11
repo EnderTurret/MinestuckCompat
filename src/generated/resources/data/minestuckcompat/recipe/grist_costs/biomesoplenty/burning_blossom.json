@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "biomesoplenty"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
     }
   ],
   "type": "minestuck:grist_cost",

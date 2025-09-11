@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "ae2"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "ae2"
     }
   ],
   "type": "minestuck:grist_cost",

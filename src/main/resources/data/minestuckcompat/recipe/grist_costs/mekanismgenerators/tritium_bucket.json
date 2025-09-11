@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "mekanismgenerators"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "mekanism"
     }
   ],
   "type": "minestuck:source_grist_cost",

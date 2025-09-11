@@ -3,6 +3,10 @@
     {
       "type": "neoforge:mod_loaded",
       "modid": "lootr"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "lootr"
     }
   ],
   "type": "minestuck:source_grist_cost",
