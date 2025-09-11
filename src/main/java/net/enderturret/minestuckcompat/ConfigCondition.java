@@ -6,11 +6,15 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.neoforged.neoforge.common.conditions.ICondition;
 
-public record ConfigCondition(String modId) implements ICondition {
+public record ConfigCondition(String option, String modId) implements ICondition {
 
 	public static final MapCodec<ConfigCondition> CODEC = RecordCodecBuilder.mapCodec(builder -> builder.group(
-			Codec.STRING.fieldOf("modid").forGetter(ConfigCondition::modId)
+			Codec.STRING.optionalFieldOf("option", "").forGetter(ConfigCondition::option),
+			Codec.STRING.optionalFieldOf("modid", "").forGetter(ConfigCondition::modId)
 			).apply(builder, ConfigCondition::new));
+
+	public ConfigCondition {}
+	public ConfigCondition(String modId) { this("", modId); }
 
 	@Override
 	public MapCodec<? extends ICondition> codec() {
@@ -19,7 +23,14 @@ public record ConfigCondition(String modId) implements ICondition {
 
 	@Override
 	public boolean test(IContext context) {
-		return MinestuckCompatConfig.common().isModEnabled(modId);
+		return switch (option) {
+			case "" -> MinestuckCompatConfig.common().isModEnabled(modId);
+			case "fixminestuck" -> MinestuckCompatConfig.common().fixMinestuck.getAsBoolean();
+			default -> {
+				MinestuckCompat.LOGGER.warn("Unknown config option: {}", option);
+				yield false;
+			}
+		};
 	}
 
 	@Override
