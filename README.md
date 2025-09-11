@@ -12,6 +12,7 @@ Minestuck Compat has specific support for:
 * [Supplementaries](https://modrinth.com/mod/supplementaries)
 
 Minestuck Compat also has partial support for:
+* [Applied Mekanistics](https://modrinth.com/mod/applied-mekanistics)
 * [Builders Crafts & Additions 2](https://modrinth.com/mod/buildersaddition)
 * [Dank Storage](https://www.curseforge.com/minecraft/mc-mods/dank-storage)
 * [Expanded Storage](https://modrinth.com/mod/expanded-storage)
