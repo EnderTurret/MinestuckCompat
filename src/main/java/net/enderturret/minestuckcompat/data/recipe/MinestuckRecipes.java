@@ -35,6 +35,17 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		// Try to fix empty tag grist costs.
 		//
 
+		sourceGristCost(c("ores/aluminium")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminium")))));
+		sourceGristCost(c("ores/aluminum")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminum")))));
+		sourceGristCost(c("ores/ardite")).grist(BUILD, 4).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ores/ardite")))));
+		sourceGristCost(c("ores/cobalt")).grist(BUILD, 4).source(c("raw_materials/cobalt")).build(output2.withConditions(not(tagEmpty(c("ores/cobalt")))));
+		sourceGristCost(c("ores/galena")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/galena")))));
+		sourceGristCost(c("ores/lead")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/lead")))));
+		sourceGristCost(c("ores/nickel")).grist(BUILD, 4).source(c("raw_materials/nickel")).build(output2.withConditions(not(tagEmpty(c("ores/nickel")))));
+		sourceGristCost(c("ores/silver")).grist(BUILD, 4).source(c("raw_materials/silver")).build(output2.withConditions(not(tagEmpty(c("ores/silver")))));
+		sourceGristCost(c("ores/tin")).grist(BUILD, 4).source(c("raw_materials/tin")).build(output2.withConditions(not(tagEmpty(c("ores/tin")))));
+		sourceGristCost(c("ores/zinc")).grist(BUILD, 4).source(c("raw_materials/zinc")).build(output2.withConditions(not(tagEmpty(c("ores/zinc")))));
+
 		sourceGristCost(c("ingots/aluminium")).source(c("ingots/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminium")))));
 		sourceGristCost(c("ingots/aluminum")).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminum")))));
 		sourceGristCost(c("ingots/ardite")).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ingots/ardite")))));

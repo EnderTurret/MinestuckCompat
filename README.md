@@ -28,6 +28,7 @@ Additionally, Minestuck Compat fills out some missing grist costs and combinatio
 * Combination recipes for banner patterns
 * Combination recipes for a few other odds and ends (e.g., sniffer egg, wind charge)
 * Combination recipes for Minestuck's wood sets (saplings, stairs, fence gates, trapdoors)
+* Corrected grist costs for suspicious sand and barriers (empty item tags)
 
 ## Debugging Features
 

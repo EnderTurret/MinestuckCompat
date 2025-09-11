@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-10T21:15:57.167549568	Minestuck Recipes
+// 1.21.1	2025-09-10T21:26:28.952562547	Minestuck Recipes
 f961184023e0bde56f06670309c5f50052eb3af3 data/minestuck/recipe/grist_costs/ingots/aluminium_tag.json
 6ed34ab995c03fd6b9dd71538deef7c88c9a97d5 data/minestuck/recipe/grist_costs/ingots/aluminum_tag.json
 220202e44cfd129fdbbbd29ad9b03fd6cd6235b7 data/minestuck/recipe/grist_costs/ingots/ardite_tag.json
@@ -13,6 +13,16 @@ effab735ae3fce3fb943058fa3f70d453fc8ce52 data/minestuck/recipe/grist_costs/ingot
 5df566cd5ac2492fa1cc973aa0a25786a6a1ad5b data/minestuck/recipe/grist_costs/ingots/tin_tag.json
 83628d5cf8fea2d3f9145cff161f0794084114d8 data/minestuck/recipe/grist_costs/ingots/uranium_tag.json
 88eddc7d1e424dfe9235d8522ca8aaffaacb329f data/minestuck/recipe/grist_costs/ingots/zinc_tag.json
+3de6c5f5f552928e8f71b99426688e44fdc40a00 data/minestuck/recipe/grist_costs/ores/aluminium_tag.json
+177ddf4fe4a461025b8ab0f911f0c896834caf2e data/minestuck/recipe/grist_costs/ores/aluminum_tag.json
+723e19ebe9ba9f0e5cfd3fe59cecf55d265f84a9 data/minestuck/recipe/grist_costs/ores/ardite_tag.json
+7b372af2b6d27e7216821724ecfdfc08067d7a0d data/minestuck/recipe/grist_costs/ores/cobalt_tag.json
+aac42faeac845909368ab41648da3731932d8140 data/minestuck/recipe/grist_costs/ores/galena_tag.json
+a1505b80ccb30b77d45335afa06f1365e89fb429 data/minestuck/recipe/grist_costs/ores/lead_tag.json
+b952fde0955e23aa57f79e248edbfe9a0c940c4f data/minestuck/recipe/grist_costs/ores/nickel_tag.json
+2e0433a5a8bbf203cd17b11eaba965b1cc1871ed data/minestuck/recipe/grist_costs/ores/silver_tag.json
+4308fd0cacee8df1c5c99142dcd361d6f932fe01 data/minestuck/recipe/grist_costs/ores/tin_tag.json
+8eac18345efc24b5323d44d4dcb1c084f06811d4 data/minestuck/recipe/grist_costs/ores/zinc_tag.json
 f162ae63517742b3aecfc9bcfc32bf0b768796fd data/minestuck/recipe/grist_costs/raw_materials/aluminium_tag.json
 d8643e41b3b8bb63b672ee356b786d758ae6c59a data/minestuck/recipe/grist_costs/raw_materials/aluminum_tag.json
 35dc076ccac0e958dbb78551b5bc89123416c3b4 data/minestuck/recipe/grist_costs/raw_materials/ardite_tag.json
