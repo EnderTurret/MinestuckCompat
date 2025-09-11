@@ -16,6 +16,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
+import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
@@ -30,7 +31,7 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "create")
-				.withConditions(modLoaded("create"));
+				.withConditions(modLoaded("create"), new ConfigCondition("create"));
 
 		// Toolboxes, Valve Handles
 

@@ -17,6 +17,7 @@ import net.minecraft.world.item.Items;
 
 import net.neoforged.neoforge.common.Tags;
 
+import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
@@ -33,7 +34,7 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "mekanism")
-				.withConditions(modLoaded("mekanism"));
+				.withConditions(modLoaded("mekanism"), new ConfigCondition("mekanism"));
 
 		// Ores
 

@@ -20,6 +20,7 @@ import net.minecraft.world.item.Items;
 
 import net.neoforged.neoforge.common.Tags;
 
+import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
@@ -34,7 +35,7 @@ public final class FarmersDelightRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "farmersdelight")
-				.withConditions(modLoaded("farmersdelight"));
+				.withConditions(modLoaded("farmersdelight"), new ConfigCondition("farmersdelight"));
 
 		gristCost(STRAW.get()).grist(BUILD, 1).build(output);
 		gristCost(TREE_BARK.get()).grist(BUILD, 1).build(output);

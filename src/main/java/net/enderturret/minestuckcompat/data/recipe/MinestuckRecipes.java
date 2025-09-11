@@ -15,6 +15,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 
+import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
 import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
@@ -28,8 +29,8 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
-		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck");
-		final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null);
+		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck").withConditions(new ConfigCondition("minestuck"));
+		final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null).withConditions(new ConfigCondition("minestuck"));
 
 		//
 		// Try to fix empty tag grist costs.

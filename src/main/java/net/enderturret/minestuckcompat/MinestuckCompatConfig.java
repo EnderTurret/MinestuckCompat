@@ -1,5 +1,8 @@
 package net.enderturret.minestuckcompat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -23,8 +26,10 @@ public final class MinestuckCompatConfig {
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
 	public final BooleanValue debugDefaultInterpreterRecipeEligibility;
 
+	private final Map<String, BooleanValue> enabledRecipes = new HashMap<>();
+
 	private MinestuckCompatConfig(ModConfigSpec.Builder builder) {
-		builder.push("grist");
+		builder.comment("Settings related to grist costs.").push("grist");
 
 		dumpGristlessItems = builder.comment(
 				"Whether or not to print a list of all items that lack grist costs to the log.",
@@ -62,7 +67,41 @@ public final class MinestuckCompatConfig {
 				"a one-to-one clone of Minestuck's default interpreter (besides allowing an added cost)."
 				).define("debugDefaultInterpreterRecipeEligibility", false);
 
-		builder.pop();
+		builder.comment("Settings for turning on/off grist cost integration for supported mods.").push("integration");
+
+		defineEnabledRecipes(builder, "ae2", "Applied Energistics 2");
+		defineEnabledRecipes(builder, "biomesoplenty", "Biomes O' Plenty");
+		defineEnabledRecipes(builder, "create", "Create");
+		defineEnabledRecipes(builder, "farmersdelight", "Farmer's Delight");
+		defineEnabledRecipes(builder, "mekanism", "Mekanism");
+		defineEnabledRecipes(builder, "minestuck", "Minestuck");
+		defineEnabledRecipes(builder, "minecraft", "Minecraft");
+
+		defineEnabledRecipes(builder, "appmek", "Applied Mekanistics");
+		defineEnabledRecipes(builder, "expandedstorage", "Expanded Storage");
+		defineEnabledRecipes(builder, "framedblocks", "FramedBlocks");
+		defineEnabledRecipes(builder, "gravestone", "GraveStone Mod");
+		defineEnabledRecipes(builder, "hostilenetworks", "Hostile Neural Networks");
+		defineEnabledRecipes(builder, "lootr", "Lootr");
+		defineEnabledRecipes(builder, "supplementaries", "Supplementaries");
+
+		builder.pop(2);
+	}
+
+	private void defineEnabledRecipes(ModConfigSpec.Builder builder, String modId, String name) {
+		enabledRecipes.put(modId, builder
+				.comment("Whether or not to enable Minestuck Compat's grist cost and combination recipes for " + name + ".")
+				.define(name, true));
+	}
+
+	public boolean isModEnabled(String modId) {
+		final BooleanValue val = enabledRecipes.get(modId);
+		if (val == null) {
+			MinestuckCompat.LOGGER.warn("Unknown mod ID {} in config query", modId);
+			return false;
+		}
+
+		return val.getAsBoolean();
 	}
 
 	public static MinestuckCompatConfig common() {
