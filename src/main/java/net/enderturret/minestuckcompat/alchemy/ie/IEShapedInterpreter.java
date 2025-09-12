@@ -18,7 +18,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
 
 import blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractShapedRecipe;
-import blusunrize.immersiveengineering.common.crafting.fluidaware.TurnAndCopyRecipe;
 
 public final class IEShapedInterpreter extends AbstractRecipeInterpreter {
 

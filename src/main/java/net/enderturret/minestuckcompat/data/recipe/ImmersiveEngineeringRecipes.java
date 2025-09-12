@@ -1,27 +1,24 @@
 package net.enderturret.minestuckcompat.data.recipe;
 
-import static com.mraof.minestuck.api.alchemy.GristTypes.*;
-import static blusunrize.immersiveengineering.common.register.IEBlocks.WoodenDecoration.*;
 import static blusunrize.immersiveengineering.common.register.IEBlocks.MetalDecoration.*;
 import static blusunrize.immersiveengineering.common.register.IEBlocks.Metals.*;
 import static blusunrize.immersiveengineering.common.register.IEBlocks.StoneDecoration.*;
+import static blusunrize.immersiveengineering.common.register.IEBlocks.WoodenDecoration.*;
 import static blusunrize.immersiveengineering.common.register.IEItems.Ingredients.*;
-import static blusunrize.immersiveengineering.common.register.IEItems.Misc.*;
 import static blusunrize.immersiveengineering.common.register.IEItems.Metals.*;
-import static blusunrize.immersiveengineering.common.register.IEItems.Weapons.*;
+import static blusunrize.immersiveengineering.common.register.IEItems.Misc.*;
 import static blusunrize.immersiveengineering.common.register.IEItems.Tools.*;
+import static blusunrize.immersiveengineering.common.register.IEItems.Weapons.*;
+import static com.mraof.minestuck.api.alchemy.GristTypes.*;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 
@@ -35,7 +32,6 @@ import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
 import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.api.shader.ShaderRegistry;
-import blusunrize.immersiveengineering.api.shader.ShaderRegistry.ShaderRegistryEntry;
 import blusunrize.immersiveengineering.common.blocks.wooden.TreatedWoodStyles;
 import blusunrize.immersiveengineering.common.items.ShaderItem;
 
@@ -113,7 +109,7 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 		gristCost(SHADER_BAG.get(Lib.RARITY_MASTERWORK.getValue())).grist(BUILD, 16).grist(ZILLIUM, 4).build(output);
 
 		for (var shader : SHADERS.entrySet()) {
-			final ShaderRegistryEntry entry = ShaderRegistry.shaderRegistry.get(shader.getKey());
+			final ShaderRegistry.ShaderRegistryEntry entry = ShaderRegistry.shaderRegistry.get(shader.getKey());
 			final ShaderItem item = shader.getValue().get();
 			switch (entry.rarity) {
 				case COMMON -> gristCost(item).grist(BUILD, 16).grist(MARBLE, 4).build(output);

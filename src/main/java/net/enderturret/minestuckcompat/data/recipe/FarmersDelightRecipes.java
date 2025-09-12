@@ -1,21 +1,16 @@
 package net.enderturret.minestuckcompat.data.recipe;
 
-import static vectorwing.farmersdelight.common.registry.ModItems.*;
 import static com.mraof.minestuck.api.alchemy.GristTypes.*;
+import static vectorwing.farmersdelight.common.registry.ModItems.*;
 
 import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
-import com.mraof.minestuck.item.MSItems;
-
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import net.neoforged.neoforge.common.Tags;

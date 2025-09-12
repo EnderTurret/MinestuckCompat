@@ -2,7 +2,6 @@ package net.enderturret.minestuckcompat.data;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
