@@ -2,8 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.enderturret.minestuckcompat.mixin",
+  "plugin": "net.enderturret.minestuckcompat.mixin.MixinConfigPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "feature.immersiveengineering.MixinTagOutput",
+    "feature.immersiveengineering.TagOutputAccess",
     "feature.debug.MixinDefaultInterpreter",
     "feature.debug.MixinGristCostGenerator",
     "feature.debug.MixinRecipeGeneratedCostHandler",

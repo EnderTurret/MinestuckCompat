@@ -1,5 +1,7 @@
 package net.enderturret.minestuckcompat.alchemy.ie;
 
+import java.util.List;
+
 import org.jetbrains.annotations.Nullable;
 
 import com.mojang.serialization.MapCodec;
@@ -36,6 +38,14 @@ public final class MetalPressInterpreter extends AbstractRecipeInterpreter {
 	@Override
 	public MapCodec<? extends RecipeInterpreter> codec() {
 		return CODEC;
+	}
+
+	@Override
+	public List<Item> getOutputItems(Recipe<?> recipe) {
+		if (recipe instanceof MetalPressRecipe r)
+			return MultiblockInterpreter.safeResolve(r.output);
+
+		return super.getOutputItems(recipe);
 	}
 
 	@Override
