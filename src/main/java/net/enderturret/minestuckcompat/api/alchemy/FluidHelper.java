@@ -1,5 +1,6 @@
 package net.enderturret.minestuckcompat.api.alchemy;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.jetbrains.annotations.Nullable;
@@ -11,6 +12,8 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import net.minecraft.world.item.ItemStack;
 
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 /**
  * Utilities for calculating fluid grist costs.
@@ -19,6 +22,28 @@ import net.neoforged.neoforge.fluids.FluidStack;
 public final class FluidHelper {
 
 	private static final int BUCKET_SIZE = 1000;
+
+	/**
+	 * Adds the cheapest fluid's grist cost to the specified {@code MutableGristSet}, scaled to its amount.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient The fluid ingredient to find a grist cost for.
+	 * @return {@code true} if a grist cost was added, or {@code false} if one could not be found.
+	 */
+	public static boolean account(MutableGristSet total, GeneratorCallback callback, SizedFluidIngredient ingredient) {
+		return account(total, callback, Arrays.asList(ingredient.ingredient().getStacks()), ingredient.amount());
+	}
+
+	/**
+	 * Adds the cheapest fluid's grist cost to the specified {@code MutableGristSet}.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient The fluid ingredient to find a grist cost for.
+	 * @return {@code true} if a grist cost was added, or {@code false} if one could not be found.
+	 */
+	public static boolean account(MutableGristSet total, GeneratorCallback callback, FluidIngredient ingredient) {
+		return account(total, callback, Arrays.asList(ingredient.getStacks()), 1000);
+	}
 
 	/**
 	 * Adds the cheapest fluid's grist cost to the specified {@code MutableGristSet}, scaled to its amount.

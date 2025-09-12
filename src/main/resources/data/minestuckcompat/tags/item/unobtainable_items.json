@@ -42,6 +42,8 @@
     { "id": "create:shadow_steel", "required": false },
     { "id": "create:shadow_steel_casing", "required": false },
 
+    { "id": "immersiveengineering:capacitor_creative", "required": false },
+
     { "id": "supplementaries:raked_gravel", "required": false },
     { "id": "supplementaries:suspicious_gravel_bricks", "required": false },
     { "id": "supplementaries:sconce_green", "required": false },

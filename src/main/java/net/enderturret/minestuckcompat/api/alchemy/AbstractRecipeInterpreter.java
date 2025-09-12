@@ -102,10 +102,22 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	 * @return {@code true} if a cost was added, or {@code false} if one was not found.
 	 */
 	public static boolean account(MutableGristSet total, GeneratorCallback callback, SizedIngredient ingredient) {
-		final GristSet ingredientCost = callback.lookupCostFor(ingredient.ingredient());
+		return account(total, callback, ingredient.ingredient(), ingredient.count());
+	}
+
+	/**
+	 * Adds the grist cost of the specified {@code Ingredient} and count to the specified grist set.
+	 * @param total The grist set to add the cost to.
+	 * @param callback The callback for looking up grist costs.
+	 * @param ingredient The ingredient.
+	 * @param count The number of items the ingredient requires.
+	 * @return {@code true} if a cost was added, or {@code false} if one was not found.
+	 */
+	public static boolean account(MutableGristSet total, GeneratorCallback callback, Ingredient ingredient, int count) {
+		final GristSet ingredientCost = callback.lookupCostFor(ingredient);
 		if (ingredientCost == null) return false;
 
-		for (int i = 0; i < ingredient.count(); i++)
+		for (int i = 0; i < count; i++)
 			total.add(ingredientCost);
 
 		return true;

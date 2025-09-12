@@ -47,6 +47,8 @@ dependencies {
     runtimeOnly 'glitchcore:GlitchCore-neoforge-1.21.1:2.1.0.0'
 
     implementation 'vectorwing:FarmersDelight-1.21.1:1.2.9'
+
+    implementation 'blusunrize:ImmersiveEngineering-1.21.1:12.4.2-194'
 }
 
 neoForge {

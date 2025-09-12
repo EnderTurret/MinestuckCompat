@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "immersiveengineering"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:tar": 16
+  },
+  "ingredient": {
+    "item": "immersiveengineering:graphite_electrode"
+  },
+  "multiplier": 4.0,
+  "sources": [
+    "immersiveengineering:dust_hop_graphite"
+  ]
+}

@@ -86,6 +86,7 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "biomesoplenty", "Biomes O' Plenty");
 		defineEnabledRecipes(builder, "create", "Create");
 		defineEnabledRecipes(builder, "farmersdelight", "Farmer's Delight");
+		defineEnabledRecipes(builder, "immersiveengineering", "Immersive Engineering");
 		defineEnabledRecipes(builder, "mekanism", "Mekanism");
 		defineEnabledRecipes(builder, "minestuck", "Minestuck");
 		defineEnabledRecipes(builder, "minecraft", "Minecraft");

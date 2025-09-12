@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "immersiveengineering"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 36,
+    "minestuck:mercury": 1500,
+    "minestuck:rust": 2250,
+    "minestuck:shale": 36,
+    "minestuck:tar": 16
+  },
+  "ingredient": {
+    "item": "immersiveengineering:phenolic_resin_bucket"
+  },
+  "sources": [
+    "minecraft:bucket"
+  ]
+}

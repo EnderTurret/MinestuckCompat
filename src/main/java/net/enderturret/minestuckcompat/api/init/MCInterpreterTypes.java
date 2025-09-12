@@ -16,6 +16,11 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.MetalPressInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.MultiblockInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.IEShapedInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
@@ -40,6 +45,17 @@ public final class MCInterpreterTypes {
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
 
 	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_MULTIBLOCK;
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_SHAPED;
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_ALLOY_SMELTER;
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_CRUSHER;
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_METAL_PRESS;
+
+	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_CHEMICAL_TO_ITEM;
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_TO_ITEM;
@@ -59,6 +75,20 @@ public final class MCInterpreterTypes {
 			CREATE_SEQUENCED_ASSEMBLY = REGISTRY.register("create/sequenced_assembly", () -> SequencedAssemblyInterpreter.CODEC);
 		else
 			CREATE_SEQUENCED_ASSEMBLY = null;
+
+		if (ModList.get().isLoaded("immersiveengineering")) {
+			IE_MULTIBLOCK = REGISTRY.register("immersiveengineering/multiblock", () -> MultiblockInterpreter.CODEC);
+			IE_SHAPED = REGISTRY.register("immersiveengineering/shaped", () -> IEShapedInterpreter.CODEC);
+			IE_ALLOY_SMELTER = REGISTRY.register("immersiveengineering/alloy_smelter", () -> AlloySmelterInterpreter.CODEC);
+			IE_CRUSHER = REGISTRY.register("immersiveengineering/crusher", () -> CrusherInterpreter.CODEC);
+			IE_METAL_PRESS = REGISTRY.register("immersiveengineering/metal_press", () -> MetalPressInterpreter.CODEC);
+		} else {
+			IE_MULTIBLOCK = null;
+			IE_SHAPED = null;
+			IE_ALLOY_SMELTER = null;
+			IE_CRUSHER = null;
+			IE_METAL_PRESS = null;
+		}
 
 		if (ModList.get().isLoaded("mekanism")) {
 			MEKANISM_ITEM_CHEMICAL_TO_ITEM = REGISTRY.register("mekanism/item_chemical_to_item", () -> ItemChemical2ItemInterpreter.CODEC);

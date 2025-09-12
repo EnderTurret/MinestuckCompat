@@ -27,6 +27,11 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.MetalPressInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.MultiblockInterpreter;
+import net.enderturret.minestuckcompat.alchemy.ie.IEShapedInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
@@ -34,6 +39,8 @@ import net.enderturret.minestuckcompat.api.data.IGeneratedGristCostConfigProvide
 import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 
 import appeng.recipes.AERecipeTypes;
+import blusunrize.immersiveengineering.api.crafting.IERecipeTypes;
+import blusunrize.immersiveengineering.common.util.RecipeSerializers;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismRecipeSerializersInternal;
 import mekanism.tools.common.registries.ToolsRecipeSerializers;
@@ -73,6 +80,14 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());
 		type(ModRecipeTypes.CUTTING.get(), new SimpleRecipeInterpreter(false, grist(GristTypes.RUST, 1)));
+
+		// Immersive Engineering
+		type(IERecipeTypes.BLUEPRINT.get(), new MultiblockInterpreter(GristSet.EMPTY));
+		serializer(RecipeSerializers.TURN_AND_COPY_SERIALIZER.get(), new IEShapedInterpreter(GristSet.EMPTY));
+		serializer(RecipeSerializers.IE_SHAPED_SERIALIZER.get(), new IEShapedInterpreter(GristSet.EMPTY));
+		type(IERecipeTypes.METAL_PRESS.get(), new MetalPressInterpreter(grist(GristTypes.RUST, 1)));
+		type(IERecipeTypes.CRUSHER.get(), new CrusherInterpreter(grist(GristTypes.MERCURY, 1)));
+		type(IERecipeTypes.ALLOY.get(), new AlloySmelterInterpreter(grist(GristTypes.TAR, 1)));
 	}
 
 	@Override
