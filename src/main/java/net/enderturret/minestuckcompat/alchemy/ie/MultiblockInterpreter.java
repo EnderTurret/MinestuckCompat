@@ -27,7 +27,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 import net.enderturret.minestuckcompat.mixin.feature.immersiveengineering.TagOutputAccess;
 
@@ -39,20 +39,14 @@ import blusunrize.immersiveengineering.api.crafting.TagOutput;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import blusunrize.immersiveengineering.common.register.IEItems.Metals;
 
-public final class MultiblockInterpreter extends AbstractRecipeInterpreter {
+public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<MultiblockInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(MultiblockInterpreter::addedCost)
 			).apply(instance, MultiblockInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public MultiblockInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -165,9 +159,7 @@ public final class MultiblockInterpreter extends AbstractRecipeInterpreter {
 						return null;
 		}
 
-		totalCost.add(addedCost);
-
-		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+		return finalizeGristCosts(totalCost, recipe);
 	}
 
 	@Override

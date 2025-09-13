@@ -12,24 +12,18 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import appeng.recipes.handlers.ChargerRecipe;
 
-public final class ChargerInterpreter extends AbstractRecipeInterpreter {
+public final class ChargerInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<ChargerInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(ChargerInterpreter::addedCost)
 			).apply(instance, ChargerInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public ChargerInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -50,21 +44,21 @@ public final class ChargerInterpreter extends AbstractRecipeInterpreter {
 		MutableGristSet totalCost = MutableGristSet.newDefault();
 
 		final int resultCount;
-		final float energyScale; // If they ever make recipes that require more/less charge.
+		//final float energyScale; // If they ever make recipes that require more/less charge.
 
 		if (recipe instanceof ChargerRecipe r) {
 			if (!account(totalCost, callback, r.getIngredient())) return null;
 
 			resultCount = r.getResultItem().getCount();
-			energyScale = 1;
+			//energyScale = 1;
 		}
 		else {
 			totalCost = ingredientCost(recipe, callback);
 			resultCount = recipe.getResultItem(getLookupProvider()).getCount();
-			energyScale = 1;
+			//energyScale = 1;
 		}
 
-		totalCost.add(scale(addedCost, energyScale, false));
+		//totalCost.add(scale(addedCost, energyScale, false));
 
 		return finalizeGristCosts(totalCost, resultCount);
 	}

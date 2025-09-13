@@ -15,24 +15,18 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import mekanism.api.recipes.ItemStackToItemStackRecipe;
 
-public final class Item2ItemInterpreter extends AbstractRecipeInterpreter {
+public final class Item2ItemInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<Item2ItemInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(Item2ItemInterpreter::addedCost)
 			).apply(instance, Item2ItemInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public Item2ItemInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -65,8 +59,6 @@ public final class Item2ItemInterpreter extends AbstractRecipeInterpreter {
 					.max().orElse(1);
 		}
 		else resultCount = recipe.getResultItem(getLookupProvider()).getCount();
-
-		totalCost.add(addedCost);
 
 		return finalizeGristCosts(totalCost, resultCount);
 	}

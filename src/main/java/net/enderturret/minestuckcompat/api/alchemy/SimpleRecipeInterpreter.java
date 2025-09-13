@@ -17,7 +17,7 @@ import net.minecraft.world.item.crafting.Recipe;
  * A {@link RecipeInterpreter} that functions like the default, but with support for added costs and including special recipes.
  * @author EnderTurret
  */
-public final class SimpleRecipeInterpreter extends AbstractRecipeInterpreter {
+public final class SimpleRecipeInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<SimpleRecipeInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			Codec.BOOL.optionalFieldOf("ignore_special", true).forGetter(SimpleRecipeInterpreter::ignoreSpecial),
@@ -25,11 +25,10 @@ public final class SimpleRecipeInterpreter extends AbstractRecipeInterpreter {
 			).apply(instance, SimpleRecipeInterpreter::new));
 
 	private final boolean ignoreSpecial;
-	private final GristSet.Immutable addedCost;
 
 	public SimpleRecipeInterpreter(boolean ignoreSpecial, GristSet.Immutable addedCost) {
+		super(addedCost);
 		this.ignoreSpecial = ignoreSpecial;
-		this.addedCost = addedCost;
 	}
 
 	public SimpleRecipeInterpreter(boolean ignoreSpecial) {
@@ -38,10 +37,6 @@ public final class SimpleRecipeInterpreter extends AbstractRecipeInterpreter {
 
 	public boolean ignoreSpecial() {
 		return ignoreSpecial;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
 	}
 
 	@Override
@@ -58,8 +53,6 @@ public final class SimpleRecipeInterpreter extends AbstractRecipeInterpreter {
 		final MutableGristSet totalCost = ingredientCost(recipe, callback);
 		if (totalCost == null) return null;
 
-		totalCost.add(addedCost);
-
-		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+		return finalizeGristCosts(totalCost, recipe);
 	}
 }

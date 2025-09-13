@@ -15,24 +15,18 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractShapedRecipe;
 
-public final class IEShapedInterpreter extends AbstractRecipeInterpreter {
+public final class IEShapedInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<IEShapedInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(IEShapedInterpreter::addedCost)
 			).apply(instance, IEShapedInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public IEShapedInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -54,9 +48,7 @@ public final class IEShapedInterpreter extends AbstractRecipeInterpreter {
 		final MutableGristSet totalCost = ingredientCost(recipe, callback);
 		if (totalCost == null) return null;
 
-		totalCost.add(addedCost);
-
-		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+		return finalizeGristCosts(totalCost, recipe);
 	}
 
 	@Override

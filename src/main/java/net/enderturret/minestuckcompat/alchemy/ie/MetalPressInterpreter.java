@@ -15,24 +15,18 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 
-public final class MetalPressInterpreter extends AbstractRecipeInterpreter {
+public final class MetalPressInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<MetalPressInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(MetalPressInterpreter::addedCost)
 			).apply(instance, MetalPressInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public MetalPressInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -58,9 +52,7 @@ public final class MetalPressInterpreter extends AbstractRecipeInterpreter {
 			if (!account(totalCost, callback, r.input.getBaseIngredient(), r.input.getCount()))
 				return null;
 
-		totalCost.add(addedCost);
-
-		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+		return finalizeGristCosts(totalCost, recipe);
 	}
 
 	@Override

@@ -79,6 +79,11 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		return totalCost;
 	}
 
+	@Nullable
+	protected final GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
+		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+	}
+
 	/**
 	 * Called to finalize the grist cost — currently just to scale it to the result size.
 	 * @param totalCost The total grist cost of the item.

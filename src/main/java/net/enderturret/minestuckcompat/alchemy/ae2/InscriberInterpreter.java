@@ -12,25 +12,19 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import appeng.recipes.handlers.InscriberProcessType;
 import appeng.recipes.handlers.InscriberRecipe;
 
-public final class InscriberInterpreter extends AbstractRecipeInterpreter {
+public final class InscriberInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<InscriberInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(InscriberInterpreter::addedCost)
 			).apply(instance, InscriberInterpreter::new));
 
-	private final GristSet.Immutable addedCost;
-
 	public InscriberInterpreter(GristSet.Immutable addedCost) {
-		this.addedCost = addedCost;
-	}
-
-	public GristSet.Immutable addedCost() {
-		return addedCost;
+		super(addedCost);
 	}
 
 	@Override
@@ -64,8 +58,6 @@ public final class InscriberInterpreter extends AbstractRecipeInterpreter {
 			totalCost = ingredientCost(recipe, callback);
 			resultCount = recipe.getResultItem(getLookupProvider()).getCount();
 		}
-
-		totalCost.add(addedCost);
 
 		return finalizeGristCosts(totalCost, resultCount);
 	}
