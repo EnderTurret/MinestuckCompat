@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "mekanism:ingot_lead"
+  },
+  "input2": {
+    "item": "minecraft:deepslate"
+  },
+  "mode": "and",
+  "output": "mekanism:deepslate_lead_ore"
+}

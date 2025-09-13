@@ -34,6 +34,8 @@ import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.api.shader.ShaderRegistry;
 import blusunrize.immersiveengineering.common.blocks.wooden.TreatedWoodStyles;
 import blusunrize.immersiveengineering.common.items.ShaderItem;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
+import blusunrize.immersiveengineering.common.register.IEItems;
 
 @Internal
 public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
@@ -129,5 +131,12 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 		// Combination Recipes
 		//
 
+		oreCombinations(output, INGOTS.get(EnumMetals.ALUMINUM), STORAGE.get(EnumMetals.ALUMINUM), ORES.get(EnumMetals.ALUMINUM), DEEPSLATE_ORES.get(EnumMetals.ALUMINUM), IEItems.Metals.RAW_ORES.get(EnumMetals.ALUMINUM), IEBlocks.Metals.RAW_ORES.get(EnumMetals.ALUMINUM));
+		oreCombinations(output, INGOTS.get(EnumMetals.LEAD), STORAGE.get(EnumMetals.LEAD), ORES.get(EnumMetals.LEAD), DEEPSLATE_ORES.get(EnumMetals.LEAD), IEItems.Metals.RAW_ORES.get(EnumMetals.LEAD), IEBlocks.Metals.RAW_ORES.get(EnumMetals.LEAD));
+		oreCombinations(output, INGOTS.get(EnumMetals.SILVER), STORAGE.get(EnumMetals.SILVER), ORES.get(EnumMetals.SILVER), DEEPSLATE_ORES.get(EnumMetals.SILVER), IEItems.Metals.RAW_ORES.get(EnumMetals.SILVER), IEBlocks.Metals.RAW_ORES.get(EnumMetals.SILVER));
+		oreCombinations(output, INGOTS.get(EnumMetals.NICKEL), STORAGE.get(EnumMetals.NICKEL), ORES.get(EnumMetals.NICKEL), DEEPSLATE_ORES.get(EnumMetals.NICKEL), IEItems.Metals.RAW_ORES.get(EnumMetals.NICKEL), IEBlocks.Metals.RAW_ORES.get(EnumMetals.NICKEL));
+		oreCombinations(output, INGOTS.get(EnumMetals.URANIUM), STORAGE.get(EnumMetals.URANIUM), ORES.get(EnumMetals.URANIUM), DEEPSLATE_ORES.get(EnumMetals.URANIUM), IEItems.Metals.RAW_ORES.get(EnumMetals.URANIUM), IEBlocks.Metals.RAW_ORES.get(EnumMetals.URANIUM));
+		woodCombinations(output, TREATED_WOOD.get(TreatedWoodStyles.HORIZONTAL), lookup(modId, "slab_treated_wood_horizontal"), lookup(modId, "stairs_treated_wood_horizontal"), DOOR, TREATED_FENCE, TREATED_FENCE_GATE, TRAPDOOR);
+		woodCombinations(output, STORAGE.get(EnumMetals.STEEL), lookup(modId, "slab_storage_steel"), null, STEEL_DOOR, STEEL_FENCE, STEEL_FENCE_GATE, STEEL_TRAPDOOR);
 	}
 }

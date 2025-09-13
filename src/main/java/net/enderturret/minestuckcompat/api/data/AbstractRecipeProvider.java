@@ -51,11 +51,13 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 		return CombinationRecipeBuilder.of(item);
 	}
 
-	protected static void oreCombinations(RecipeOutput output, ItemLike ingot, ItemLike block, ItemLike ore, @Nullable ItemLike rawOre, @Nullable ItemLike rawOreBlock) {
+	protected static void oreCombinations(RecipeOutput output, ItemLike ingot, ItemLike block, ItemLike ore, @Nullable ItemLike deepslateOre, @Nullable ItemLike rawOre, @Nullable ItemLike rawOreBlock) {
 		combination(block).or().input(ingot).input(Items.STONE).build(output);
 		combination(ore).and().input(ingot).input(Items.STONE).build(output);
 		if (rawOre != null && rawOreBlock != null)
 			combination(rawOreBlock).and().input(rawOre).input(Items.STONE).build(output);
+		if (deepslateOre != null)
+			combination(deepslateOre).and().input(ingot).input(Items.DEEPSLATE).build(output);
 	}
 
 	protected static void saplingCombinations(RecipeOutput output, ItemLike sapling, ItemLike log, ItemLike leaves, boolean includePrimary) {
@@ -69,10 +71,13 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 		saplingCombinations(output, sapling, log, leaves, true);
 	}
 
-	protected static void woodCombinations(RecipeOutput output, ItemLike planks, ItemLike slab, ItemLike stairs, ItemLike door, ItemLike fence, ItemLike fenceGate, ItemLike trapdoor) {
-		combination(stairs).or().input(planks).input(slab).build(output);
-		combination(fenceGate).or().input(door).input(fence).build(output);
-		combination(trapdoor).or().input(door).input(slab).build(output);
+	protected static void woodCombinations(RecipeOutput output, @Nullable ItemLike planks, @Nullable ItemLike slab, @Nullable ItemLike stairs, @Nullable ItemLike door, @Nullable ItemLike fence, @Nullable ItemLike fenceGate, @Nullable ItemLike trapdoor) {
+		if (stairs != null && planks != null && slab != null)
+			combination(stairs).or().input(planks).input(slab).build(output);
+		if (fenceGate != null && door != null && fence != null)
+			combination(fenceGate).or().input(door).input(fence).build(output);
+		if (trapdoor != null && door != null && slab != null)
+			combination(trapdoor).or().input(door).input(slab).build(output);
 	}
 
 	protected static TagKey<Item> tag(String namespace, String path) {

@@ -1,5 +1,6 @@
-// 1.21.1	2025-09-11T17:03:49.611554641	Create Recipes
+// 1.21.1	2025-09-12T20:15:50.30318933	Create Recipes
 9fb55f00603657573caace940aa17b99341adc5b data/minestuckcompat/recipe/combinations/create/blaze_burner.json
+3f78e3fab31a89269ce23522859835a5ca56cb9a data/minestuckcompat/recipe/combinations/create/deepslate_zinc_ore.json
 645aaaed33a050206f2eb5e8bd215e099dffb369 data/minestuckcompat/recipe/combinations/create/raw_zinc_block.json
 b967211146e1cdb930516bea994b4b7a2900842e data/minestuckcompat/recipe/combinations/create/zinc_block.json
 36f8bb491b86f94ada51460f6097d395defe7e7b data/minestuckcompat/recipe/combinations/create/zinc_ingot.json

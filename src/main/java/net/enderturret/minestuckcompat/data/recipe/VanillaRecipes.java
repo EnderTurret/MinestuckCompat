@@ -123,6 +123,17 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		// Combination Recipes
 		//
 
+		// Deepslate Ores
+
+		combination(DEEPSLATE_COAL_ORE).and().input(Items.COAL).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_IRON_ORE).and().input(Items.IRON_INGOT).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_COPPER_ORE).and().input(Items.COPPER_INGOT).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_GOLD_ORE).and().input(Items.GOLD_INGOT).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_REDSTONE_ORE).and().input(Items.REDSTONE).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_EMERALD_ORE).and().input(Items.EMERALD).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_LAPIS_ORE).and().input(Items.LAPIS_LAZULI).input(Items.DEEPSLATE).build(output);
+		combination(DEEPSLATE_DIAMOND_ORE).and().input(Items.DIAMOND).input(Items.DEEPSLATE).build(output);
+
 		// Sherds
 
 		combination(ANGLER_POTTERY_SHERD).or().input(TERRACOTTA).input(FISHING_ROD).build(output);

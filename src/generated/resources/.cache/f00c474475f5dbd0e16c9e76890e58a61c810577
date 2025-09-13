@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-11T17:03:49.610396022	Mekanism Recipes
+// 1.21.1	2025-09-12T20:15:50.302641062	Mekanism Recipes
 2decb9bed5bee6a3996e0e7e22a0fcd9ed4b7dbb data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
 05157ceacb19e548a3a903f1fc0b494eecb5b6d1 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
 ec81a2de0db3b10a4cdc1301f1693a98bbbb9af6 data/minestuckcompat/recipe/combinations/mekanism/block_raw_lead.json
@@ -14,6 +14,10 @@ f00c48a152cb243cab3d1f00727a35cb1b32b48b data/minestuckcompat/recipe/combination
 a10c80487965ba730a0a999fc43094715262bc9a data/minestuckcompat/recipe/combinations/mekanism/crystal_osmium.json
 26a410ef0ab4df469d1037ebb99453ae9a68b36f data/minestuckcompat/recipe/combinations/mekanism/crystal_tin.json
 2a84b3a9752e3ac91a8c6175a867bc3211e7a85d data/minestuckcompat/recipe/combinations/mekanism/crystal_uranium.json
+473fea28520d16677c66fe8e59d5b74338604e23 data/minestuckcompat/recipe/combinations/mekanism/deepslate_lead_ore.json
+b68643e1d7a028c46ff309a64eb000b2d7efb892 data/minestuckcompat/recipe/combinations/mekanism/deepslate_osmium_ore.json
+e02f6fc57c71038c12de60f04e16ae8773347fb4 data/minestuckcompat/recipe/combinations/mekanism/deepslate_tin_ore.json
+2e426449a69a6647c6e555d8a331ee4729d0501a data/minestuckcompat/recipe/combinations/mekanism/deepslate_uranium_ore.json
 4ce8154d0a356c0f30c91a5353b99281ae119c9c data/minestuckcompat/recipe/combinations/mekanism/dust_copper.json
 e4a25eefa7abfee6a29d56ab43c17a309c85c602 data/minestuckcompat/recipe/combinations/mekanism/dust_gold.json
 b878366d6e00be11a82e63f927795c3b7bdf088a data/minestuckcompat/recipe/combinations/mekanism/dust_iron.json
