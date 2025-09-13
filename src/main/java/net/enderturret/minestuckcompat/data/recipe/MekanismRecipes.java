@@ -110,27 +110,28 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 
 		combination(mek("crystal_iron")).and().input(Items.QUARTZ).input(Items.IRON_INGOT).build(output);
 		combination(mek("crystal_gold")).and().input(Items.QUARTZ).input(Items.GOLD_INGOT).build(output);
-		combination(mek("crystal_osmium")).and().input(Items.QUARTZ).input(mek("ingot_osmium")).build(output);
+		combination(mek("crystal_osmium")).and().input(Items.QUARTZ).input(c("ingots/osmium")).build(output);
 		combination(mek("crystal_copper")).and().input(Items.QUARTZ).input(Items.COPPER_INGOT).build(output);
-		combination(mek("crystal_tin")).and().input(Items.QUARTZ).input(mek("ingot_tin")).build(output);
-		combination(mek("crystal_lead")).and().input(Items.QUARTZ).input(mek("ingot_lead")).build(output);
-		combination(mek("crystal_uranium")).and().input(Items.QUARTZ).input(mek("ingot_uranium")).build(output);
+		combination(mek("crystal_tin")).and().input(Items.QUARTZ).input(c("ingots/tin")).build(output);
+		combination(mek("crystal_lead")).and().input(Items.QUARTZ).input(c("ingots/lead")).build(output);
+		combination(mek("crystal_uranium")).and().input(Items.QUARTZ).input(c("ingots/uranium")).build(output);
 
 		combination(mek("dust_iron")).and().input(Items.REDSTONE).input(Items.IRON_INGOT).build(output);
 		combination(mek("dust_gold")).and().input(Items.REDSTONE).input(Items.GOLD_INGOT).build(output);
-		combination(mek("dust_osmium")).and().input(Items.REDSTONE).input(mek("ingot_osmium")).build(output);
+		combination(mek("dust_osmium")).and().input(Items.REDSTONE).input(c("ingots/osmium")).build(output);
 		combination(mek("dust_copper")).and().input(Items.REDSTONE).input(Items.COPPER_INGOT).build(output);
-		combination(mek("dust_tin")).and().input(Items.REDSTONE).input(mek("ingot_tin")).build(output);
-		combination(mek("dust_lead")).and().input(Items.REDSTONE).input(mek("ingot_lead")).build(output);
-		combination(mek("dust_uranium")).and().input(Items.REDSTONE).input(mek("ingot_uranium")).build(output);
+		combination(mek("dust_tin")).and().input(Items.REDSTONE).input(c("ingots/tin")).build(output);
+		combination(mek("dust_lead")).and().input(Items.REDSTONE).input(c("ingots/lead")).build(output);
+		combination(mek("dust_uranium")).and().input(Items.REDSTONE).input(c("ingots/uranium")).build(output);
+		combination(mek("dust_steel")).and().input(Items.REDSTONE).input(c("ingots/steel")).build(output);
 
 		combination(mek("shard_iron")).and().input(Items.AMETHYST_SHARD).input(Items.IRON_INGOT).build(output);
 		combination(mek("shard_gold")).and().input(Items.AMETHYST_SHARD).input(Items.GOLD_INGOT).build(output);
-		combination(mek("shard_osmium")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_osmium")).build(output);
+		combination(mek("shard_osmium")).and().input(Items.AMETHYST_SHARD).input(c("ingots/osmium")).build(output);
 		combination(mek("shard_copper")).and().input(Items.AMETHYST_SHARD).input(Items.COPPER_INGOT).build(output);
-		combination(mek("shard_tin")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_tin")).build(output);
-		combination(mek("shard_lead")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_lead")).build(output);
-		combination(mek("shard_uranium")).and().input(Items.AMETHYST_SHARD).input(mek("ingot_uranium")).build(output);
+		combination(mek("shard_tin")).and().input(Items.AMETHYST_SHARD).input(c("ingots/tin")).build(output);
+		combination(mek("shard_lead")).and().input(Items.AMETHYST_SHARD).input(c("ingots/lead")).build(output);
+		combination(mek("shard_uranium")).and().input(Items.AMETHYST_SHARD).input(c("ingots/uranium")).build(output);
 	}
 
 	private static Item mek(String id) {

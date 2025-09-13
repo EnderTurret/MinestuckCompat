@@ -14,7 +14,7 @@
     "item": "minecraft:quartz"
   },
   "input2": {
-    "item": "mekanism:ingot_lead"
+    "tag": "c:ingots/lead"
   },
   "mode": "and",
   "output": "mekanism:crystal_lead"

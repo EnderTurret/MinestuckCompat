@@ -14,7 +14,7 @@
     "item": "minecraft:amethyst_shard"
   },
   "input2": {
-    "item": "mekanism:ingot_lead"
+    "tag": "c:ingots/lead"
   },
   "mode": "and",
   "output": "mekanism:shard_lead"

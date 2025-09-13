@@ -14,7 +14,7 @@
     "item": "minecraft:amethyst_shard"
   },
   "input2": {
-    "item": "mekanism:ingot_uranium"
+    "tag": "c:ingots/uranium"
   },
   "mode": "and",
   "output": "mekanism:shard_uranium"

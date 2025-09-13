@@ -11,11 +11,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:quartz"
+    "item": "minecraft:redstone"
   },
   "input2": {
-    "tag": "c:ingots/uranium"
+    "tag": "c:ingots/steel"
   },
   "mode": "and",
-  "output": "mekanism:crystal_uranium"
+  "output": "mekanism:dust_steel"
 }

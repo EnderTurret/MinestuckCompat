@@ -14,7 +14,7 @@
     "item": "minecraft:amethyst_shard"
   },
   "input2": {
-    "item": "mekanism:ingot_osmium"
+    "tag": "c:ingots/osmium"
   },
   "mode": "and",
   "output": "mekanism:shard_osmium"

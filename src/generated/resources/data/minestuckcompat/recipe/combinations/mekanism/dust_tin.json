@@ -14,7 +14,7 @@
     "item": "minecraft:redstone"
   },
   "input2": {
-    "item": "mekanism:ingot_tin"
+    "tag": "c:ingots/tin"
   },
   "mode": "and",
   "output": "mekanism:dust_tin"
