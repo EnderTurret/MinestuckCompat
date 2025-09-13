@@ -33,7 +33,7 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "ae2")
-				.withConditions(modLoaded("ae2"), new ConfigCondition("ae2"));
+				.withConditions(new ConfigCondition("ae2"));
 
 		// Materials
 

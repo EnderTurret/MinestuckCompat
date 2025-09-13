@@ -34,7 +34,7 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "mekanism")
-				.withConditions(modLoaded("mekanism"), new ConfigCondition("mekanism"));
+				.withConditions(new ConfigCondition("mekanism"));
 
 		// Ores
 

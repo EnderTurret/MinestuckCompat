@@ -35,7 +35,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "biomesoplenty")
-				.withConditions(modLoaded("biomesoplenty"), new ConfigCondition("biomesoplenty"));
+				.withConditions(new ConfigCondition("biomesoplenty"));
 
 		gristCost(MUSIC_DISC_WANDERER).grist(BUILD, 15).grist(AMBER, 5).grist(COBALT, 5).grist(CHALK, 8).build(output);
 

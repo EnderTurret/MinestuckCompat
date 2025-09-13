@@ -31,7 +31,7 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "create")
-				.withConditions(modLoaded("create"), new ConfigCondition("create"));
+				.withConditions(new ConfigCondition("create"));
 
 		// Toolboxes, Valve Handles
 

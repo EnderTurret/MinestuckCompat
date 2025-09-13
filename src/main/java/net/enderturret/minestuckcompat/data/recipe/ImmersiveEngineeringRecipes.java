@@ -49,7 +49,7 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "immersiveengineering")
-				.withConditions(modLoaded("immersiveengineering"), new ConfigCondition("immersiveengineering"));
+				.withConditions(new ConfigCondition("immersiveengineering"));
 		final String modId = "immersiveengineering";
 
 		gristCost(HEMP_FIBER).grist(AMBER, 2).grist(CAULK, 2).build(output);
