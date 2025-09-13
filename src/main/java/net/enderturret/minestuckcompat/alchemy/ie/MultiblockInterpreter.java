@@ -21,7 +21,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
 
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
@@ -39,14 +38,14 @@ import blusunrize.immersiveengineering.api.crafting.TagOutput;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import blusunrize.immersiveengineering.common.register.IEItems.Metals;
 
-public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpreter {
+public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MultiblockRecipe> {
 
 	public static final MapCodec<MultiblockInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(MultiblockInterpreter::addedCost)
+			COST_FIELD.forGetter(MultiblockInterpreter::addedCost)
 			).apply(instance, MultiblockInterpreter::new));
 
 	public MultiblockInterpreter(GristSet.Immutable addedCost) {
-		super(addedCost);
+		super(MultiblockRecipe.class, addedCost);
 	}
 
 	@Override
@@ -57,16 +56,39 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 	private boolean warned = false;
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
+	public List<Item> getOutputItemsTyped(MultiblockRecipe recipe) {
 		if (recipe instanceof BlueprintCraftingRecipe r)
 			return safeResolve(r.output);
 
-		if (recipe instanceof MultiblockRecipe && !warned) {
+		if (!warned) {
 			MinestuckCompat.LOGGER.warn("Called for unhandled MultiblockRecipe type {}! This may resolve tags too early!", recipe.getClass().getSimpleName());
 			warned = true;
 		}
 
 		return super.getOutputItems(recipe);
+	}
+
+	@Override
+	@Nullable
+	public MutableGristSet generateCost(MutableGristSet totalCost, MultiblockRecipe recipe, Item output, GeneratorCallback callback) {
+		if (recipe.getItemInputs() != null)
+			for (IngredientWithSize ing : recipe.getItemInputs())
+				if (!account(totalCost, callback, ing.getBaseIngredient(), ing.getCount()))
+					return null;
+
+		if (recipe.getFluidInputs() != null)
+			for (SizedFluidIngredient ing : recipe.getFluidInputs())
+				if (!FluidHelper.account(totalCost, callback, ing))
+					return null;
+
+		return totalCost;
+	}
+
+	@Override
+	public void reportPreliminaryLookupsTyped(MultiblockRecipe recipe, LookupTracker tracker) {
+		if (recipe.getItemInputs() != null)
+			for (IngredientWithSize ing : recipe.getItemInputs())
+				tracker.report(ing.getBaseIngredient());
 	}
 
 	static List<Item> safeResolve(TagOutput output) {
@@ -139,36 +161,5 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 
 	private static ResourceLocation c(String path) {
 		return ResourceLocation.fromNamespaceAndPath("c", path);
-	}
-
-	@Override
-	@Nullable
-	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
-		final MutableGristSet totalCost = ingredientCost(recipe, callback);
-		if (totalCost == null) return null;
-
-		if (recipe instanceof MultiblockRecipe r) {
-			if (r.getItemInputs() != null)
-				for (IngredientWithSize ing : r.getItemInputs())
-					if (!account(totalCost, callback, ing.getBaseIngredient(), ing.getCount()))
-						return null;
-
-			if (r.getFluidInputs() != null)
-				for (SizedFluidIngredient ing : r.getFluidInputs())
-					if (!FluidHelper.account(totalCost, callback, ing))
-						return null;
-		}
-
-		return finalizeGristCosts(totalCost, recipe);
-	}
-
-	@Override
-	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
-		super.reportPreliminaryLookups(recipe, tracker);
-
-		if (recipe instanceof MultiblockRecipe r)
-			if (r.getItemInputs() != null)
-				for (IngredientWithSize ing : r.getItemInputs())
-					tracker.report(ing.getBaseIngredient());
 	}
 }

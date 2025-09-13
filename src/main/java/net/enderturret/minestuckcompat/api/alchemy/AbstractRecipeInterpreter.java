@@ -80,7 +80,7 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	}
 
 	@Nullable
-	protected final GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
 		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
 	}
 

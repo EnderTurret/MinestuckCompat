@@ -1,7 +1,5 @@
 package net.enderturret.minestuckcompat.alchemy.ae2;
 
-import java.util.List;
-
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
@@ -20,7 +18,7 @@ import appeng.recipes.handlers.InscriberRecipe;
 public final class InscriberInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<InscriberInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(InscriberInterpreter::addedCost)
+			COST_FIELD.forGetter(InscriberInterpreter::addedCost)
 			).apply(instance, InscriberInterpreter::new));
 
 	public InscriberInterpreter(GristSet.Immutable addedCost) {
@@ -33,32 +31,19 @@ public final class InscriberInterpreter extends AbstractCostAddingRecipeInterpre
 	}
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
-		if (recipe instanceof InscriberRecipe r)
-			return List.of(r.getResultItem().getItem());
-
-		return super.getOutputItems(recipe);
-	}
-
-	@Override
 	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
 		MutableGristSet totalCost = MutableGristSet.newDefault();
 
-		final int resultCount;
 		if (recipe instanceof InscriberRecipe r) {
 			// Ignore press ingredients (since they're not consumed).
 			if (r.getProcessType() != InscriberProcessType.INSCRIBE)
 				if (!account(totalCost, callback, r.getTopOptional())) return null;
 			if (!account(totalCost, callback, r.getMiddleInput())) return null;
 			if (!account(totalCost, callback, r.getBottomOptional())) return null;
-
-			resultCount = r.getResultItem().getCount();
 		}
-		else {
+		else
 			totalCost = ingredientCost(recipe, callback);
-			resultCount = recipe.getResultItem(getLookupProvider()).getCount();
-		}
 
-		return finalizeGristCosts(totalCost, resultCount);
+		return finalizeGristCosts(totalCost, recipe);
 	}
 }

@@ -3,6 +3,8 @@ package net.enderturret.minestuckcompat.alchemy.mekanism;
 import java.util.List;
 import java.util.Objects;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
@@ -19,14 +21,14 @@ import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInter
 
 import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
 
-public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipeInterpreter {
+public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<ItemStackChemicalToItemStackRecipe> {
 
 	public static final MapCodec<ItemChemical2ItemInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(ItemChemical2ItemInterpreter::addedCost)
+			COST_FIELD.forGetter(ItemChemical2ItemInterpreter::addedCost)
 			).apply(instance, ItemChemical2ItemInterpreter::new));
 
 	public ItemChemical2ItemInterpreter(GristSet.Immutable addedCost) {
-		super(addedCost);
+		super(ItemStackChemicalToItemStackRecipe.class, addedCost);
 	}
 
 	@Override
@@ -35,42 +37,34 @@ public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipe
 	}
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
-		if (recipe instanceof ItemStackChemicalToItemStackRecipe r)
-			return r.getOutputDefinition().stream()
-					.map(ItemStack::getItem)
-					.filter(Objects::nonNull)
-					.toList();
-
-		return super.getOutputItems(recipe);
+	public List<Item> getOutputItemsTyped(ItemStackChemicalToItemStackRecipe recipe) {
+		return recipe.getOutputDefinition().stream()
+				.map(ItemStack::getItem)
+				.filter(Objects::nonNull)
+				.toList();
 	}
 
 	@Override
-	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
-		final MutableGristSet totalCost = ingredientCost(recipe, callback);
+	public MutableGristSet generateCost(MutableGristSet totalCost, ItemStackChemicalToItemStackRecipe recipe, Item output, GeneratorCallback callback) {
+		if (!account(totalCost, callback, recipe.getItemInput().ingredient()))
+			return null;
 
-		final int resultCount;
-		if (recipe instanceof ItemStackChemicalToItemStackRecipe r) {
-			if (!account(totalCost, callback, r.getItemInput().ingredient()))
-				return null;
+		if (!ChemicalHelper.account(totalCost, callback, recipe.getChemicalInput()))
+			return null;
 
-			if (!ChemicalHelper.account(totalCost, callback, r.getChemicalInput()))
-				return null;
-
-			resultCount = r.getOutputDefinition().stream()
-					.mapToInt(ItemStack::getCount)
-					.max().orElse(1);
-		}
-		else resultCount = recipe.getResultItem(getLookupProvider()).getCount();
-
-		return finalizeGristCosts(totalCost, resultCount);
+		return totalCost;
 	}
 
 	@Override
-	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
-		if (recipe instanceof ItemStackChemicalToItemStackRecipe r)
-			tracker.report(r.getItemInput().ingredient().ingredient());
+	@Nullable
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
+		return finalizeGristCosts(totalCost, recipe instanceof ItemStackChemicalToItemStackRecipe r
+				? r.getOutputDefinition().stream().mapToInt(ItemStack::getCount).max().orElse(1)
+				: recipe.getResultItem(getLookupProvider()).getCount());
+	}
 
-		super.reportPreliminaryLookups(recipe, tracker);
+	@Override
+	public void reportPreliminaryLookupsTyped(ItemStackChemicalToItemStackRecipe recipe, LookupTracker tracker) {
+		tracker.report(recipe.getItemInput().ingredient().ingredient());
 	}
 }

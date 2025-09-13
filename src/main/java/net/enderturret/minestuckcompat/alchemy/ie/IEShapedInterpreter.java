@@ -22,7 +22,7 @@ import blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractShaped
 public final class IEShapedInterpreter extends AbstractCostAddingRecipeInterpreter {
 
 	public static final MapCodec<IEShapedInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(IEShapedInterpreter::addedCost)
+			COST_FIELD.forGetter(IEShapedInterpreter::addedCost)
 			).apply(instance, IEShapedInterpreter::new));
 
 	public IEShapedInterpreter(GristSet.Immutable addedCost) {

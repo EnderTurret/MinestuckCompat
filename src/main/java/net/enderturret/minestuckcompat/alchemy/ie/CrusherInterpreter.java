@@ -13,20 +13,19 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
 
-public final class CrusherInterpreter extends AbstractCostAddingRecipeInterpreter {
+public final class CrusherInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CrusherRecipe> {
 
 	public static final MapCodec<CrusherInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(CrusherInterpreter::addedCost)
+			COST_FIELD.forGetter(CrusherInterpreter::addedCost)
 			).apply(instance, CrusherInterpreter::new));
 
 	public CrusherInterpreter(GristSet.Immutable addedCost) {
-		super(addedCost);
+		super(CrusherRecipe.class, addedCost);
 	}
 
 	@Override
@@ -35,31 +34,20 @@ public final class CrusherInterpreter extends AbstractCostAddingRecipeInterprete
 	}
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
-		if (recipe instanceof CrusherRecipe r)
-			return MultiblockInterpreter.safeResolve(r.output);
-
-		return super.getOutputItems(recipe);
+	public List<Item> getOutputItemsTyped(CrusherRecipe recipe) {
+		return MultiblockInterpreter.safeResolve(recipe.output);
 	}
 
 	@Override
 	@Nullable
-	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
-		final MutableGristSet totalCost = ingredientCost(recipe, callback);
-		if (totalCost == null) return null;
-
-		if (recipe instanceof CrusherRecipe r)
-			if (!account(totalCost, callback, r.input))
-				return null;
-
-		return finalizeGristCosts(totalCost, recipe);
+	public MutableGristSet generateCost(MutableGristSet totalCost, CrusherRecipe recipe, Item output, GeneratorCallback callback) {
+		if (!account(totalCost, callback, recipe.input))
+			return null;
+		return totalCost;
 	}
 
 	@Override
-	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
-		super.reportPreliminaryLookups(recipe, tracker);
-
-		if (recipe instanceof CrusherRecipe r)
-			tracker.report(r.input);
+	public void reportPreliminaryLookupsTyped(CrusherRecipe recipe, LookupTracker tracker) {
+		tracker.report(recipe.input);
 	}
 }
