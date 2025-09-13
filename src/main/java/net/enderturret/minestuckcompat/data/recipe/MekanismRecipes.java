@@ -100,13 +100,13 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		//
 
 		oreCombinations(output, mek("ingot_lead"), mek("block_lead"), mek("lead_ore"), mek("deepslate_lead_ore"), mek("raw_lead"), mek("block_raw_lead"));
-		combination(mek("ingot_lead")).and().input(Items.IRON_INGOT).input(Tags.Items.DYES_GRAY).build(output);
+		combination(mek("ingot_lead")).or().input(Items.IRON_INGOT).input(Items.SPIDER_EYE).build(output);
 		oreCombinations(output, mek("ingot_osmium"), mek("block_osmium"), mek("osmium_ore"), mek("deepslate_osmium_ore"), mek("raw_osmium"), mek("block_raw_osmium"));
 		combination(mek("ingot_osmium")).and().input(Items.IRON_INGOT).input(MSItems.RAW_CRUXITE).build(output);
 		oreCombinations(output, mek("ingot_tin"), mek("block_tin"), mek("tin_ore"), mek("deepslate_tin_ore"), mek("raw_tin"), mek("block_raw_tin"));
 		combination(mek("ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
 		oreCombinations(output, mek("ingot_uranium"), mek("block_uranium"), mek("uranium_ore"), mek("deepslate_uranium_ore"), mek("raw_uranium"), mek("block_raw_uranium"));
-		combination(mek("ingot_uranium")).and().input(mek("ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
+		combination(mek("ingot_uranium")).or().input(mek("ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
 
 		combination(mek("crystal_iron")).and().input(Items.QUARTZ).input(Items.IRON_INGOT).build(output);
 		combination(mek("crystal_gold")).and().input(Items.QUARTZ).input(Items.GOLD_INGOT).build(output);

@@ -2,11 +2,11 @@
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
-      "modid": "mekanism"
+      "modid": "immersiveengineering"
     },
     {
       "type": "minestuckcompat:config",
-      "modid": "mekanism"
+      "modid": "immersiveengineering"
     }
   ],
   "type": "minestuck:combination",
@@ -14,8 +14,8 @@
     "item": "minecraft:iron_ingot"
   },
   "input2": {
-    "item": "minecraft:spider_eye"
+    "item": "minestuck:silver_spoon"
   },
-  "mode": "or",
-  "output": "mekanism:ingot_lead"
+  "mode": "and",
+  "output": "immersiveengineering:ingot_silver"
 }

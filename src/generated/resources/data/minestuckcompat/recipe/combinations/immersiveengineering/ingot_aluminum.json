@@ -2,20 +2,20 @@
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
-      "modid": "mekanism"
+      "modid": "immersiveengineering"
     },
     {
       "type": "minestuckcompat:config",
-      "modid": "mekanism"
+      "modid": "immersiveengineering"
     }
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "mekanism:ingot_lead"
+    "item": "minecraft:copper_ingot"
   },
   "input2": {
-    "item": "minecraft:fermented_spider_eye"
+    "item": "minecraft:gold_ingot"
   },
   "mode": "or",
-  "output": "mekanism:ingot_uranium"
+  "output": "immersiveengineering:ingot_aluminum"
 }
