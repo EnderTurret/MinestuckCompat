@@ -18,8 +18,8 @@ import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.api.data.AbstractRecipeProvider;
-import net.enderturret.minestuckcompat.api.data.RenamingRecipeOutput;
+import net.enderturret.minestuckcompat.data.util.AbstractRecipeProvider;
+import net.enderturret.minestuckcompat.data.util.RenamingRecipeOutput;
 
 @Internal
 public final class CreateRecipes extends AbstractRecipeProvider {

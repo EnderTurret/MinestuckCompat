@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.api.data;
+package net.enderturret.minestuckcompat.data.util;
 
 import java.util.concurrent.CompletableFuture;
 

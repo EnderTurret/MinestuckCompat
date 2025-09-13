@@ -1,4 +1,4 @@
-package net.enderturret.minestuckcompat.api.data;
+package net.enderturret.minestuckcompat.data.util;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -85,7 +85,7 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 	}
 
 	protected static TagKey<Item> c(String path) {
-		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
+		return tag("c", path);
 	}
 
 	protected static Item lookup(String namespace, String path) {

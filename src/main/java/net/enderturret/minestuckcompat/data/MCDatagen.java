@@ -17,7 +17,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.api.data.WrappedDataProvider;
 import net.enderturret.minestuckcompat.data.recipe.Ae2Recipes;
 import net.enderturret.minestuckcompat.data.recipe.BiomesOPlentyRecipes;
 import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
@@ -26,6 +25,7 @@ import net.enderturret.minestuckcompat.data.recipe.ImmersiveEngineeringRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
+import net.enderturret.minestuckcompat.data.util.WrappedDataProvider;
 
 @Internal
 @EventBusSubscriber(modid = MinestuckCompat.MOD_ID)
