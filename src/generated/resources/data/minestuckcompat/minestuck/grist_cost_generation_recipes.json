@@ -273,6 +273,26 @@
     ],
     "interpreter": {
       "type": "minestuckcompat:simple",
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:mechanical_crafting"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
       "added_cost": {
         "minestuck:mercury": 1
       },
@@ -296,6 +316,9 @@
     ],
     "interpreter": {
       "type": "minestuckcompat:create/sequenced_assembly",
+      "deploy_cost": {
+        "minestuck:build": 1
+      },
       "press_cost": {
         "minestuck:mercury": 1
       }
@@ -303,6 +326,121 @@
     "source": {
       "type": "recipe_type",
       "recipe_type": "create:sequenced_assembly"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:shale": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:haunting"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:cobalt": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:splashing"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:mercury": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:milling"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:mercury": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:crushing"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "create"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:build": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "create:deploying"
     }
   },
   {

@@ -129,14 +129,6 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 
 		// Miscellaneous
 
-		sourceGristCost(CRUSHING_WHEEL).grist(BUILD, 5).multiplier(8).source(ANDESITE_ALLOY.asItem()).build(output);
-		sourceGristCost(WAND_OF_SYMMETRY).source(c("glass_blocks")).source(c("glass_blocks")).source(c("glass_blocks"))
-				.source(Items.ENDER_PEARL).source(PRECISION_MECHANISM.asItem()).source(BRASS_INGOT.asItem()).source(c("obsidians")).build(output);
-		sourceGristCost(EXTENDO_GRIP).source(BRASS_INGOT.asItem()).source(PRECISION_MECHANISM.asItem()).source(Items.STICK).source(Items.STICK)
-				.source(Items.STICK).source(Items.STICK).source(Items.STICK).source(Items.STICK).source(BRASS_HAND.asItem()).build(output);
-		sourceGristCost(POTATO_CANNON).source(ANDESITE_ALLOY.asItem()).source(PRECISION_MECHANISM.asItem()).source(FLUID_PIPE.asItem())
-				.source(FLUID_PIPE.asItem()).source(FLUID_PIPE.asItem()).source(Items.COPPER_INGOT).source(Items.COPPER_INGOT).build(output);
-		sourceGristCost(HAUNTED_BELL).grist(SHALE, 1).source(PECULIAR_BELL.asItem()).build(output);
 		sourceGristCost(BLAZE_BURNER).grist(SULFUR, 20).source(Items.BLAZE_ROD).source(EMPTY_BLAZE_BURNER.asItem()).build(output);
 
 		//

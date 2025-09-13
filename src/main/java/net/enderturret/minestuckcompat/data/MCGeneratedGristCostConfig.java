@@ -71,8 +71,14 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		// Create
 		type(AllRecipeTypes.ITEM_APPLICATION.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.PRESSING.getType(), new SimpleRecipeInterpreter(false));
+		type(AllRecipeTypes.MECHANICAL_CRAFTING.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
-		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(GristSet.EMPTY, grist(GristTypes.MERCURY, 1)));
+		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(grist(GristTypes.BUILD, 1), grist(GristTypes.MERCURY, 1)));
+		type(AllRecipeTypes.HAUNTING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.SHALE, 1)));
+		type(AllRecipeTypes.SPLASHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.COBALT, 1)));
+		type(AllRecipeTypes.MILLING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
+		type(AllRecipeTypes.CRUSHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
+		type(AllRecipeTypes.DEPLOYING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.BUILD, 1)));
 
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());
