@@ -124,19 +124,38 @@ public final class MixinHooks {
 
 		final Set<RecipeHolder<?>> recipes = new HashSet<>(recipeManager.getRecipes());
 
-		final Set<String> impossibleRecipes = Set.of("mekanism:chemical_conversion", "mekanism:chemical_infusing",
+		final Set<String> impossibleRecipes = Set.of(
+				"mekanism:chemical_conversion", "mekanism:chemical_infusing",
 				"mekanism:dissolution", "mekanism:evaporating", "mekanism:oxidizing", "mekanism:pigment_extracting",
 				"mekanism:rotary", "mekanism:washing", "mekanism:centrifuging", "mekanism:separating",
-				"mekanism:pigment_mixing", "mekanism:energy_conversion",
+				"mekanism:pigment_mixing", "mekanism:energy_conversion", "mekanism:activating",
 				// No point supporting this one (only mirrors vanilla recipes):
 				"mekanism:painting",
-				"ae2:entropy", "ae2:matter_cannon");
+
+				"ae2:entropy", "ae2:matter_cannon",
+
+				"create:emptying",
+
+				"immersiveengineering:thermoelectric_source", "immersiveengineering:mineral_mix",
+				"immersiveengineering:generator_fuel", "immersiveengineering:fertilizer", "immersiveengineering:cloche",
+				"immersiveengineering:blast_furnace_fuel", "immersiveengineering:windmill_biome",
+
+				// Item ==> Liquid
+				"immersiveengineering:squeezer", "immersiveengineering:fermenter",
+				// Liquid + Item ==> Liquid
+				"immersiveengineering:refinery", "immersiveengineering:mixer"
+				);
 
 		final Set<String> unsupportedRecipes = Set.of(
+				"minecraft:smithing",
 				// Mirrors of smelting:
 				"minecraft:blasting", "minecraft:smoking", "minecraft:campfire_cooking",
 				// Likely to significantly alter grist costs:
-				"mekanism:sawing", "mekanism:combining");
+				"mekanism:sawing", "mekanism:combining",
+				"immersiveengineering:sawmill",
+				// Can't be bothered:
+				"mekanism:crystallizing", "mekanism:reaction",
+				"ae2:transform");
 
 		recipes.removeIf(recipe -> {
 			// Skip grist/alchemization recipes.

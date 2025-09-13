@@ -43,6 +43,7 @@
     { "id": "create:shadow_steel_casing", "required": false },
 
     { "id": "immersiveengineering:capacitor_creative", "required": false },
+    { "id": "immersiveengineering:ingot_hop_graphite", "required": false },
 
     { "id": "supplementaries:raked_gravel", "required": false },
     { "id": "supplementaries:suspicious_gravel_bricks", "required": false },
