@@ -6,7 +6,6 @@
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "item": "ae2:redstone_p2p_tunnel"
   },

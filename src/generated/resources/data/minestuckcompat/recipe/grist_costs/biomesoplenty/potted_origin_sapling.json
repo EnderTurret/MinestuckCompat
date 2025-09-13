@@ -6,7 +6,6 @@
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "item": "biomesoplenty:potted_origin_sapling"
   },

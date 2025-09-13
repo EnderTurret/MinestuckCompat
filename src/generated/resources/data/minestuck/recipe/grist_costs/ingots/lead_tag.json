@@ -13,7 +13,6 @@
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "tag": "c:ingots/lead"
   },

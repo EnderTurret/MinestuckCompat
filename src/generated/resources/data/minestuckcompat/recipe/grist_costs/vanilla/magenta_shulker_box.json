@@ -6,7 +6,6 @@
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "item": "minecraft:magenta_shulker_box"
   },

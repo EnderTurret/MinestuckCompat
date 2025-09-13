@@ -1,18 +1,18 @@
-// 1.21.1	2025-09-11T17:28:50.126892977	Minestuck Recipes
-e0b50104dba28cf76daabe25b2bb75e5b0251fa9 data/minestuck/recipe/grist_costs/ingots/aluminium_tag.json
-6d683ffec1728ef41313e822aaec525b617757a7 data/minestuck/recipe/grist_costs/ingots/aluminum_tag.json
-9923271dd7375e87889d9e84955b03ecea072502 data/minestuck/recipe/grist_costs/ingots/ardite_tag.json
+// 1.21.1	2025-09-13T18:26:18.231833932	Minestuck Recipes
+3f1576d6e160e07d6c4ebc694917c49ec92e244a data/minestuck/recipe/grist_costs/ingots/aluminium_tag.json
+7ac7834902b5a9a895f5c0fea1040bcf9831a16a data/minestuck/recipe/grist_costs/ingots/aluminum_tag.json
+63996a3003eefec3eae68ae9843f563f12bf74b9 data/minestuck/recipe/grist_costs/ingots/ardite_tag.json
 a7ccd2eabbaf5e4c0db833b85396e5d986ce4b23 data/minestuck/recipe/grist_costs/ingots/brass_tag.json
-87f3d80297a2fb9d08feef13f5340ef3a9250747 data/minestuck/recipe/grist_costs/ingots/cobalt_tag.json
+47bfb1e3e715654aa03e799895cac6baf9e99a14 data/minestuck/recipe/grist_costs/ingots/cobalt_tag.json
 8687e373df0908d5e518d753ff1e00a9167b3c20 data/minestuck/recipe/grist_costs/ingots/electrum_tag.json
 ea382a796b348e46f2056941185a40481152099e data/minestuck/recipe/grist_costs/ingots/invar_tag.json
-313a07da64f44d1ea77f19e8f27bea04d20c6874 data/minestuck/recipe/grist_costs/ingots/lead_tag.json
-dbea85a0a7bf1628996f9073f3c0f33b018c3ab1 data/minestuck/recipe/grist_costs/ingots/nickel_tag.json
+241b7bacfcd8f0443b4c56e8d700525f65b3c993 data/minestuck/recipe/grist_costs/ingots/lead_tag.json
+ad522dc61636b4385f9f5d380caacb2c675d4678 data/minestuck/recipe/grist_costs/ingots/nickel_tag.json
 8a5590d7a3435ca173b511a772003d0328cb0ac5 data/minestuck/recipe/grist_costs/ingots/red_alloy_tag.json
-346f26fa7f801b3d2102264c1c72b8990a94b456 data/minestuck/recipe/grist_costs/ingots/silver_tag.json
-fbdbc9f5db3668f76494b127d873619c51c6cb2c data/minestuck/recipe/grist_costs/ingots/tin_tag.json
+b6f302ca89a0a1661ad5adcb93a3111fd8155a36 data/minestuck/recipe/grist_costs/ingots/silver_tag.json
+886f759a0d7863f1656247de6d366fc3d7e906c3 data/minestuck/recipe/grist_costs/ingots/tin_tag.json
 17904327e2aa18182f19df2df8064e8d9626c023 data/minestuck/recipe/grist_costs/ingots/uranium_tag.json
-24d2693c6be21be5fafe7b1702fd109a1f7165b0 data/minestuck/recipe/grist_costs/ingots/zinc_tag.json
+f7e7aa21f3324618e65a2606930e7a1d83a45d2a data/minestuck/recipe/grist_costs/ingots/zinc_tag.json
 c2229e1ec09582da0d263413de50e3b3ac96edff data/minestuck/recipe/grist_costs/ores/aluminium_tag.json
 ad8adbfb233dbf0d89e4a78b9d80d904167c7ad5 data/minestuck/recipe/grist_costs/ores/aluminum_tag.json
 f85f98d00da125016d25049f203ded68d0e3c56f data/minestuck/recipe/grist_costs/ores/ardite_tag.json
@@ -23,7 +23,7 @@ e1a436a893ec33ce9f9d69b69a87335c48b82b1e data/minestuck/recipe/grist_costs/ores/
 e71c14652c153d8bb72310a3c7886013f0d2f5fc data/minestuck/recipe/grist_costs/ores/silver_tag.json
 9a3fda97485cd3a7580614deb12ce62acab7b6fa data/minestuck/recipe/grist_costs/ores/tin_tag.json
 b9f69dc1acf2e6f72651445ad910e5422f7beaf2 data/minestuck/recipe/grist_costs/ores/zinc_tag.json
-37a0103607c979d7cc7952c76c79c9f05ef7cafe data/minestuck/recipe/grist_costs/raw_materials/aluminium_tag.json
+6e13bcab7d3dbafdfefc5fcd5bd93e41b9cd81c0 data/minestuck/recipe/grist_costs/raw_materials/aluminium_tag.json
 914d6b18e29728166c9bb6d3ec56489bc427fbe6 data/minestuck/recipe/grist_costs/raw_materials/aluminum_tag.json
 e97561860b2965fc9a8e451465c5e0fb40746273 data/minestuck/recipe/grist_costs/raw_materials/ardite_tag.json
 fdfb4cd36b97c191b839a4eab56c87a4e8985a81 data/minestuck/recipe/grist_costs/raw_materials/cobalt_tag.json
