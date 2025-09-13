@@ -7,6 +7,7 @@ Minestuck Compat has specific support for:
 * [Biomes O' Plenty](https://modrinth.com/mod/biomes-o-plenty)
 * [Create](https://modrinth.com/mod/create)
 * [Farmer's Delight](https://modrinth.com/mod/farmers-delight)
+* [Immersive Engineering](https://modrinth.com/mod/immersiveengineering)
 * [Mekanism](https://modrinth.com/mod/mekanism)
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
 * [Supplementaries](https://modrinth.com/mod/supplementaries)
@@ -28,6 +29,7 @@ Additionally, Minestuck Compat fills out some missing grist costs and combinatio
 * Combination recipes for banner patterns
 * Combination recipes for a few other odds and ends (e.g., sniffer egg, wind charge)
 * Combination recipes for Minestuck's wood sets (saplings, stairs, fence gates, trapdoors)
+* Combination recipes for deepslate ores (ingot AND deepslate)
 * Corrected grist costs for suspicious sand and barriers (empty item tags)
 
 ## Debugging Features
