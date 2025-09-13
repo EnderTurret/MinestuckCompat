@@ -144,5 +144,18 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 
 		woodCombinations(output, TREATED_WOOD.get(TreatedWoodStyles.HORIZONTAL), lookup(modId, "slab_treated_wood_horizontal"), lookup(modId, "stairs_treated_wood_horizontal"), DOOR, TREATED_FENCE, TREATED_FENCE_GATE, TRAPDOOR);
 		woodCombinations(output, STORAGE.get(EnumMetals.STEEL), lookup(modId, "slab_storage_steel"), null, STEEL_DOOR, STEEL_FENCE, STEEL_FENCE_GATE, STEEL_TRAPDOOR);
+
+		final RecipeOutput notMekanism = output.withConditions(not(modLoaded("mekanism")));
+		combination(DUSTS.get(EnumMetals.IRON)).and().input(Items.REDSTONE).input(Items.IRON_INGOT).build(notMekanism);
+		combination(DUSTS.get(EnumMetals.GOLD)).and().input(Items.REDSTONE).input(Items.GOLD_INGOT).build(notMekanism);
+		combination(DUSTS.get(EnumMetals.COPPER)).and().input(Items.REDSTONE).input(Items.COPPER_INGOT).build(notMekanism);
+		combination(DUSTS.get(EnumMetals.LEAD)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.LEAD)).build(notMekanism);
+		combination(DUSTS.get(EnumMetals.URANIUM)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.URANIUM)).build(notMekanism);
+		combination(DUSTS.get(EnumMetals.ALUMINUM)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.ALUMINUM)).build(output);
+		combination(DUSTS.get(EnumMetals.SILVER)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.SILVER)).build(output);
+		combination(DUSTS.get(EnumMetals.NICKEL)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.NICKEL)).build(output);
+		combination(DUSTS.get(EnumMetals.CONSTANTAN)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.CONSTANTAN)).build(output);
+		combination(DUSTS.get(EnumMetals.ELECTRUM)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.ELECTRUM)).build(output);
+		combination(DUSTS.get(EnumMetals.STEEL)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.STEEL)).build(notMekanism);
 	}
 }
