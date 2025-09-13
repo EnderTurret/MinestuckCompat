@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createoreexcavation"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "createoreexcavation"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:quartz": 4
+  },
+  "ingredient": {
+    "item": "createoreexcavation:raw_emerald"
+  },
+  "sources": [
+    "minecraft:emerald"
+  ]
+}

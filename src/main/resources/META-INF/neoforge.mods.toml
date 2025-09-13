@@ -20,11 +20,13 @@ license="LGPL v2.1"
     Also includes recipe interpreters (for use with the grist cost generator) for:
     * Applied Energistics 2
     * Create
+    * Immersive Engineering
     * Mekanism
 
-    Additionally, it also includes partial support for:
+    Additionally, it also includes partial (or full) grist cost support for:
     * Applied Mekanistics
     * Builders Crafts & Additions 2
+    * Create Ore Excavation
     * Dank Storage
     * Expanded Storage
     * FramedBlocks

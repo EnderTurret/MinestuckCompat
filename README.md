@@ -12,9 +12,10 @@ Minestuck Compat has specific support for:
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
 * [Supplementaries](https://modrinth.com/mod/supplementaries)
 
-Minestuck Compat also has partial support for:
+Minestuck Compat also has partial (or full) support for:
 * [Applied Mekanistics](https://modrinth.com/mod/applied-mekanistics)
 * [Builders Crafts & Additions 2](https://modrinth.com/mod/buildersaddition)
+* [Create Ore Excavation](https://modrinth.com/mod/create-ore-excavation)
 * [Dank Storage](https://www.curseforge.com/minecraft/mc-mods/dank-storage)
 * [Expanded Storage](https://modrinth.com/mod/expanded-storage)
 * [FramedBlocks](https://modrinth.com/mod/framedblocks)

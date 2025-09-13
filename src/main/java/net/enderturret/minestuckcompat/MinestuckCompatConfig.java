@@ -93,6 +93,7 @@ public final class MinestuckCompatConfig {
 
 		defineEnabledRecipes(builder, "appmek", "Applied Mekanistics");
 		defineEnabledRecipes(builder, "buildersaddition2", "Builders Crafts & Additions 2");
+		defineEnabledRecipes(builder, "createoreexcavation", "Create Ore Excavation");
 		defineEnabledRecipes(builder, "dankstorage", "Dank Storage");
 		defineEnabledRecipes(builder, "expandedstorage", "Expanded Storage");
 		defineEnabledRecipes(builder, "framedblocks", "FramedBlocks");
