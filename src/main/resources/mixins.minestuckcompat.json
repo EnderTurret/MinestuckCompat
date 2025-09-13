@@ -4,6 +4,9 @@
   "package": "net.enderturret.minestuckcompat.mixin",
   "plugin": "net.enderturret.minestuckcompat.mixin.MixinConfigPlugin",
   "compatibilityLevel": "JAVA_21",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "mixins": [
     "feature.immersiveengineering.MixinTagOutput",
     "feature.immersiveengineering.TagOutputAccess",

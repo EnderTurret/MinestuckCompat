@@ -16,6 +16,8 @@ public final class EmptyGristSet implements GristSet.Immutable {
 
 	public static final EmptyGristSet INSTANCE = new EmptyGristSet();
 
+	private EmptyGristSet() {}
+
 	@Override
 	public Map<GristType, Long> asMap() {
 		return Map.of();
