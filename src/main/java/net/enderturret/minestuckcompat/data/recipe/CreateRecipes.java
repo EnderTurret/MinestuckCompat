@@ -139,6 +139,20 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		combination(ZINC_INGOT).and().input(Items.COPPER_INGOT).input(c("gems/emerald")).build(output);
 
 		combination(BLAZE_BURNER).or().input(EMPTY_BLAZE_BURNER.asItem()).input(Items.BLAZE_ROD).build(output);
+
+		combination(CRUSHED_BAUXITE).and().input(c("ingots/aluminum")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/aluminum")))));
+		combination(CRUSHED_COPPER).and().input(c("ingots/copper")).input(Items.GRAVEL).build(output);
+		combination(CRUSHED_GOLD).and().input(c("ingots/gold")).input(Items.GRAVEL).build(output);
+		combination(CRUSHED_IRON).and().input(c("ingots/iron")).input(Items.GRAVEL).build(output);
+		combination(CRUSHED_LEAD).and().input(c("ingots/lead")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/lead")))));
+		combination(CRUSHED_NICKEL).and().input(c("ingots/nickel")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/nickel")))));
+		combination(CRUSHED_OSMIUM).and().input(c("ingots/osmium")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/osmium")))));
+		combination(CRUSHED_PLATINUM).and().input(c("ingots/platinum")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/platinum")))));
+		combination(CRUSHED_QUICKSILVER).and().input(c("ingots/quicksilver")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/quicksilver")))));
+		combination(CRUSHED_SILVER).and().input(c("ingots/silver")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/silver")))));
+		combination(CRUSHED_TIN).and().input(c("ingots/tin")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/tin")))));
+		combination(CRUSHED_URANIUM).and().input(c("ingots/uranium")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/uranium")))));
+		combination(CRUSHED_ZINC).and().input(c("ingots/zinc")).input(Items.GRAVEL).build(output);
 	}
 
 	private void variantSet(RecipeOutput output, String baseTypeDomain, String baseTypeName) {

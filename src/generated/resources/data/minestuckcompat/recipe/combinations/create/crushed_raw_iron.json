@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "c:ingots/iron"
+  },
+  "input2": {
+    "item": "minecraft:gravel"
+  },
+  "mode": "and",
+  "output": "create:crushed_raw_iron"
+}
