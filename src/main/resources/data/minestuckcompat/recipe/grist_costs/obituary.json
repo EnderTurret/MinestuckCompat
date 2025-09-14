@@ -1,16 +1,11 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "gravestone"
-    },
-    {
       "type": "minestuckcompat:config",
       "modid": "gravestone"
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "item": "gravestone:obituary"
   },

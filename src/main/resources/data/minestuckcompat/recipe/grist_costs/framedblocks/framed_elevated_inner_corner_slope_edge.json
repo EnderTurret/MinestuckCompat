@@ -1,16 +1,11 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "framedblocks"
-    },
-    {
       "type": "minestuckcompat:config",
       "modid": "framedblocks"
     }
   ],
   "type": "minestuck:source_grist_cost",
-  "grist_cost": {},
   "ingredient": {
     "item": "framedblocks:framed_elevated_inner_corner_slope_edge"
   },

@@ -1,10 +1,6 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "createoreexcavation"
-    },
-    {
       "type": "minestuckcompat:config",
       "modid": "createoreexcavation"
     }
