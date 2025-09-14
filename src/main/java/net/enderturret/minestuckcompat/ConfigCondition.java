@@ -26,7 +26,6 @@ public record ConfigCondition(String option, String modId) implements ICondition
 	public boolean test(IContext context) {
 		return switch (option) {
 			case "" -> ModList.get().isLoaded(modId) && MinestuckCompatConfig.common().isModEnabled(modId);
-			case "fixminestuck" -> MinestuckCompatConfig.common().fixMinestuck.getAsBoolean();
 			default -> {
 				MinestuckCompat.LOGGER.warn("Unknown config option: {}", option);
 				yield false;

@@ -26,8 +26,6 @@ public final class MinestuckCompatConfig {
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
 	public final BooleanValue debugDefaultInterpreterRecipeEligibility;
 
-	public final BooleanValue fixMinestuck;
-
 	private final Map<String, BooleanValue> enabledRecipes = new HashMap<>();
 
 	private MinestuckCompatConfig(ModConfigSpec.Builder builder) {
@@ -68,17 +66,6 @@ public final class MinestuckCompatConfig {
 				"recipes by adding `\"ignore_simple\": false` to its definition. The interpreter is otherwise",
 				"a one-to-one clone of Minestuck's default interpreter (besides allowing an added cost)."
 				).define("debugDefaultInterpreterRecipeEligibility", false);
-
-		fixMinestuck = builder.comment(
-				"Whether or not to fix some of Minestuck's grist cost recipes.",
-				"",
-				"Many of these fixes involve adding checks to mod integration ore recipes (e.g., grist costs for",
-				"Invar) that end up accidentally adding costs to barriers when the respective mod(s) aren't loaded.",
-				"In short: fixes Minestuck adding grist costs to the barrier block.",
-				"",
-				"Minestuck Compat also fixes Minestuck's sand grist cost to not apply to suspicious sand, so that",
-				"suspicious sand doesn't end up with two grist costs."
-				).define("fixMinestuck", true);
 
 		builder.comment("Settings for turning on/off grist cost integration for supported mods.").push("integration");
 

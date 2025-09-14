@@ -30,7 +30,7 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck").withConditions(new ConfigCondition("minestuck"));
-		final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null).withConditions(new ConfigCondition("fixminestuck", ""));
+		final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null);
 
 		//
 		// Try to fix empty tag grist costs.

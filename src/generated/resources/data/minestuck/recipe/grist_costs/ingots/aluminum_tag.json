@@ -1,10 +1,6 @@
 {
   "neoforge:conditions": [
     {
-      "type": "minestuckcompat:config",
-      "option": "fixminestuck"
-    },
-    {
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
