@@ -20,13 +20,13 @@
     "feature.outside_grist_costs.MixinRecipeGeneratedCostProcess",
     "perf.allocations.MixinGristSet",
     "perf.allocations.MixinMutableGristSet",
+    "perf.small_grist_set.data.MixinContainerGristCostBuilder",
+    "perf.small_grist_set.data.MixinGristCostRecipeBuilder",
+    "perf.small_grist_set.data.MixinSourceGristCostBuilder",
     "perf.small_grist_set.MixinCodecs",
-    "perf.small_grist_set.MixinContainerGristCostBuilder",
     "perf.small_grist_set.MixinDefaultImmutableGristSet",
-    "perf.small_grist_set.MixinGristCostRecipeBuilder",
     "perf.small_grist_set.MixinGristSet",
     "perf.small_grist_set.MixinMutableGristSet",
-    "perf.small_grist_set.MixinSourceGristCostBuilder",
     "perf.small_recipes.MixinSourceGristCostSerializer"
   ]
 }
