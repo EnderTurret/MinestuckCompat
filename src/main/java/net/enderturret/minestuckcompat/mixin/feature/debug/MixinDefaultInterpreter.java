@@ -25,23 +25,20 @@ public abstract class MixinDefaultInterpreter {
 	@Inject(at = @At("RETURN"), method = "getOutputItems")
 	private void minestuckcompat$printRecipeEligibilityFromOutput(Recipe<?> recipe, CallbackInfoReturnable<List<Item>> cir) {
 		if (cir.getReturnValue().isEmpty() && MinestuckCompatConfig.common().debugDefaultInterpreterRecipeEligibility.getAsBoolean())
-			MinestuckCompat.LOGGER.warn("Recipe {} (type {}, serializer {}) was unhandled because it had no result.",
-					recipe,
-					BuiltInRegistries.RECIPE_TYPE.getKey(recipe.getType()), BuiltInRegistries.RECIPE_SERIALIZER.getKey(recipe.getSerializer()));
+			minestuckcompat$logWarn("Recipe {} (type {}, serializer {}) was unhandled because it had no result.", recipe);
 	}
 
 	@Inject(at = @At("HEAD"), method = "generateCost")
 	private void minestuckcompat$printRecipeEligibility(Recipe<?> recipe, Item output, GeneratorCallback callback, CallbackInfoReturnable<MutableGristSet> cir) {
-		if (recipe.isSpecial() && !(recipe instanceof CustomRecipe) && MinestuckCompatConfig.common().debugDefaultInterpreterRecipeEligibility.getAsBoolean()) {
-			MinestuckCompat.LOGGER.warn("Recipe {} (type {}, serializer {}) was unhandled because it was marked special.",
-					recipe,
-					BuiltInRegistries.RECIPE_TYPE.getKey(recipe.getType()), BuiltInRegistries.RECIPE_SERIALIZER.getKey(recipe.getSerializer()));
-		}
+		if (recipe.isSpecial() && !(recipe instanceof CustomRecipe) && MinestuckCompatConfig.common().debugDefaultInterpreterRecipeEligibility.getAsBoolean())
+			minestuckcompat$logWarn("Recipe {} (type {}, serializer {}) was unhandled because it was marked special.", recipe);
 
-		else if (recipe.getIngredients().isEmpty() && MinestuckCompatConfig.common().debugDefaultInterpreterRecipeEligibility.getAsBoolean()) {
-			MinestuckCompat.LOGGER.warn("Recipe {} (type {}, serializer {}) was unhandled because it had no ingredients.",
-					recipe,
-					BuiltInRegistries.RECIPE_TYPE.getKey(recipe.getType()), BuiltInRegistries.RECIPE_SERIALIZER.getKey(recipe.getSerializer()));
-		}
+		else if (recipe.getIngredients().isEmpty() && MinestuckCompatConfig.common().debugDefaultInterpreterRecipeEligibility.getAsBoolean())
+			minestuckcompat$logWarn("Recipe {} (type {}, serializer {}) was unhandled because it had no ingredients.", recipe);
+	}
+
+	private static void minestuckcompat$logWarn(String message, Recipe<?> recipe) {
+		MinestuckCompat.LOGGER.warn(message, recipe,
+				BuiltInRegistries.RECIPE_TYPE.getKey(recipe.getType()), BuiltInRegistries.RECIPE_SERIALIZER.getKey(recipe.getSerializer()));
 	}
 }
