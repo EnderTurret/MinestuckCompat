@@ -71,6 +71,7 @@ neoForge {
         client {
             client()
             ideName = 'runMinestuckCompatClient'
+            systemProperty('foxfilter.dev', 'true')
         }
 
         server {
@@ -82,6 +83,7 @@ neoForge {
             data()
             ideName = 'runMinestuckCompatData'
             programArguments.addAll '--mod', 'minestuckcompat', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            systemProperty('minestuckcompat.datagen', 'true')
         }
     }
 }

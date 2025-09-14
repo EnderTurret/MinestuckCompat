@@ -16,6 +16,9 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 		if (mixinClassName.contains("immersiveengineering"))
 			return LoadingModList.get().getModFileById("immersiveengineering") != null;
 
+		if (mixinClassName.contains("small_grist_set.data"))
+			return Boolean.getBoolean("minestuckcompat.datagen");
+
 		return true;
 	}
 
