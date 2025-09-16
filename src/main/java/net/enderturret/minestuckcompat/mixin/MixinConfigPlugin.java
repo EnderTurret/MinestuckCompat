@@ -16,10 +16,18 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 		if (mixinClassName.contains("immersiveengineering"))
 			return LoadingModList.get().getModFileById("immersiveengineering") != null;
 
-		if (mixinClassName.contains("small_grist_set.data"))
-			return Boolean.getBoolean("minestuckcompat.datagen");
-
 		return true;
+	}
+
+	@Override
+	public List<String> getMixins() {
+		if (Boolean.getBoolean("minestuckcompat.datagen"))
+			return List.of(
+					"perf.small_grist_set.data.MixinContainerGristCostBuilder",
+					"perf.small_grist_set.data.MixinGristCostRecipeBuilder",
+					"perf.small_grist_set.data.MixinSourceGristCostBuilder"
+					);
+		return null;
 	}
 
 	@Override
@@ -30,9 +38,6 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 
 	@Override
 	public void acceptTargets(Set<String> myTargets, Set<String> otherTargets) {}
-
-	@Override
-	public List<String> getMixins() { return null; }
 
 	@Override
 	public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {}

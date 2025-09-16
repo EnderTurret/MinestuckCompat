@@ -102,6 +102,7 @@ tasks.named('jar', Jar).configure {
 
     exclude '.cache'
     exclude 'net/enderturret/minestuckcompat/data/**'
+    exclude 'net/enderturret/minestuckcompat/mixin/perf/small_grist_set/data/**'
 }
 
 tasks.withType(JavaCompile).configureEach {
