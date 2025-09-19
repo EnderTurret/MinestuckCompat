@@ -17,6 +17,7 @@
     "feature.grist_source_conditions.MixinRecipeGeneratedCostHandler",
     "feature.jei_fixes.MixinDesignixRecipeCategory",
     "feature.jei_fixes.MixinGristCostRecipeCategory",
+    "feature.jei_fixes.MixinGristIngredientRenderer",
     "feature.jei_fixes.MixinMinestuckJeiPlugin",
     "feature.jei_fixes.MixinTotemLatheRecipeCategory",
     "feature.outside_grist_costs.GeneratorProcessAccess",
