@@ -15,6 +15,11 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = 'ModMaven'
+        url = 'https://modmaven.dev'
+    }
     flatDir {
         dirs 'libs'
     }
@@ -25,6 +30,8 @@ dependencies {
     // Minestuck dependencies
     runtimeOnly 'software.bernie:geckolib-neoforge-1.21.1:4.7.6'
     runtimeOnly 'net.commoble:infiniverse-1.21:2.0.1.0'
+    compileOnly "mezz.jei:jei-1.21.1-common-api:19.22.0.315"
+    compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.22.0.315"
 
     implementation 'mekanism:Mekanism-1.21.1:10.7.15.81'
     implementation 'mekanism:MekanismTools-1.21.1:10.7.15.81'

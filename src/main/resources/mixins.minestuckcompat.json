@@ -15,6 +15,7 @@
     "feature.debug.MixinRecipeGeneratedCostHandler",
     "feature.grist_source_conditions.MixinGeneratedGristCostConfigProvider",
     "feature.grist_source_conditions.MixinRecipeGeneratedCostHandler",
+    "feature.jei_fixes.MixinMinestuckJeiPlugin",
     "feature.outside_grist_costs.GeneratorProcessAccess",
     "feature.outside_grist_costs.MixinGristCostGenerator",
     "feature.outside_grist_costs.MixinRecipeGeneratedCostProcess",

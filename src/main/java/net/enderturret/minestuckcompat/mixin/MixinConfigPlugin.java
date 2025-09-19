@@ -16,6 +16,9 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 		if (mixinClassName.contains("immersiveengineering"))
 			return LoadingModList.get().getModFileById("immersiveengineering") != null;
 
+		if (mixinClassName.contains("jei_fixes"))
+			return LoadingModList.get().getModFileById("jei") != null;
+
 		return true;
 	}
 
