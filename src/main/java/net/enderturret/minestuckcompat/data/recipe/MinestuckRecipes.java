@@ -30,50 +30,52 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck").withConditions(new ConfigCondition("minestuck"));
-		final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null);
 
 		//
 		// Try to fix empty tag grist costs.
 		//
 
-		sourceGristCost(c("ores/aluminium")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminium")))));
-		sourceGristCost(c("ores/aluminum")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminum")))));
-		sourceGristCost(c("ores/ardite")).grist(BUILD, 4).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ores/ardite")))));
-		sourceGristCost(c("ores/cobalt")).grist(BUILD, 4).source(c("raw_materials/cobalt")).build(output2.withConditions(not(tagEmpty(c("ores/cobalt")))));
-		sourceGristCost(c("ores/galena")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/galena")))));
-		sourceGristCost(c("ores/lead")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/lead")))));
-		sourceGristCost(c("ores/nickel")).grist(BUILD, 4).source(c("raw_materials/nickel")).build(output2.withConditions(not(tagEmpty(c("ores/nickel")))));
-		sourceGristCost(c("ores/silver")).grist(BUILD, 4).source(c("raw_materials/silver")).build(output2.withConditions(not(tagEmpty(c("ores/silver")))));
-		sourceGristCost(c("ores/tin")).grist(BUILD, 4).source(c("raw_materials/tin")).build(output2.withConditions(not(tagEmpty(c("ores/tin")))));
-		sourceGristCost(c("ores/zinc")).grist(BUILD, 4).source(c("raw_materials/zinc")).build(output2.withConditions(not(tagEmpty(c("ores/zinc")))));
+		{
+			final RecipeOutput output2 = new RenamingRecipeOutput(_recipeOutput, "minestuck", null);
+			sourceGristCost(c("ores/aluminium")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminium")))));
+			sourceGristCost(c("ores/aluminum")).grist(BUILD, 4).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ores/aluminum")))));
+			sourceGristCost(c("ores/ardite")).grist(BUILD, 4).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ores/ardite")))));
+			sourceGristCost(c("ores/cobalt")).grist(BUILD, 4).source(c("raw_materials/cobalt")).build(output2.withConditions(not(tagEmpty(c("ores/cobalt")))));
+			sourceGristCost(c("ores/galena")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/galena")))));
+			sourceGristCost(c("ores/lead")).grist(BUILD, 4).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ores/lead")))));
+			sourceGristCost(c("ores/nickel")).grist(BUILD, 4).source(c("raw_materials/nickel")).build(output2.withConditions(not(tagEmpty(c("ores/nickel")))));
+			sourceGristCost(c("ores/silver")).grist(BUILD, 4).source(c("raw_materials/silver")).build(output2.withConditions(not(tagEmpty(c("ores/silver")))));
+			sourceGristCost(c("ores/tin")).grist(BUILD, 4).source(c("raw_materials/tin")).build(output2.withConditions(not(tagEmpty(c("ores/tin")))));
+			sourceGristCost(c("ores/zinc")).grist(BUILD, 4).source(c("raw_materials/zinc")).build(output2.withConditions(not(tagEmpty(c("ores/zinc")))));
 
-		sourceGristCost(c("ingots/aluminium")).source(c("ingots/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminium")))));
-		sourceGristCost(c("ingots/aluminum")).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminum")))));
-		sourceGristCost(c("ingots/ardite")).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ingots/ardite")))));
-		gristCost(c("ingots/brass")).grist(CAULK, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("ingots/brass")))));
-		sourceGristCost(c("ingots/cobalt")).source(c("raw_materials/cobalt")).build(output2.withConditions(not(tagEmpty(c("ingots/cobalt")))));
-		gristCost(c("ingots/electrum")).grist(GOLD, 6).grist(MERCURY, 6).grist(RUST, 10).build(output2.withConditions(not(tagEmpty(c("ingots/electrum")))));
-		gristCost(c("ingots/invar")).grist(RUST, 12).grist(SULFUR, 5).build(output2.withConditions(not(tagEmpty(c("ingots/invar")))));
-		sourceGristCost(c("ingots/lead")).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ingots/lead")))));
-		sourceGristCost(c("ingots/nickel")).source(c("raw_materials/nickel")).build(output2.withConditions(not(tagEmpty(c("ingots/nickel")))));
-		gristCost(c("ingots/red_alloy")).grist(GARNET, 32).grist(RUST, 18).build(output2.withConditions(not(tagEmpty(c("ingots/red_alloy")))));
-		sourceGristCost(c("ingots/silver")).source(c("raw_materials/silver")).build(output2.withConditions(not(tagEmpty(c("ingots/silver")))));
-		sourceGristCost(c("ingots/tin")).source(c("raw_materials/tin")).build(output2.withConditions(not(tagEmpty(c("ingots/tin")))));
-		gristCost(c("ingots/uranium")).grist(URANIUM, 8).build(output2.withConditions(not(tagEmpty(c("ingots/uranium")))));
-		sourceGristCost(c("ingots/zinc")).source(c("raw_materials/zinc")).build(output2.withConditions(not(tagEmpty(c("ingots/zinc")))));
+			sourceGristCost(c("ingots/aluminium")).source(c("ingots/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminium")))));
+			sourceGristCost(c("ingots/aluminum")).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("ingots/aluminum")))));
+			sourceGristCost(c("ingots/ardite")).source(c("raw_materials/ardite")).build(output2.withConditions(not(tagEmpty(c("ingots/ardite")))));
+			gristCost(c("ingots/brass")).grist(CAULK, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("ingots/brass")))));
+			sourceGristCost(c("ingots/cobalt")).source(c("raw_materials/cobalt")).build(output2.withConditions(not(tagEmpty(c("ingots/cobalt")))));
+			gristCost(c("ingots/electrum")).grist(GOLD, 6).grist(MERCURY, 6).grist(RUST, 10).build(output2.withConditions(not(tagEmpty(c("ingots/electrum")))));
+			gristCost(c("ingots/invar")).grist(RUST, 12).grist(SULFUR, 5).build(output2.withConditions(not(tagEmpty(c("ingots/invar")))));
+			sourceGristCost(c("ingots/lead")).source(c("raw_materials/lead")).build(output2.withConditions(not(tagEmpty(c("ingots/lead")))));
+			sourceGristCost(c("ingots/nickel")).source(c("raw_materials/nickel")).build(output2.withConditions(not(tagEmpty(c("ingots/nickel")))));
+			gristCost(c("ingots/red_alloy")).grist(GARNET, 32).grist(RUST, 18).build(output2.withConditions(not(tagEmpty(c("ingots/red_alloy")))));
+			sourceGristCost(c("ingots/silver")).source(c("raw_materials/silver")).build(output2.withConditions(not(tagEmpty(c("ingots/silver")))));
+			sourceGristCost(c("ingots/tin")).source(c("raw_materials/tin")).build(output2.withConditions(not(tagEmpty(c("ingots/tin")))));
+			gristCost(c("ingots/uranium")).grist(URANIUM, 8).build(output2.withConditions(not(tagEmpty(c("ingots/uranium")))));
+			sourceGristCost(c("ingots/zinc")).source(c("raw_materials/zinc")).build(output2.withConditions(not(tagEmpty(c("ingots/zinc")))));
 
-		sourceGristCost(c("raw_materials/aluminium")).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("raw_materials/aluminium")))));
-		gristCost(c("raw_materials/aluminum")).grist(GristTypes.CHALK, 6).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/aluminum")))));
-		gristCost(c("raw_materials/ardite")).grist(GARNET, 12).grist(SULFUR, 8).build(output2.withConditions(not(tagEmpty(c("raw_materials/ardite")))));
-		gristCost(c("raw_materials/cobalt")).grist(COBALT, 18).build(output2.withConditions(not(tagEmpty(c("raw_materials/cobalt")))));
-		gristCost(c("raw_materials/lead")).grist(COBALT, 4).grist(RUST, 12).grist(SHALE, 4).build(output2.withConditions(not(tagEmpty(c("raw_materials/lead")))));
-		gristCost(c("raw_materials/nickel")).grist(RUST, 12).grist(SULFUR, 8).build(output2.withConditions(not(tagEmpty(c("raw_materials/nickel")))));
-		gristCost(c("raw_materials/silver")).grist(MERCURY, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/silver")))));
-		gristCost(c("raw_materials/tin")).grist(CAULK, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/tin")))));
-		gristCost(c("raw_materials/zinc")).grist(RUST, 12).grist(SHALE, 4).build(output2.withConditions(not(tagEmpty(c("raw_materials/zinc")))));
+			sourceGristCost(c("raw_materials/aluminium")).source(c("raw_materials/aluminum")).build(output2.withConditions(not(tagEmpty(c("raw_materials/aluminium")))));
+			gristCost(c("raw_materials/aluminum")).grist(GristTypes.CHALK, 6).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/aluminum")))));
+			gristCost(c("raw_materials/ardite")).grist(GARNET, 12).grist(SULFUR, 8).build(output2.withConditions(not(tagEmpty(c("raw_materials/ardite")))));
+			gristCost(c("raw_materials/cobalt")).grist(COBALT, 18).build(output2.withConditions(not(tagEmpty(c("raw_materials/cobalt")))));
+			gristCost(c("raw_materials/lead")).grist(COBALT, 4).grist(RUST, 12).grist(SHALE, 4).build(output2.withConditions(not(tagEmpty(c("raw_materials/lead")))));
+			gristCost(c("raw_materials/nickel")).grist(RUST, 12).grist(SULFUR, 8).build(output2.withConditions(not(tagEmpty(c("raw_materials/nickel")))));
+			gristCost(c("raw_materials/silver")).grist(MERCURY, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/silver")))));
+			gristCost(c("raw_materials/tin")).grist(CAULK, 8).grist(RUST, 12).build(output2.withConditions(not(tagEmpty(c("raw_materials/tin")))));
+			gristCost(c("raw_materials/zinc")).grist(RUST, 12).grist(SHALE, 4).build(output2.withConditions(not(tagEmpty(c("raw_materials/zinc")))));
 
-		// Fix sand also including suspicious sand.
-		gristCost(tag(MinestuckCompat.MOD_ID, "unsuspicious_sand")).grist(BUILD, 1).build(output2, ResourceLocation.fromNamespaceAndPath("minestuck", "sand_tag"));
+			// Fix sand also including suspicious sand.
+			gristCost(tag(MinestuckCompat.MOD_ID, "unsuspicious_sand")).grist(BUILD, 1).build(output2, ResourceLocation.fromNamespaceAndPath("minestuck", "sand_tag"));
+		}
 
 		//
 		// Combination Recipes
