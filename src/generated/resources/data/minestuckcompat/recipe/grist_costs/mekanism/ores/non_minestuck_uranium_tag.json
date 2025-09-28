@@ -10,7 +10,7 @@
     "minestuck:build": 4
   },
   "ingredient": {
-    "tag": "c:ores/uranium"
+    "tag": "minestuckcompat:ores/non_minestuck_uranium"
   },
   "sources": [
     "#c:raw_materials/uranium"

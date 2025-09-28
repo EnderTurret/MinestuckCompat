@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-13T18:26:18.232361851	Mekanism Recipes
+// 1.21.1	2025-09-28T03:39:56.652747178	Mekanism Recipes
 6915722dfe7823e03e24459782830958dd5ff7c5 data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
 30b066a2ef4aac0b76d1396e0a4455f77118a1d7 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
 d095ad75811c687fc8083289dd0d51fc264ba054 data/minestuckcompat/recipe/combinations/mekanism/block_raw_lead.json
@@ -65,8 +65,8 @@ e7ee8c953f51fceb6d7d5d3889dd005dbaa11c23 data/minestuckcompat/recipe/grist_costs
 b08cf1ff9fc9050c6577741fb00a7e625cca8523 data/minestuckcompat/recipe/grist_costs/mekanism/lithium_bucket.json
 78ec1cb7d1f4b2255e191731ed3d11059ee6ecae data/minestuckcompat/recipe/grist_costs/mekanism/nutritional_paste_bucket.json
 3fd865fe39bf704154f9e211d7be4d16305b474b data/minestuckcompat/recipe/grist_costs/mekanism/ores/fluorite_tag.json
+d4ea3e29aea8de44dc7377db71211d5200ee96ad data/minestuckcompat/recipe/grist_costs/mekanism/ores/non_minestuck_uranium_tag.json
 5af9e4ab33cdd5aeba0a5ddc6322f033d72a4cbb data/minestuckcompat/recipe/grist_costs/mekanism/ores/osmium_tag.json
-9775db41d8fa1f83fcde07b6b9f03fad53c67970 data/minestuckcompat/recipe/grist_costs/mekanism/ores/uranium_tag.json
 318cd1e2399367579fe3f6c2f4ca0ec0a92bc006 data/minestuckcompat/recipe/grist_costs/mekanism/oxygen_bucket.json
 e593ae41de09443b0720cfcb1e197013957ab594 data/minestuckcompat/recipe/grist_costs/mekanism/pellet_antimatter.json
 57877c3a991e18ac9c544c5590c8dd331bec3cb7 data/minestuckcompat/recipe/grist_costs/mekanism/pellet_plutonium.json

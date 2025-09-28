@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.Nullable;
 
+import com.mraof.minestuck.api.alchemy.recipe.ContainerGristCostBuilder;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipeBuilder;
 import com.mraof.minestuck.api.alchemy.recipe.SourceGristCostBuilder;
 import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationRecipeBuilder;
@@ -45,6 +46,10 @@ public abstract class AbstractRecipeProvider extends RecipeProvider implements I
 
 	protected static SourceGristCostBuilder sourceGristCost(TagKey<Item> tag) {
 		return SourceGristCostBuilder.of(tag);
+	}
+
+	protected static ContainerGristCostBuilder containerGristCost(ItemLike item) {
+		return ContainerGristCostBuilder.of(item);
 	}
 
 	protected static CombinationRecipeBuilder combination(ItemLike item) {

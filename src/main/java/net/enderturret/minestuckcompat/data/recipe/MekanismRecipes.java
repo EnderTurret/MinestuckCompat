@@ -42,7 +42,7 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 
 		sourceGristCost(c("ores/fluorite")).grist(BUILD, 4).multiplier(4).source(c("gems/fluorite")).build(output);
 		sourceGristCost(c("ores/osmium")).grist(BUILD, 4).source(c("raw_materials/osmium")).build(output);
-		sourceGristCost(c("ores/uranium")).grist(BUILD, 4).source(c("raw_materials/uranium")).build(output);
+		sourceGristCost(tag(MinestuckCompat.MOD_ID, "ores/non_minestuck_uranium")).grist(BUILD, 4).source(c("raw_materials/uranium")).build(output);
 
 		gristCost(c("raw_materials/osmium")).grist(RUST, 12).grist(COBALT, 4).build(output);
 		gristCost(c("raw_materials/uranium")).grist(URANIUM, 3).build(output);
