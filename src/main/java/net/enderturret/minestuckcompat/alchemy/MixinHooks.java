@@ -76,7 +76,6 @@ public final class MixinHooks {
 
 			final ResourceLocation id = item.builtInRegistryHolder().getKey().location();
 
-			if ("minestuck".equals(id.getNamespace())) continue;
 			if (technicalItems.contains(item.builtInRegistryHolder())) continue;
 			if (unobtainableItems.contains(item.builtInRegistryHolder())) continue;
 
