@@ -107,6 +107,18 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 
 			// Fix sand also including suspicious sand.
 			gristCost(tag(MinestuckCompat.MOD_ID, "unsuspicious_sand")).grist(BUILD, 1).build(output2, ResourceLocation.fromNamespaceAndPath("minestuck", "sand_tag"));
+
+			// Fix double log/plank costs.
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/coarse_end_stone"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/flowery_vine_log"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/frost_log"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/frost_planks"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/glowing_log"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/glowing_planks"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/petrified_log"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/pumice_stone"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/igneous_stone"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/uncarved_wood"));
 		}
 
 		//

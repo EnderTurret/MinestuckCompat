@@ -23,7 +23,7 @@ import net.minecraft.world.level.ItemLike;
 
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
-public abstract class AbstractRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public abstract class AbstractRecipeProvider extends AbstractOverridingRecipeProvider {
 
 	protected AbstractRecipeProvider(PackOutput output, CompletableFuture<Provider> registries) {
 		super(output, registries);
