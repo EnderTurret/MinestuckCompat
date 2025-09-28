@@ -23,6 +23,7 @@ import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
 import net.enderturret.minestuckcompat.data.recipe.FarmersDelightRecipes;
 import net.enderturret.minestuckcompat.data.recipe.ImmersiveEngineeringRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
+import net.enderturret.minestuckcompat.data.recipe.MinestuckAddonRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
 import net.enderturret.minestuckcompat.data.util.WrappedDataProvider;
@@ -41,6 +42,7 @@ public final class MCDatagen {
 
 		e.getGenerator().addProvider(server, wrap(lookup, VanillaRecipes::new, "Vanilla Recipes"));
 		e.getGenerator().addProvider(server, wrap(lookup, MinestuckRecipes::new, "Minestuck Recipes"));
+		e.getGenerator().addProvider(server, wrap(lookup, MinestuckAddonRecipes::new, "Minestuck Addon Recipes"));
 
 		if (ModList.get().isLoaded("ae2"))
 			e.getGenerator().addProvider(server, wrap(lookup, Ae2Recipes::new, "AE2 Recipes"));

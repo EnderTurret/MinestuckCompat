@@ -27,6 +27,10 @@ public abstract class AbstractOverridingRecipeProvider extends RecipeProvider im
 	@Override
 	protected abstract void buildRecipes(RecipeOutput recipeOutput);
 
+	protected void remove(String namespace, String path) {
+		remove(ResourceLocation.fromNamespaceAndPath(namespace, path));
+	}
+
 	protected void remove(ResourceLocation name) {
 		extraFutures.add(DataProvider.saveStable(cachedOutput, NO_RECIPE, recipePathProvider.json(name)));
 	}
