@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4130,
+    "minestuck:gold": 273,
+    "minestuck:rust": 4130
+  },
+  "ingredient": {
+    "item": "minestuck:cueball"
+  }
+}

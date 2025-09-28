@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4,
+    "minestuck:garnet": 12,
+    "minestuck:rust": 81
+  },
+  "ingredient": {
+    "item": "minestuck:and_gate_block"
+  }
+}

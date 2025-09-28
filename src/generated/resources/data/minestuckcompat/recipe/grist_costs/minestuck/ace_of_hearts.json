@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4,
+    "minestuck:garnet": 4,
+    "minestuck:mercury": 4
+  },
+  "ingredient": {
+    "item": "minestuck:ace_of_hearts"
+  }
+}

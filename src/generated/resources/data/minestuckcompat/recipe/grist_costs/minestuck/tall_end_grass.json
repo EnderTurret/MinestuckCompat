@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:caulk": 1,
+    "minestuck:iodine": 2
+  },
+  "ingredient": {
+    "item": "minestuck:tall_end_grass"
+  },
+  "sources": []
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:iron_block"
+  },
+  "input2": {
+    "item": "minecraft:redstone"
+  },
+  "mode": "and",
+  "output": "minestuck:and_gate_block"
+}

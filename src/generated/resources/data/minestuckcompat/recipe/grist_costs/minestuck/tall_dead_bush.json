@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "ingredient": {
+    "item": "minestuck:tall_dead_bush"
+  },
+  "multiplier": 2.0,
+  "sources": [
+    "minecraft:dead_bush"
+  ]
+}

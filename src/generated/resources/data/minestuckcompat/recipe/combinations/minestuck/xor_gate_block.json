@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:or_gate_block"
+  },
+  "input2": {
+    "item": "minestuck:nand_gate_block"
+  },
+  "mode": "or",
+  "output": "minestuck:xor_gate_block"
+}

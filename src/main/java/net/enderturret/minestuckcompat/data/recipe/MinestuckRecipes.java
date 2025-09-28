@@ -14,6 +14,7 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
@@ -30,6 +31,37 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 	@Override
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck").withConditions(new ConfigCondition("minestuck"));
+
+		gristCost(ACE_OF_CLUBS).grist(BUILD, 4).grist(MERCURY, 4).grist(GARNET, 4).build(output);
+		gristCost(ACE_OF_DIAMONDS).grist(BUILD, 4).grist(MERCURY, 4).grist(TAR, 4).build(output);
+		gristCost(ACE_OF_HEARTS).grist(BUILD, 4).grist(MERCURY, 4).grist(GARNET, 4).build(output);
+		gristCost(ACE_OF_SPADES).grist(BUILD, 4).grist(MERCURY, 4).grist(TAR, 4).build(output);
+		gristCost(RAZOR_BLADE).grist(RUST, 14).build(output);
+		gristCost(SUSHROOM).grist(IODINE, 3).grist(GARNET, 1).build(output);
+		gristCost(CRYPTID_PHOTO).grist(BUILD, 160).grist(AMETHYST, 80).grist(GARNET, 33).build(output);
+		gristCost(CUEBALL).grist(BUILD, 4130).grist(RUST, 4130).grist(GOLD, 273).build(output);
+
+		gristCost(ALLWEDDOL).grist(BUILD, 24913).grist(RUST, 2750).grist(GOLD, 5188).build(output);
+		gristCost(ACTION_CLAWS_DRAWN).grist(BUILD, 2944).grist(RUST, 1732).grist(COBALT, 3140).grist(DIAMOND, 5600).build(output);
+
+		gristCost(MINI_TYPHEUS_STATUE).grist(BUILD, 30).build(output);
+		gristCost(NAKAGATOR_STATUE).grist(BUILD, 30).build(output);
+
+		containerGristCost(LIGHT_WATER_BUCKET).grist(GristTypes.CHALK, 6).grist(TAR, 4).build(output);
+
+		sourceGristCost(TALL_DEAD_BUSH).multiplier(2).source(Items.DEAD_BUSH).build(output);
+		sourceGristCost(TALL_END_GRASS).grist(CAULK, 1).grist(IODINE, 2).build(output);
+		sourceGristCost(TALL_SANDY_GRASS).grist(IODINE, 1).multiplier(2).source(SANDY_GRASS.asItem()).build(output);
+		gristCost(DESERT_BUSH).grist(BUILD, 1).grist(IODINE, 2).build(output);
+		gristCost(MAGMATIC_IGNEOUS_STONE).grist(BUILD, 2).grist(CAULK, 4).grist(TAR, 4).build(output);
+		gristCost(METEORIC_STONE).grist(BUILD, 2).build(output);
+
+		gristCost(AND_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
+		gristCost(NAND_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
+		gristCost(NOR_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
+		gristCost(OR_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
+		gristCost(XNOR_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
+		gristCost(XOR_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);
 
 		//
 		// Try to fix empty tag grist costs.
@@ -80,6 +112,18 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		//
 		// Combination Recipes
 		//
+
+		combination(TALL_DEAD_BUSH).or().input(Items.DEAD_BUSH).input(Items.TALL_GRASS).build(output);
+		combination(TALL_END_GRASS).or().input(END_GRASS).input(Items.TALL_GRASS).build(output);
+		combination(TALL_SANDY_GRASS).or().input(SANDY_GRASS).input(Items.TALL_GRASS).build(output);
+		combination(RAZOR_BLADE).or().input(Items.IRON_INGOT).input(Items.IRON_SWORD).build(output);
+
+		combination(AND_GATE_BLOCK).and().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
+		combination(OR_GATE_BLOCK).or().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
+		combination(NAND_GATE_BLOCK).or().input(AND_GATE_BLOCK).input(Items.REDSTONE_TORCH).build(output);
+		combination(NOR_GATE_BLOCK).or().input(OR_GATE_BLOCK).input(Items.REDSTONE_TORCH).build(output);
+		combination(XNOR_GATE_BLOCK).or().input(NOR_GATE_BLOCK).input(XOR_GATE_BLOCK).build(output);
+		combination(XOR_GATE_BLOCK).or().input(OR_GATE_BLOCK).input(NAND_GATE_BLOCK).build(output);
 
 		saplingCombinations(output, BLOOD_ASPECT_SAPLING, BLOOD_ASPECT_LOG, BLOOD_ASPECT_LEAVES);
 		saplingCombinations(output, BREATH_ASPECT_SAPLING, BREATH_ASPECT_LOG, BREATH_ASPECT_LEAVES);

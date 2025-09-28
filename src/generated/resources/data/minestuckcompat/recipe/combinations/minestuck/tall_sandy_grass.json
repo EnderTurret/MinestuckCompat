@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:sandy_grass"
+  },
+  "input2": {
+    "item": "minecraft:tall_grass"
+  },
+  "mode": "or",
+  "output": "minestuck:tall_sandy_grass"
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:chalk": 6,
+    "minestuck:tar": 4
+  },
+  "ingredient": {
+    "item": "minestuck:light_water_bucket"
+  }
+}

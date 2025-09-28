@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:or_gate_block"
+  },
+  "input2": {
+    "item": "minecraft:redstone_torch"
+  },
+  "mode": "or",
+  "output": "minestuck:nor_gate_block"
+}

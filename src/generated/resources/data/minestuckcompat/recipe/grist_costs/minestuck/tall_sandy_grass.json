@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:iodine": 1
+  },
+  "ingredient": {
+    "item": "minestuck:tall_sandy_grass"
+  },
+  "multiplier": 2.0,
+  "sources": [
+    "minestuck:sandy_grass"
+  ]
+}
