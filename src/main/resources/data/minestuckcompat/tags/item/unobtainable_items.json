@@ -1,5 +1,7 @@
 {
   "values": [
+    "#minestuckcompat:creative_items",
+
     "minecraft:spawner",
     "minecraft:trial_spawner",
 
@@ -22,27 +24,14 @@
     "minecraft:infested_stone",
     "minecraft:infested_stone_bricks",
 
-    { "id": "mekanism:creative_bin", "required": false },
-    { "id": "mekanism:creative_chemical_tank", "required": false },
-    { "id": "mekanism:creative_energy_cube", "required": false },
-    { "id": "mekanism:creative_fluid_tank", "required": false },
     { "id": "mekanismgenerators:bioethanol_bucket", "required": false },
 
-    { "id": "ae2:creative_energy_cell", "required": false },
-    { "id": "ae2:creative_storage_cell", "required": false },
-
-    { "id": "create:creative_blaze_cake", "required": false },
-    { "id": "create:creative_crate", "required": false },
-    { "id": "create:creative_fluid_tank", "required": false },
-    { "id": "create:creative_motor", "required": false },
-    { "id": "create:handheld_worldshaper", "required": false },
     { "id": "create:chromatic_compound", "required": false },
     { "id": "create:refined_radiance", "required": false },
     { "id": "create:refined_radiance_casing", "required": false },
     { "id": "create:shadow_steel", "required": false },
     { "id": "create:shadow_steel_casing", "required": false },
 
-    { "id": "immersiveengineering:capacitor_creative", "required": false },
     { "id": "immersiveengineering:ingot_hop_graphite", "required": false },
 
     { "id": "supplementaries:raked_gravel", "required": false },

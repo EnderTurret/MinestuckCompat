@@ -1,0 +1,16 @@
+{
+  "values": [
+    { "id": "mekanism:creative_bin", "required": false },
+    { "id": "mekanism:creative_chemical_tank", "required": false },
+    { "id": "mekanism:creative_energy_cube", "required": false },
+    { "id": "mekanism:creative_fluid_tank", "required": false },
+    { "id": "ae2:creative_energy_cell", "required": false },
+    { "id": "ae2:creative_storage_cell", "required": false },
+    { "id": "create:creative_blaze_cake", "required": false },
+    { "id": "create:creative_crate", "required": false },
+    { "id": "create:creative_fluid_tank", "required": false },
+    { "id": "create:creative_motor", "required": false },
+    { "id": "create:handheld_worldshaper", "required": false },
+    { "id": "immersiveengineering:capacitor_creative", "required": false }
+  ]
+}
