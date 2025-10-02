@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:sugar_cane"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "and",
+  "output": "minecraft:kelp"
+}

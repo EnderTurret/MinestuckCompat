@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:seagrass"
+  },
+  "input2": {
+    "item": "minecraft:red_concrete"
+  },
+  "mode": "and",
+  "output": "minecraft:fire_coral"
+}

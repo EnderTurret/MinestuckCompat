@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "input2": {
+    "item": "minecraft:wet_sponge"
+  },
+  "mode": "and",
+  "output": "minecraft:melon_seeds"
+}

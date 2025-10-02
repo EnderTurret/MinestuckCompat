@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:redstone"
+  },
+  "input2": {
+    "item": "minecraft:copper_ingot"
+  },
+  "mode": "or",
+  "output": "minecraft:lightning_rod"
+}

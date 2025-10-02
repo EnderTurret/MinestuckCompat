@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:honey_bottle"
+  },
+  "input2": {
+    "item": "minestuck:plutonium_core"
+  },
+  "mode": "and",
+  "output": "minecraft:honeycomb"
+}

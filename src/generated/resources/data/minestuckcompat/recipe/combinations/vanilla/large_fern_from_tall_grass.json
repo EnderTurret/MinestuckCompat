@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:tall_grass"
+  },
+  "input2": {
+    "item": "minecraft:podzol"
+  },
+  "mode": "or",
+  "output": "minecraft:large_fern"
+}

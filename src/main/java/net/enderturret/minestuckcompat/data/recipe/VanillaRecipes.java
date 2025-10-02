@@ -199,6 +199,65 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(OMINOUS_BOTTLE).or().input(Items.GLASS_BOTTLE).input(Items.CROSSBOW).build(output);
 		combination(TRIAL_KEY).or().input(Items.COPPER_INGOT).input(Items.WITHER_SKELETON_SKULL).build(output);
 
+		//
+		// Combinations for Minecraft content that's effectively unobtainable if you start in the Medium.
+		//
+
+		// Plants
+		combination(SHORT_GRASS).or().namedInput(GRASS_BLOCK).input(ItemTags.SAPLINGS).build(output);
+		combination(SHORT_GRASS).or().namedInput(MSItems.PETRIFIED_GRASS).input(WATER_BUCKET).build(output);
+		combination(TALL_GRASS).or().input(SHORT_GRASS).input(BONE_MEAL).build(output);
+		combination(FERN).or().input(SHORT_GRASS).input(PODZOL).build(output);
+		combination(LARGE_FERN).or().namedInput(FERN).input(BONE_MEAL).build(output);
+		combination(LARGE_FERN).or().namedInput(TALL_GRASS).input(PODZOL).build(output);
+		combination(BAMBOO).and().input(STICK).input(ItemTags.SAPLINGS).build(output);
+		combination(KELP).and().input(SUGAR_CANE).input(WATER_BUCKET).build(output);
+		combination(SEAGRASS).and().input(SHORT_GRASS).input(WATER_BUCKET).build(output);
+		combination(SEA_PICKLE).and().input(ItemTags.SMALL_FLOWERS).input(WATER_BUCKET).build(output);
+		combination(RED_MUSHROOM).or().namedInput(POPPY).input(SCULK).build(output);
+		combination(RED_MUSHROOM).and().namedInput(BROWN_MUSHROOM).input(REDSTONE).build(output);
+		combination(BROWN_MUSHROOM).or().namedInput(DANDELION).input(SCULK).build(output);
+		combination(BROWN_MUSHROOM).and().namedInput(RED_MUSHROOM).input(TERRACOTTA).build(output);
+		combination(WARPED_FUNGUS).and().input(BROWN_MUSHROOM).input(NETHER_WART).build(output);
+		combination(CRIMSON_FUNGUS).and().input(RED_MUSHROOM).input(NETHER_WART).build(output);
+
+		combination(TUBE_CORAL).and().input(SEAGRASS).input(BLUE_CONCRETE).build(output);
+		combination(BRAIN_CORAL).and().input(SEAGRASS).input(PINK_CONCRETE).build(output);
+		combination(BUBBLE_CORAL).and().input(SEAGRASS).input(MAGENTA_CONCRETE).build(output);
+		combination(FIRE_CORAL).and().input(SEAGRASS).input(RED_CONCRETE).build(output);
+		combination(HORN_CORAL).and().input(SEAGRASS).input(YELLOW_CONCRETE).build(output);
+
+		// Crops
+		combination(WHEAT_SEEDS).or().input(WHEAT).input(ItemTags.SAPLINGS).build(output);
+		combination(COCOA_BEANS).or().input(WHEAT_SEEDS).input(JUNGLE_LOG).build(output);
+		combination(CARROT).or().input(WHEAT_SEEDS).input(SPIDER_EYE).build(output);
+		combination(NETHER_WART).and().input(WHEAT).input(NETHERRACK).build(output);
+		combination(BEETROOT_SEEDS).or().input(POTATO).input(WHEAT).build(output);
+		combination(PUMPKIN_SEEDS).or().input(MELON_SEEDS).input(BONE).build(output);
+		combination(MELON_SEEDS).and().input(WHEAT_SEEDS).input(WET_SPONGE).build(output);
+		combination(SWEET_BERRIES).and().input(MELON_SLICE).input(ItemTags.LEAVES).build(output);
+		combination(OAK_SAPLING).or().input(ItemTags.SAPLINGS).input(SHORT_GRASS).build(output);
+		combination(BIRCH_SAPLING).and().input(OAK_SAPLING).input(FEATHER).build(output);
+		combination(SPRUCE_SAPLING).or().input(ItemTags.SAPLINGS).input(SNOWBALL).build(output);
+		combination(JUNGLE_SAPLING).and().input(ItemTags.SAPLINGS).input(VINE).build(output);
+
+		// Resources
+		combination(COPPER_INGOT).or().input(GOLD_INGOT).input(IRON_INGOT).build(output);
+		combination(EMERALD).or().input(AMETHYST_SHARD).input(GLISTERING_MELON_SLICE).build(output);
+		combination(LAPIS_LAZULI).or().input(Items.QUARTZ).input(MSItems.WAND).build(output);
+		combination(Items.QUARTZ).or().input(IRON_INGOT).input(NETHERRACK).build(output);
+		combination(HONEY_BLOCK).or().input(SLIME_BLOCK).input(SUGAR).build(output);
+		combination(HONEYCOMB).and().input(HONEY_BOTTLE).input(MSItems.PLUTONIUM_CORE).build(output);
+		combination(STRING).or().input(KELP).input(SPIDER_EYE).build(output);
+		combination(SPIDER_EYE).and().input(ENDER_EYE).input(REDSTONE).build(output);
+		combination(SLIME_BALL).and().input(MOSS_BLOCK).input(WATER_BUCKET).build(output);
+		combination(SNOWBALL).and().input(ENDER_PEARL).input(SUGAR).build(output);
+		combination(GUNPOWDER).and().input(REDSTONE).input(CHARCOAL).build(output);
+		combination(RABBIT_FOOT).or().input(SPIDER_EYE).input(CARROT).build(output);
+		combination(RABBIT).or().input(ROTTEN_FLESH).input(RABBIT_FOOT).build(output);
+		combination(MUTTON).or().input(ROTTEN_FLESH).input(ItemTags.WOOL).build(output);
+		combination(EGG).or().input(FEATHER).input(BONE_MEAL).build(output);
+
 		// These are replacements for Minestuck's existing recipes so they don't conflict with the dust recipes in MekanismRecipes.
 		combination(CLOCK).or().input(REDSTONE).input(GOLD_INGOT).build(output);
 		combination(LIGHTNING_ROD).or().input(REDSTONE).input(COPPER_INGOT).build(output);

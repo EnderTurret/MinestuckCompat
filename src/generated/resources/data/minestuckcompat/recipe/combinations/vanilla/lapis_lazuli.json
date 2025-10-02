@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:quartz"
+  },
+  "input2": {
+    "item": "minestuck:wand"
+  },
+  "mode": "or",
+  "output": "minecraft:lapis_lazuli"
+}

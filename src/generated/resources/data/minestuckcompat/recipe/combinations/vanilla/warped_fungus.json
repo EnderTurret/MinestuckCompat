@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:brown_mushroom"
+  },
+  "input2": {
+    "item": "minecraft:nether_wart"
+  },
+  "mode": "and",
+  "output": "minecraft:warped_fungus"
+}

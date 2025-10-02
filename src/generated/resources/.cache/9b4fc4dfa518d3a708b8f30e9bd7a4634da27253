@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-28T19:25:18.840854038	Minestuck Recipes
+// 1.21.1	2025-10-02T03:57:13.362873523	Minestuck Recipes
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/clock_from_redstone.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/lightning_rod.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/coarse_end_stone.json
@@ -108,6 +108,9 @@ f2f98c2a7b62c278ef1e8a239ba6d404d4e4cef0 data/minestuckcompat/recipe/combination
 02ae226a6c5c591aca283d8761dd628cbeb4cdc9 data/minestuckcompat/recipe/combinations/minestuck/nand_gate_block.json
 ce2e5d927ac0be79d880b22c454e435b18015527 data/minestuckcompat/recipe/combinations/minestuck/nor_gate_block.json
 7afdc47f6d5148ec0a3f3322c8506d8e4644d838 data/minestuckcompat/recipe/combinations/minestuck/or_gate_block.json
+cb23b9e888919c5e855937bd55fc5a474ff34848 data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_cobblestone.json
+ba422c8473da13e4818fb140a1e22a1a6ae2434c data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_gravel.json
+0f8aec45ae8786efd0900ad834dea6c4d503e781 data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_stone.json
 aed887d956e94cb730ed384357e84ea83eaf96a7 data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_fence_gate.json
 c2e1d6dbe9c4d8acf2cd5662bee029fcd67c7142 data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_sapling.json
 6f0046343672a085c03d8117163c559dda9b9712 data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_sapling_from_stick.json

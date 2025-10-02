@@ -133,6 +133,9 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(TALL_END_GRASS).or().input(END_GRASS).input(Items.TALL_GRASS).build(output);
 		combination(TALL_SANDY_GRASS).or().input(SANDY_GRASS).input(Items.TALL_GRASS).build(output);
 		combination(RAZOR_BLADE).or().input(Items.IRON_INGOT).input(Items.IRON_SWORD).build(output);
+		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.STONE).build(output);
+		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.GRAVEL).build(output);
+		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.COBBLESTONE).build(output);
 
 		combination(AND_GATE_BLOCK).and().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
 		combination(OR_GATE_BLOCK).or().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
