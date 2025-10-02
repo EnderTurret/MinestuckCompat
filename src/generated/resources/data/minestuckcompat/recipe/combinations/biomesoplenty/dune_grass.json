@@ -7,7 +7,7 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:short_grass"
+    "item": "minecraft:wheat"
   },
   "input2": {
     "item": "minecraft:sand"

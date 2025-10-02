@@ -24,6 +24,7 @@ public final class MinestuckCompatConfig {
 	public final BooleanValue dumpGristlessItems;
 	public final BooleanValue dumpUnhandledRecipeTypes;
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
+	public final BooleanValue checkConflictingCombinationRecipes;
 	public final BooleanValue debugDefaultInterpreterRecipeEligibility;
 
 	private final Map<String, BooleanValue> enabledRecipes = new HashMap<>();
@@ -90,6 +91,10 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "supplementaries", "Supplementaries");
 
 		builder.pop(2);
+
+		checkConflictingCombinationRecipes = builder.comment(
+				"Whether or not to check for overlapping punch designix and totem lathe (combination) recipes."
+				).define("checkConflictingCombinationRecipes", false);
 	}
 
 	private void defineEnabledRecipes(ModConfigSpec.Builder builder, String modId, String name) {

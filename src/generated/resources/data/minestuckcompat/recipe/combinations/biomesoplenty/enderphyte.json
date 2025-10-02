@@ -12,6 +12,6 @@
   "input2": {
     "item": "minecraft:end_stone"
   },
-  "mode": "or",
+  "mode": "and",
   "output": "biomesoplenty:enderphyte"
 }

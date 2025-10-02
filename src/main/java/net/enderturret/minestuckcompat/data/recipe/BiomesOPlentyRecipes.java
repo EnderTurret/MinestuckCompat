@@ -239,7 +239,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(REDWOOD_LEAVES).or().input(Items.BIRCH_LEAVES).input(Items.TALL_GRASS).build(output);
 		combination(MAHOGANY_LEAVES).or().input(Items.JUNGLE_LEAVES).input(Items.MANGROVE_LEAVES).build(output);
 		combination(JACARANDA_LEAVES).or().input(Items.CHERRY_LEAVES).input(LAVENDER).build(output);
-		combination(PALM_LEAVES).or().input(Items.JUNGLE_LEAVES).input(Items.WATER_BUCKET).build(output);
+		combination(PALM_LEAVES).and().input(Items.JUNGLE_LEAVES).input(Items.WATER_BUCKET).build(output);
 		combination(WILLOW_LEAVES).or().input(Items.MANGROVE_LEAVES).input(Items.VINE).build(output);
 		combination(DEAD_LEAVES).and().input(ItemTags.LEAVES).input(Items.DEAD_BUSH).build(output);
 		combination(MAGIC_LEAVES).or().input(ItemTags.LEAVES).input(MSItems.EIGHTBALL).build(output);
@@ -263,7 +263,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(WILDFLOWER).or().input(Items.PINK_PETALS).input(MSItems.BI_DYE).build(output);
 		combination(WHITE_PETALS).or().input(Items.PINK_PETALS).input(Items.WHITE_DYE).build(output);
 		combination(ICY_IRIS).or().input(Items.TALL_GRASS).input(Items.ICE).build(output);
-		combination(GLOWFLOWER).or().input(Items.LILY_OF_THE_VALLEY).input(GLOWSHROOM).build(output);
+		combination(GLOWFLOWER).or().input(Items.LILY_OF_THE_VALLEY).input(Items.GLOWSTONE_DUST).build(output);
 		combination(WILTED_LILY).and().input(Items.LILY_OF_THE_VALLEY).input(Items.DEAD_BUSH).build(output);
 		combination(BURNING_BLOSSOM).or().input(ORANGE_COSMOS).input(Items.FLINT_AND_STEEL).build(output);
 		combination(ENDBLOOM).or().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
@@ -275,11 +275,11 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(HUGE_CLOVER_PETAL).or().input(CLOVER).input(HIGH_GRASS).build(output);
 		combination(HUGE_LILY_PAD).and().input(Items.LILY_PAD).input(HUGE_CLOVER_PETAL).build(output);
 		combination(WATERLILY).or().input(Items.SPORE_BLOSSOM).input(Items.LILY_PAD).build(output);
-		combination(DUNE_GRASS).or().input(Items.SHORT_GRASS).input(Items.SAND).build(output);
+		combination(DUNE_GRASS).or().input(Items.WHEAT).input(Items.SAND).build(output);
 		combination(DESERT_GRASS).or().input(DUNE_GRASS).input(Items.SHEARS).build(output);
 		combination(DEAD_GRASS).and().input(Items.DEAD_BUSH).input(Items.SHORT_GRASS).build(output);
 		combination(TUNDRA_SHRUB).or().input(Items.DEAD_BUSH).input(Items.SNOWBALL).build(output);
-		combination(ENDERPHYTE).or().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
+		combination(ENDERPHYTE).and().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
 		combination(LUMALOOP).or().input(HIGH_GRASS).input(Items.END_STONE).build(output);
 		combination(BARLEY).and().input(Items.WHEAT).input(Items.TALL_GRASS).build(output);
 		combination(SEA_OATS).or().input(BARLEY).input(Items.SAND).build(output);
@@ -291,7 +291,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(BRAMBLE).or().input(Items.NETHER_WART).input(Items.ROSE_BUSH).build(output);
 		combination(WHITE_SAND).and().input(Items.SAND).input(Tags.Items.DYES_WHITE).build(output);
 		combination(ORANGE_SAND).and().input(Items.SAND).input(Tags.Items.DYES_ORANGE).build(output);
-		combination(BLACK_SAND).and().input(Items.SAND).input(Tags.Items.DYES_BLACK).build(output);
+		combination(BLACK_SAND).and().input(WHITE_SAND).input(Tags.Items.DYES_BLACK).build(output);
 		combination(THERMAL_CALCITE).or().input(Items.CALCITE).input(Items.FIRE_CHARGE).build(output);
 		combination(DRIED_SALT).or().input(Items.MUD).input(Items.COARSE_DIRT).build(output);
 		combination(EYEBULB).and().input(Items.TALL_GRASS).input(Items.ENDER_EYE).build(output);
@@ -303,8 +303,8 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(WISPJELLY).or().input(Items.SLIME_BLOCK).input(Items.WIND_CHARGE).build(output);
 		combination(TOADSTOOL).or().input(TOADSTOOL_BLOCK).input(Items.SHEARS).build(output);
 		combination(TOADSTOOL_BLOCK).or().input(Tags.Items.MUSHROOMS).input(SMOOTH_ORANGE_SANDSTONE).build(output);
-		combination(GLOWSHROOM).or().input(Items.BROWN_MUSHROOM).input(Items.GLOWSTONE_DUST).build(output);
-		combination(GLOWING_MOSS_BLOCK).and().input(Items.GRASS_BLOCK).input(GLOWSHROOM).build(output);
+		combination(GLOWSHROOM).or().input(Items.BROWN_MUSHROOM).input(GLOWFLOWER).build(output);
+		combination(GLOWING_MOSS_BLOCK).and().input(Items.MOSS_BLOCK).input(GLOWSHROOM).build(output);
 		combination(GLOWWORM_SILK).and().input(GLOWING_MOSS_BLOCK).input(Items.STRING).build(output);
 		combination(SPIDER_EGG).and().input(Items.COBWEB).input(Items.EGG).build(output);
 		combination(HANGING_COBWEB).or().input(Items.COBWEB).input(Items.VINE).build(output);

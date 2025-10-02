@@ -2,6 +2,7 @@ package net.enderturret.minestuckcompat.alchemy;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +14,13 @@ import java.util.stream.Collectors;
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import com.mojang.serialization.Codec;
+import com.mraof.minestuck.alchemy.recipe.RegularCombinationRecipe;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedGristCost;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
+import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationMode;
+import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationRecipe;
 import com.mraof.minestuck.item.crafting.MSRecipeTypes;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -58,6 +62,9 @@ public final class MixinHooks {
 
 	@SuppressWarnings("deprecation")
 	public static void checkItemsWithoutGristCost(RecipeManager recipeManager) {
+		if (MinestuckCompatConfig.common().checkConflictingCombinationRecipes.getAsBoolean())
+			checkDuplicateCombinations(recipeManager);
+
 		if (!MinestuckCompatConfig.common().dumpGristlessItems.getAsBoolean()) return;
 
 		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
@@ -214,6 +221,38 @@ public final class MixinHooks {
 		MinestuckCompat.LOGGER.info("Unhandled recipes:\n{}", lines.stream()
 				.map(line -> line.id + " ".repeat(_idWidth - line.id.length()) + line.typeId + " ".repeat(_typeWidth - line.typeId.length()) + line.serializerId)
 				.collect(Collectors.joining("\n")));
+	}
+
+	private static void checkDuplicateCombinations(RecipeManager recipeManager) {
+		final List<RecipeHolder<CombinationRecipe>> list = recipeManager.getAllRecipesFor(MSRecipeTypes.COMBINATION_TYPE.get());
+
+		record Combination(Item a, Item b, boolean and) {
+			@SuppressWarnings("deprecation")
+			Combination {
+				if (a.builtInRegistryHolder().getRegisteredName().compareTo(b.builtInRegistryHolder().getRegisteredName()) < 0) {
+					final Item temp = a;
+					a = b;
+					b = temp;
+				}
+			}
+		}
+
+		final Map<Combination, ResourceLocation> usedCombinations = new HashMap<>();
+
+		for (RecipeHolder<CombinationRecipe> holder : list) {
+			final RegularCombinationRecipe recipe = (RegularCombinationRecipe) holder.value();
+			for (ItemStack stack1 : recipe.input1().getItems()) {
+				if (stack1.getItemHolder().getRegisteredName().contains("paxel")) continue;
+				for (ItemStack stack2 : recipe.input2().getItems()) {
+					if (stack2.getItemHolder().getRegisteredName().contains("paxel")) continue;
+
+					final Combination combo = new Combination(stack1.getItem(), stack2.getItem(), recipe.mode() == CombinationMode.AND);
+					ResourceLocation conflict;
+					if ((conflict = usedCombinations.put(combo, holder.id())) != null)
+						MinestuckCompat.LOGGER.warn("Combination recipe {} conflicts with {}!", holder.id(), conflict);
+				}
+			}
+		}
 	}
 
 	private static List<RecipeHolder<GristCostRecipe>> hasGristCost(ItemStack item, RecipeManager recipeManager) {

@@ -198,5 +198,9 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(OMINOUS_TRIAL_KEY).or().input(TRIAL_KEY).input(OMINOUS_BOTTLE).build(output);
 		combination(OMINOUS_BOTTLE).or().input(Items.GLASS_BOTTLE).input(Items.CROSSBOW).build(output);
 		combination(TRIAL_KEY).or().input(Items.COPPER_INGOT).input(Items.WITHER_SKELETON_SKULL).build(output);
+
+		// These are replacements for Minestuck's existing recipes so they don't conflict with the dust recipes in MekanismRecipes.
+		combination(CLOCK).or().input(REDSTONE).input(GOLD_INGOT).build(output);
+		combination(LIGHTNING_ROD).or().input(REDSTONE).input(COPPER_INGOT).build(output);
 	}
 }

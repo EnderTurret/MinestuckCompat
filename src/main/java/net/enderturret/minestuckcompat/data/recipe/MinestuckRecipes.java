@@ -119,6 +119,10 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/pumice_stone"));
 			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/igneous_stone"));
 			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "grist_costs/uncarved_wood"));
+
+			// We ship different versions of these in VanillaRecipes.
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "combinations/clock_from_redstone"));
+			remove(ResourceLocation.fromNamespaceAndPath("minestuck", "combinations/lightning_rod"));
 		}
 
 		//

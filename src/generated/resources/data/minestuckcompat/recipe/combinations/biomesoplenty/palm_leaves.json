@@ -12,6 +12,6 @@
   "input2": {
     "item": "minecraft:water_bucket"
   },
-  "mode": "or",
+  "mode": "and",
   "output": "biomesoplenty:palm_leaves"
 }

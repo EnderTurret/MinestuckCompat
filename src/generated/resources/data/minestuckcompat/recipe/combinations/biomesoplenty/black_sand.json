@@ -7,7 +7,7 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:sand"
+    "item": "biomesoplenty:white_sand"
   },
   "input2": {
     "tag": "c:dyes/black"

@@ -10,7 +10,7 @@
     "item": "minecraft:brown_mushroom"
   },
   "input2": {
-    "item": "minecraft:glowstone_dust"
+    "item": "biomesoplenty:glowflower"
   },
   "mode": "or",
   "output": "biomesoplenty:glowshroom"

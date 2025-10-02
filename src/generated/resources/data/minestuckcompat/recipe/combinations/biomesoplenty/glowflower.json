@@ -10,7 +10,7 @@
     "item": "minecraft:lily_of_the_valley"
   },
   "input2": {
-    "item": "biomesoplenty:glowshroom"
+    "item": "minecraft:glowstone_dust"
   },
   "mode": "or",
   "output": "biomesoplenty:glowflower"
