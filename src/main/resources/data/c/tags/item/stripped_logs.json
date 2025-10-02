@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minestuck:blood_aspect_stripped_log",
+    "minestuck:breath_aspect_stripped_log",
+    "minestuck:doom_aspect_stripped_log",
+    "minestuck:heart_aspect_stripped_log",
+    "minestuck:hope_aspect_stripped_log",
+    "minestuck:life_aspect_stripped_log",
+    "minestuck:light_aspect_stripped_log",
+    "minestuck:mind_aspect_stripped_log",
+    "minestuck:rage_aspect_stripped_log",
+    "minestuck:space_aspect_stripped_log",
+    "minestuck:time_aspect_stripped_log",
+    "minestuck:void_aspect_stripped_log",
+    "minestuck:stripped_glowing_log",
+    "minestuck:stripped_frost_log",
+    "minestuck:stripped_rainbow_log",
+    "minestuck:stripped_end_log",
+    "minestuck:stripped_dead_log",
+    "minestuck:stripped_cindered_log",
+    "minestuck:stripped_shadewood",
+    "minestuck:stripped_rotted_shadewood",
+    "minestuck:stripped_scarred_shadewood"
+  ]
+}

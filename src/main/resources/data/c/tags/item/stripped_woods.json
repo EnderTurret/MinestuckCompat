@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minestuck:blood_aspect_stripped_wood",
+    "minestuck:breath_aspect_stripped_wood",
+    "minestuck:doom_aspect_stripped_wood",
+    "minestuck:heart_aspect_stripped_wood",
+    "minestuck:hope_aspect_stripped_wood",
+    "minestuck:life_aspect_stripped_wood",
+    "minestuck:light_aspect_stripped_wood",
+    "minestuck:mind_aspect_stripped_wood",
+    "minestuck:rage_aspect_stripped_wood",
+    "minestuck:space_aspect_stripped_wood",
+    "minestuck:time_aspect_stripped_wood",
+    "minestuck:void_aspect_stripped_wood",
+    "minestuck:stripped_glowing_wood",
+    "minestuck:stripped_frost_wood",
+    "minestuck:stripped_rainbow_wood",
+    "minestuck:stripped_end_wood",
+    "minestuck:stripped_dead_wood",
+    "minestuck:stripped_cindered_wood",
+    "minestuck:stripped_shadewood",
+    "minestuck:stripped_rotted_shadewood",
+    "minestuck:stripped_scarred_shadewood"
+  ]
+}
