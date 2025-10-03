@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:iron_chestplate"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:chain"
   },
-  "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "mode": "and",
+  "output": "minecraft:chainmail_chestplate"
 }

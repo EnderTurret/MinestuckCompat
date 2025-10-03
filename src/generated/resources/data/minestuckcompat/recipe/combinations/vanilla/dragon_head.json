@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:wither_skeleton_skull"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:phantom_membrane"
   },
-  "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "mode": "and",
+  "output": "minecraft:dragon_head"
 }

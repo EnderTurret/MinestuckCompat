@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:player_head"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minestuck:tilldeath_handbook"
   },
   "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "output": "minecraft:totem_of_undying"
 }

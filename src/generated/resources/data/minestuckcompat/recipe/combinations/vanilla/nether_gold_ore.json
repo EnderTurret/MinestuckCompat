@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:gold_nugget"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:netherrack"
   },
-  "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "mode": "and",
+  "output": "minecraft:nether_gold_ore"
 }

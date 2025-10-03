@@ -16,6 +16,8 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
+import net.neoforged.neoforge.common.Tags;
+
 import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.data.util.AbstractRecipeProvider;
@@ -140,7 +142,7 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(ARCHER_POTTERY_SHERD).or().input(TERRACOTTA).input(BOW).build(output);
 		combination(ARMS_UP_POTTERY_SHERD).or().input(TERRACOTTA).input(ARMOR_STAND).build(output);
 		combination(BLADE_POTTERY_SHERD).or().input(TERRACOTTA).input(ItemTags.SWORDS).build(output);
-		combination(BREWER_POTTERY_SHERD).or().input(TERRACOTTA).input(POTION).build(output);
+		combination(BREWER_POTTERY_SHERD).or().input(TERRACOTTA).input(GLASS_BOTTLE).build(output);
 		combination(BURN_POTTERY_SHERD).or().input(TERRACOTTA).input(FLINT_AND_STEEL).build(output);
 		combination(DANGER_POTTERY_SHERD).or().input(TERRACOTTA).input(GUNPOWDER).build(output);
 		combination(FLOW_POTTERY_SHERD).or().input(TERRACOTTA).input(FLOW_BANNER_PATTERN).build(output);
@@ -195,9 +197,12 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(PIGLIN_HEAD).or().input(ZOMBIE_HEAD).input(CARROT).build(output);
 		combination(SNIFFER_EGG).or().input(EGG).input(CLOCK).build(output);
 		combination(WIND_CHARGE).or().input(FIRE_CHARGE).input(MSItems.FAN).build(output);
+		combination(BREEZE_ROD).and().input(WIND_CHARGE).input(BLAZE_ROD).build(output);
 		combination(OMINOUS_TRIAL_KEY).or().input(TRIAL_KEY).input(OMINOUS_BOTTLE).build(output);
 		combination(OMINOUS_BOTTLE).or().input(Items.GLASS_BOTTLE).input(Items.CROSSBOW).build(output);
 		combination(TRIAL_KEY).or().input(Items.COPPER_INGOT).input(Items.WITHER_SKELETON_SKULL).build(output);
+		combination(NETHERITE_UPGRADE_SMITHING_TEMPLATE).or().input(Items.NETHERITE_INGOT).input(Items.DIAMOND).build(output);
+		combination(HEAVY_CORE).and().input(MSItems.PLUTONIUM_CORE).input(ANVIL).build(output);
 
 		//
 		// Combinations for Minecraft content that's effectively unobtainable if you start in the Medium.
@@ -221,11 +226,44 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(WARPED_FUNGUS).and().input(BROWN_MUSHROOM).input(NETHER_WART).build(output);
 		combination(CRIMSON_FUNGUS).and().input(RED_MUSHROOM).input(NETHER_WART).build(output);
 
+		// Flowers
+		// (We use poppies instead of #small_flowers to dodge potential conflicts.)
+		combination(DANDELION).and().input(POPPY).input(Items.GOLD_INGOT).build(output);
+		combination(POPPY).or().input(FLOWER_POT).input(IRON_INGOT).build(output);
+		combination(BLUE_ORCHID).and().input(POPPY).input(Tags.Items.DYES_LIGHT_BLUE).build(output);
+		combination(ALLIUM).and().input(POPPY).input(Tags.Items.DYES_PURPLE).build(output);
+		combination(AZURE_BLUET).and().input(POPPY).input(Tags.Items.DYES_WHITE).build(output);
+		combination(RED_TULIP).and().input(WHITE_TULIP).input(Tags.Items.DYES_RED).build(output);
+		combination(ORANGE_TULIP).and().input(WHITE_TULIP).input(Tags.Items.DYES_ORANGE).build(output);
+		combination(WHITE_TULIP).or().input(POPPY).input(FERMENTED_SPIDER_EYE).build(output);
+		combination(PINK_TULIP).and().input(WHITE_TULIP).input(Tags.Items.DYES_PINK).build(output);
+		combination(OXEYE_DAISY).or().input(SUNFLOWER).input(PISTON).build(output);
+		combination(CORNFLOWER).and().input(POPPY).input(Tags.Items.DYES_BLUE).build(output);
+		combination(LILY_OF_THE_VALLEY).or().input(POPPY).input(SPIDER_EYE).build(output);
+		combination(WITHER_ROSE).and().input(POPPY).input(WITHER_SKELETON_SKULL).build(output);
+		combination(PINK_PETALS).and().input(POPPY).input(PINK_CARPET).build(output);
+
+		// Tall Flowers
+		combination(SUNFLOWER).or().input(DANDELION).input(BONE_MEAL).build(output);
+		combination(LILAC).or().input(ALLIUM).input(BONE_MEAL).build(output);
+		combination(ROSE_BUSH).or().input(POPPY).input(BONE_MEAL).build(output);
+		combination(PEONY).or().input(PINK_TULIP).input(BONE_MEAL).build(output);
+
 		combination(TUBE_CORAL).and().input(SEAGRASS).input(BLUE_CONCRETE).build(output);
 		combination(BRAIN_CORAL).and().input(SEAGRASS).input(PINK_CONCRETE).build(output);
 		combination(BUBBLE_CORAL).and().input(SEAGRASS).input(MAGENTA_CONCRETE).build(output);
 		combination(FIRE_CORAL).and().input(SEAGRASS).input(RED_CONCRETE).build(output);
 		combination(HORN_CORAL).and().input(SEAGRASS).input(YELLOW_CONCRETE).build(output);
+		combination(TUBE_CORAL_BLOCK).and().input(TUBE_CORAL).input(Tags.Items.STONES).build(output);
+		combination(BRAIN_CORAL_BLOCK).and().input(BRAIN_CORAL).input(Tags.Items.STONES).build(output);
+		combination(BUBBLE_CORAL_BLOCK).and().input(BUBBLE_CORAL).input(Tags.Items.STONES).build(output);
+		combination(FIRE_CORAL_BLOCK).and().input(FIRE_CORAL).input(Tags.Items.STONES).build(output);
+		combination(HORN_CORAL_BLOCK).and().input(HORN_CORAL).input(Tags.Items.STONES).build(output);
+		combination(TUBE_CORAL_FAN).and().input(TUBE_CORAL).input(MSItems.FAN).build(output);
+		combination(BRAIN_CORAL_FAN).and().input(BRAIN_CORAL).input(MSItems.FAN).build(output);
+		combination(BUBBLE_CORAL_FAN).and().input(BUBBLE_CORAL).input(MSItems.FAN).build(output);
+		combination(FIRE_CORAL_FAN).and().input(FIRE_CORAL).input(MSItems.FAN).build(output);
+		combination(HORN_CORAL_FAN).and().input(HORN_CORAL).input(MSItems.FAN).build(output);
 
 		// Crops
 		combination(WHEAT_SEEDS).or().input(WHEAT).input(ItemTags.SAPLINGS).build(output);
@@ -240,6 +278,8 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(BIRCH_SAPLING).and().input(OAK_SAPLING).input(FEATHER).build(output);
 		combination(SPRUCE_SAPLING).or().input(ItemTags.SAPLINGS).input(SNOWBALL).build(output);
 		combination(JUNGLE_SAPLING).and().input(ItemTags.SAPLINGS).input(VINE).build(output);
+		combination(MANGROVE_PROPAGULE).or().input(JUNGLE_SAPLING).input(MUD).build(output);
+		combination(CHERRY_SAPLING).and().input(SPRUCE_SAPLING).input(PINK_PETALS).build(output);
 
 		// Resources
 		combination(COPPER_INGOT).or().input(GOLD_INGOT).input(IRON_INGOT).build(output);
@@ -257,6 +297,48 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(RABBIT).or().input(ROTTEN_FLESH).input(RABBIT_FOOT).build(output);
 		combination(MUTTON).or().input(ROTTEN_FLESH).input(ItemTags.WOOL).build(output);
 		combination(EGG).or().input(FEATHER).input(BONE_MEAL).build(output);
+		combination(FEATHER).or().input(MSItems.FAN).input(CHICKEN).build(output);
+		combination(SHULKER_SHELL).and().input(POPPED_CHORUS_FRUIT).input(ItemTags.HEAD_ARMOR).build(output);
+
+		// Recor- sorry, "music discs"
+		combination(MUSIC_DISC_11).or().input(MUSIC_DISC_CAT).input(PLAYER_HEAD).build(output);
+		combination(MUSIC_DISC_13).or().input(MUSIC_DISC_CAT).input(Tags.Items.STONES).build(output);
+		combination(MUSIC_DISC_BLOCKS).or().input(MUSIC_DISC_CAT).input(DIRT).build(output);
+		combination(MUSIC_DISC_CAT).or().input(MSItems.BLANK_DISK).input(COD).build(output);
+		combination(MUSIC_DISC_CHIRP).or().input(MUSIC_DISC_CAT).input(FEATHER).build(output);
+		combination(MUSIC_DISC_FAR).or().input(MUSIC_DISC_CAT).input(SHORT_GRASS).build(output);
+		combination(MUSIC_DISC_MALL).or().input(MUSIC_DISC_CAT).input(ItemTags.BEDS).build(output);
+		combination(MUSIC_DISC_MELLOHI).or().input(MUSIC_DISC_CAT).input(MAGENTA_CARPET).build(output);
+		combination(MUSIC_DISC_STAL).or().input(MUSIC_DISC_CAT).input(CHARCOAL).build(output);
+		combination(MUSIC_DISC_STRAD).or().input(MUSIC_DISC_MALL).input(Tags.Items.DYES_WHITE).build(output);
+		combination(MUSIC_DISC_WAIT).or().input(MUSIC_DISC_CAT).input(LEATHER_BOOTS).build(output);
+		combination(MUSIC_DISC_WARD).or().input(MUSIC_DISC_CAT).input(JACK_O_LANTERN).build(output);
+		combination(MUSIC_DISC_PIGSTEP).or().input(MUSIC_DISC_CAT).input(PORKCHOP).build(output);
+		combination(MUSIC_DISC_OTHERSIDE).or().input(MUSIC_DISC_CAT).input(GLOW_BERRIES).build(output);
+		combination(MUSIC_DISC_RELIC).or().input(MUSIC_DISC_CAT).input(BRUSH).build(output);
+		combination(MUSIC_DISC_5).or().input(MUSIC_DISC_CAT).input(ECHO_SHARD).build(output);
+		combination(DISC_FRAGMENT_5).or().input(MUSIC_DISC_5).input(ItemTags.AXES).build(output);
+		combination(MUSIC_DISC_CREATOR).or().input(MUSIC_DISC_CAT).input(COPPER_INGOT).build(output);
+		combination(MUSIC_DISC_CREATOR_MUSIC_BOX).or().input(MUSIC_DISC_CREATOR).input(ItemTags.AXES).build(output);
+		combination(MUSIC_DISC_PRECIPICE).or().input(MUSIC_DISC_CAT).input(SNOW_BLOCK).build(output);
+
+		// Miscellaneous
+		combination(NETHER_GOLD_ORE).and().input(GOLD_NUGGET).input(NETHERRACK).build(output);
+		combination(WITHER_SKELETON_SKULL).and().input(BONE).input(COAL).build(output);
+		combination(NETHER_STAR).and().input(WITHER_SKELETON_SKULL).input(FIREWORK_STAR).build(output);
+		combination(SCULK_CATALYST).and().input(SCULK).input(EXPERIENCE_BOTTLE).build(output);
+		combination(SMALL_AMETHYST_BUD).or().input(AMETHYST_SHARD).input(BONE_MEAL).build(output);
+		combination(MEDIUM_AMETHYST_BUD).or().input(SMALL_AMETHYST_BUD).input(BONE_MEAL).build(output);
+		combination(LARGE_AMETHYST_BUD).or().input(MEDIUM_AMETHYST_BUD).input(BONE_MEAL).build(output);
+		combination(NETHER_SPROUTS).or().input(WARPED_ROOTS).input(SHEARS).build(output);
+		combination(DRAGON_HEAD).and().input(WITHER_SKELETON_SKULL).input(PHANTOM_MEMBRANE).build(output);
+		combination(MILK_BUCKET).and().input(WATER_BUCKET).input(MSItems.CHALK).build(output);
+		combination(TOTEM_OF_UNDYING).or().input(PLAYER_HEAD).input(MSItems.TILLDEATH_HANDBOOK).build(output);
+		combination(PLAYER_HEAD).or().input(ZOMBIE_HEAD).input(MSItems.GAMEBRO_MAGAZINE).build(output);
+		combination(CHAINMAIL_HELMET).and().input(IRON_HELMET).input(CHAIN).build(output);
+		combination(CHAINMAIL_CHESTPLATE).and().input(IRON_CHESTPLATE).input(CHAIN).build(output);
+		combination(CHAINMAIL_LEGGINGS).and().input(IRON_LEGGINGS).input(CHAIN).build(output);
+		combination(CHAINMAIL_BOOTS).and().input(IRON_BOOTS).input(CHAIN).build(output);
 
 		// These are replacements for Minestuck's existing recipes so they don't conflict with the dust recipes in MekanismRecipes.
 		combination(CLOCK).or().input(REDSTONE).input(GOLD_INGOT).build(output);

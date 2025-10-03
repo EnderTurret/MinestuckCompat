@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:small_amethyst_bud"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:bone_meal"
   },
   "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "output": "minecraft:medium_amethyst_bud"
 }

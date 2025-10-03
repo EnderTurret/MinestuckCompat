@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:music_disc_5"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "tag": "minecraft:axes"
   },
   "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "output": "minecraft:disc_fragment_5"
 }

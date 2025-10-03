@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minecraft:jungle_sapling"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:mud"
   },
   "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "output": "minecraft:mangrove_propagule"
 }

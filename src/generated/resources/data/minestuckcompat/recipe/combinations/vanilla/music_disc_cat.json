@@ -7,11 +7,11 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "item": "minecraft:terracotta"
+    "item": "minestuck:blank_disk"
   },
   "input2": {
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:cod"
   },
   "mode": "or",
-  "output": "minecraft:brewer_pottery_sherd"
+  "output": "minecraft:music_disc_cat"
 }
