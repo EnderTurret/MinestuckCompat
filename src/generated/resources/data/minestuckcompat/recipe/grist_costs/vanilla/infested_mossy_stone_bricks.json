@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 2,
+    "minestuck:marble": 1
+  },
+  "ingredient": {
+    "item": "minecraft:infested_mossy_stone_bricks"
+  }
+}

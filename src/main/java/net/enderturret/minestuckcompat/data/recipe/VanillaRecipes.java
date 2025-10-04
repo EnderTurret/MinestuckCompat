@@ -121,6 +121,13 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		sourceGristCost(OMINOUS_BOTTLE).grist(TAR, 16).source(GLASS_BOTTLE).build(output);
 		sourceGristCost(OMINOUS_TRIAL_KEY).source(OMINOUS_BOTTLE).source(TRIAL_KEY).build(output);
 
+		gristCost(INFESTED_STONE).grist(BUILD, 2).build(output);
+		gristCost(INFESTED_STONE_BRICKS).grist(BUILD, 2).build(output);
+		gristCost(INFESTED_MOSSY_STONE_BRICKS).grist(BUILD, 2).grist(MARBLE, 1).build(output);
+		gristCost(INFESTED_CRACKED_STONE_BRICKS).grist(BUILD, 2).build(output);
+		gristCost(INFESTED_CHISELED_STONE_BRICKS).grist(BUILD, 2).build(output);
+		gristCost(INFESTED_DEEPSLATE).grist(BUILD, 2).build(output);
+
 		//
 		// Combination Recipes
 		//
@@ -203,6 +210,10 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(TRIAL_KEY).or().input(Items.COPPER_INGOT).input(Items.WITHER_SKELETON_SKULL).build(output);
 		combination(NETHERITE_UPGRADE_SMITHING_TEMPLATE).or().input(Items.NETHERITE_INGOT).input(Items.DIAMOND).build(output);
 		combination(HEAVY_CORE).and().input(MSItems.PLUTONIUM_CORE).input(ANVIL).build(output);
+		combination(ARMADILLO_SCUTE).or().input(TURTLE_SCUTE).input(SAND).build(output);
+		combination(TURTLE_SCUTE).or().input(TURTLE_EGG).input(LEATHER).build(output);
+		combination(TURTLE_EGG).or().input(EGG).input(WATER_BUCKET).build(output);
+		combination(BEE_NEST).and().input(BEEHIVE).input(HONEYCOMB).build(output);
 
 		//
 		// Combinations for Minecraft content that's effectively unobtainable if you start in the Medium.
@@ -339,6 +350,16 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(CHAINMAIL_CHESTPLATE).and().input(IRON_CHESTPLATE).input(CHAIN).build(output);
 		combination(CHAINMAIL_LEGGINGS).and().input(IRON_LEGGINGS).input(CHAIN).build(output);
 		combination(CHAINMAIL_BOOTS).and().input(IRON_BOOTS).input(CHAIN).build(output);
+		combination(SUSPICIOUS_GRAVEL).and().input(MSItems.SUSHROOM).input(GRAVEL).build(output);
+		combination(SUSPICIOUS_SAND).and().input(MSItems.SUSHROOM).input(SAND).build(output);
+
+		combination(INFESTED_COBBLESTONE).and().input(MSItems.SUSHROOM).input(COBBLESTONE).build(output);
+		combination(INFESTED_STONE).and().input(MSItems.SUSHROOM).input(STONE).build(output);
+		combination(INFESTED_STONE_BRICKS).and().input(MSItems.SUSHROOM).input(STONE_BRICKS).build(output);
+		combination(INFESTED_MOSSY_STONE_BRICKS).and().input(MSItems.SUSHROOM).input(MOSSY_STONE_BRICKS).build(output);
+		combination(INFESTED_CRACKED_STONE_BRICKS).and().input(MSItems.SUSHROOM).input(CRACKED_STONE_BRICKS).build(output);
+		combination(INFESTED_CHISELED_STONE_BRICKS).and().input(MSItems.SUSHROOM).input(CHISELED_STONE_BRICKS).build(output);
+		combination(INFESTED_DEEPSLATE).and().input(MSItems.SUSHROOM).input(DEEPSLATE).build(output);
 
 		// These are replacements for Minestuck's existing recipes so they don't conflict with the dust recipes in MekanismRecipes.
 		combination(CLOCK).or().input(REDSTONE).input(GOLD_INGOT).build(output);

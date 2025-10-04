@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:turtle_scute"
+  },
+  "input2": {
+    "item": "minecraft:sand"
+  },
+  "mode": "or",
+  "output": "minecraft:armadillo_scute"
+}

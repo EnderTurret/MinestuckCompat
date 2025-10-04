@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:egg"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "or",
+  "output": "minecraft:turtle_egg"
+}

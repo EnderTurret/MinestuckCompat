@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:turtle_egg"
+  },
+  "input2": {
+    "item": "minecraft:leather"
+  },
+  "mode": "or",
+  "output": "minecraft:turtle_scute"
+}

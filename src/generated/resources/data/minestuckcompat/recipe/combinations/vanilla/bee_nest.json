@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:beehive"
+  },
+  "input2": {
+    "item": "minecraft:honeycomb"
+  },
+  "mode": "and",
+  "output": "minecraft:bee_nest"
+}
