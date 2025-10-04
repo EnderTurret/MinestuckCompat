@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:jungle_sapling"
+  },
+  "input2": {
+    "item": "minecraft:snowball"
+  },
+  "mode": "and",
+  "output": "minestuck:frost_sapling"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:dark_oak_sapling"
+  },
+  "input2": {
+    "item": "minestuck:blood_bucket"
+  },
+  "mode": "and",
+  "output": "minestuck:blood_aspect_sapling"
+}

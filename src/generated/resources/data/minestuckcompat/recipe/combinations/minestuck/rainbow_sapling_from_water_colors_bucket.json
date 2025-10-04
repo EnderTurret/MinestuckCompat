@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:birch_sapling"
+  },
+  "input2": {
+    "item": "minestuck:water_colors_bucket"
+  },
+  "mode": "and",
+  "output": "minestuck:rainbow_sapling"
+}

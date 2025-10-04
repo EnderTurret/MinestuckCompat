@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:jungle_sapling"
+  },
+  "input2": {
+    "item": "minecraft:golden_carrot"
+  },
+  "mode": "and",
+  "output": "minestuck:hope_aspect_sapling"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:spruce_sapling"
+  },
+  "input2": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "mode": "and",
+  "output": "minestuck:light_aspect_sapling"
+}

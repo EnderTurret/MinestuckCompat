@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "minestuck:bugs"
+  },
+  "input2": {
+    "item": "minecraft:cocoa_beans"
+  },
+  "mode": "and",
+  "output": "minestuck:chocolate_beetle"
+}

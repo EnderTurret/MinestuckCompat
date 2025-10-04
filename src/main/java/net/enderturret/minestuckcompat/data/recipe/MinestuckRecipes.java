@@ -9,11 +9,13 @@ import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import com.mraof.minestuck.api.alchemy.GristTypes;
+import com.mraof.minestuck.util.MSTags;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.ConfigCondition;
@@ -131,11 +133,15 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 
 		combination(TALL_DEAD_BUSH).or().input(Items.DEAD_BUSH).input(Items.TALL_GRASS).build(output);
 		combination(TALL_END_GRASS).or().input(END_GRASS).input(Items.TALL_GRASS).build(output);
+		combination(SANDY_GRASS).and().input(Items.FERN).input(Items.SAND).build(output);
 		combination(TALL_SANDY_GRASS).or().input(SANDY_GRASS).input(Items.TALL_GRASS).build(output);
 		combination(RAZOR_BLADE).or().input(Items.IRON_INGOT).input(Items.IRON_SWORD).build(output);
 		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.STONE).build(output);
 		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.GRAVEL).build(output);
 		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.COBBLESTONE).build(output);
+		combination(SINGED_GRASS).or().input(Items.SHORT_GRASS).input(Items.FLINT_AND_STEEL).build(output);
+		combination(SINGED_FOLIAGE).or().input(ItemTags.SAPLINGS).input(Items.FLINT_AND_STEEL).build(output);
+		combination(DEAD_LOG).and().input(Items.OAK_LOG).input(Items.DEAD_BUSH).build(output);
 
 		combination(AND_GATE_BLOCK).and().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
 		combination(OR_GATE_BLOCK).or().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
@@ -143,6 +149,16 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(NOR_GATE_BLOCK).or().input(OR_GATE_BLOCK).input(Items.REDSTONE_TORCH).build(output);
 		combination(XNOR_GATE_BLOCK).or().input(NOR_GATE_BLOCK).input(XOR_GATE_BLOCK).build(output);
 		combination(XOR_GATE_BLOCK).or().input(OR_GATE_BLOCK).input(NAND_GATE_BLOCK).build(output);
+
+		combination(JAR_OF_BUGS).or().input(Items.GLASS_BOTTLE).input(MSTags.Items.BUGS).build(output);
+		combination(CHOCOLATE_BEETLE).and().input(MSTags.Items.BUGS).input(Items.COCOA_BEANS).build(output);
+		combination(CONE_OF_FLIES).or().input(Items.WHEAT).input(MSTags.Items.BUGS).build(output);
+		combination(STRAWBERRY).and().input(Items.MELON).input(Items.SWEET_BERRIES).build(output);
+		combination(ONION).and().input(Items.POTATO).input(Items.SHORT_GRASS).build(output);
+		combination(SUSHROOM).or().input(Items.RED_MUSHROOM).input(DAGGER).build(output);
+		combination(DESERT_BUSH).or().input(Items.SWEET_BERRIES).input(Items.SAND).build(output);
+		combination(FUCHSIA_CAKE).or().input(Items.CAKE).input(ItemTags.FISHES).build(output);
+		combination(CRUMPLY_HAT).or().input(Items.LEATHER_HELMET).input(Items.ANVIL).build(output);
 
 		saplingCombinations(output, BLOOD_ASPECT_SAPLING, BLOOD_ASPECT_LOG, BLOOD_ASPECT_LEAVES);
 		saplingCombinations(output, BREATH_ASPECT_SAPLING, BREATH_ASPECT_LOG, BREATH_ASPECT_LEAVES);
@@ -177,5 +193,22 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		woodCombinations(output, RAINBOW_PLANKS, RAINBOW_SLAB, RAINBOW_STAIRS, RAINBOW_DOOR, RAINBOW_FENCE, RAINBOW_FENCE_GATE, RAINBOW_TRAPDOOR);
 		woodCombinations(output, END_PLANKS, END_SLAB, END_STAIRS, END_DOOR, END_FENCE, END_FENCE_GATE, END_TRAPDOOR);
 		woodCombinations(output, SHADEWOOD_PLANKS, SHADEWOOD_SLAB, SHADEWOOD_STAIRS, SHADEWOOD_DOOR, SHADEWOOD_FENCE, SHADEWOOD_FENCE_GATE, SHADEWOOD_TRAPDOOR);
+
+		combination(BLOOD_ASPECT_SAPLING).and().input(Items.DARK_OAK_SAPLING).namedInput(BLOOD_BUCKET).build(output);
+		combination(BREATH_ASPECT_SAPLING).and().input(Items.ACACIA_SAPLING).namedInput(Items.WIND_CHARGE).build(output);
+		combination(DOOM_ASPECT_SAPLING).or().input(Items.JUNGLE_SAPLING).namedInput(Items.TRIPWIRE_HOOK).build(output);
+		combination(HEART_ASPECT_SAPLING).or().input(Items.OAK_SAPLING).namedInput(Items.BEETROOT).build(output);
+		combination(HOPE_ASPECT_SAPLING).and().input(Items.JUNGLE_SAPLING).namedInput(Items.GOLDEN_CARROT).build(output);
+		combination(LIFE_ASPECT_SAPLING).and().input(Items.ACACIA_SAPLING).namedInput(Items.SHORT_GRASS).build(output);
+		combination(LIGHT_ASPECT_SAPLING).and().input(Items.SPRUCE_SAPLING).namedInput(Items.GLOWSTONE_DUST).build(output);
+		combination(MIND_ASPECT_SAPLING).or().input(Items.DARK_OAK_SAPLING).namedInput(BRAIN_JUICE_BUCKET).build(output);
+		combination(RAGE_ASPECT_SAPLING).or().input(Items.ACACIA_SAPLING).namedInput(Items.GUNPOWDER).build(output);
+		combination(SPACE_ASPECT_SAPLING).or().input(Items.OAK_SAPLING).namedInput(GENERIC_OBJECT).build(output);
+		combination(TIME_ASPECT_SAPLING).or().input(Items.BIRCH_SAPLING).namedInput(Items.CLOCK).build(output);
+		combination(VOID_ASPECT_SAPLING).or().input(Items.MANGROVE_PROPAGULE).namedInput(Items.END_STONE).build(output);
+		combination(FROST_SAPLING).and().input(Items.JUNGLE_SAPLING).namedInput(Items.SNOWBALL).build(output);
+		combination(RAINBOW_SAPLING).and().input(Items.BIRCH_SAPLING).namedInput(WATER_COLORS_BUCKET).build(output);
+		combination(END_SAPLING).and().input(Items.BIRCH_SAPLING).namedInput(Items.CHORUS_FRUIT).build(output);
+		combination(SHADEWOOD_SAPLING).or().input(Items.ACACIA_SAPLING).namedInput(Items.PHANTOM_MEMBRANE).build(output);
 	}
 }

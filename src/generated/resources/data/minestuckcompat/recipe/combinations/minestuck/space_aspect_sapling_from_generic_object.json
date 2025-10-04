@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:oak_sapling"
+  },
+  "input2": {
+    "item": "minestuck:generic_object"
+  },
+  "mode": "or",
+  "output": "minestuck:space_aspect_sapling"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:birch_sapling"
+  },
+  "input2": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "mode": "and",
+  "output": "minestuck:end_sapling"
+}
