@@ -268,7 +268,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(BURNING_BLOSSOM).or().input(ORANGE_COSMOS).input(Items.FLINT_AND_STEEL).build(output);
 		combination(ENDBLOOM).or().input(Items.SHORT_GRASS).input(Items.END_STONE).build(output);
 
-		combination(SPROUT).and().input(Items.SHORT_GRASS).input(ItemTags.SAPLINGS).build(output);
+		combination(SPROUT).and().input(Items.SHORT_GRASS).input(CLOVER).build(output);
 		combination(BUSH).or().input(Items.SHORT_GRASS).input(Items.SWEET_BERRIES).build(output);
 		combination(HIGH_GRASS).and().input(Items.TALL_GRASS).input(Items.LARGE_FERN).build(output);
 		combination(CLOVER).and().input(Items.PINK_PETALS).input(Tags.Items.DYES_GREEN).build(output);

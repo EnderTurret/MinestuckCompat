@@ -10,7 +10,7 @@
     "item": "minecraft:short_grass"
   },
   "input2": {
-    "tag": "minecraft:saplings"
+    "item": "biomesoplenty:clover"
   },
   "mode": "and",
   "output": "biomesoplenty:sprout"

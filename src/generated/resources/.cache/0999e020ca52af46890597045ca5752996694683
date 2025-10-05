@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-02T04:00:46.987222007	Biomes O' Plenty Recipes
+// 1.21.1	2025-10-04T20:30:09.954457043	Biomes O' Plenty Recipes
 c96a16b5168743c8cba7dee3ea7211c8f468d9bf data/minestuckcompat/recipe/combinations/biomesoplenty/barley.json
 8f33b067ce94be1c7a8e3063689761baabe60f1c data/minestuckcompat/recipe/combinations/biomesoplenty/black_sand.json
 4bbedcfcfb66e35cfcb0da2dcb2c032db473de44 data/minestuckcompat/recipe/combinations/biomesoplenty/blood_bucket.json
@@ -150,7 +150,7 @@ d8860e13f731e6a5ee62f245b7f55c4a7f321d18 data/minestuckcompat/recipe/combination
 42f52e00b2f7778ef6946ff997ca5c089fa4e8c1 data/minestuckcompat/recipe/combinations/biomesoplenty/snowblossom_sapling_from_stick.json
 ee2ebd47cf8a8a00d150a686354fd329873617cd data/minestuckcompat/recipe/combinations/biomesoplenty/snowblossom_sapling_from_wheat_seeds.json
 a6a3d69e5cb4b25f5ab067f434d048bb2d05fefb data/minestuckcompat/recipe/combinations/biomesoplenty/spider_egg.json
-16eb63e03f32f98cd46ff7af41d2aab4393218f8 data/minestuckcompat/recipe/combinations/biomesoplenty/sprout.json
+3a88627df371936ac6cd9d3a621c1413e6b68ad1 data/minestuckcompat/recipe/combinations/biomesoplenty/sprout.json
 0fd4b8f7d3619f646aa1a6addaca17e8768543db data/minestuckcompat/recipe/combinations/biomesoplenty/tall_lavender.json
 0e773560e2f973eec776bac92b12006bdce94743 data/minestuckcompat/recipe/combinations/biomesoplenty/tall_white_lavender_from_tall_lavender.json
 b767fba24b17688ef4e4928c31aa608ff62aa2c6 data/minestuckcompat/recipe/combinations/biomesoplenty/tall_white_lavender_from_white_lavender.json
