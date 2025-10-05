@@ -241,9 +241,15 @@ public final class MixinHooks {
 
 		for (RecipeHolder<CombinationRecipe> holder : list) {
 			final RegularCombinationRecipe recipe = (RegularCombinationRecipe) holder.value();
-			for (ItemStack stack1 : recipe.input1().getItems()) {
+			final ItemStack[] input1 = recipe.input1().getItems();
+			final ItemStack[] input2 = recipe.input2().getItems();
+
+			if ((input1.length == 1 && ItemStack.isSameItemSameComponents(input1[0], recipe.output())) || (input2.length == 1 && ItemStack.isSameItemSameComponents(input2[0], recipe.output())))
+				MinestuckCompat.LOGGER.warn("Combination recipe {} is self-referential: {} + {} ==> {}", holder.id(), input1, input2, recipe.output().getItem());
+
+			for (ItemStack stack1 : input1) {
 				if (stack1.getItemHolder().getRegisteredName().contains("paxel")) continue;
-				for (ItemStack stack2 : recipe.input2().getItems()) {
+				for (ItemStack stack2 : input2) {
 					if (stack2.getItemHolder().getRegisteredName().contains("paxel")) continue;
 
 					final Combination combo = new Combination(stack1.getItem(), stack2.getItem(), recipe.mode() == CombinationMode.AND);
