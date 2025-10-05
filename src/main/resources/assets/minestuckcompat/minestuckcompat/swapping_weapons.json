@@ -1,0 +1,38 @@
+{
+  "minestuck:lipstick_chainsaw": "minestuck:lipstick",
+  "minestuck:cakesaw": "minestuck:cakesaw_lipstick",
+  "minestuck:magenta_mauler": "minestuck:magenta_mauler_lipstick",
+  "minestuck:thistleblower": "minestuck:thistleblower_lipstick",
+  "minestuck:hand_cranked_vampire_eraser": "minestuck:hand_cranked_vampire_eraser_lipstick",
+  "minestuck:emerald_immolator": "minestuck:emerald_immolator_lipstick",
+  "minestuck:obsidiator": "minestuck:obsidiator_lipstick",
+  "minestuck:devils_delight": "minestuck:devils_delight_lipstick",
+  "minestuck:demonbane_ragripper": "minestuck:demonbane_ragripper_lipstick",
+  "minestuck:frosttooth": "minestuck:frosttooth_lipstick",
+
+  "minestuck:ace_of_clubs": "minestuck:club_of_felony",
+  "minestuck:ace_of_diamonds": "minestuck:cuestick",
+  "minestuck:ace_of_hearts": "minestuck:tv_antenna",
+  "minestuck:ace_of_spades": "minestuck:horse_hitcher",
+  "minestuck:crocker_spoon": "minestuck:crocker_fork",
+  "minestuck:edisons_fury": "minestuck:edisons_serenity",
+  "minestuck:shock_axe": "minestuck:shock_axe_unpowered",
+  "minestuck:hellbringers_hoe_active": "minestuck:hellbringers_hoe_inactive",
+  "minestuck:kissy_cutie_heart_hitter": "minestuck:kissy_cutie_heart_splitter",
+  "minestuck:mutant_cutie_cell_putter": "minestuck:mutant_cutie_cell_cutter",
+
+  "minestuck:makeshift_claws_drawn": "minestuck:makeshift_claws_sheathed",
+  "minestuck:cat_claws_drawn": "minestuck:cat_claws_sheathed",
+  "minestuck:coffee_claws_drawn": "minestuck:coffee_claws_sheathed",
+  "minestuck:atomikitty_katar_drawn": "minestuck:atomikitty_katar_sheathed",
+  "minestuck:skeletonizer_drawn": "minestuck:skeletonizer_sheathed",
+  "minestuck:skeleton_displacer_drawn": "minestuck:skeleton_displacer_sheathed",
+  "minestuck:tears_of_the_enderlich_drawn": "minestuck:tears_of_the_enderlich_sheathed",
+  "minestuck:lion_lacerators_drawn": "minestuck:lion_lacerators_sheathed",
+  "minestuck:action_claws_drawn": "minestuck:action_claws_sheathed",
+
+  "minestuck:dragon_cane": "minestuck:dragon_cane_unsheathed",
+  "minestuck:less_proper_walking_stick": "minestuck:less_proper_walking_stick_sheathed",
+  "minestuck:rockefellers_walking_bladecane": "minestuck:rockefellers_walking_bladecane_sheathed",
+  "minestuck:chancewyrms_extra_fortunate_stabbing_implement": "minestuck:chancewyrms_extra_fortunate_stabbing_implement_unsheathed"
+}

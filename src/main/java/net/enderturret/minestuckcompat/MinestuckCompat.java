@@ -12,13 +12,11 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import net.enderturret.minestuckcompat.alchemy.JeiHooks;
 import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
 import net.enderturret.minestuckcompat.api.init.MCInterpreterTypes;
 
@@ -39,12 +37,5 @@ public final class MinestuckCompat {
 
 		if (ModList.get().isLoaded("rechiseled"))
 			NeoForge.EVENT_BUS.register(RechiseledGristCosts.class);
-
-		modBus.addListener(this::onCommonSetup);
-	}
-
-	private void onCommonSetup(FMLCommonSetupEvent e) {
-		if (ModList.get().isLoaded("create") && ModList.get().isLoaded("jei"))
-			JeiHooks.registerConversions();
 	}
 }

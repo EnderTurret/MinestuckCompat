@@ -9,11 +9,11 @@ import org.jetbrains.annotations.Nullable;
 import com.mraof.minestuck.api.alchemy.recipe.JeiGristCost;
 import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationMode;
 import com.mraof.minestuck.api.alchemy.recipe.combination.JeiCombination;
-import com.mraof.minestuck.item.MSItems;
 import com.simibubi.create.compat.jei.ConversionRecipe;
 import com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 
@@ -42,25 +42,16 @@ public final class JeiHooks {
 		GRIST_IDS.put(cost, id);
 	}
 
-	public static void registerConversions() {
-		// Lipstick <=> Chainsaw
-		registerRecipricolConversion(MSItems.LIPSTICK_CHAINSAW, MSItems.LIPSTICK);
-		registerRecipricolConversion(MSItems.CAKESAW, MSItems.CAKESAW_LIPSTICK);
-		registerRecipricolConversion(MSItems.MAGENTA_MAULER, MSItems.MAGENTA_MAULER_LIPSTICK);
-		registerRecipricolConversion(MSItems.THISTLEBLOWER, MSItems.THISTLEBLOWER_LIPSTICK);
-		registerRecipricolConversion(MSItems.HAND_CRANKED_VAMPIRE_ERASER, MSItems.HAND_CRANKED_VAMPIRE_ERASER_LIPSTICK);
-		registerRecipricolConversion(MSItems.EMERALD_IMMOLATOR, MSItems.EMERALD_IMMOLATOR_LIPSTICK);
-		registerRecipricolConversion(MSItems.OBSIDIATOR, MSItems.OBSIDIATOR_LIPSTICK);
-		registerRecipricolConversion(MSItems.DEVILS_DELIGHT, MSItems.DEVILS_DELIGHT_LIPSTICK);
-		registerRecipricolConversion(MSItems.DEMONBANE_RAGRIPPER, MSItems.DEMONBANE_RAGRIPPER_LIPSTICK);
-		registerRecipricolConversion(MSItems.FROSTTOOTH, MSItems.FROSTTOOTH_LIPSTICK);
+	private static boolean registered = false;
 
-		// Miscellaneous
-		registerRecipricolConversion(MSItems.CROCKER_SPOON, MSItems.CROCKER_FORK);
-		registerRecipricolConversion(MSItems.ACE_OF_CLUBS, MSItems.CLUB_OF_FELONY);
-		registerRecipricolConversion(MSItems.ACE_OF_DIAMONDS, MSItems.CUESTICK);
-		registerRecipricolConversion(MSItems.ACE_OF_HEARTS, MSItems.TV_ANTENNA);
-		registerRecipricolConversion(MSItems.ACE_OF_SPADES, MSItems.HORSE_HITCHER);
+	public static void registerConversions() {
+		if (registered) return;
+		else registered = true;
+
+		for (Map.Entry<Item, Item> entry : ClientDataManager.SWAPPING_WEAPONS.entrySet()) {
+			registerConversion(entry.getKey(), entry.getValue());
+			registerConversion(entry.getValue(), entry.getKey());
+		}
 	}
 
 	private static void registerRecipricolConversion(ItemLike from, ItemLike to) {
