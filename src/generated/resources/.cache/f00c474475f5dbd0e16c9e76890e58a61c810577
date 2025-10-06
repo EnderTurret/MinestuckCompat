@@ -1,4 +1,5 @@
-// 1.21.1	2025-09-28T03:39:56.652747178	Mekanism Recipes
+// 1.21.1	2025-10-05T03:48:22.885313307	Mekanism Recipes
+ed0f523cba0a0bc16b8f36f7b1b51eff73e5b518 data/minestuckcompat/recipe/combinations/mekanism/block_fluorite.json
 6915722dfe7823e03e24459782830958dd5ff7c5 data/minestuckcompat/recipe/combinations/mekanism/block_lead.json
 30b066a2ef4aac0b76d1396e0a4455f77118a1d7 data/minestuckcompat/recipe/combinations/mekanism/block_osmium.json
 d095ad75811c687fc8083289dd0d51fc264ba054 data/minestuckcompat/recipe/combinations/mekanism/block_raw_lead.json
@@ -14,6 +15,7 @@ fc52c661f1ecd1c9776b23a51f6889824348b733 data/minestuckcompat/recipe/combination
 ebd75dbeb806675ef5a768c707eddfd402dc04aa data/minestuckcompat/recipe/combinations/mekanism/crystal_osmium.json
 3f9e1b8a264afb85837f48ef2a0febd06de432ac data/minestuckcompat/recipe/combinations/mekanism/crystal_tin.json
 eb938e51e4ca157b19f7974c364e720f99929981 data/minestuckcompat/recipe/combinations/mekanism/crystal_uranium.json
+3bc7e7511a23ad1d79bdc3d1684da7b26a24af62 data/minestuckcompat/recipe/combinations/mekanism/deepslate_fluorite_ore.json
 2ea1ffd85e8892f28440ae7510613498e9b385d1 data/minestuckcompat/recipe/combinations/mekanism/deepslate_lead_ore.json
 aaa63135a790e661a804e0519cc0472874dbe55d data/minestuckcompat/recipe/combinations/mekanism/deepslate_osmium_ore.json
 3119654258befb87f3f317dba4eaa42d6cd4a609 data/minestuckcompat/recipe/combinations/mekanism/deepslate_tin_ore.json
@@ -26,6 +28,8 @@ de1599d0dd408cf45f06040b21a7ca07dbde5499 data/minestuckcompat/recipe/combination
 21e6df34a7ad07c7808bd505489b95411e58a1c7 data/minestuckcompat/recipe/combinations/mekanism/dust_steel.json
 538875d1e8442422777351011e37c474a483710a data/minestuckcompat/recipe/combinations/mekanism/dust_tin.json
 fa84586b7b6145c45fb9e46d636d679dc1944a5b data/minestuckcompat/recipe/combinations/mekanism/dust_uranium.json
+cd1d5521f0c24b2571315538ca55fcc65d86a1cf data/minestuckcompat/recipe/combinations/mekanism/fluorite_gem.json
+412e32d6e8fe00615f102b946ec16e041fecb712 data/minestuckcompat/recipe/combinations/mekanism/fluorite_ore.json
 13768039870fae28171f0264e33a4ccdf62692c7 data/minestuckcompat/recipe/combinations/mekanism/ingot_lead.json
 86e430226a3ec25a6ca6cd9a17be040ea4572b43 data/minestuckcompat/recipe/combinations/mekanism/ingot_osmium.json
 352b12719e40920411e12ada5c4e34a5029dcda3 data/minestuckcompat/recipe/combinations/mekanism/ingot_tin.json

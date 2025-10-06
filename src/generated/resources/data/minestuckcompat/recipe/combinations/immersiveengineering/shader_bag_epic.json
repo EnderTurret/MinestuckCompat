@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "immersiveengineering:shader_bag_common"
+  },
+  "input2": {
+    "item": "minecraft:heavy_core"
+  },
+  "mode": "or",
+  "output": "immersiveengineering:shader_bag_epic"
+}

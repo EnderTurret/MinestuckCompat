@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:dark_prismarine"
+  },
+  "input2": {
+    "item": "create:zinc_ingot"
+  },
+  "mode": "and",
+  "output": "create:veridium"
+}

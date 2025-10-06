@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "ae2:small_quartz_bud"
+  },
+  "input2": {
+    "item": "minecraft:bone_meal"
+  },
+  "mode": "or",
+  "output": "ae2:medium_quartz_bud"
+}

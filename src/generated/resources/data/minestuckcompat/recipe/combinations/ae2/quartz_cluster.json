@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:pointed_dripstone"
+  },
+  "input2": {
+    "item": "ae2:certus_quartz_crystal"
+  },
+  "mode": "or",
+  "output": "ae2:quartz_cluster"
+}

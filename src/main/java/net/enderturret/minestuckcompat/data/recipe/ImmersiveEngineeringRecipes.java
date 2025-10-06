@@ -157,5 +157,13 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 		combination(DUSTS.get(EnumMetals.CONSTANTAN)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.CONSTANTAN)).build(output);
 		combination(DUSTS.get(EnumMetals.ELECTRUM)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.ELECTRUM)).build(output);
 		combination(DUSTS.get(EnumMetals.STEEL)).and().input(Items.REDSTONE).input(INGOTS.get(EnumMetals.STEEL)).build(notMekanism);
+
+		combination(SHADER_BAG.get(Rarity.COMMON)).or().input(Items.ENDER_EYE).input(Items.QUARTZ).build(output);
+		combination(SHADER_BAG.get(Rarity.UNCOMMON)).or().input(SHADER_BAG.get(Rarity.COMMON)).input(Items.HEART_OF_THE_SEA).build(output);
+		combination(SHADER_BAG.get(Rarity.RARE)).or().input(SHADER_BAG.get(Rarity.COMMON)).input(Items.GOLDEN_APPLE).build(output);
+		combination(SHADER_BAG.get(Rarity.EPIC)).or().input(SHADER_BAG.get(Rarity.COMMON)).input(Items.HEAVY_CORE).build(output);
+		combination(SHADER_BAG.get(Lib.RARITY_MASTERWORK.getValue())).or().input(SHADER_BAG.get(Rarity.COMMON)).input(RAILGUN).build(output);
+
+		combination(HEMP_SEEDS).and().input(Items.WHEAT_SEEDS).input(Items.LARGE_FERN).build(output);
 	}
 }

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "create:zinc_ingot"
+  },
+  "input2": {
+    "item": "minecraft:raw_iron"
+  },
+  "mode": "and",
+  "output": "create:raw_zinc"
+}

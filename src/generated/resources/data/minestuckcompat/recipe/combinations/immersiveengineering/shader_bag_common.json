@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:ender_eye"
+  },
+  "input2": {
+    "item": "minecraft:quartz"
+  },
+  "mode": "or",
+  "output": "immersiveengineering:shader_bag_common"
+}

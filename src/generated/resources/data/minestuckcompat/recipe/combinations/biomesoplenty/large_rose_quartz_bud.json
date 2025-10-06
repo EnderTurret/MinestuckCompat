@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:medium_rose_quartz_bud"
+  },
+  "input2": {
+    "item": "minecraft:bone_meal"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:large_rose_quartz_bud"
+}

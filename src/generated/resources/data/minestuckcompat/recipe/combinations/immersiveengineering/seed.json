@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "input2": {
+    "item": "minecraft:large_fern"
+  },
+  "mode": "and",
+  "output": "immersiveengineering:seed"
+}

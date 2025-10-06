@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "immersiveengineering:shader_bag_common"
+  },
+  "input2": {
+    "item": "immersiveengineering:railgun"
+  },
+  "mode": "or",
+  "output": "immersiveengineering:shader_bag_immersiveengineering_masterwork"
+}

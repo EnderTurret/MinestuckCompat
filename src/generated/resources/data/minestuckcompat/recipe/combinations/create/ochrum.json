@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "create:limestone"
+  },
+  "input2": {
+    "item": "minecraft:stripped_oak_log"
+  },
+  "mode": "and",
+  "output": "create:ochrum"
+}

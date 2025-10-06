@@ -116,5 +116,7 @@ public final class FarmersDelightRecipes extends AbstractRecipeProvider {
 		combination(ONION.get()).or().input(Items.BEETROOT).input(Items.POTATO).build(output);
 		combination(TOMATO.get()).or().input(Items.POTATO).input(Tags.Items.DYES_RED).build(output);
 		combination(ROTTEN_TOMATO.get()).or().input(TOMATO.get()).input(Items.ROTTEN_FLESH).build(output);
+		combination(RICE_PANICLE.get()).and().input(Items.TALL_GRASS).input(Items.DANDELION).build(output);
+		combination(HAM.get()).and().input(Items.PORKCHOP).input(Items.BONE).build(output);
 	}
 }

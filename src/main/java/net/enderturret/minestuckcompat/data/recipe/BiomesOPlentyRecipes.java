@@ -300,6 +300,9 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(ROSE_QUARTZ_BLOCK).or().input(Items.GLASS).input(Items.RED_DYE).build(output);
 		combination(ROSE_QUARTZ_CLUSTER).or().input(Items.POINTED_DRIPSTONE).input(ROSE_QUARTZ_CHUNK).build(output);
 		combination(ROSE_QUARTZ_CHUNK).and().input(Items.AMETHYST_SHARD).input(Tags.Items.DYES_RED).build(output);
+		combination(SMALL_ROSE_QUARTZ_BUD).or().input(ROSE_QUARTZ_CHUNK).input(Items.BONE_MEAL).build(output);
+		combination(MEDIUM_ROSE_QUARTZ_BUD).or().input(SMALL_ROSE_QUARTZ_BUD).input(Items.BONE_MEAL).build(output);
+		combination(LARGE_ROSE_QUARTZ_BUD).or().input(MEDIUM_ROSE_QUARTZ_BUD).input(Items.BONE_MEAL).build(output);
 		combination(WISPJELLY).or().input(Items.SLIME_BLOCK).input(Items.WIND_CHARGE).build(output);
 		combination(TOADSTOOL).or().input(TOADSTOOL_BLOCK).input(Items.SHEARS).build(output);
 		combination(TOADSTOOL_BLOCK).or().input(Tags.Items.MUSHROOMS).input(SMOOTH_ORANGE_SANDSTONE).build(output);

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "mekanism:fluorite_gem"
+  },
+  "input2": {
+    "item": "minecraft:stone"
+  },
+  "mode": "and",
+  "output": "mekanism:fluorite_ore"
+}

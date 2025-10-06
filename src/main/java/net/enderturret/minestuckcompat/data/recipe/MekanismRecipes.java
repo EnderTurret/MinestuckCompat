@@ -105,6 +105,8 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		combination(mek("ingot_tin")).or().input(Items.COPPER_INGOT).input(MSItems.CHALK).build(output);
 		oreCombinations(output, mek("ingot_uranium"), mek("block_uranium"), mek("uranium_ore"), mek("deepslate_uranium_ore"), mek("raw_uranium"), mek("block_raw_uranium"));
 		combination(mek("ingot_uranium")).or().input(mek("ingot_lead")).input(Items.FERMENTED_SPIDER_EYE).build(output);
+		oreCombinations(output, mek("fluorite_gem"), mek("block_fluorite"), mek("fluorite_ore"), mek("deepslate_fluorite_ore"), null, null);
+		combination(mek("fluorite_gem")).and().input(Items.AMETHYST_SHARD).input(Items.QUARTZ).build(output);
 
 		combination(mek("crystal_iron")).and().input(Items.QUARTZ).input(Items.IRON_INGOT).build(output);
 		combination(mek("crystal_gold")).and().input(Items.QUARTZ).input(Items.GOLD_INGOT).build(output);

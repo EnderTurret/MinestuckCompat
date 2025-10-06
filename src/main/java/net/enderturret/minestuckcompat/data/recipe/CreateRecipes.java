@@ -139,6 +139,7 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		combination(ZINC_INGOT).and().input(Items.COPPER_INGOT).input(c("gems/emerald")).build(output);
 
 		combination(BLAZE_BURNER).or().input(EMPTY_BLAZE_BURNER.asItem()).input(Items.BLAZE_ROD).build(output);
+		combination(RAW_ZINC).and().input(ZINC_INGOT).input(Items.RAW_IRON).build(output);
 
 		combination(CRUSHED_BAUXITE).and().input(c("ingots/aluminum")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/aluminum")))));
 		combination(CRUSHED_COPPER).and().input(c("ingots/copper")).input(Items.GRAVEL).build(output);
@@ -153,6 +154,12 @@ public final class CreateRecipes extends AbstractRecipeProvider {
 		combination(CRUSHED_TIN).and().input(c("ingots/tin")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/tin")))));
 		combination(CRUSHED_URANIUM).and().input(c("ingots/uranium")).input(Items.GRAVEL).build(output.withConditions(not(tagEmpty(c("ingots/uranium")))));
 		combination(CRUSHED_ZINC).and().input(c("ingots/zinc")).input(Items.GRAVEL).build(output);
+
+		combination(lookup("create", "asurine")).and().input(Items.AMETHYST_BLOCK).input(Items.DIAMOND).build(output);
+		combination(lookup("create", "crimsite")).and().input(ROSE_QUARTZ_BLOCK).input(Items.NETHER_WART_BLOCK).build(output);
+		combination(lookup("create", "limestone")).and().input(Items.STONE).input(Items.PAPER).build(output);
+		combination(lookup("create", "ochrum")).and().input(lookup("create", "limestone")).input(Items.STRIPPED_OAK_LOG).build(output);
+		combination(lookup("create", "veridium")).and().input(Items.DARK_PRISMARINE).input(ZINC_INGOT).build(output);
 	}
 
 	private void variantSet(RecipeOutput output, String baseTypeDomain, String baseTypeName) {

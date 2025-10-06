@@ -69,6 +69,11 @@
     { "id": "ae2:paint", "required": false },
     { "id": "ae2:wrapped_generic_stack", "required": false },
     { "id": "ae2:missing_content", "required": false },
+    { "id": "ae2:crafting_pattern", "required": false },
+    { "id": "ae2:processing_pattern", "required": false },
+    { "id": "ae2:smithing_table_pattern", "required": false },
+    { "id": "ae2:stonecutting_pattern", "required": false },
+    { "id": "ae2:name_press", "required": false },
 
     { "id": "create:andesite_encased_cogwheel", "required": false },
     { "id": "create:andesite_encased_large_cogwheel", "required": false },

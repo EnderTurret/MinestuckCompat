@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:tall_grass"
+  },
+  "input2": {
+    "item": "minecraft:dandelion"
+  },
+  "mode": "and",
+  "output": "farmersdelight:rice_panicle"
+}

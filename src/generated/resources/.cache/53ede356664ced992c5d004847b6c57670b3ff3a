@@ -1,5 +1,7 @@
-// 1.21.1	2025-09-13T18:26:18.232935692	Create Recipes
+// 1.21.1	2025-10-05T02:25:30.237235258	Create Recipes
+c1b1a18827a9a5ab145541bf92f5acb02e65ff81 data/minestuckcompat/recipe/combinations/create/asurine.json
 bc8903993d5eed9b78d3bad61cb81b154d31a7a9 data/minestuckcompat/recipe/combinations/create/blaze_burner.json
+04f08fcc1144ad0e446617b4b20036fa6f3e7a11 data/minestuckcompat/recipe/combinations/create/crimsite.json
 3a2d365be4ec75b2558f39b8bbd3f386c89dec8c data/minestuckcompat/recipe/combinations/create/crushed_raw_aluminum.json
 39ac37c684ccff278003f7dc9cf59652bb13711f data/minestuckcompat/recipe/combinations/create/crushed_raw_copper.json
 8d457b558e5e7c098881367a6b2e6b4d4d4849ae data/minestuckcompat/recipe/combinations/create/crushed_raw_gold.json
@@ -14,7 +16,11 @@ a0a081bd41b1a13894261605038b3549904392e7 data/minestuckcompat/recipe/combination
 53c9e5968475473cc2f4c9ef2a87d0f6b46d3658 data/minestuckcompat/recipe/combinations/create/crushed_raw_uranium.json
 cb2c03722809ddfef4bcf6336f4e06ae9ce6f3a4 data/minestuckcompat/recipe/combinations/create/crushed_raw_zinc.json
 f25924bfcc167e4c8e05c1f3044cbe528c5b3c37 data/minestuckcompat/recipe/combinations/create/deepslate_zinc_ore.json
+ca16992c133f0dd316c3fea81d4bf83d306b10b2 data/minestuckcompat/recipe/combinations/create/limestone.json
+aa2133f67980c759ec882a23d74ce0a0a9bc24a7 data/minestuckcompat/recipe/combinations/create/ochrum.json
+0189d6428f3acea63b65571fac624b3dcc8f6dfc data/minestuckcompat/recipe/combinations/create/raw_zinc.json
 4c00fac9d69030e9ae93d01f8b11638832644914 data/minestuckcompat/recipe/combinations/create/raw_zinc_block.json
+54c6780b341c551a7ac257cbdd4b0a0be98c6403 data/minestuckcompat/recipe/combinations/create/veridium.json
 bf6520592d10811221bd8e72bd8c0628f7276569 data/minestuckcompat/recipe/combinations/create/zinc_block.json
 00f3d5d978c35da58982c30aca24ed1d1e495583 data/minestuckcompat/recipe/combinations/create/zinc_ingot.json
 419243893dcf3b5caecad3351d88500228af8829 data/minestuckcompat/recipe/combinations/create/zinc_ore.json

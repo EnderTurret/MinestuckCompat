@@ -1,8 +1,10 @@
-// 1.21.1	2025-09-13T18:26:18.23268078	Farmers Delight Recipes
+// 1.21.1	2025-10-05T05:30:46.779651053	Farmers Delight Recipes
 ca18777e9432384349cc6ca07f6c31818b3e6c8b data/minestuckcompat/recipe/combinations/farmersdelight/brown_mushroom_colony.json
 ffb530ac0881cb545c5ea1cf5f77383c49c33995 data/minestuckcompat/recipe/combinations/farmersdelight/cabbage.json
+a6032f67674f6d6e9c3fde592c902234c0ab6c68 data/minestuckcompat/recipe/combinations/farmersdelight/ham.json
 d1d8f5142d75fa65081d9232c1d41192f2ebeaa0 data/minestuckcompat/recipe/combinations/farmersdelight/onion.json
 e03d11fadcb465204a96f74c08fe36e0f512e0e9 data/minestuckcompat/recipe/combinations/farmersdelight/red_mushroom_colony.json
+d86ca284c7ea0e0c49a4ef14a1767c7f419b5393 data/minestuckcompat/recipe/combinations/farmersdelight/rice_panicle.json
 05f35e6733a21ee4bbd05539b14d43f85091ec8d data/minestuckcompat/recipe/combinations/farmersdelight/rotten_tomato.json
 f0a6d69cf40720cae27688fb2256a7b8af854ad1 data/minestuckcompat/recipe/combinations/farmersdelight/sandy_shrub.json
 a453abd2a5c17effa9652effbaa557c6fd624f4e data/minestuckcompat/recipe/combinations/farmersdelight/tomato.json
