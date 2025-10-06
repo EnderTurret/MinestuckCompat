@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
@@ -67,24 +68,17 @@ public final class MixinHooks {
 
 		if (!MinestuckCompatConfig.common().dumpGristlessItems.getAsBoolean()) return;
 
-		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
-		final TagKey<Item> unobtainableItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "unobtainable_items"));
-
 		final var sherds = BuiltInRegistries.ITEM.getTag(ItemTags.DECORATED_POT_SHERDS).orElseThrow();
-		final var technicalItems = BuiltInRegistries.ITEM.getTag(technicalItemsTag).orElseThrow();
-		final var unobtainableItems = BuiltInRegistries.ITEM.getTag(unobtainableItemsTag).orElseThrow();
 
 		final List<ResourceLocation> items = new ArrayList<>();
 		final List<ResourceLocation> collectibles = new ArrayList<>();
 		final Map<ResourceLocation, List<ResourceLocation>> multiSources = new TreeMap<>(ResourceLocation::compareNamespaced);
+		final Predicate<Item> filter = getUnobtainableItemPredicate();
 
 		for (Item item : BuiltInRegistries.ITEM) {
-			if (item instanceof GameMasterBlockItem || item instanceof SpawnEggItem) continue;
+			if (filter.test(item)) continue;
 
 			final ResourceLocation id = item.builtInRegistryHolder().getKey().location();
-
-			if (technicalItems.contains(item.builtInRegistryHolder())) continue;
-			if (unobtainableItems.contains(item.builtInRegistryHolder())) continue;
 
 			final List<RecipeHolder<GristCostRecipe>> recipes = hasGristCost(item.getDefaultInstance(), recipeManager);
 			if (recipes.isEmpty())
@@ -115,11 +109,29 @@ public final class MixinHooks {
 					.collect(Collectors.joining("\n")));
 	}
 
-	private static String formatRecipeList(Map.Entry<ResourceLocation, List<ResourceLocation>> entry) {
+	@SuppressWarnings("deprecation")
+	private static Predicate<Item> getUnobtainableItemPredicate() {
+		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
+		final TagKey<Item> unobtainableItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "unobtainable_items"));
+
+		final var technicalItems = BuiltInRegistries.ITEM.getTag(technicalItemsTag).orElseThrow();
+		final var unobtainableItems = BuiltInRegistries.ITEM.getTag(unobtainableItemsTag).orElseThrow();
+
+		return item -> {
+			if (item instanceof GameMasterBlockItem || item instanceof SpawnEggItem) return true;
+
+			if (technicalItems.contains(item.builtInRegistryHolder())) return true;
+			if (unobtainableItems.contains(item.builtInRegistryHolder())) return true;
+
+			return false;
+		};
+	}
+
+	private static <K, V> String formatRecipeList(Map.Entry<K, List<V>> entry) {
 		final String id = entry.getKey().toString();
 		final StringBuilder ret = new StringBuilder(id);
 
-		for (ResourceLocation rl : entry.getValue())
+		for (V rl : entry.getValue())
 			ret.append('\n').append("  ==> ").append(rl.toString());
 
 		return ret.toString();
