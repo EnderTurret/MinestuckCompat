@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:tube_coral"
+  },
+  "input2": {
+    "item": "minecraft:stone_pressure_plate"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:barnacles"
+}

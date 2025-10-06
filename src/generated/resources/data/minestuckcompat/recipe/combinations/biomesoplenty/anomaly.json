@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:null_block"
+  },
+  "input2": {
+    "item": "minestuck:artifact_warhead"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:anomaly"
+}

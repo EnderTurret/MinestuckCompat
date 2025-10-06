@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:thermal_calcite"
+  },
+  "input2": {
+    "item": "minecraft:campfire"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:thermal_calcite_vent"
+}

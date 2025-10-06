@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:flesh"
+  },
+  "input2": {
+    "item": "minecraft:short_grass"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:pus_bubble"
+}

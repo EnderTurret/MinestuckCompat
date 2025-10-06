@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:music_disc_wait"
+  },
+  "input2": {
+    "item": "minecraft:netherite_boots"
+  },
+  "mode": "or",
+  "output": "biomesoplenty:music_disc_wanderer"
+}

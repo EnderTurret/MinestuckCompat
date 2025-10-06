@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "biomesoplenty:willow_sapling"
+  },
+  "input2": {
+    "item": "minecraft:vine"
+  },
+  "mode": "and",
+  "output": "biomesoplenty:willow_vine"
+}

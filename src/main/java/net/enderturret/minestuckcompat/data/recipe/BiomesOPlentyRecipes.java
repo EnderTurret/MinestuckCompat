@@ -293,6 +293,7 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(ORANGE_SAND).and().input(Items.SAND).input(Tags.Items.DYES_ORANGE).build(output);
 		combination(BLACK_SAND).and().input(WHITE_SAND).input(Tags.Items.DYES_BLACK).build(output);
 		combination(THERMAL_CALCITE).or().input(Items.CALCITE).input(Items.FIRE_CHARGE).build(output);
+		combination(THERMAL_CALCITE_VENT).or().input(THERMAL_CALCITE).input(Items.CAMPFIRE).build(output);
 		combination(DRIED_SALT).or().input(Items.MUD).input(Items.COARSE_DIRT).build(output);
 		combination(EYEBULB).and().input(Items.TALL_GRASS).input(Items.ENDER_EYE).build(output);
 		combination(HAIR).and().input(Items.SHORT_GRASS).input(Items.ROTTEN_FLESH).build(output);
@@ -319,9 +320,17 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		combination(LIQUID_NULL_BUCKET).and().input(NULL_BLOCK).input(Items.WATER_BUCKET).build(output);
 		// This one's a joke about old unobtainable items (and how easy it was to typo and get a missing texture one).
 		combination(NULL_BLOCK).and().input(Items.SMOOTH_STONE).input(Items.RED_MUSHROOM_BLOCK).build(output);
+		combination(ANOMALY).or().input(NULL_BLOCK).input(MSItems.ARTIFACT_WARHEAD).build(output);
 		combination(BLOOD_BUCKET).and().input(MSItems.BLOOD_BUCKET).input(Items.ROTTEN_FLESH).build(output);
 		combination(POROUS_FLESH).and().input(FLESH).input(Items.MAGMA_BLOCK).build(output);
 		combination(FLESH_TENDONS).and().input(FLESH).input(Items.VINE).build(output);
+		combination(PUS_BUBBLE).and().input(FLESH).input(Items.SHORT_GRASS).build(output);
+		combination(WILLOW_VINE).and().input(WILLOW_SAPLING).input(Items.VINE).build(output);
+		combination(SPANISH_MOSS).or().input(WILLOW_SAPLING).input(Items.MOSS_BLOCK).build(output);
+		combination(BARNACLES).and().input(Items.TUBE_CORAL).input(Items.STONE_PRESSURE_PLATE).build(output);
+
+		// "wait" used to be called "where are we now"
+		combination(MUSIC_DISC_WANDERER).or().input(Items.MUSIC_DISC_WAIT).input(Items.NETHERITE_BOOTS).build(output);
 
 		// Miscellaneous Recipes
 
