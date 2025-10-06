@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:native_sulfur"
+  },
+  "input2": {
+    "item": "minecraft:short_grass"
+  },
+  "mode": "and",
+  "output": "minestuck:sulfur_bubble"
+}

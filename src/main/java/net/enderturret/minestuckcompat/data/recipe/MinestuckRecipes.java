@@ -9,7 +9,9 @@ import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import com.mraof.minestuck.api.alchemy.GristTypes;
+import com.mraof.minestuck.block.AspectTreeBlocks;
 import com.mraof.minestuck.util.MSTags;
+import com.simibubi.create.AllBlocks;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -141,7 +143,18 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(PETRIFIED_GRASS).or().input(Items.SHORT_GRASS).namedInput(Items.COBBLESTONE).build(output);
 		combination(SINGED_GRASS).or().input(Items.SHORT_GRASS).input(Items.FLINT_AND_STEEL).build(output);
 		combination(SINGED_FOLIAGE).or().input(ItemTags.SAPLINGS).input(Items.FLINT_AND_STEEL).build(output);
+		combination(NATIVE_SULFUR).and().input(Items.MAGMA_BLOCK).input(Items.GUNPOWDER).build(output);
+		combination(SULFUR_BUBBLE).and().input(NATIVE_SULFUR).input(Items.SHORT_GRASS).build(output);
 		combination(DEAD_LOG).and().input(Items.OAK_LOG).input(Items.DEAD_BUSH).build(output);
+		combination(DEAD_FOLIAGE).and().input(Items.OAK_SAPLING).input(Items.DEAD_BUSH).build(output);
+		combination(METEORIC_STONE).and().input(Items.BASALT).input(AspectTreeBlocks.VOID_ASPECT_PLANKS).build(output);
+
+		combination(NAKAGATOR_STATUE).and().input(Items.RED_SANDSTONE).input(MINI_FROG_STATUE).build(output);
+		combination(PLUSH_SALAMANDER).and().input(Items.YELLOW_WOOL).input(Items.WATER_BUCKET).build(output);
+
+		// While this item doesn't have any (default) combination recipes, it does spawn in chests.
+		combination(BISICKLE).and().input(SICKLE).namedInput(Items.CHAIN).build(output);
+		combination(BISICKLE).and().input(SICKLE).namedInput(AllBlocks.COGWHEEL).build(output.withConditions(modLoaded("create")));
 
 		combination(AND_GATE_BLOCK).and().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
 		combination(OR_GATE_BLOCK).or().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
@@ -156,6 +169,7 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(STRAWBERRY).and().input(Items.MELON).input(Items.SWEET_BERRIES).build(output);
 		combination(ONION).and().input(Items.POTATO).input(Items.SHORT_GRASS).build(output);
 		combination(SUSHROOM).or().input(Items.RED_MUSHROOM).input(DAGGER).build(output);
+		combination(MOREL_MUSHROOM).or().input(Items.RED_MUSHROOM).input(Items.HONEYCOMB).build(output);
 		combination(DESERT_BUSH).or().input(Items.SWEET_BERRIES).input(Items.SAND).build(output);
 		combination(FUCHSIA_CAKE).or().input(Items.CAKE).input(ItemTags.FISHES).build(output);
 		combination(CRUMPLY_HAT).or().input(Items.LEATHER_HELMET).input(Items.ANVIL).build(output);

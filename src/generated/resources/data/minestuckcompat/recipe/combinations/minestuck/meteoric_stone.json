@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:basalt"
+  },
+  "input2": {
+    "item": "minestuck:void_aspect_planks"
+  },
+  "mode": "and",
+  "output": "minestuck:meteoric_stone"
+}

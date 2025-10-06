@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-03T20:41:32.407398028	Vanilla Recipes
+// 1.21.1	2025-10-06T18:59:24.547784125	Vanilla Recipes
 0099357e0c43f6126ce48f01bd96461c53ce9c0d data/minestuckcompat/recipe/combinations/vanilla/allium.json
 7e4a2be9c0f2bce836643a3f9d928a57a90b3dea data/minestuckcompat/recipe/combinations/vanilla/angler_pottery_sherd.json
 f64944c9b485abfecd033c00d68d2c4f1c849106 data/minestuckcompat/recipe/combinations/vanilla/archer_pottery_sherd.json
@@ -50,6 +50,7 @@ d6c2d3ada04087cb40fca8073a4ce9335d89e502 data/minestuckcompat/recipe/combination
 b6f356d9d25ae410f6b049c05354a271ed5dffaf data/minestuckcompat/recipe/combinations/vanilla/dune_armor_trim_smithing_template.json
 7615190d2be85262af276d8ee2a2cc76c7d7b9b3 data/minestuckcompat/recipe/combinations/vanilla/egg.json
 3f5f791888a5afbaed83a8f047fdc1c80a3f0588 data/minestuckcompat/recipe/combinations/vanilla/emerald.json
+1ba9ae531bebcb4897323519a3779507d4e00ebb data/minestuckcompat/recipe/combinations/vanilla/ender_pearl.json
 72523bedb005c28053f9f467e8478d23d3895738 data/minestuckcompat/recipe/combinations/vanilla/explorer_pottery_sherd.json
 20fe0c702fa0b427251081106fd9c423ff8605bc data/minestuckcompat/recipe/combinations/vanilla/eye_armor_trim_smithing_template.json
 faf0bf7fc0f035cf2a20e88500b4640bf4d78854 data/minestuckcompat/recipe/combinations/vanilla/feather.json
@@ -128,6 +129,7 @@ e51b194199e6878432282f0a6a9ae18edf83d167 data/minestuckcompat/recipe/combination
 bb18e09006671e9691199d1c77933edf07cc841d data/minestuckcompat/recipe/combinations/vanilla/orange_tulip.json
 f3b935cada5e4083a467cb375524f3e48802a1a6 data/minestuckcompat/recipe/combinations/vanilla/oxeye_daisy.json
 8fd3b7d2b88628ba68b4780f61d9782433825939 data/minestuckcompat/recipe/combinations/vanilla/peony.json
+32a370dc3e818e6fe69b28a8d17846ae4f3187e8 data/minestuckcompat/recipe/combinations/vanilla/phantom_membrane.json
 3b07208340a96f45f9d5f8e56c579c8c6585aeed data/minestuckcompat/recipe/combinations/vanilla/piglin_banner_pattern.json
 177e25cdc8ca47a540049498d6eb216c18e89d32 data/minestuckcompat/recipe/combinations/vanilla/piglin_head.json
 f2f41c2df0f1242c7655c92be19ecf9e59812a38 data/minestuckcompat/recipe/combinations/vanilla/pink_petals.json

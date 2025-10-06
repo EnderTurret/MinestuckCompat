@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:slime_ball"
+  },
+  "input2": {
+    "item": "minecraft:echo_shard"
+  },
+  "mode": "and",
+  "output": "minecraft:ender_pearl"
+}

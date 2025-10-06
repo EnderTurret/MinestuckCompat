@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:yellow_wool"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "and",
+  "output": "minestuck:plush_salamander"
+}

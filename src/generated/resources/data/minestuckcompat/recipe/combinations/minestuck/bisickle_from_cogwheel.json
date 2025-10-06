@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:sickle"
+  },
+  "input2": {
+    "item": "create:cogwheel"
+  },
+  "mode": "and",
+  "output": "minestuck:bisickle"
+}

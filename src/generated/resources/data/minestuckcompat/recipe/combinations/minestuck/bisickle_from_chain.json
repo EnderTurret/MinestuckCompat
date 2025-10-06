@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:sickle"
+  },
+  "input2": {
+    "item": "minecraft:chain"
+  },
+  "mode": "and",
+  "output": "minestuck:bisickle"
+}

@@ -310,6 +310,8 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(EGG).or().input(FEATHER).input(BONE_MEAL).build(output);
 		combination(FEATHER).or().input(MSItems.FAN).input(CHICKEN).build(output);
 		combination(SHULKER_SHELL).and().input(POPPED_CHORUS_FRUIT).input(ItemTags.HEAD_ARMOR).build(output);
+		combination(ENDER_PEARL).and().input(Items.SLIME_BALL).input(Items.ECHO_SHARD).build(output);
+		combination(PHANTOM_MEMBRANE).and().input(Items.LEATHER).input(Items.ENDER_PEARL).build(output);
 
 		// Recor- sorry, "music discs"
 		combination(MUSIC_DISC_11).or().input(MUSIC_DISC_CAT).input(PLAYER_HEAD).build(output);
