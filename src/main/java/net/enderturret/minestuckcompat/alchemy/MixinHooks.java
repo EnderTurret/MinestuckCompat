@@ -27,12 +27,10 @@ import com.mraof.minestuck.item.crafting.MSRecipeTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.GameMasterBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SmithingTemplateItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.MapExtendingRecipe;
@@ -68,10 +66,7 @@ public final class MixinHooks {
 
 		if (!MinestuckCompatConfig.common().dumpGristlessItems.getAsBoolean()) return;
 
-		final var sherds = BuiltInRegistries.ITEM.getTag(ItemTags.DECORATED_POT_SHERDS).orElseThrow();
-
 		final List<ResourceLocation> items = new ArrayList<>();
-		final List<ResourceLocation> collectibles = new ArrayList<>();
 		final Map<ResourceLocation, List<ResourceLocation>> multiSources = new TreeMap<>(ResourceLocation::compareNamespaced);
 		final Predicate<Item> filter = getUnobtainableItemPredicate();
 
@@ -82,8 +77,7 @@ public final class MixinHooks {
 
 			final List<RecipeHolder<GristCostRecipe>> recipes = hasGristCost(item.getDefaultInstance(), recipeManager);
 			if (recipes.isEmpty())
-				(item instanceof SmithingTemplateItem || sherds.contains(item.builtInRegistryHolder()) ? collectibles : items)
-				.add(id);
+				items.add(id);
 
 			if (recipes.size() > 1) {
 				// Remove the generated recipe, if present.
@@ -96,11 +90,6 @@ public final class MixinHooks {
 		if (!items.isEmpty()) {
 			items.sort(ResourceLocation::compareNamespaced);
 			MinestuckCompat.LOGGER.info("Items without grist costs:\n{}", items.stream().map(ResourceLocation::toString).collect(Collectors.joining("\n")));
-		}
-
-		if (!collectibles.isEmpty()) {
-			collectibles.sort(ResourceLocation::compareNamespaced);
-			MinestuckCompat.LOGGER.info("Collectibles without grist costs:\n{}", collectibles.stream().map(ResourceLocation::toString).collect(Collectors.joining("\n")));
 		}
 
 		if (!multiSources.isEmpty())
