@@ -26,6 +26,7 @@ public final class MinestuckCompatConfig {
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
 	public final BooleanValue checkConflictingCombinationRecipes;
 	public final BooleanValue debugDefaultInterpreterRecipeEligibility;
+	public final BooleanValue mysteriousConversionRecipes;
 
 	private final Map<String, BooleanValue> enabledRecipes = new HashMap<>();
 
@@ -95,6 +96,11 @@ public final class MinestuckCompatConfig {
 		checkConflictingCombinationRecipes = builder.comment(
 				"Whether or not to check for overlapping punch designix and totem lathe (combination) recipes."
 				).define("checkConflictingCombinationRecipes", false);
+
+		mysteriousConversionRecipes = builder.comment(
+				"Whether or not to add \"Mysterious Conversions\" for Minestuck's transforming weapons to JEI when Create is installed.",
+				"Mods and resource packs can add their own such weapons by adding a mymod:minestuckcompat/swapping_weapons.json file."
+				).define("mysteriousConversionRecipes", true);
 	}
 
 	private void defineEnabledRecipes(ModConfigSpec.Builder builder, String modId, String name) {

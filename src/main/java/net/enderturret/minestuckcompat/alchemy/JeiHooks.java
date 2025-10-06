@@ -17,6 +17,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 
+import net.enderturret.minestuckcompat.MinestuckCompatConfig;
+
 @Internal
 public final class JeiHooks {
 
@@ -45,6 +47,8 @@ public final class JeiHooks {
 	private static boolean registered = false;
 
 	public static void registerConversions() {
+		if (!MinestuckCompatConfig.common().mysteriousConversionRecipes.get()) return;
+
 		if (registered) return;
 		else registered = true;
 
