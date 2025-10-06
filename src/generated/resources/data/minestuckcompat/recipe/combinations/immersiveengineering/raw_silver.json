@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "immersiveengineering:ingot_silver"
+  },
+  "input2": {
+    "item": "minecraft:raw_iron"
+  },
+  "mode": "and",
+  "output": "immersiveengineering:raw_silver"
+}

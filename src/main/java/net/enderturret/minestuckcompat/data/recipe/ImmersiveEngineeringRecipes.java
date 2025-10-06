@@ -165,5 +165,11 @@ public final class ImmersiveEngineeringRecipes extends AbstractRecipeProvider {
 		combination(SHADER_BAG.get(Lib.RARITY_MASTERWORK.getValue())).or().input(SHADER_BAG.get(Rarity.COMMON)).input(RAILGUN).build(output);
 
 		combination(HEMP_SEEDS).and().input(Items.WHEAT_SEEDS).input(Items.LARGE_FERN).build(output);
+
+		combination(IEItems.Metals.RAW_ORES.get(EnumMetals.ALUMINUM)).and().input(INGOTS.get(EnumMetals.ALUMINUM)).input(Items.RAW_IRON).build(output);
+		combination(IEItems.Metals.RAW_ORES.get(EnumMetals.LEAD)).and().input(INGOTS.get(EnumMetals.LEAD)).input(Items.RAW_IRON).build(output);
+		combination(IEItems.Metals.RAW_ORES.get(EnumMetals.NICKEL)).and().input(INGOTS.get(EnumMetals.NICKEL)).input(Items.RAW_IRON).build(output);
+		combination(IEItems.Metals.RAW_ORES.get(EnumMetals.SILVER)).and().input(INGOTS.get(EnumMetals.SILVER)).input(Items.RAW_IRON).build(output);
+		combination(IEItems.Metals.RAW_ORES.get(EnumMetals.URANIUM)).and().input(INGOTS.get(EnumMetals.URANIUM)).input(Items.RAW_IRON).build(output);
 	}
 }

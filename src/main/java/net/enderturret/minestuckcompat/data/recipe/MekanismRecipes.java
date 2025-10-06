@@ -132,6 +132,11 @@ public final class MekanismRecipes extends AbstractRecipeProvider {
 		combination(mek("shard_tin")).and().input(Items.AMETHYST_SHARD).input(c("ingots/tin")).build(output);
 		combination(mek("shard_lead")).and().input(Items.AMETHYST_SHARD).input(c("ingots/lead")).build(output);
 		combination(mek("shard_uranium")).and().input(Items.AMETHYST_SHARD).input(c("ingots/uranium")).build(output);
+
+		combination(mek("raw_lead")).and().input(mek("ingot_lead")).input(Items.RAW_IRON).build(output);
+		combination(mek("raw_osmium")).and().input(mek("ingot_osmium")).input(Items.RAW_IRON).build(output);
+		combination(mek("raw_tin")).and().input(mek("ingot_tin")).input(Items.RAW_IRON).build(output);
+		combination(mek("raw_uranium")).and().input(mek("ingot_uranium")).input(Items.RAW_IRON).build(output);
 	}
 
 	private static Item mek(String id) {

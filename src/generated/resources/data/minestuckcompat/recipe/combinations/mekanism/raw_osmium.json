@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "mekanism:ingot_osmium"
+  },
+  "input2": {
+    "item": "minecraft:raw_iron"
+  },
+  "mode": "and",
+  "output": "mekanism:raw_osmium"
+}
