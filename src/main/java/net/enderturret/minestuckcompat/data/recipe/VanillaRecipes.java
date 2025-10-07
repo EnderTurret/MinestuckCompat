@@ -287,8 +287,8 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(SWEET_BERRIES).and().input(MELON_SLICE).input(ItemTags.LEAVES).build(output);
 		combination(OAK_SAPLING).or().input(ItemTags.SAPLINGS).input(SHORT_GRASS).build(output);
 		combination(BIRCH_SAPLING).and().input(OAK_SAPLING).input(FEATHER).build(output);
-		combination(SPRUCE_SAPLING).or().input(ItemTags.SAPLINGS).input(SNOWBALL).build(output);
-		combination(JUNGLE_SAPLING).and().input(ItemTags.SAPLINGS).input(VINE).build(output);
+		combination(SPRUCE_SAPLING).or().input(OAK_SAPLING).input(SNOWBALL).build(output);
+		combination(JUNGLE_SAPLING).and().input(OAK_SAPLING).input(VINE).build(output);
 		combination(MANGROVE_PROPAGULE).or().input(JUNGLE_SAPLING).input(MUD).build(output);
 		combination(CHERRY_SAPLING).and().input(SPRUCE_SAPLING).input(PINK_PETALS).build(output);
 

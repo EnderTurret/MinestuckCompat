@@ -12,6 +12,6 @@
   "input2": {
     "item": "minecraft:water_bucket"
   },
-  "mode": "and",
+  "mode": "or",
   "output": "minestuck:plush_salamander"
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-06T18:52:17.096653673	Minestuck Recipes
+// 1.21.1	2025-10-07T04:55:03.763681894	Minestuck Recipes
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/clock_from_redstone.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/lightning_rod.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/coarse_end_stone.json
@@ -136,7 +136,7 @@ ce2e5d927ac0be79d880b22c454e435b18015527 data/minestuckcompat/recipe/combination
 cb23b9e888919c5e855937bd55fc5a474ff34848 data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_cobblestone.json
 ba422c8473da13e4818fb140a1e22a1a6ae2434c data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_gravel.json
 0f8aec45ae8786efd0900ad834dea6c4d503e781 data/minestuckcompat/recipe/combinations/minestuck/petrified_grass_from_stone.json
-bdb6c09cfea23650807b838a9ed28d021e875775 data/minestuckcompat/recipe/combinations/minestuck/plush_salamander.json
+1c82af05c6776fbb485b98b320ac8f9041e5e496 data/minestuckcompat/recipe/combinations/minestuck/plush_salamander.json
 aed887d956e94cb730ed384357e84ea83eaf96a7 data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_fence_gate.json
 c2e1d6dbe9c4d8acf2cd5662bee029fcd67c7142 data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_sapling.json
 39f4ed0a3e34676c405bb737d6277a83f2e889fd data/minestuckcompat/recipe/combinations/minestuck/rage_aspect_sapling_from_gunpowder.json

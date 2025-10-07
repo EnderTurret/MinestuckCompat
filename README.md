@@ -170,7 +170,6 @@ Here's a sample config:
 ```
 
 This interpreter type can be configured with a `deploy_cost` and `press_cost`, both optional.
-There is no `added_cost` field — use the other two instead.
 
 ### `minestuckcompat:mekanism/item_chemical_to_item`
 

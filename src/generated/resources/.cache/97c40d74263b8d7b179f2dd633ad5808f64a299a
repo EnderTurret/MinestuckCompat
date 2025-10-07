@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-06T18:59:24.547784125	Vanilla Recipes
+// 1.21.1	2025-10-07T04:55:03.760972378	Vanilla Recipes
 0099357e0c43f6126ce48f01bd96461c53ce9c0d data/minestuckcompat/recipe/combinations/vanilla/allium.json
 7e4a2be9c0f2bce836643a3f9d928a57a90b3dea data/minestuckcompat/recipe/combinations/vanilla/angler_pottery_sherd.json
 f64944c9b485abfecd033c00d68d2c4f1c849106 data/minestuckcompat/recipe/combinations/vanilla/archer_pottery_sherd.json
@@ -83,7 +83,7 @@ c95a269472450275acbd864fff9326cc18c6697c data/minestuckcompat/recipe/combination
 137771a6e6fec4b76e3913d8b672c4670ed18338 data/minestuckcompat/recipe/combinations/vanilla/infested_mossy_stone_bricks.json
 c3c0c15a446dc687afdbd8ed45b03485197365a0 data/minestuckcompat/recipe/combinations/vanilla/infested_stone.json
 b1a6117c05b517f33ab186cce1be56e2b56dadaa data/minestuckcompat/recipe/combinations/vanilla/infested_stone_bricks.json
-2f5bf31604783aaf0037bcfe4a9d43cf0306e232 data/minestuckcompat/recipe/combinations/vanilla/jungle_sapling.json
+fbb199d5fd1f5d351c909929526bfd6ce16fd3c8 data/minestuckcompat/recipe/combinations/vanilla/jungle_sapling.json
 5d71d1c6f98e48c6d1c50e92bb24ba8cdc31a148 data/minestuckcompat/recipe/combinations/vanilla/kelp.json
 5194f87d7a3f2f09bf5b83ddd10a86417e80cde5 data/minestuckcompat/recipe/combinations/vanilla/lapis_lazuli.json
 c1da27b2734aebb66d0910a3d4fad58af036c1bc data/minestuckcompat/recipe/combinations/vanilla/large_amethyst_bud.json
@@ -169,7 +169,7 @@ ce968c1ce6a74ab0207022f3688282c126d55486 data/minestuckcompat/recipe/combination
 d616a1f7bbe0c24a0b3ae61b9166f6d5f43da69b data/minestuckcompat/recipe/combinations/vanilla/snowball.json
 9c60b4939ba05ca5f2b1170f1cac087988817a45 data/minestuckcompat/recipe/combinations/vanilla/spider_eye.json
 6403d564d5b3c43369930405379970385787e3fc data/minestuckcompat/recipe/combinations/vanilla/spire_armor_trim_smithing_template.json
-4f0214ffb15811b6bf48176cbb7d9b66678fbf31 data/minestuckcompat/recipe/combinations/vanilla/spruce_sapling.json
+bd5006512aa2111bf37e6084f684a0a66ee9701f data/minestuckcompat/recipe/combinations/vanilla/spruce_sapling.json
 ef59b6dc73015cf3d25e618941f91a09e15c06da data/minestuckcompat/recipe/combinations/vanilla/string.json
 aad38ddee9155ebfb961ddb6bdd98435b270021c data/minestuckcompat/recipe/combinations/vanilla/sunflower.json
 a425a82342c4f4b92da01e8b982754f0f7391ff8 data/minestuckcompat/recipe/combinations/vanilla/suspicious_gravel.json

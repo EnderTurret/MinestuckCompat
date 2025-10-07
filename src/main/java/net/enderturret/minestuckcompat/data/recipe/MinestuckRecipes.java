@@ -150,7 +150,7 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(METEORIC_STONE).and().input(Items.BASALT).input(AspectTreeBlocks.VOID_ASPECT_PLANKS).build(output);
 
 		combination(NAKAGATOR_STATUE).and().input(Items.RED_SANDSTONE).input(MINI_FROG_STATUE).build(output);
-		combination(PLUSH_SALAMANDER).and().input(Items.YELLOW_WOOL).input(Items.WATER_BUCKET).build(output);
+		combination(PLUSH_SALAMANDER).or().input(Items.YELLOW_WOOL).input(Items.WATER_BUCKET).build(output);
 
 		// While this item doesn't have any (default) combination recipes, it does spawn in chests.
 		combination(BISICKLE).and().input(SICKLE).namedInput(Items.CHAIN).build(output);
