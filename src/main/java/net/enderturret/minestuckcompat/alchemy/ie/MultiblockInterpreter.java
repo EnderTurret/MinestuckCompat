@@ -21,12 +21,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 import net.enderturret.minestuckcompat.mixin.feature.immersiveengineering.TagOutputAccess;
 
@@ -35,10 +37,11 @@ import blusunrize.immersiveengineering.api.crafting.BlueprintCraftingRecipe;
 import blusunrize.immersiveengineering.api.crafting.IngredientWithSize;
 import blusunrize.immersiveengineering.api.crafting.MultiblockRecipe;
 import blusunrize.immersiveengineering.api.crafting.TagOutput;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import blusunrize.immersiveengineering.common.register.IEItems.Metals;
 
-public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MultiblockRecipe> {
+public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MultiblockRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<MultiblockInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(MultiblockInterpreter::addedCost)
@@ -89,6 +92,12 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 		if (recipe.getItemInputs() != null)
 			for (IngredientWithSize ing : recipe.getItemInputs())
 				tracker.report(ing.getBaseIngredient());
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		if (recipe instanceof BlueprintCraftingRecipe)
+			tracker.report(IEBlocks.WoodenDevices.CRAFTING_TABLE.asItem());
 	}
 
 	static List<Item> safeResolve(TagOutput output) {

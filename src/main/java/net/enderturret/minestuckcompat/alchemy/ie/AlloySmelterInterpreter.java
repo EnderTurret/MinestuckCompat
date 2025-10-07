@@ -13,12 +13,15 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
 import blusunrize.immersiveengineering.api.crafting.AlloyRecipe;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
 
-public final class AlloySmelterInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<AlloyRecipe> {
+public final class AlloySmelterInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<AlloyRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<AlloySmelterInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(AlloySmelterInterpreter::addedCost)
@@ -52,5 +55,10 @@ public final class AlloySmelterInterpreter extends AbstractCostAddingRecipeInter
 	public void reportPreliminaryLookupsTyped(AlloyRecipe recipe, LookupTracker tracker) {
 		tracker.report(recipe.input0.getBaseIngredient());
 		tracker.report(recipe.input1.getBaseIngredient());
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		tracker.report(IEBlocks.StoneDecoration.ALLOYBRICK.asItem());
 	}
 }

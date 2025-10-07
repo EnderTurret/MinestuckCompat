@@ -79,9 +79,6 @@
   { "inputs": ["minecraft:netherite_upgrade_smithing_template", "create:copper_diving_boots"], "outputs": ["create:netherite_diving_boots"] },
 
   { "inputs": ["create:mechanical_mixer", "create:basin", "#create:pulpifiable", "minecraft:water_bucket"], "outputs": ["create:pulp"] },
-  { "inputs": ["create:deployer", "create:mechanical_press", "minecraft:iron_nugget", "minecraft:stone_slab"], "outputs": ["create:track", "create:incomplete_track"] },
-  { "inputs": ["create:deployer", "create:golden_sheet", "create:cogwheel", "create:large_cogwheel", "minecraft:iron_nugget"], "outputs": ["create:precision_mechanism", "create:incomplete_precision_mechanism"] },
-  { "inputs": ["create:spout", "create:mechanical_press", "#c:dusts/obsidian", "minecraft:lava_bucket"], "outputs": ["create:sturdy_sheet", "create:unprocessed_obsidian_sheet"] },
 
   { "inputs": ["create:mechanical_press", "minecraft:egg", "minecraft:sugar", "create:cinder_flour"], "outputs": ["create:blaze_cake_base"] },
   { "inputs": ["create:spout", "minecraft:lava_bucket", "create:blaze_cake_base"], "outputs": ["create:blaze_cake"] },

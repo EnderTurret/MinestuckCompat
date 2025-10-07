@@ -16,12 +16,16 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeType;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
 import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
+import mekanism.api.recipes.MekanismRecipeTypes;
+import mekanism.common.registries.MekanismBlocks;
 
-public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<ItemStackChemicalToItemStackRecipe> {
+public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<ItemStackChemicalToItemStackRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<ItemChemical2ItemInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(ItemChemical2ItemInterpreter::addedCost)
@@ -66,5 +70,16 @@ public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipe
 	@Override
 	public void reportPreliminaryLookupsTyped(ItemStackChemicalToItemStackRecipe recipe, LookupTracker tracker) {
 		tracker.report(recipe.getItemInput().ingredient().ingredient());
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		final RecipeType<?> type = recipe.getType();
+		if (type == MekanismRecipeTypes.TYPE_COMPRESSING.get()) tracker.report(MekanismBlocks.OSMIUM_COMPRESSOR.asItem());
+		else if (type == MekanismRecipeTypes.TYPE_INJECTING.get()) tracker.report(MekanismBlocks.CHEMICAL_INJECTION_CHAMBER.asItem());
+		else if (type == MekanismRecipeTypes.TYPE_PURIFYING.get()) tracker.report(MekanismBlocks.PURIFICATION_CHAMBER.asItem());
+		else if (type == MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get()) tracker.report(MekanismBlocks.METALLURGIC_INFUSER.asItem());
+		else if (type == MekanismRecipeTypes.TYPE_PAINTING.get()) tracker.report(MekanismBlocks.PAINTING_MACHINE.asItem());
+		else if (type == MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get()) tracker.report(MekanismBlocks.ANTIPROTONIC_NUCLEOSYNTHESIZER.asItem());
 	}
 }

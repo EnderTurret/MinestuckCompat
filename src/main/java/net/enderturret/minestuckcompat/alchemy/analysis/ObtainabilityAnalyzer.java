@@ -44,6 +44,7 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
 public final class ObtainabilityAnalyzer {
 
@@ -234,6 +235,8 @@ public final class ObtainabilityAnalyzer {
 		};
 
 		interpreter.reportPreliminaryLookups(recipe, tracker);
+		if (interpreter instanceof AnalyzableRecipeInterpreter analyzable)
+			analyzable.reportCraftingStation(recipe, tracker);
 
 		return List.copyOf(ret);
 	}

@@ -13,12 +13,15 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
 
-public final class CrusherInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CrusherRecipe> {
+public final class CrusherInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CrusherRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<CrusherInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(CrusherInterpreter::addedCost)
@@ -49,5 +52,10 @@ public final class CrusherInterpreter extends AbstractCostAddingRecipeInterprete
 	@Override
 	public void reportPreliminaryLookupsTyped(CrusherRecipe recipe, LookupTracker tracker) {
 		tracker.report(recipe.input);
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		tracker.report(IEBlocks.MetalDecoration.ENGINEERING_HEAVY.asItem());
 	}
 }

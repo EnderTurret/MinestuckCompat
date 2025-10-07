@@ -6,15 +6,18 @@ import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
+import appeng.core.definitions.AEBlocks;
 import appeng.recipes.handlers.ChargerRecipe;
 
-public final class ChargerInterpreter extends AbstractCostAddingRecipeInterpreter {
+public final class ChargerInterpreter extends AbstractCostAddingRecipeInterpreter implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<ChargerInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(ChargerInterpreter::addedCost)
@@ -47,5 +50,10 @@ public final class ChargerInterpreter extends AbstractCostAddingRecipeInterprete
 		//totalCost.add(scale(addedCost, energyScale, false));
 
 		return finalizeGristCosts(totalCost, recipe);
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		tracker.report(AEBlocks.CHARGER.asItem());
 	}
 }

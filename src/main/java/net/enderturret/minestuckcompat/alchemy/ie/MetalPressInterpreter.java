@@ -13,12 +13,15 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
 
-public final class MetalPressInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MetalPressRecipe> {
+public final class MetalPressInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MetalPressRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<MetalPressInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(MetalPressInterpreter::addedCost)
@@ -49,5 +52,10 @@ public final class MetalPressInterpreter extends AbstractCostAddingRecipeInterpr
 	@Override
 	public void reportPreliminaryLookupsTyped(MetalPressRecipe recipe, LookupTracker tracker) {
 		tracker.report(recipe.input.getBaseIngredient());
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		tracker.report(IEBlocks.MetalDecoration.ENGINEERING_HEAVY.asItem());
 	}
 }

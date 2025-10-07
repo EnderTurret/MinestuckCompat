@@ -11,6 +11,7 @@ import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
+import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
@@ -24,6 +25,7 @@ import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 
 public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<SequencedAssemblyRecipe> implements AnalyzableRecipeInterpreter {
@@ -94,6 +96,18 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 						tracker.report(ing);
 			} else if (seq.getRecipe() instanceof FillingRecipe r2)
 				FluidHelper.report(tracker, r2.getRequiredFluid().getMatchingFluidStacks().get(0));
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		if (recipe instanceof SequencedAssemblyRecipe r)
+			for (SequencedRecipe seq : r.getSequence())
+				if (seq.getRecipe() instanceof DeployerApplicationRecipe)
+					tracker.report(AllBlocks.DEPLOYER.asItem());
+				else if (seq.getRecipe() instanceof PressingRecipe)
+					tracker.report(AllBlocks.MECHANICAL_PRESS.asItem());
+				else if (seq.getRecipe() instanceof FillingRecipe)
+					tracker.report(AllBlocks.SPOUT.asItem());
 	}
 
 	private boolean handleSequenceRecipe(SequencedAssemblyRecipe r, Recipe<?> seq, MutableGristSet sequenceCost, Item output, GeneratorCallback callback) {
