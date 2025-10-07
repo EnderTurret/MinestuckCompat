@@ -34,23 +34,11 @@
   { "inputs": ["minecraft:shulker_box", "minecraft:white_dye"], "outputs": ["minecraft:white_shulker_box"] },
   { "inputs": ["minecraft:shulker_box", "minecraft:yellow_dye"], "outputs": ["minecraft:yellow_shulker_box"] },
 
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_axe"], "outputs": ["minecraft:netherite_axe"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_boots"], "outputs": ["minecraft:netherite_boots"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_chestplate"], "outputs": ["minecraft:netherite_chestplate"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_helmet"], "outputs": ["minecraft:netherite_helmet"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_hoe"], "outputs": ["minecraft:netherite_hoe"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_leggings"], "outputs": ["minecraft:netherite_leggings"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_pickaxe"], "outputs": ["minecraft:netherite_pickaxe"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_shovel"], "outputs": ["minecraft:netherite_shovel"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "minecraft:diamond_sword"], "outputs": ["minecraft:netherite_sword"] },
-
   { "inputs": ["minecraft:water_bucket", "minecraft:fishing_rod"], "outputs": ["minecraft:cod", "minecraft:salmon", "minecraft:pufferfish", "minecraft:tropical_fish"] },
+  { "inputs": ["minecraft:glass_bottle"], "outputs": ["minecraft:potion"] },
 
   { "inputs": ["minecraft:gunpowder", "#c:dyes"], "outputs": ["minecraft:firework_star"] },
   { "inputs": ["minecraft:enchanting_table", "minecraft:book"], "outputs": ["minecraft:enchanted_book"] },
-
-  { "inputs": ["minecraft:glass_bottle", "minecraft:orange_dye"], "outputs": ["minestuck:orange_faygo"] },
-  { "inputs": ["minecraft:glass_bottle", "minecraft:sugar"], "outputs": ["minestuck:tab"] },
 
   { "inputs": ["minestuck:desert_bush"], "outputs": ["minestuck:desert_fruit"] },
   { "inputs": ["minestuck:black_stone"], "outputs": ["minestuck:black_cobblestone"] },
@@ -74,10 +62,6 @@
   { "inputs": ["create:brown_toolbox", "minecraft:white_dye"], "outputs": ["create:white_toolbox"] },
   { "inputs": ["create:brown_toolbox", "minecraft:yellow_dye"], "outputs": ["create:yellow_toolbox"] },
 
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "create:copper_backtank"], "outputs": ["create:netherite_backtank"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "create:copper_diving_helmet"], "outputs": ["create:netherite_diving_helmet"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "create:copper_diving_boots"], "outputs": ["create:netherite_diving_boots"] },
-
   { "inputs": ["create:mechanical_mixer", "create:basin", "#create:pulpifiable", "minecraft:water_bucket"], "outputs": ["create:pulp"] },
 
   { "inputs": ["create:mechanical_press", "minecraft:egg", "minecraft:sugar", "create:cinder_flour"], "outputs": ["create:blaze_cake_base"] },
@@ -90,7 +74,6 @@
   { "inputs": ["create:spout", "minecraft:bread", "minecraft:milk_bucket"], "outputs": ["create:sweet_roll"] },
   { "inputs": ["create:crushing_wheel", "minecraft:raw_iron"], "outputs": ["create:experience_nugget"] },
 
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "mekanismtools:diamond_paxel"], "outputs": ["mekanismtools:netherite_paxel"] },
   { "inputs": ["mekanism:pressurized_reaction_chamber", "mekanism:bio_fuel"], "outputs": ["mekanism:substrate", "mekanism:hydrogen_bucket", "mekanism:ethene_bucket"] },
   { "inputs": ["mekanism:pressurized_reaction_chamber", "mekanism:substrate"], "outputs": ["mekanism:hdpe_pellet", "mekanism:oxygen_bucket"] },
   { "inputs": ["mekanism:precision_sawmill", "minecraft:stick"], "outputs": ["mekanism:sawdust"] },
@@ -121,7 +104,6 @@
   { "inputs": ["immersiveengineering:heavy_engineering", "immersiveengineering:dust_coke"], "outputs": ["immersiveengineering:dust_hop_graphite", "immersiveengineering:plate_hop_graphite", "immersiveengineering:graphite_electrode"] },
 
   { "inputs": ["minecraft:short_grass", "farmersdelight:iron_knife"], "outputs": ["farmersdelight:straw"] },
-  { "inputs": ["minecraft:netherite_upgrade_smithing_template", "farmersdelight:diamond_knife"], "outputs": ["farmersdelight:netherite_knife"] },
   { "inputs": ["farmersdelight:honey_glazed_ham_block"], "outputs": ["farmersdelight:honey_glazed_ham"] },
   { "inputs": ["farmersdelight:roast_chicken_block"], "outputs": ["farmersdelight:roast_chicken"] },
   { "inputs": ["farmersdelight:shepherds_pie_block"], "outputs": ["farmersdelight:shepherds_pie"] },
@@ -134,7 +116,6 @@
   { "inputs": ["biomesoplenty:glowshroom", "minecraft:bone_meal"], "outputs": ["biomesoplenty:glowshroom_block"] },
 
   { "inputs": ["ae2:charged_certus_quartz_crystal", "minecraft:redstone", "minecraft:quartz", "minecraft:water_bucket"], "outputs": ["ae2:fluix_crystal"] },
-  { "inputs": ["ae2:charger", "ae2:certus_quartz_crystal"], "outputs": ["ae2:charged_certus_quartz_crystal"] },
   { "inputs": ["ae2:flawless_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
   { "inputs": ["ae2:flawed_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
   { "inputs": ["ae2:chipped_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
@@ -144,11 +125,5 @@
   { "inputs": ["ae2:condenser", "ae2:cell_component_64k"], "outputs": ["ae2:singularity"] },
   { "inputs": ["ae2:singularity", "minecraft:ender_pearl", "minecraft:tnt"], "outputs": ["ae2:quantum_entangled_singularity"] },
   { "inputs": ["ae2:me_p2p_tunnel"], "outputs": ["ae2:fe_p2p_tunnel", "ae2:fluid_p2p_tunnel", "ae2:item_p2p_tunnel", "ae2:light_p2p_tunnel", "ae2:redstone_p2p_tunnel", "appmek:chemical_p2p_tunnel"] },
-  { "inputs": ["ae2:mysterious_cube"], "outputs": ["ae2:calculation_processor_press", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:silicon_press"] },
-
-  { "inputs": ["ae2:fluix_upgrade_smithing_template", "#ae2:quartz_axe"], "outputs": ["ae2:fluix_axe"] },
-  { "inputs": ["ae2:fluix_upgrade_smithing_template", "#ae2:quartz_hoe"], "outputs": ["ae2:fluix_hoe"] },
-  { "inputs": ["ae2:fluix_upgrade_smithing_template", "#ae2:quartz_pickaxe"], "outputs": ["ae2:fluix_pickaxe"] },
-  { "inputs": ["ae2:fluix_upgrade_smithing_template", "#ae2:quartz_shovel"], "outputs": ["ae2:fluix_shovel"] },
-  { "inputs": ["ae2:fluix_upgrade_smithing_template", "#ae2:quartz_sword"], "outputs": ["ae2:fluix_sword"] }
+  { "inputs": ["ae2:mysterious_cube"], "outputs": ["ae2:calculation_processor_press", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:silicon_press"] }
 ]

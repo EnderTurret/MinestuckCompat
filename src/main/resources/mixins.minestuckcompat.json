@@ -23,6 +23,7 @@
     "feature.outside_grist_costs.GeneratorProcessAccess",
     "feature.outside_grist_costs.MixinGristCostGenerator",
     "feature.outside_grist_costs.MixinRecipeGeneratedCostProcess",
+    "feature.smithing_fix.MixinSmithingInterpreter",
     "perf.allocations.MixinGristSet",
     "perf.allocations.MixinMutableGristSet",
     "perf.small_grist_set.MixinCodecs",
