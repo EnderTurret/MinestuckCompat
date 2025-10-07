@@ -1,0 +1,45 @@
+{
+  "land_features": [
+    "minecraft:stone", "minestuck:raw_cruxite", "minestuck:raw_uranium", "minecraft:coal",
+    "minecraft:water_bucket", "minecraft:lava_bucket"
+  ],
+  "enter_requirements": [
+    "minestuck:computer_parts", "minestuck:sburb_code", "minestuck:completed_sburb_code",
+    "minestuck:cruxtruder_lid", "minestuck:cruxite_apple", "minestuck:cruxite_potion"
+  ],
+  "space_aspect": [
+    "minestuck:frog", "minestuck:space_aspect_log", "minestuck:space_aspect_sapling"
+  ],
+  "consort_food": [
+    "minestuck:grasshopper", "#minestuck:grist_candy"
+  ],
+  "consort_junk": [
+    "minecraft:rabbit_hide", "minestuck:ancient_thumb_drive", "minestuck:crowbar"
+  ],
+  "consort_general": [
+    "minestuck:carving_tool", "minestuck:mini_frog_statue", "minestuck:mini_typheus_statue",
+    "minestuck:thresh_dvd", "minestuck:crew_poster", "minestuck:sbahj_poster",
+    "minestuck:gamebro_magazine", "minestuck:gamegrl_magazine",
+    "minestuck:music_disc_emissary_of_dance", "minestuck:music_disc_dance_stab_dance",
+    "minestuck:electric_autoharp", "minestuck:battery"
+  ],
+  "land_chests": [
+    "minestuck:scythe", "minestuck:metal_bat", "minestuck:mace", "minestuck:jousting_lance",
+    "minestuck:lucerne_hammer",
+
+    "minestuck:captcha_card", "minecraft:arrow", "minecraft:wheat", "minecraft:apple",
+    "minecraft:experience_bottle", "minecraft:rotten_flesh", "minecraft:bone",
+
+    "minecraft:iron_ingot", "minecraft:gold_ingot", "minecraft:redstone", "minecraft:ender_pearl",
+    "minestuck:flarp_manual", "minestuck:sassacre_text", "minestuck:wiseguy", "minestuck:tablestuck_manual",
+    "minestuck:tilldeath_handbook", "minestuck:binary_code", "minestuck:nonbinary_code", "minestuck:barbasol",
+    "minestuck:generic_object",
+
+    "minecraft:diamond", "minestuck:grimoire", "minestuck:mini_wizard_statue", "minestuck:cassette_player",
+    "minestuck:sendificator", "minestuck:dice", "minestuck:cueball", "minestuck:cryptid_photo",
+    "minestuck:chessboard", "minestuck:ace_of_clubs", "minestuck:ace_of_diamonds", "minestuck:ace_of_hearts",
+    "minestuck:ace_of_spades", "minestuck:gutter_ball", "minestuck:plush_mutated_cat",
+
+    "minestuck:boondollars"
+  ]
+}

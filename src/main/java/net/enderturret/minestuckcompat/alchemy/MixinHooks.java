@@ -99,7 +99,7 @@ public final class MixinHooks {
 	}
 
 	@SuppressWarnings("deprecation")
-	private static Predicate<Item> getUnobtainableItemPredicate() {
+	public static Predicate<Item> getUnobtainableItemPredicate() {
 		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
 		final TagKey<Item> unobtainableItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "unobtainable_items"));
 
@@ -116,7 +116,7 @@ public final class MixinHooks {
 		};
 	}
 
-	private static <K, V> String formatRecipeList(Map.Entry<K, List<V>> entry) {
+	public static <K, V> String formatRecipeList(Map.Entry<K, List<V>> entry) {
 		final String id = entry.getKey().toString();
 		final StringBuilder ret = new StringBuilder(id);
 
