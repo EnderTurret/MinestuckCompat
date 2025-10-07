@@ -97,10 +97,9 @@ public final class ObtainabilityAnalyzer {
 						continue parent;
 				}
 
-				for (Item out : recipe.outputs()) {
+				for (Item out : recipe.outputs())
 					if (obtainable.add(out))
 						newlyObtainable.add(out);
-				}
 
 				it.remove();
 			}
@@ -138,23 +137,6 @@ public final class ObtainabilityAnalyzer {
 	@SuppressWarnings("deprecation")
 	private static void dumpUnobtainables(Map<Item, List<AnalyzedRecipe>> relevantRecipes, Set<Item> obtainable, List<Item> unobtainable) {
 		try {
-			for (var it = relevantRecipes.entrySet().iterator(); it.hasNext(); ) {
-				final var entry = it.next();
-
-				for (Iterator<AnalyzedRecipe> it2 = entry.getValue().iterator(); it2.hasNext(); ) {
-					final AnalyzedRecipe recipe = it2.next();
-					if (obtainable.containsAll(recipe.outputs()))
-						it2.remove();
-				}
-
-				if (entry.getValue().isEmpty()) it.remove();
-			}
-
-			Files.writeString(Paths.get("analyzer_unhandled_recipes.txt"), relevantRecipes.entrySet().stream()
-					.map(entry -> Map.entry(entry.getKey().builtInRegistryHolder().getKey().location(), entry.getValue()))
-					.map(MixinHooks::formatRecipeList)
-					.collect(Collectors.joining("\n")));
-
 			Files.writeString(Paths.get("analyzer_unobtainables.txt"), unobtainable.stream()
 					.map(item -> item.builtInRegistryHolder().getRegisteredName())
 					.collect(Collectors.joining("\n")));

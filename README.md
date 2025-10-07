@@ -82,8 +82,7 @@ One of the major features of Minestuck Compat is the Obtainability Analyzer.
 As the name suggests, it analyzes the obtainability of items — what items are obtainable and which aren't — and builds a list of unobtainable items.
 
 The analyzer can be run with the `/minestuckcompat analyzer` command in an *integrated server (singleplayer)*.
-It will then dump two files `analyzer_unhandled_recipes.txt` and `analyzer_unobtainables.txt` into the game directory.
-The former contains all of the recipes that the analyzer didn't understand, and the latter contains all the unobtainable items the analyzer identified.
+It will then dump the file `analyzer_unobtainables.txt` into the game directory, which contains all the unobtainable items the analyzer identified.
 
 ### Why do this
 
