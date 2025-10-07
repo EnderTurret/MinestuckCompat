@@ -1,5 +1,8 @@
 package net.enderturret.minestuckcompat.data;
 
+import static com.mraof.minestuck.api.alchemy.GristSet.EMPTY;
+import static com.mraof.minestuck.api.alchemy.GristTypes.*;
+
 import java.util.function.Supplier;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
@@ -14,7 +17,6 @@ import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
-import com.mraof.minestuck.api.alchemy.GristTypes;
 import com.mraof.minestuck.data.GeneratedGristCostConfigProvider;
 import com.simibubi.create.AllRecipeTypes;
 
@@ -54,43 +56,43 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 	protected void addEntries() {
 		// Mekanism
 		serializer(MekanismRecipeSerializersInternal.MEK_DATA.get());
-		type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-		type(MekanismRecipeTypes.TYPE_INJECTING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-		type(MekanismRecipeTypes.TYPE_PURIFYING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-		type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-		type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(GristSet.EMPTY));
-		type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(GristTypes.COBALT, 10)));
-		type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(GristTypes.MERCURY, 1)));
+		type(MekanismRecipeTypes.TYPE_COMPRESSING.get(), new ItemChemical2ItemInterpreter(EMPTY));
+		type(MekanismRecipeTypes.TYPE_INJECTING.get(), new ItemChemical2ItemInterpreter(EMPTY));
+		type(MekanismRecipeTypes.TYPE_PURIFYING.get(), new ItemChemical2ItemInterpreter(EMPTY));
+		type(MekanismRecipeTypes.TYPE_METALLURGIC_INFUSING.get(), new ItemChemical2ItemInterpreter(EMPTY));
+		type(MekanismRecipeTypes.TYPE_NUCLEOSYNTHESIZING.get(), new ItemChemical2ItemInterpreter(EMPTY));
+		type(MekanismRecipeTypes.TYPE_ENRICHING.get(), new Item2ItemInterpreter(grist(COBALT, 10)));
+		type(MekanismRecipeTypes.TYPE_CRUSHING.get(), new Item2ItemInterpreter(grist(MERCURY, 1)));
 		// Mekanism Tools
 		serializer(ToolsRecipeSerializers.PAXEL.get());
 
 		// Applied Energistics 2
-		type(AERecipeTypes.CHARGER, new ChargerInterpreter(grist(GristTypes.URANIUM, 1)));
-		type(AERecipeTypes.INSCRIBER, new InscriberInterpreter(grist(GristTypes.GARNET, 1)));
+		type(AERecipeTypes.CHARGER, new ChargerInterpreter(grist(URANIUM, 1)));
+		type(AERecipeTypes.INSCRIBER, new InscriberInterpreter(grist(GARNET, 1)));
 
 		// Create
 		type(AllRecipeTypes.ITEM_APPLICATION.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.PRESSING.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.MECHANICAL_CRAFTING.getType(), new SimpleRecipeInterpreter(false));
-		type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
-		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(grist(GristTypes.BUILD, 1), grist(GristTypes.MERCURY, 1)));
-		type(AllRecipeTypes.HAUNTING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.SHALE, 1)));
-		type(AllRecipeTypes.SPLASHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.COBALT, 1)));
-		type(AllRecipeTypes.MILLING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
-		type(AllRecipeTypes.CRUSHING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.MERCURY, 1)));
-		type(AllRecipeTypes.DEPLOYING.getType(), new SimpleRecipeInterpreter(false, grist(GristTypes.BUILD, 1)));
+		type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
+		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(EMPTY, grist(BUILD, 1), grist(MERCURY, 1)));
+		type(AllRecipeTypes.HAUNTING.getType(), new SimpleRecipeInterpreter(false, grist(SHALE, 1)));
+		type(AllRecipeTypes.SPLASHING.getType(), new SimpleRecipeInterpreter(false, grist(COBALT, 1)));
+		type(AllRecipeTypes.MILLING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
+		type(AllRecipeTypes.CRUSHING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
+		type(AllRecipeTypes.DEPLOYING.getType(), new SimpleRecipeInterpreter(false, grist(BUILD, 1)));
 
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());
-		type(ModRecipeTypes.CUTTING.get(), new SimpleRecipeInterpreter(false, grist(GristTypes.RUST, 1)));
+		type(ModRecipeTypes.CUTTING.get(), new SimpleRecipeInterpreter(false, grist(RUST, 1)));
 
 		// Immersive Engineering
-		type(IERecipeTypes.BLUEPRINT.get(), new MultiblockInterpreter(GristSet.EMPTY));
-		serializer(RecipeSerializers.TURN_AND_COPY_SERIALIZER.get(), new IEShapedInterpreter(GristSet.EMPTY));
-		serializer(RecipeSerializers.IE_SHAPED_SERIALIZER.get(), new IEShapedInterpreter(GristSet.EMPTY));
-		type(IERecipeTypes.METAL_PRESS.get(), new MetalPressInterpreter(grist(GristTypes.RUST, 1)));
-		type(IERecipeTypes.CRUSHER.get(), new CrusherInterpreter(grist(GristTypes.MERCURY, 1)));
-		type(IERecipeTypes.ALLOY.get(), new AlloySmelterInterpreter(grist(GristTypes.TAR, 1)));
+		type(IERecipeTypes.BLUEPRINT.get(), new MultiblockInterpreter(EMPTY));
+		serializer(RecipeSerializers.TURN_AND_COPY_SERIALIZER.get(), new IEShapedInterpreter(EMPTY));
+		serializer(RecipeSerializers.IE_SHAPED_SERIALIZER.get(), new IEShapedInterpreter(EMPTY));
+		type(IERecipeTypes.METAL_PRESS.get(), new MetalPressInterpreter(grist(RUST, 1)));
+		type(IERecipeTypes.CRUSHER.get(), new CrusherInterpreter(grist(MERCURY, 1)));
+		type(IERecipeTypes.ALLOY.get(), new AlloySmelterInterpreter(grist(TAR, 1)));
 	}
 
 	@Override

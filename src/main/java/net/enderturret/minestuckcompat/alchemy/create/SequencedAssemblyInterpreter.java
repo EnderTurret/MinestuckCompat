@@ -2,12 +2,15 @@ package net.enderturret.minestuckcompat.alchemy.create;
 
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
@@ -20,12 +23,13 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
-import net.enderturret.minestuckcompat.api.alchemy.AbstractRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 
-public final class SequencedAssemblyInterpreter extends AbstractRecipeInterpreter {
+public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<SequencedAssemblyRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<SequencedAssemblyInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::addedCost),
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("deploy_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::deployCost),
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("press_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::pressCost)
 			).apply(instance, SequencedAssemblyInterpreter::new));
@@ -33,7 +37,8 @@ public final class SequencedAssemblyInterpreter extends AbstractRecipeInterprete
 	private final GristSet.Immutable deployCost;
 	private final GristSet.Immutable pressCost;
 
-	public SequencedAssemblyInterpreter(GristSet.Immutable deployCost, GristSet.Immutable pressCost) {
+	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost) {
+		super(SequencedAssemblyRecipe.class, addedCost);
 		this.deployCost = deployCost;
 		this.pressCost = pressCost;
 	}
@@ -52,37 +57,43 @@ public final class SequencedAssemblyInterpreter extends AbstractRecipeInterprete
 	}
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
-		if (recipe instanceof SequencedAssemblyRecipe r)
-			return List.of(r.getResultItem(null).getItem(), r.getTransitionalItem().getItem());
-
-		return super.getOutputItems(recipe);
+	protected List<Item> getOutputItemsTyped(SequencedAssemblyRecipe recipe) {
+		return List.of(recipe.getResultItem(null).getItem(), recipe.getTransitionalItem().getItem());
 	}
 
 	@Override
-	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
-		if (!(recipe instanceof SequencedAssemblyRecipe r))
-			return super.generateCost(recipe, output, callback);
-
-		MutableGristSet totalCost = MutableGristSet.newDefault();
-
-		account(totalCost, callback, r.getIngredient());
+	@Nullable
+	protected MutableGristSet generateCost(MutableGristSet totalCost, SequencedAssemblyRecipe recipe, Item output, GeneratorCallback callback) {
+		account(totalCost, callback, recipe.getIngredient());
 
 		// If we're checking the incomplete item, stop here.
-		if (output == r.getTransitionalItem().getItem()) return totalCost;
+		if (output == recipe.getTransitionalItem().getItem()) return totalCost;
 
-		final MutableGristSet sequenceCost = r.getLoops() == 1 ? totalCost : MutableGristSet.newDefault();
+		final MutableGristSet sequenceCost = recipe.getLoops() == 1 ? totalCost : MutableGristSet.newDefault();
 
-		for (SequencedRecipe seq : r.getSequence())
-			if (!handleSequenceRecipe(r, seq.getRecipe(), sequenceCost, output, callback))
+		for (SequencedRecipe seq : recipe.getSequence())
+			if (!handleSequenceRecipe(recipe, seq.getRecipe(), sequenceCost, output, callback))
 				return null;
 
-		if (r.getLoops() > 1) {
-			sequenceCost.scale(r.getLoops());
+		if (recipe.getLoops() > 1) {
+			sequenceCost.scale(recipe.getLoops());
 			totalCost.add(sequenceCost);
 		}
 
-		return finalizeGristCosts(totalCost, 1);
+		return totalCost;
+	}
+
+	@Override
+	protected void reportPreliminaryLookupsTyped(SequencedAssemblyRecipe recipe, LookupTracker tracker) {
+		tracker.report(recipe.getIngredient());
+
+		for (SequencedRecipe seq : recipe.getSequence())
+			if (seq.getRecipe() instanceof DeployerApplicationRecipe r2) {
+				for (Ingredient ing : r2.getIngredients())
+					if (!ing.test(recipe.getTransitionalItem()))
+						tracker.report(ing);
+			} else if (seq.getRecipe() instanceof FillingRecipe r2)
+				FluidHelper.report(tracker, r2.getRequiredFluid().getMatchingFluidStacks().get(0));
 	}
 
 	private boolean handleSequenceRecipe(SequencedAssemblyRecipe r, Recipe<?> seq, MutableGristSet sequenceCost, Item output, GeneratorCallback callback) {

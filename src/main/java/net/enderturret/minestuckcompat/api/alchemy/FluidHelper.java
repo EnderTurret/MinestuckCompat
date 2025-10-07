@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.ItemStack;
 
@@ -88,5 +89,9 @@ public final class FluidHelper {
 		if (remainderCost == null) return null;
 
 		return remainderCost.mutableCopy().scale(-1).add(bucketCost);
+	}
+
+	public static void report(LookupTracker tracker, FluidStack fluid) {
+		tracker.report(fluid.getFluidType().getBucket(fluid));
 	}
 }
