@@ -4,6 +4,8 @@ license="LGPL v2.1"
 [[mods]]
     modId="minestuckcompat"
     displayName="Minestuck Compat"
+    displayURL="https://github.com/EnderTurret/MinestuckCompat"
+    logoFile="icon.png"
     description='''
     A comprehensive Minestuck addon that provides grist costs and combination recipes for:
     * Applied Energistics 2
