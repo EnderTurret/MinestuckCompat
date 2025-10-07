@@ -1,0 +1,96 @@
+package net.enderturret.minestuckcompat.alchemy.create;
+
+import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
+
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
+import com.mraof.minestuck.api.alchemy.GristSet;
+import com.mraof.minestuck.api.alchemy.MutableGristSet;
+import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllRecipeTypes;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
+import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
+import com.simibubi.create.foundation.fluid.FluidIngredient;
+
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeType;
+
+import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
+
+public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<StandardProcessingRecipe<?>> implements AnalyzableRecipeInterpreter {
+
+	public static final MapCodec<FluidProcessingInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(FluidProcessingInterpreter::addedCost),
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("heated_cost", GristSet.EMPTY).forGetter(FluidProcessingInterpreter::heatedCost)
+			).apply(instance, FluidProcessingInterpreter::new));
+
+	private final GristSet.Immutable heatedCost;
+
+	@SuppressWarnings({ "cast", "unchecked" })
+	public FluidProcessingInterpreter(GristSet.Immutable addedCost, GristSet.Immutable heatedCost) {
+		super((Class<StandardProcessingRecipe<?>>) (Class) StandardProcessingRecipe.class, addedCost);
+		this.heatedCost = heatedCost;
+	}
+
+	public GristSet.Immutable heatedCost() {
+		return heatedCost;
+	}
+
+	@Override
+	public MapCodec<? extends RecipeInterpreter> codec() {
+		return CODEC;
+	}
+
+	@Override
+	protected List<Item> getOutputItemsTyped(StandardProcessingRecipe<?> recipe) {
+		return recipe.getRollableResults().stream().map(o -> o.getStack().getItem()).toList();
+	}
+
+	@Override
+	@Nullable
+	protected MutableGristSet generateCost(MutableGristSet totalCost, StandardProcessingRecipe<?> recipe, Item output, GeneratorCallback callback) {
+		for (Ingredient ing : recipe.getIngredients())
+			if (!account(totalCost, callback, ing))
+				return null;
+
+		for (FluidIngredient ing : recipe.getFluidIngredients())
+			if (!FluidHelper.account(totalCost, callback, ing.getMatchingFluidStacks(), ing.getRequiredAmount()))
+				return null;
+
+		return totalCost;
+	}
+
+	@Override
+	protected void reportPreliminaryLookupsTyped(StandardProcessingRecipe<?> recipe, LookupTracker tracker) {
+		for (Ingredient ing : recipe.getIngredients())
+			tracker.report(ing);
+		for (FluidIngredient ing : recipe.getFluidIngredients())
+			FluidHelper.report(tracker, ing.getMatchingFluidStacks().get(0));
+	}
+
+	@Override
+	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
+		final RecipeType<?> type = recipe.getType();
+		if (type == AllRecipeTypes.COMPACTING.getType()) {
+			tracker.report(AllBlocks.BASIN.asItem());
+			tracker.report(AllBlocks.MECHANICAL_PRESS.asItem());
+		}
+		if (type == AllRecipeTypes.MIXING.getType()) {
+			tracker.report(AllBlocks.BASIN.asItem());
+			tracker.report(AllBlocks.MECHANICAL_MIXER.asItem());
+		}
+		if (type == AllRecipeTypes.FILLING.getType()) tracker.report(AllBlocks.SPOUT.asItem());
+
+		if (recipe instanceof StandardProcessingRecipe<?> r && r.getRequiredHeat() != HeatCondition.NONE)
+			tracker.report(AllBlocks.LIT_BLAZE_BURNER.asItem());
+	}
+}

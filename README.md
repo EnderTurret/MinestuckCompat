@@ -147,6 +147,14 @@ The simple interpreter can also be configured with an `added_cost` — see Mines
 
 Interpreter types for Applied Energistics 2's Charger and Inscriber, respectively.
 
+### `minestuckcompat:create/fluid_processing`
+
+An interpreter type intended for Create's Compacting, Filling, and Mixing recipes.
+It's generally the same as `minestuckcompat:simple` in behavior, but correctly handles *fluid ingredients*.
+It may also be configured with a `heated_cost`, same as with `added_cost`.
+
+Note: fluids must have their buckets assigned grist costs in order for this interpreter to work.
+
 ### `minestuckcompat:create/sequenced_assembly`
 
 An interpreter type for Create's Sequenced Assembly recipes.

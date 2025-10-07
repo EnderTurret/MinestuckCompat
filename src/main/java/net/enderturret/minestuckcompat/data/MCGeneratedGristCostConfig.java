@@ -25,6 +25,7 @@ import net.minecraft.data.PackOutput;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
+import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
@@ -81,6 +82,9 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(AllRecipeTypes.MILLING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
 		type(AllRecipeTypes.CRUSHING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
 		type(AllRecipeTypes.DEPLOYING.getType(), new SimpleRecipeInterpreter(false, grist(BUILD, 1)));
+		type(AllRecipeTypes.MIXING.getType(), new FluidProcessingInterpreter(EMPTY, grist(TAR, 1)));
+		type(AllRecipeTypes.COMPACTING.getType(), new FluidProcessingInterpreter(grist(MERCURY, 1), grist(TAR, 1)));
+		type(AllRecipeTypes.FILLING.getType(), new FluidProcessingInterpreter(EMPTY, EMPTY));
 
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());

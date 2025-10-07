@@ -15,6 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
+import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
@@ -41,6 +42,8 @@ public final class MCInterpreterTypes {
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> AE2_INSCRIBER;
 
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_FLUID_PROCESSING;
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
 
@@ -71,10 +74,13 @@ public final class MCInterpreterTypes {
 			AE2_INSCRIBER = null;
 		}
 
-		if (ModList.get().isLoaded("create"))
+		if (ModList.get().isLoaded("create")) {
+			CREATE_FLUID_PROCESSING = REGISTRY.register("create/fluid_processing", () -> FluidProcessingInterpreter.CODEC);
 			CREATE_SEQUENCED_ASSEMBLY = REGISTRY.register("create/sequenced_assembly", () -> SequencedAssemblyInterpreter.CODEC);
-		else
+		} else {
+			CREATE_FLUID_PROCESSING = null;
 			CREATE_SEQUENCED_ASSEMBLY = null;
+		}
 
 		if (ModList.get().isLoaded("immersiveengineering")) {
 			IE_MULTIBLOCK = REGISTRY.register("immersiveengineering/multiblock", () -> MultiblockInterpreter.CODEC);

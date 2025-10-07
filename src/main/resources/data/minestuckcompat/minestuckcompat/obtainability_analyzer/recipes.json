@@ -62,16 +62,8 @@
   { "inputs": ["create:brown_toolbox", "minecraft:white_dye"], "outputs": ["create:white_toolbox"] },
   { "inputs": ["create:brown_toolbox", "minecraft:yellow_dye"], "outputs": ["create:yellow_toolbox"] },
 
-  { "inputs": ["create:mechanical_mixer", "create:basin", "#create:pulpifiable", "minecraft:water_bucket"], "outputs": ["create:pulp"] },
-
-  { "inputs": ["create:mechanical_press", "minecraft:egg", "minecraft:sugar", "create:cinder_flour"], "outputs": ["create:blaze_cake_base"] },
-  { "inputs": ["create:spout", "minecraft:lava_bucket", "create:blaze_cake_base"], "outputs": ["create:blaze_cake"] },
-  { "inputs": ["create:mechanical_mixer", "create:blaze_burner", "minecraft:sugar", "minecraft:cocoa_beans", "minecraft:milk_bucket"], "outputs": ["create:bar_of_chocolate", "create:chocolate_bucket"] },
-  { "inputs": ["create:spout", "minecraft:sweet_berries", "create:bar_of_chocolate"], "outputs": ["create:chocolate_glazed_berries"] },
-  { "inputs": ["create:spout", "create:mechanical_mixer", "create:blaze_burner", "minecraft:glass_bottle", "#minecraft:leaves", "minecraft:water_bucket", "minecraft:milk_bucket"], "outputs": ["create:builders_tea"] },
+  { "inputs": ["create:mechanical_mixer", "create:blaze_burner", "minecraft:sugar", "minecraft:cocoa_beans", "minecraft:milk_bucket"], "outputs": ["create:chocolate_bucket"] },
   { "inputs": ["create:spout", "create:mechanical_mixer", "create:blaze_burner", "minecraft:honey_block"], "outputs": ["create:honey_bucket"] },
-  { "inputs": ["create:spout", "create:honey_bucket"], "outputs": ["create:honeyed_apple"] },
-  { "inputs": ["create:spout", "minecraft:bread", "minecraft:milk_bucket"], "outputs": ["create:sweet_roll"] },
   { "inputs": ["create:crushing_wheel", "minecraft:raw_iron"], "outputs": ["create:experience_nugget"] },
 
   { "inputs": ["mekanism:pressurized_reaction_chamber", "mekanism:bio_fuel"], "outputs": ["mekanism:substrate", "mekanism:hydrogen_bucket", "mekanism:ethene_bucket"] },
