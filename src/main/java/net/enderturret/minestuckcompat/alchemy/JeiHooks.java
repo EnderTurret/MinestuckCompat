@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import com.mraof.minestuck.api.alchemy.recipe.JeiGristCost;
 import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationMode;
 import com.mraof.minestuck.api.alchemy.recipe.combination.JeiCombination;
+import com.mraof.minestuck.item.MSItems;
 import com.simibubi.create.compat.jei.ConversionRecipe;
 import com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory;
 
@@ -56,6 +57,9 @@ public final class JeiHooks {
 			registerConversion(entry.getKey(), entry.getValue());
 			registerConversion(entry.getValue(), entry.getKey());
 		}
+
+		registerConversion(MSItems.CANDY_CANE, MSItems.SHARP_CANDY_CANE);
+		registerConversion(MSItems.FROSTTOOTH, MSItems.ICE_SHARD);
 	}
 
 	private static void registerRecipricolConversion(ItemLike from, ItemLike to) {
