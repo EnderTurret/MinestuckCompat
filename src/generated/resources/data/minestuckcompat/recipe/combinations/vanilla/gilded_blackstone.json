@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:blackstone"
+  },
+  "input2": {
+    "item": "minecraft:gold_nugget"
+  },
+  "mode": "and",
+  "output": "minecraft:gilded_blackstone"
+}

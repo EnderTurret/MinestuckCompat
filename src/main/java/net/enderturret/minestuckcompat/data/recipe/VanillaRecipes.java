@@ -354,6 +354,14 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(CHAINMAIL_BOOTS).and().input(IRON_BOOTS).input(CHAIN).build(output);
 		combination(SUSPICIOUS_GRAVEL).and().input(MSItems.SUSHROOM).input(GRAVEL).build(output);
 		combination(SUSPICIOUS_SAND).and().input(MSItems.SUSHROOM).input(SAND).build(output);
+		combination(GILDED_BLACKSTONE).and().input(Items.BLACKSTONE).input(Items.GOLD_NUGGET).build(output);
+
+		// These recipe are single-handedly making like 3000+ items obtainable.
+		combination(DIRT).or().input(Tags.Items.STONES).input(ItemTags.SAPLINGS).build(output);
+		combination(SAND).or().input(Tags.Items.GRAVELS).input(ItemTags.PICKAXES).build(output);
+		combination(GRAVEL).or().input(Tags.Items.COBBLESTONES).input(ItemTags.PICKAXES).build(output);
+		// This recipe single-handedly makes IE content obtainable.
+		combination(PODZOL).and().input(Items.GRASS_BLOCK).input(Items.SPRUCE_SAPLING).build(output);
 
 		combination(INFESTED_COBBLESTONE).and().input(MSItems.SUSHROOM).input(COBBLESTONE).build(output);
 		combination(INFESTED_STONE).and().input(MSItems.SUSHROOM).input(STONE).build(output);

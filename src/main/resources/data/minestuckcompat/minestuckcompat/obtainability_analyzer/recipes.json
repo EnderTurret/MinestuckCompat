@@ -39,6 +39,11 @@
 
   { "inputs": ["minecraft:gunpowder", "#c:dyes"], "outputs": ["minecraft:firework_star"] },
   { "inputs": ["minecraft:enchanting_table", "minecraft:book"], "outputs": ["minecraft:enchanted_book"] },
+  { "inputs": ["minecraft:clay"], "outputs": ["minecraft:clay_ball"] },
+  { "inputs": ["minecraft:gravel"], "outputs": ["minecraft:flint"] },
+  { "inputs": ["minecraft:melon"], "outputs": ["minecraft:melon_slice"] },
+  { "inputs": ["minecraft:water_bucket", "minecraft:lava_bucket"], "outputs": ["minecraft:obsidian"] },
+  { "inputs": ["minecraft:bamboo_block", "#minecraft:axes"], "outputs": ["minecraft:stripped_bamboo_block"] },
 
   { "inputs": ["minestuck:desert_bush"], "outputs": ["minestuck:desert_fruit"] },
   { "inputs": ["minestuck:black_stone"], "outputs": ["minestuck:black_cobblestone"] },

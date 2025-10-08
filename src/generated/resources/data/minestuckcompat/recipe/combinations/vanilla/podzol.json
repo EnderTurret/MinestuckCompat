@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:grass_block"
+  },
+  "input2": {
+    "item": "minecraft:spruce_sapling"
+  },
+  "mode": "and",
+  "output": "minecraft:podzol"
+}
