@@ -358,7 +358,7 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(GILDED_BLACKSTONE).and().input(Items.BLACKSTONE).input(Items.GOLD_NUGGET).build(output);
 
 		// These recipe are single-handedly making like 3000+ items obtainable.
-		combination(DIRT).or().input(Tags.Items.STONES).input(ItemTags.SAPLINGS).build(output);
+		combination(DIRT).and().input(Tags.Items.STONES).input(ItemTags.SAPLINGS).build(output);
 		combination(SAND).or().input(Tags.Items.GRAVELS).input(ItemTags.PICKAXES).build(output);
 		combination(GRAVEL).or().input(Tags.Items.COBBLESTONES).input(ItemTags.PICKAXES).build(output);
 		// This recipe single-handedly makes IE content obtainable.

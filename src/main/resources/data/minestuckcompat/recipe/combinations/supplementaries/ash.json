@@ -7,7 +7,7 @@
   ],
   "type": "minestuck:combination",
   "input1": {
-    "tag": "minecraft:logs_that_burn"
+    "tag": "minecraft:planks"
   },
   "input2": {
     "item": "minecraft:flint_and_steel"

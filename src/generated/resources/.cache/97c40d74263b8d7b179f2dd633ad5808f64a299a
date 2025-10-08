@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-08T02:39:44.142175677	Vanilla Recipes
+// 1.21.1	2025-10-08T18:52:57.626091826	Vanilla Recipes
 0099357e0c43f6126ce48f01bd96461c53ce9c0d data/minestuckcompat/recipe/combinations/vanilla/allium.json
 7e4a2be9c0f2bce836643a3f9d928a57a90b3dea data/minestuckcompat/recipe/combinations/vanilla/angler_pottery_sherd.json
 f64944c9b485abfecd033c00d68d2c4f1c849106 data/minestuckcompat/recipe/combinations/vanilla/archer_pottery_sherd.json
@@ -45,7 +45,7 @@ a56752d5a348fa94284cadf310e3ee4bcb76d5b6 data/minestuckcompat/recipe/combination
 81fcec63114d310773adecba21b482ba86283d56 data/minestuckcompat/recipe/combinations/vanilla/deepslate_iron_ore.json
 ae5a892cda940381d34208d93747a19078421d09 data/minestuckcompat/recipe/combinations/vanilla/deepslate_lapis_ore.json
 a9c9ce6fbd56c9c52f71300edb07187b181a0aaf data/minestuckcompat/recipe/combinations/vanilla/deepslate_redstone_ore.json
-4847c5ce86d47fbb0beaab6e7b1afd86d6b48a87 data/minestuckcompat/recipe/combinations/vanilla/dirt.json
+2d6b0a1f1c68bc25aa685cdd793607ea8c8d9e18 data/minestuckcompat/recipe/combinations/vanilla/dirt.json
 c93e8801b3db4714386a5a65986ca7e423b5a5ac data/minestuckcompat/recipe/combinations/vanilla/disc_fragment_5.json
 d6c2d3ada04087cb40fca8073a4ce9335d89e502 data/minestuckcompat/recipe/combinations/vanilla/dragon_head.json
 b6f356d9d25ae410f6b049c05354a271ed5dffaf data/minestuckcompat/recipe/combinations/vanilla/dune_armor_trim_smithing_template.json
