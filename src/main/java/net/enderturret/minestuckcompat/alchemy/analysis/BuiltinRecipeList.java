@@ -50,10 +50,23 @@ final class BuiltinRecipeList {
 			BuiltinRecipeList::parseIngredient,
 			ing -> DataResult.error(() -> "Cannot serialize SimpleIngredient"));
 
+	@SuppressWarnings("deprecation")
+	private static final Codec<Item> LENIENT_ITEM_CODEC = ResourceLocation.CODEC.xmap(
+			id -> {
+				final Optional<Item> optional = BuiltInRegistries.ITEM.getOptional(id);
+				if (!optional.isPresent()) {
+					maybeWarn(id);
+					return Items.AIR;
+				}
+
+				return optional.get();
+			},
+			item -> item.builtInRegistryHolder().getKey().location());
+
 	private static final Codec<AnalyzedRecipe> RECIPE_CODEC = RecordCodecBuilder.create(builder -> builder.group(
 			INGREDIENT_CODEC.listOf().fieldOf("inputs").forGetter(AnalyzedRecipe::inputs),
-			BuiltInRegistries.ITEM.byNameCodec().listOf().fieldOf("outputs").forGetter(AnalyzedRecipe::outputs)
-			).apply(builder, AnalyzedRecipe::new));
+			LENIENT_ITEM_CODEC.listOf().fieldOf("outputs").forGetter(AnalyzedRecipe::outputs)
+			).apply(builder, AnalyzedRecipe::fromCodec));
 
 	private static final Codec<List<AnalyzedRecipe>> CODEC = RECIPE_CODEC.listOf();
 
@@ -74,6 +87,9 @@ final class BuiltinRecipeList {
 
 		ret.addAll(parseResource(resourceManager, "minestuckcompat/obtainability_analyzer", "minestuckcompat/obtainability_analyzer/recipes.json",
 				elem -> CODEC.parse(JsonOps.INSTANCE, elem).getOrThrow()));
+
+		// Remove any invalid recipes.
+		ret.removeIf(recipe -> recipe.inputs().isEmpty() && recipe.outputs().isEmpty());
 
 		detectRecipesFromRuntime(ret);
 
@@ -159,14 +175,18 @@ final class BuiltinRecipeList {
 		if (loc.tag())
 			return DataResult.success(SimpleIngredient.of(TagKey.create(Registries.ITEM, loc.id())));
 
-		Optional<Item> item = BuiltInRegistries.ITEM.getOptional(loc.id());
+		final Optional<Item> item = BuiltInRegistries.ITEM.getOptional(loc.id());
 		if (!item.isPresent()) {
-			final String domain = loc.id().getNamespace();
-			if (BuiltInRegistries.ITEM.holders().anyMatch(holder -> domain.equals(holder.getKey().location().getNamespace())))
-				MinestuckCompat.LOGGER.warn("Unknown item ID in analyzer recipes: {}", loc.id());
-			item = Optional.of(Items.AIR);
+			maybeWarn(loc.id());
+			return DataResult.success(SimpleIngredient.INVALID);
 		}
 
 		return DataResult.success(SimpleIngredient.of(item.get()));
+	}
+
+	private static void maybeWarn(ResourceLocation id) {
+		final String domain = id.getNamespace();
+		if (BuiltInRegistries.ITEM.holders().anyMatch(holder -> domain.equals(holder.getKey().location().getNamespace())))
+			MinestuckCompat.LOGGER.warn("Unknown item ID in analyzer recipes: {}", id);
 	}
 }

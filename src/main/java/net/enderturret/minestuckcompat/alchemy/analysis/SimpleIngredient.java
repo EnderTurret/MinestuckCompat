@@ -9,10 +9,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
 record SimpleIngredient(List<Item> items) {
+
+	static final SimpleIngredient INVALID = new SimpleIngredient(List.of(Items.AIR));
 
 	static SimpleIngredient of(ItemLike item) {
 		return new SimpleIngredient(List.of(item.asItem()));
