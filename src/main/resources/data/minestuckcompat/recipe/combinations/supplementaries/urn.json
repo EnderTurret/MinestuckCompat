@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:decorated_pot"
+  },
+  "input2": {
+    "item": "supplementaries:ash"
+  },
+  "mode": "or",
+  "output": "supplementaries:urn"
+}

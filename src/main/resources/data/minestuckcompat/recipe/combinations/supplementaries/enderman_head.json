@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:player_head"
+  },
+  "input2": {
+    "item": "minestuck:grimoire"
+  },
+  "mode": "or",
+  "output": "supplementaries:enderman_head"
+}

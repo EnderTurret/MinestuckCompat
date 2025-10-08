@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:short_grass"
+  },
+  "input2": {
+    "item": "minecraft:blue_orchid"
+  },
+  "mode": "and",
+  "output": "supplementaries:wild_flax"
+}

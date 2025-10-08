@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:ink_squid_pro_quo"
+  },
+  "input2": {
+    "item": "minecraft:clock"
+  },
+  "mode": "or",
+  "output": "supplementaries:antique_ink"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "minecraft:logs_that_burn"
+  },
+  "input2": {
+    "item": "minecraft:flint_and_steel"
+  },
+  "mode": "or",
+  "output": "supplementaries:ash"
+}
