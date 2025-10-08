@@ -1,6 +1,6 @@
 # Minestuck Compat
 
-A comprehensive Minestuck addon that provides grist costs and combination recipes for various large mods.
+A comprehensive [Minestuck](https://www.curseforge.com/minecraft/mc-mods/minestuck) addon that provides grist costs and combination recipes for various large mods.
 It also comes with a few other features.
 
 Minestuck Compat has specific support for:
