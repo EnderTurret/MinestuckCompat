@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.mojang.serialization.Codec;
@@ -44,7 +46,8 @@ import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ClientDataManager;
 
-final class BuiltinRecipeList {
+@Internal
+public final class BuiltinRecipeList {
 
 	private static final Codec<SimpleIngredient> INGREDIENT_CODEC = ExtraCodecs.TAG_OR_ELEMENT_ID.flatXmap(
 			BuiltinRecipeList::parseIngredient,
@@ -96,7 +99,7 @@ final class BuiltinRecipeList {
 		return ret;
 	}
 
-	static <T> List<T> parseResource(ResourceManager resourceManager, String folder, String path, Function<JsonElement, Collection<T>> codec) {
+	public static <T> List<T> parseResource(ResourceManager resourceManager, String folder, String path, Function<JsonElement, Collection<T>> codec) {
 		final List<T> ret = new ArrayList<>();
 
 		for (var entry : resourceManager.listResources(folder, rl -> rl.getPath().equals(path)).entrySet()) {
