@@ -1,3 +1,8 @@
 {
-  "minestuckcompat.alias.grist": "grist"
+  "minestuckcompat.alias.grist": "grist",
+
+  "minestuckcompat.analyzer.no_roots": "Cannot perform analysis with no roots!",
+  "minestuckcompat.analyzer.starting": "Beginning obtainability analysis with %s roots!",
+  "minestuckcompat.analyzer.completed.1": "Analysis completed with %s obtainable items! Took %s s.",
+  "minestuckcompat.analyzer.completed.2": "Analysis identified %s unobtainable items. Check the file for details."
 }

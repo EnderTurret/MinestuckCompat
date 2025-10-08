@@ -12,7 +12,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.Item;
 
-import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.analysis.ObtainabilityAnalyzer;
 
 public final class AnalyzerCommand {
@@ -24,15 +23,18 @@ public final class AnalyzerCommand {
 	}
 
 	private static int analyze(CommandContext<CommandSourceStack> ctx) {
-		final MinecraftServer server = ctx.getSource().getServer();
-
+		final CommandSourceStack src = ctx.getSource();
+		final MinecraftServer server = src.getServer();
 		final ResourceManager resourceManager = server.getResourceManager();
+
 		final ObtainabilityAnalyzer analyzer = new ObtainabilityAnalyzer(server.getRecipeManager(), resourceManager);
 
-		final List<Item> unobtainable = analyzer.check();
-
-		if (!unobtainable.isEmpty())
-			MinestuckCompat.LOGGER.info("Found {} unobtainable items!", unobtainable.size());
+		final List<Item> unobtainable = analyzer.check((msg, error) -> {
+			if (error)
+				src.sendFailure(msg);
+			else
+				src.sendSuccess(() -> msg, false);
+		});
 
 		return Command.SINGLE_SUCCESS;
 	}

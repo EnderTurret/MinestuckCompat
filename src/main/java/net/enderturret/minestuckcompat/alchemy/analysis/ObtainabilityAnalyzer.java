@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -26,8 +27,10 @@ import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHa
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.registries.VanillaRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -60,15 +63,20 @@ public final class ObtainabilityAnalyzer {
 	}
 
 	@SuppressWarnings("deprecation")
-	public List<Item> check() {
+	public List<Item> check(@Nullable BiConsumer<Component, Boolean> messageConsumer) {
 		final Set<Item> roots = defineDefaultRoots();
 
 		if (roots.isEmpty()) {
 			MinestuckCompat.LOGGER.warn("Attempted to perform obtainability analysis with 0 roots!");
+			if (messageConsumer != null)
+				messageConsumer.accept(Component.translatable("minestuckcompat.analyzer.no_roots"), true);
 			return List.of();
 		}
 
 		MinestuckCompat.LOGGER.info("Beginning obtainability analysis with {} roots!", roots.size());
+		if (messageConsumer != null)
+			messageConsumer.accept(Component.translatable("minestuckcompat.analyzer.starting",
+					Component.literal(Integer.toString(roots.size())).withStyle(ChatFormatting.GREEN)), false);
 
 		final Map<Item, List<AnalyzedRecipe>> relevantRecipes = buildRelevantRecipes();
 
@@ -122,7 +130,18 @@ public final class ObtainabilityAnalyzer {
 				.toList();
 
 		final long end = System.currentTimeMillis();
-		MinestuckCompat.LOGGER.info("Analysis completed with {} obtainable items! Took {} s.", obtainable.size(), "%.3f".formatted((end - start) / 1000D));
+		final String time = "%.3f".formatted((end - start) / 1000D);
+
+		MinestuckCompat.LOGGER.info("Analysis completed with {} obtainable items! Took {} s.", obtainable.size(), time);
+		MinestuckCompat.LOGGER.info("Analysis identified {} unobtainable items. Check the file for details.", unobtainable.size());
+
+		if (messageConsumer != null) {
+			messageConsumer.accept(Component.translatable("minestuckcompat.analyzer.completed.1",
+					Component.literal(Integer.toString(obtainable.size())).withStyle(ChatFormatting.GREEN),
+					Component.literal(time).withStyle(ChatFormatting.GREEN)), false);
+			messageConsumer.accept(Component.translatable("minestuckcompat.analyzer.completed.2",
+					Component.literal(Integer.toString(unobtainable.size())).withStyle(ChatFormatting.GREEN)), false);
+		}
 
 		if (!unobtainable.isEmpty())
 			dumpUnobtainables(relevantRecipes, obtainable, unobtainable);
