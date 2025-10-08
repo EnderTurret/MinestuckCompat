@@ -34,7 +34,7 @@
   { "inputs": ["minecraft:shulker_box", "minecraft:white_dye"], "outputs": ["minecraft:white_shulker_box"] },
   { "inputs": ["minecraft:shulker_box", "minecraft:yellow_dye"], "outputs": ["minecraft:yellow_shulker_box"] },
 
-  { "inputs": ["minecraft:water_bucket", "minecraft:fishing_rod"], "outputs": ["minecraft:cod", "minecraft:salmon", "minecraft:pufferfish", "minecraft:tropical_fish"] },
+  { "inputs": ["minecraft:water_bucket", "minecraft:fishing_rod"], "outputs": ["minecraft:cod", "minecraft:salmon", "minecraft:pufferfish", "minecraft:tropical_fish", "minecraft:nautilus_shell"] },
   { "inputs": ["minecraft:glass_bottle"], "outputs": ["minecraft:potion"] },
 
   { "inputs": ["minecraft:gunpowder", "#c:dyes"], "outputs": ["minecraft:firework_star"] },
@@ -45,6 +45,7 @@
   { "inputs": ["minestuck:mycelium_stone"], "outputs": ["minestuck:mycelium_cobblestone"] },
   { "inputs": ["minestuck:shadewood_sapling"], "outputs": ["minestuck:rotted_shadewood_log", "minestuck:scarred_shadewood_log", "minestuck:shroomy_shadewood_leaves", "minestuck:glowing_mushroom_vines"] },
   { "inputs": ["minestuck:captcharoid_camera", "minestuck:katana"], "outputs": ["minestuck:unbreakable_katana"] },
+  { "inputs": ["minestuck:completed_sburb_code", "minestuck:computer"], "outputs": ["minestuck:client_disk", "minestuck:server_disk"] },
 
   { "inputs": ["create:brown_toolbox", "minecraft:black_dye"], "outputs": ["create:black_toolbox"] },
   { "inputs": ["create:brown_toolbox", "minecraft:blue_dye"], "outputs": ["create:blue_toolbox"] },
@@ -78,7 +79,7 @@
 
   { "inputs": ["immersiveengineering:shader_bag_common"], "outputs": ["immersiveengineering:shader_acepride", "immersiveengineering:shader_ancient", "immersiveengineering:shader_angelsthesis", "immersiveengineering:shader_argo", "immersiveengineering:shader_astartes", "immersiveengineering:shader_bipride", "immersiveengineering:shader_chloris", "immersiveengineering:shader_crescentrose", "immersiveengineering:shader_crimsonlotus", "immersiveengineering:shader_darkfire", "immersiveengineering:shader_dominator", "immersiveengineering:shader_dragonsbreath", "immersiveengineering:shader_enbypride", "immersiveengineering:shader_erruption", "immersiveengineering:shader_exia", "immersiveengineering:shader_eyas", "immersiveengineering:shader_felix", "immersiveengineering:shader_fox", "immersiveengineering:shader_gaypride", "immersiveengineering:shader_glacis", "immersiveengineering:shader_harrowed", "immersiveengineering:shader_hawk", "immersiveengineering:shader_hollow", "immersiveengineering:shader_ikelos", "immersiveengineering:shader_kindled", "immersiveengineering:shader_lesbianpride", "immersiveengineering:shader_locus", "immersiveengineering:shader_lususnaturae", "immersiveengineering:shader_magnum", "immersiveengineering:shader_massfusion", "immersiveengineering:shader_matrix", "immersiveengineering:shader_microshark", "immersiveengineering:shader_milo", "immersiveengineering:shader_n7", "immersiveengineering:shader_netherforged", "immersiveengineering:shader_normandy", "immersiveengineering:shader_omnitool", "immersiveengineering:shader_phoenix", "immersiveengineering:shader_qrow", "immersiveengineering:shader_radiant", "immersiveengineering:shader_regal", "immersiveengineering:shader_rosequartz", "immersiveengineering:shader_sharkface", "immersiveengineering:shader_sponsor", "immersiveengineering:shader_stormflower", "immersiveengineering:shader_sunstrike", "immersiveengineering:shader_sutherland", "immersiveengineering:shader_taken", "immersiveengineering:shader_transpride", "immersiveengineering:shader_trident", "immersiveengineering:shader_twili", "immersiveengineering:shader_usurper", "immersiveengineering:shader_vanguard", "immersiveengineering:shader_vaulttec", "immersiveengineering:shader_waaagh", "immersiveengineering:shader_warbird"] },
   { "inputs": ["immersiveengineering:cokebrick", "minecraft:coal"], "outputs": ["immersiveengineering:coal_coke", "immersiveengineering:creosote_bucket"] },
-  { "inputs": ["immersiveengineering:blastbrick", "minecraft:iron_ingot"], "outputs": ["immersiveengineering:ingot_steel", "immersiveengineering:slag"] },
+  { "inputs": ["immersiveengineering:blastbrick", "minecraft:iron_ingot"], "outputs": ["immersiveengineering:ingot_steel", "mekanism:ingot_steel", "immersiveengineering:slag"] },
   { "inputs": ["minecraft:redstone", "minecraft:bucket"], "outputs": ["immersiveengineering:redstone_acid_bucket"] },
   { "inputs": ["minecraft:bricks"], "outputs": ["immersiveengineering:clinker_brick"] },
   { "inputs": ["immersiveengineering:heavy_engineering", "minecraft:sandstone"], "outputs": ["immersiveengineering:dust_saltpeter"] },
@@ -117,5 +118,34 @@
   { "inputs": ["ae2:condenser", "ae2:cell_component_64k"], "outputs": ["ae2:singularity"] },
   { "inputs": ["ae2:singularity", "minecraft:ender_pearl", "minecraft:tnt"], "outputs": ["ae2:quantum_entangled_singularity"] },
   { "inputs": ["ae2:me_p2p_tunnel"], "outputs": ["ae2:fe_p2p_tunnel", "ae2:fluid_p2p_tunnel", "ae2:item_p2p_tunnel", "ae2:light_p2p_tunnel", "ae2:redstone_p2p_tunnel", "appmek:chemical_p2p_tunnel"] },
-  { "inputs": ["ae2:mysterious_cube"], "outputs": ["ae2:calculation_processor_press", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:silicon_press"] }
+  { "inputs": ["ae2:mysterious_cube"], "outputs": ["ae2:calculation_processor_press", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:silicon_press"] },
+
+  { "inputs": ["hostilenetworks:sim_chamber"], "outputs": ["hostilenetworks:overworld_prediction", "hostilenetworks:nether_prediction", "hostilenetworks:end_prediction"] },
+  { "inputs": ["framedblocks:framed_cube"], "outputs": ["framedblocks:framed_chain", "framedblocks:framed_corner_slope_edge", "framedblocks:framed_elev_double_corner_slope_edge", "framedblocks:framed_elev_double_inner_corner_slope_edge", "framedblocks:framed_elevated_corner_slope_edge", "framedblocks:framed_elevated_inner_corner_slope_edge", "framedblocks:framed_hopper", "framedblocks:framed_inner_corner_slope_edge", "framedblocks:framed_inner_threeway_corner_slope_edge", "framedblocks:framed_layered_cube", "framedblocks:framed_lightning_rod", "framedblocks:framed_path", "framedblocks:framed_stacked_corner_slope_edge", "framedblocks:framed_stacked_inner_corner_slope_edge", "framedblocks:framed_threeway_corner_slope_edge"] },
+
+  { "inputs": ["supplementaries:flax_seeds"], "outputs": ["supplementaries:flax"] },
+  { "inputs": ["minecraft:arrow", "supplementaries:rope"], "outputs": ["supplementaries:rope_arrow"] },
+  { "inputs": ["minecraft:shulker_box", "minecraft:netherite_ingot"], "outputs": ["supplementaries:safe"] },
+  { "inputs": ["supplementaries:present", "minecraft:tripwire_hook"], "outputs": ["supplementaries:trapped_present"] },
+  { "inputs": ["supplementaries:present", "minecraft:black_dye"], "outputs": ["supplementaries:present_black", "supplementaries:trapped_present_black"] },
+  { "inputs": ["supplementaries:present", "minecraft:blue_dye"], "outputs": ["supplementaries:present_blue", "supplementaries:trapped_present_blue"] },
+  { "inputs": ["supplementaries:present", "minecraft:brown_dye"], "outputs": ["supplementaries:present_brown", "supplementaries:trapped_present_brown"] },
+  { "inputs": ["supplementaries:present", "minecraft:cyan_dye"], "outputs": ["supplementaries:present_cyan", "supplementaries:trapped_present_cyan"] },
+  { "inputs": ["supplementaries:present", "minecraft:gray_dye"], "outputs": ["supplementaries:present_gray", "supplementaries:trapped_present_gray"] },
+  { "inputs": ["supplementaries:present", "minecraft:green_dye"], "outputs": ["supplementaries:present_green", "supplementaries:trapped_present_green"] },
+  { "inputs": ["supplementaries:present", "minecraft:light_blue_dye"], "outputs": ["supplementaries:present_light_blue", "supplementaries:trapped_present_light_blue"] },
+  { "inputs": ["supplementaries:present", "minecraft:light_gray_dye"], "outputs": ["supplementaries:present_light_gray", "supplementaries:trapped_present_light_gray"] },
+  { "inputs": ["supplementaries:present", "minecraft:lime_dye"], "outputs": ["supplementaries:present_lime", "supplementaries:trapped_present_lime"] },
+  { "inputs": ["supplementaries:present", "minecraft:magenta_dye"], "outputs": ["supplementaries:present_magenta", "supplementaries:trapped_present_magenta"] },
+  { "inputs": ["supplementaries:present", "minecraft:orange_dye"], "outputs": ["supplementaries:present_orange", "supplementaries:trapped_present_orange"] },
+  { "inputs": ["supplementaries:present", "minecraft:pink_dye"], "outputs": ["supplementaries:present_pink", "supplementaries:trapped_present_pink"] },
+  { "inputs": ["supplementaries:present", "minecraft:purple_dye"], "outputs": ["supplementaries:present_purple", "supplementaries:trapped_present_purple"] },
+  { "inputs": ["supplementaries:present", "minecraft:red_dye"], "outputs": ["supplementaries:present_red", "supplementaries:trapped_present_red"] },
+  { "inputs": ["supplementaries:present", "minecraft:white_dye"], "outputs": ["supplementaries:present_white", "supplementaries:trapped_present_white"] },
+  { "inputs": ["supplementaries:present", "minecraft:yellow_dye"], "outputs": ["supplementaries:present_yellow", "supplementaries:trapped_present_yellow"] },
+
+  { "inputs": ["expandedstorage:storage_mutator", "expandedstorage:green_mini_present"], "outputs": ["expandedstorage:lavender_mini_present"] },
+  { "inputs": ["expandedstorage:storage_mutator", "expandedstorage:obsidian_chest"], "outputs": ["expandedstorage:metallic_obsidian_chest"] },
+  { "inputs": ["expandedstorage:storage_mutator", "expandedstorage:lavender_mini_present"], "outputs": ["expandedstorage:pink_amethyst_mini_present"] },
+  { "inputs": ["expandedstorage:storage_mutator", "expandedstorage:copper_chest"], "outputs": ["expandedstorage:trial_chest"] }
 ]

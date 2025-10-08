@@ -41,5 +41,6 @@
     "minestuck:ace_of_spades", "minestuck:gutter_ball", "minestuck:plush_mutated_cat",
 
     "minestuck:boondollars"
-  ]
+  ],
+  "death": [ "gravestone:obituary" ]
 }
