@@ -18,7 +18,7 @@ repositories {
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
     maven {
-        url 'https://api.modrinth.com/maven'
+        url = 'https://api.modrinth.com/maven'
         content {
             includeGroup 'maven.modrinth'
         }
