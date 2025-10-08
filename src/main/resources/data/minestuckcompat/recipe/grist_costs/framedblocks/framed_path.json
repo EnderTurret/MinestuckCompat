@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "framedblocks"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "ingredient": {
+    "item": "framedblocks:framed_path"
+  },
+  "sources": [
+    "framedblocks:framed_cube"
+  ]
+}

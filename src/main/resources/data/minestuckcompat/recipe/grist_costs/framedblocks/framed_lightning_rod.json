@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "framedblocks"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 3
+  },
+  "ingredient": {
+    "item": "framedblocks:framed_lightning_rod"
+  },
+  "multiplier": 48,
+  "sources": [
+    "minecraft:copper_ingot"
+  ]
+}
