@@ -40,6 +40,21 @@ Minestuck Compat also enhances Minestuck's JEI integration:
 * Grist types are aliased to "grist", allowing them to show when searching exactly that
 * When Create is installed, "mysterious conversion" recipes are added for swapping weapons (e.g. lipstick chainsaws)
 
+## Installation
+
+Just drop Minestuck Compat into the mods folder.
+It will automatically enable the relevant compatibility recipes, so further configuration isn't necessary.
+However, if certain features aren't to your liking, the `minestuckcompat-common.toml` file contains config options for turning most of Minestuck Compat's features off.
+
+### For mod and modpack developers
+
+Minestuck Compat offers some optional features that can be turned on via the config.
+These features all generally aid efforts at integrating Minestuck with other mods.
+Modpack developers may find these useful for making other mods play nicely with Minestuck, and mod developers may find them useful for developing Minestuck addons.
+See the following section for details on the offered features.
+
+Mod/modpack developers may also ship an `assets/yournamespace/minestuckcompat/swapping_weapons.json` file to supplement Minestuck Compat's swapping weapon list with additional such weapons. (For example, many of Alchemy Expanded's firearms.)
+
 ## Debugging features
 
 Minestuck Compat provides a few debugging features, mainly involving Minestuck's grist cost generator. They can all be found in Minestuck Compat's config.
