@@ -1,11 +1,10 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 license="LGPL v2.1"
+issueTrackerURL="https://github.com/EnderTurret/MinestuckCompat/issues"
 [[mods]]
     modId="minestuckcompat"
     displayName="Minestuck Compat"
-    displayURL="https://github.com/EnderTurret/MinestuckCompat"
-    logoFile="icon.png"
     description='''
     A comprehensive Minestuck addon that provides grist costs and combination recipes for:
     * Applied Energistics 2
@@ -38,6 +37,8 @@ license="LGPL v2.1"
     '''
     version="${file.jarVersion}"
     authors="EnderTurret"
+    displayURL="https://github.com/EnderTurret/MinestuckCompat"
+    logoFile="icon.png"
 
 [[mixins]]
     config="mixins.minestuckcompat.json"
