@@ -3,6 +3,13 @@
     {
       "type": "minestuckcompat:config",
       "modid": "minecraft"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "balm"
+      }
     }
   ],
   "type": "minestuck:grist_cost",

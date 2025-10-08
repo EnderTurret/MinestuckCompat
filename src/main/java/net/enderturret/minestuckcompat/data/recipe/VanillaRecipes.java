@@ -121,12 +121,13 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		sourceGristCost(OMINOUS_BOTTLE).grist(TAR, 16).source(GLASS_BOTTLE).build(output);
 		sourceGristCost(OMINOUS_TRIAL_KEY).source(OMINOUS_BOTTLE).source(TRIAL_KEY).build(output);
 
-		gristCost(INFESTED_STONE).grist(BUILD, 2).build(output);
+		// Balm adds some of these to the c:stones tag, which gives them explicit grist costs.
+		gristCost(INFESTED_STONE).grist(BUILD, 2).build(output.withConditions(not(modLoaded("balm"))));
 		gristCost(INFESTED_STONE_BRICKS).grist(BUILD, 2).build(output);
 		gristCost(INFESTED_MOSSY_STONE_BRICKS).grist(BUILD, 2).grist(MARBLE, 1).build(output);
 		gristCost(INFESTED_CRACKED_STONE_BRICKS).grist(BUILD, 2).build(output);
 		gristCost(INFESTED_CHISELED_STONE_BRICKS).grist(BUILD, 2).build(output);
-		gristCost(INFESTED_DEEPSLATE).grist(BUILD, 2).build(output);
+		gristCost(INFESTED_DEEPSLATE).grist(BUILD, 2).build(output.withConditions(not(modLoaded("balm"))));
 
 		//
 		// Combination Recipes
