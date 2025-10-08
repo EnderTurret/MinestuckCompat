@@ -40,7 +40,7 @@ Minestuck Compat also enhances Minestuck's JEI integration:
 * Grist types are aliased to "grist", allowing them to show when searching exactly that
 * When Create is installed, "mysterious conversion" recipes are added for swapping weapons (e.g. lipstick chainsaws)
 
-## Debugging Features
+## Debugging features
 
 Minestuck Compat provides a few debugging features, mainly involving Minestuck's grist cost generator. They can all be found in Minestuck Compat's config.
 
@@ -111,7 +111,7 @@ However, the analyzer *does* come with some built-in understanding for select ga
 In particular log/wood stripping, copper oxidizing and waxing, logs/leaves from saplings, and dead forms of coral.
 For other things (such as the Immersive Engineering coke oven) "recipes" are hard-coded using the `minestuckcompat/obtainability_analyzer/recipes.json` file, which is where the analyzer can be taught about smithing upgrades, shulker box and toolbox dying, crops from seeds, and pretty much anything else.
 
-## Interpreter Types
+## Interpreter types
 
 Minestuck Compat supplements Minestuck's recipe interpreter types with additional ones designed for use with other mods.
 Unless otherwise stated, each one may optionally have an `added_cost`.
@@ -228,8 +228,14 @@ Here's an example from Minestuck Compat's file:
 
 In this example, the `mod_loaded` condition prevents this entry from loading when Mekanism isn't present, thereby avoiding unnecessary errors in the logs about missing recipe types/serializers.
 
-## Performance Optimizations
+## Performance optimizations
 
 Minestuck Compat (ironically) also applies a few optimizations to Minestuck's grist cost generation algorithm.
 These are primarily just some good ol' allocation avoidance optimizations (theoretically saving CPU time but mostly my sanity), but also include smaller implementations of the backing grist cost data structure.
 The latter optimization shrinks the memory footprint of a given grist cost by around 3/4ths.
+
+## Compiling this mod
+
+Run `gradlew.bat build` (on Windows) or `./gradlew build` (on Linux) to build the mod.
+You will need to ensure the required dependencies are present in the `libs` folder.
+See the `build.gradle` for a list of required mods.
