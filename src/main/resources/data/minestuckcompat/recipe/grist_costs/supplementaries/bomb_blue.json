@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 16,
+    "minestuck:uranium": 10
+  },
+  "ingredient": {
+    "item": "supplementaries:bomb_blue"
+  },
+  "sources": [
+    "supplementaries:bomb"
+  ]
+}

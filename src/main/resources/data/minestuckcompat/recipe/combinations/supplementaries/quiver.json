@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:leather_leggings"
+  },
+  "input2": {
+    "item": "minecraft:arrow"
+  },
+  "mode": "or",
+  "output": "supplementaries:quiver"
+}

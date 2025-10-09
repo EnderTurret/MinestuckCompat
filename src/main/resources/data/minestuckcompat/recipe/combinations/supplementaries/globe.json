@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:map"
+  },
+  "input2": {
+    "item": "minecraft:heart_of_the_sea"
+  },
+  "mode": "or",
+  "output": "supplementaries:globe"
+}

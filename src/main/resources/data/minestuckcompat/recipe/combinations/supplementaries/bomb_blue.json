@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "supplementaries"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "supplementaries:bomb"
+  },
+  "input2": {
+    "item": "minecraft:enchanted_golden_apple"
+  },
+  "mode": "or",
+  "output": "supplementaries:bomb_blue"
+}

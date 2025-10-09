@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "lootr"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:chest"
+  },
+  "input2": {
+    "item": "minecraft:player_head"
+  },
+  "mode": "and",
+  "output": "lootr:trophy"
+}
