@@ -9,6 +9,10 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
+/**
+ * Minestuck Compat's common config.
+ * @author EnderTurret
+ */
 @Internal
 public final class MinestuckCompatConfig {
 

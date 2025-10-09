@@ -2,6 +2,8 @@ package net.enderturret.minestuckcompat.command;
 
 import java.util.List;
 
+import org.jetbrains.annotations.ApiStatus.Internal;
+
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
@@ -14,8 +16,17 @@ import net.minecraft.world.item.Item;
 
 import net.enderturret.minestuckcompat.alchemy.analysis.ObtainabilityAnalyzer;
 
+/**
+ * The command that runs Minestuck Compat's {@linkplain ObtainabilityAnalyzer obtainability analyzer}.
+ * @author EnderTurret
+ */
+@Internal
 public final class AnalyzerCommand {
 
+	/**
+	 * Registers the {@code AnalyzerCommand} to the specified {@code CommandDispatcher}.
+	 * @param dispatcher The dispatcher to register to.
+	 */
 	public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
 		dispatcher.register(Commands.literal("minestuckcompat").then(Commands.literal("analyze")
 				.requires(src -> src.hasPermission(4))

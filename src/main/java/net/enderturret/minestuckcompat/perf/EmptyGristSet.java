@@ -14,6 +14,9 @@ import com.mraof.minestuck.api.alchemy.GristType;
  */
 public final class EmptyGristSet implements GristSet.Immutable {
 
+	/**
+	 * The singleton instance of {@code EmptyGristSet}.
+	 */
 	public static final EmptyGristSet INSTANCE = new EmptyGristSet();
 
 	private EmptyGristSet() {}

@@ -30,6 +30,11 @@ public final class RegisterGristCostProvidersEvent extends Event {
 	private final Map<Item, GristSet.Immutable> generatedCosts;
 	private final GeneratorProcessAccess access;
 
+	/**
+	 * Constructs a new {@code RegisterGristCostProvidersEvent}.
+	 * @param generatedCosts The map of generated grist costs to add custom costs to.
+	 * @param access Access for the grist cost generator's cost providers.
+	 */
 	@Internal
 	public RegisterGristCostProvidersEvent(Map<Item, GristSet.Immutable> generatedCosts, GeneratorProcessAccess access) {
 		this.generatedCosts = generatedCosts;

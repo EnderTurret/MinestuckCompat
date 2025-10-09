@@ -46,14 +46,25 @@ import net.enderturret.minestuckcompat.MinestuckCompatConfig;
 import net.enderturret.minestuckcompat.api.alchemy.RegisterGristCostProvidersEvent;
 import net.enderturret.minestuckcompat.mixin.feature.outside_grist_costs.GeneratorProcessAccess;
 
+/**
+ * Various hooks for Minestuck Compat's mixins.
+ * @author EnderTurret
+ */
 @Internal
 public final class MixinHooks {
 
 	public static final Codec<Optional<SourceEntry>> CONDITIONAL_SOURCE_ENTRY = ConditionalOps.createConditionalCodec(SourceEntry.CODEC);
 	public static final Codec<List<Optional<SourceEntry>>> CONDITIONAL_SOURCE_ENTRY_LIST = CONDITIONAL_SOURCE_ENTRY.listOf();
 
+	/**
+	 * The {@code generatedCosts} map from {@code RecipeGeneratedCostProcess}.
+	 */
 	public static Map<Item, GristSet.Immutable> generatedCosts;
 
+	/**
+	 * Fires the {@link RegisterGristCostProvidersEvent} with the specified access.
+	 * @param access The access to pass to the event.
+	 */
 	public static void generateAdditionalGristCosts(GeneratorProcessAccess access) {
 		MinestuckCompat.LOGGER.info("Discovering additional grist cost providers!");
 		NeoForge.EVENT_BUS.post(new RegisterGristCostProvidersEvent(generatedCosts, access));

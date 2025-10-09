@@ -21,12 +21,20 @@ import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import blusunrize.immersiveengineering.api.crafting.MetalPressRecipe;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 
+/**
+ * A recipe interpreter for Immersive Engineering's {@linkplain MetalPressRecipe metal press recipes}.
+ * @author EnderTurret
+ */
 public final class MetalPressInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<MetalPressRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<MetalPressInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(MetalPressInterpreter::addedCost)
 			).apply(instance, MetalPressInterpreter::new));
 
+	/**
+	 * Constructs a new {@code MetalPressInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	public MetalPressInterpreter(GristSet.Immutable addedCost) {
 		super(MetalPressRecipe.class, addedCost);
 	}

@@ -21,12 +21,20 @@ import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import blusunrize.immersiveengineering.api.crafting.CrusherRecipe;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 
+/**
+ * A recipe interpreter for Immersive Engineering's {@linkplain CrusherRecipe crusher recipes}.
+ * @author EnderTurret
+ */
 public final class CrusherInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CrusherRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<CrusherInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(CrusherInterpreter::addedCost)
 			).apply(instance, CrusherInterpreter::new));
 
+	/**
+	 * Constructs a new {@code CrusherInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	public CrusherInterpreter(GristSet.Immutable addedCost) {
 		super(CrusherRecipe.class, addedCost);
 	}

@@ -26,6 +26,11 @@ import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInter
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 
+/**
+ * A recipe interpreter intended for Create's {@linkplain AllRecipeTypes#COMPACTING compacting}, {@linkplain AllRecipeTypes#MIXING mixing}, and {@linkplain AllRecipeTypes#FILLING filling} recipes.
+ * Unlike many other recipe interpreters, this one attempts to handle fluid ingredients.
+ * @author EnderTurret
+ */
 public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<StandardProcessingRecipe<?>> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<FluidProcessingInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
@@ -35,6 +40,11 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 
 	private final GristSet.Immutable heatedCost;
 
+	/**
+	 * Constructs a new {@code FluidProcessingInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 * @param heatedCost The grist cost added for "heated" recipes, i.e. those requiring a blaze burner.
+	 */
 	@SuppressWarnings({ "cast", "unchecked" })
 	public FluidProcessingInterpreter(GristSet.Immutable addedCost, GristSet.Immutable heatedCost) {
 		super((Class<StandardProcessingRecipe<?>>) (Class) StandardProcessingRecipe.class, addedCost);

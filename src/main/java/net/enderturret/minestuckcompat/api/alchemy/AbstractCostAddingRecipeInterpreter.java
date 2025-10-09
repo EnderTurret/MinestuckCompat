@@ -13,12 +13,23 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 
+/**
+ * A version of {@link AbstractRecipeInterpreter} that adds a per-recipe added grist cost.
+ * @author EnderTurret
+ */
 public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipeInterpreter {
 
 	protected final GristSet.Immutable addedCost;
 
+	/**
+	 * The cost field {@code MapCodec}. Add this to your {@code AbstractCostAddingRecipeInterpreter} subclass's codec.
+	 */
 	protected static final MapCodec<GristSet.Immutable> COST_FIELD = GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY);
 
+	/**
+	 * Constructs a new {@code AbstractCostAddingRecipeInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	protected AbstractCostAddingRecipeInterpreter(GristSet.Immutable addedCost) {
 		this.addedCost = addedCost;
 	}
@@ -36,20 +47,50 @@ public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipe
 		return super.finalizeGristCosts(totalCost, resultCount);
 	}
 
+	/**
+	 * A typed subclass of {@link AbstractCostAddingRecipeInterpreter} that allows implementors to work with a specific recipe type instead of {@code Recipe<?>}.
+	 *
+	 * @author EnderTurret
+	 *
+	 * @param <T> The recipe class.
+	 */
 	public static abstract class Typed<T extends Recipe<?>> extends AbstractCostAddingRecipeInterpreter {
 
 		protected final Class<T> recipeClass;
 
+		/**
+		 * Constructs a {@code Typed} {@code AbstractCostAddingRecipeInterpreter}.
+		 * @param recipeClass The interpreter's recipe type class.
+		 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+		 */
 		protected Typed(Class<T> recipeClass, GristSet.Immutable addedCost) {
 			super(addedCost);
 			this.recipeClass = recipeClass;
 		}
 
+		/**
+		 * Typed version of {@link #getOutputItems(Recipe)}.
+		 * @param recipe The recipe to retrieve the output items of.
+		 * @return The list of output items from the recipe.
+		 */
 		protected abstract List<Item> getOutputItemsTyped(T recipe);
 
+		/**
+		 * Typed version of {@link #generateCost(Recipe, Item, GeneratorCallback)}.
+		 * @param totalCost The total grist cost of the recipe.
+		 * @param recipe The recipe to generate the grist cost of.
+		 * @param output The recipe's output item.
+		 * @param callback The grist cost generator callback, for fetching item grist costs.
+		 * @return {@code totalCost}, or {@code null} if one of the recipe's ingredients has a {@code null} grist cost.
+		 */
 		@Nullable
 		protected abstract MutableGristSet generateCost(MutableGristSet totalCost, T recipe, Item output, GeneratorCallback callback);
 
+		/**
+		 * Typed version of {@link #reportPreliminaryLookups(Recipe, LookupTracker)}.
+		 * @param recipe The recipe to report the ingredients of.
+		 * @param tracker The {@code LookupTracker} to report the ingredients to.
+		 */
 		protected abstract void reportPreliminaryLookupsTyped(T recipe, LookupTracker tracker);
 
 		@Override

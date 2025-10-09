@@ -21,12 +21,20 @@ import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import blusunrize.immersiveengineering.api.crafting.AlloyRecipe;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 
+/**
+ * A recipe interpreter for Immersive Engineering's {@linkplain AlloyRecipe alloy smelter recipes}.
+ * @author EnderTurret
+ */
 public final class AlloySmelterInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<AlloyRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<AlloySmelterInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(AlloySmelterInterpreter::addedCost)
 			).apply(instance, AlloySmelterInterpreter::new));
 
+	/**
+	 * Constructs a new {@code AlloySmelterInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	public AlloySmelterInterpreter(GristSet.Immutable addedCost) {
 		super(AlloyRecipe.class, addedCost);
 	}

@@ -49,12 +49,21 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 
+/**
+ * The obtainability analyzer attempts to generate a list of unobtainable items given lists of root items and {@linkplain AnalyzedRecipe recipes}.
+ * @author EnderTurret
+ */
 public final class ObtainabilityAnalyzer {
 
 	private final RecipeManager recipeManager;
 	private final ResourceManager resourceManager;
 	private final Map<Recipe<?>, RecipeInterpreter> interpretersByRecipe;
 
+	/**
+	 * Constructs a new {@code ObtainabilityAnalyzer}.
+	 * @param recipeManager The recipe manager to read recipes from.
+	 * @param resourceManager The resource manager to read the analyzer's supporting data from.
+	 */
 	public ObtainabilityAnalyzer(RecipeManager recipeManager, ResourceManager resourceManager) {
 		this.recipeManager = recipeManager;
 		this.resourceManager = resourceManager;
@@ -62,6 +71,11 @@ public final class ObtainabilityAnalyzer {
 		interpretersByRecipe = readInterpreters(recipeManager, resourceManager);
 	}
 
+	/**
+	 * Causes this {@code ObtainabilityAnalyzer} to carry out its analysis.
+	 * @param messageConsumer A {@code BiConsumer} to echo progress messages to another source (e.g. chat). May be {@code null}.
+	 * @return A list of unobtainable items.
+	 */
 	@SuppressWarnings("deprecation")
 	public List<Item> check(@Nullable BiConsumer<Component, Boolean> messageConsumer) {
 		final Set<Item> roots = defineDefaultRoots();
@@ -186,7 +200,7 @@ public final class ObtainabilityAnalyzer {
 	}
 
 	@Nullable
-	public RecipeInterpreter findInterpreter(Recipe<?> recipe) {
+	private RecipeInterpreter findInterpreter(Recipe<?> recipe) {
 		if (recipe instanceof RegularCombinationRecipe) return CombinationRecipeInterpreter.INSTANCE;
 		return interpretersByRecipe.get(recipe);
 	}

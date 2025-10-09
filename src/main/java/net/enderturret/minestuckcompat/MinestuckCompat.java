@@ -23,6 +23,10 @@ import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
 import net.enderturret.minestuckcompat.api.init.MCInterpreterTypes;
 import net.enderturret.minestuckcompat.command.AnalyzerCommand;
 
+/**
+ * Minestuck Compat's main mod class.
+ * @author EnderTurret
+ */
 @Mod(MinestuckCompat.MOD_ID)
 public final class MinestuckCompat {
 

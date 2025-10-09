@@ -27,6 +27,10 @@ import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.analysis.BuiltinRecipeList;
 
+/**
+ * Handles reading Minestuck Compat's client-side data.
+ * @author EnderTurret
+ */
 @Internal
 @EventBusSubscriber(modid = MinestuckCompat.MOD_ID, value = Dist.CLIENT)
 public final class ClientDataManager {

@@ -91,6 +91,11 @@ public final class FluidHelper {
 		return remainderCost.mutableCopy().scale(-1).add(bucketCost);
 	}
 
+	/**
+	 * Reports the specified fluid to the {@code LookupTracker}.
+	 * @param tracker The {@code LookupTracker} to report the fluid to.
+	 * @param fluid The fluid to report.
+	 */
 	public static void report(LookupTracker tracker, FluidStack fluid) {
 		tracker.report(fluid.getFluidType().getBucket(fluid));
 	}

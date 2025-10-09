@@ -43,16 +43,31 @@ public final class SmallImmutableGristSet extends AbstractSmallGristSet implemen
 		return empty ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
 	}
 
+	/**
+	 * Creates an {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set} from the specified grist set.
+	 * @param set The grist set to create the immutable one from.
+	 * @return The created grist set.
+	 */
 	public static GristSet.Immutable create(GristSet set) {
 		final int[] gristByType = gristByType(set, true);
 		return gristByType == null ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
 	}
 
+	/**
+	 * Creates an {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set} from the specified map.
+	 * @param map The map to create the grist set from.
+	 * @return The created grist set.
+	 */
 	public static GristSet.Immutable create(Map<GristType, Long> map) {
 		final int[] gristByType = gristByType(map, true);
 		return gristByType == null ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
 	}
 
+	/**
+	 * Creates an {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set} from the specified list.
+	 * @param list The list to create the grist set from.
+	 * @return The created grist set.
+	 */
 	public static GristSet.Immutable create(List<GristAmount> list) {
 		if (list.isEmpty()) return EmptyGristSet.INSTANCE;
 		if (list.size() == 1) return list.get(0);

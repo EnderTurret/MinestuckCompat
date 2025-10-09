@@ -17,6 +17,10 @@ import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import appeng.core.definitions.AEBlocks;
 import appeng.recipes.handlers.ChargerRecipe;
 
+/**
+ * A recipe interpreter for AE2's {@linkplain ChargerRecipe charging recipes}.
+ * @author EnderTurret
+ */
 public final class ChargerInterpreter extends AbstractCostAddingRecipeInterpreter implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<ChargerInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(

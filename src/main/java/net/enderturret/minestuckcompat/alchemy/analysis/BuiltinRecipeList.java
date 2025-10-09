@@ -46,6 +46,12 @@ import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.ClientDataManager;
 
+/**
+ * {@code BuiltinRecipeList} handles reading support data for the {@linkplain ObtainabilityAnalyzer obtainability analyzer}.
+ * In particular, reading the root items and hard-coded "recipe" definitions.
+ * It also handles reading "recipes" from the environment, like log stripping or tree growth.
+ * @author EnderTurret
+ */
 @Internal
 public final class BuiltinRecipeList {
 
@@ -99,6 +105,15 @@ public final class BuiltinRecipeList {
 		return ret;
 	}
 
+	/**
+	 * Parses — using the specified codec — files in all namespaces at the specified location and returns a {@link List} of the results.
+	 * @param <T> The type of decoded element.
+	 * @param resourceManager The resource manager to read from.
+	 * @param folder The folder that the desired file is in.
+	 * @param path The path to the desired file.
+	 * @param codec The {@link Function} to decode each resource.
+	 * @return The parsed resource list.
+	 */
 	public static <T> List<T> parseResource(ResourceManager resourceManager, String folder, String path, Function<JsonElement, Collection<T>> codec) {
 		final List<T> ret = new ArrayList<>();
 

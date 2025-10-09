@@ -12,11 +12,15 @@ import net.neoforged.bus.api.SubscribeEvent;
 
 import net.enderturret.minestuckcompat.api.alchemy.RegisterGristCostProvidersEvent;
 
+/**
+ * Handles generating grist costs for Rechiseled's blocks.
+ * @author EnderTurret
+ */
 @Internal
 public final class RechiseledGristCosts {
 
 	@SubscribeEvent
-	public static void registerProviders(RegisterGristCostProvidersEvent event) {
+	static void registerProviders(RegisterGristCostProvidersEvent event) {
 		for (ChiselingRecipe recipe : ChiselingRecipes.getAllRecipes()) {
 			if (recipe.getEntries().isEmpty()) continue;
 

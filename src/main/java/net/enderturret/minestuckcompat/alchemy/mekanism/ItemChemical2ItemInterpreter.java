@@ -25,12 +25,20 @@ import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
 import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.common.registries.MekanismBlocks;
 
+/**
+ * A recipe interpreter for Mekanism's {@link ItemStackChemicalToItemStackRecipe}.
+ * @author EnderTurret
+ */
 public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<ItemStackChemicalToItemStackRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<ItemChemical2ItemInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			COST_FIELD.forGetter(ItemChemical2ItemInterpreter::addedCost)
 			).apply(instance, ItemChemical2ItemInterpreter::new));
 
+	/**
+	 * Constructs a new {@code ItemChemical2ItemInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	public ItemChemical2ItemInterpreter(GristSet.Immutable addedCost) {
 		super(ItemStackChemicalToItemStackRecipe.class, addedCost);
 	}

@@ -32,16 +32,29 @@ public final class SmallMutableGristSet extends AbstractSmallGristSet implements
 		super(gristByType);
 	}
 
+	/**
+	 * Constructs a new, empty {@code SmallMutableGristSet}.
+	 */
 	public SmallMutableGristSet() {
 		this(new int[GristTypes.REGISTRY.size()]);
 	}
 
-	public static MutableGristSet shrink(GristSet set) {
+	/**
+	 * Creates a new {@link MutableGristSet} from the specified grist set.
+	 * @param set The grist set to create the new mutable one from.
+	 * @return The new mutable grist set.
+	 */
+	public static MutableGristSet create(GristSet set) {
 		final int[] gristByType = gristByType(set, false);
 		return new SmallMutableGristSet(gristByType);
 	}
 
-	public static MutableGristSet shrink(List<GristAmount> list) {
+	/**
+	 * Creates a new {@link MutableGristSet} from the specified list.
+	 * @param list The list to create the grist set from.
+	 * @return The new mutable grist set.
+	 */
+	public static MutableGristSet create(List<GristAmount> list) {
 		return new SmallMutableGristSet(gristByType(list));
 	}
 

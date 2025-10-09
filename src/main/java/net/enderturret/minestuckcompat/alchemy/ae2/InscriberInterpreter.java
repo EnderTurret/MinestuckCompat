@@ -18,6 +18,10 @@ import appeng.core.definitions.AEBlocks;
 import appeng.recipes.handlers.InscriberProcessType;
 import appeng.recipes.handlers.InscriberRecipe;
 
+/**
+ * A recipe interpreter for AE2's {@linkplain InscriberRecipe inscribing recipes}.
+ * @author EnderTurret
+ */
 public final class InscriberInterpreter extends AbstractCostAddingRecipeInterpreter implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<InscriberInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(

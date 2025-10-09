@@ -26,11 +26,20 @@ public final class SimpleRecipeInterpreter extends AbstractCostAddingRecipeInter
 
 	private final boolean ignoreSpecial;
 
+	/**
+	 * Constructs a new {@code SimpleRecipeInterpreter}.
+	 * @param ignoreSpecial Whether or not to ignore recipes that return {@code true} in {@link Recipe#isSpecial()}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 */
 	public SimpleRecipeInterpreter(boolean ignoreSpecial, GristSet.Immutable addedCost) {
 		super(addedCost);
 		this.ignoreSpecial = ignoreSpecial;
 	}
 
+	/**
+	 * No-cost version of {@link #SimpleRecipeInterpreter(boolean, com.mraof.minestuck.api.alchemy.GristSet.Immutable)}.
+	 * @param ignoreSpecial Whether or not to ignore recipes that return {@code true} in {@link Recipe#isSpecial()}.
+	 */
 	public SimpleRecipeInterpreter(boolean ignoreSpecial) {
 		this(ignoreSpecial, GristSet.EMPTY);
 	}

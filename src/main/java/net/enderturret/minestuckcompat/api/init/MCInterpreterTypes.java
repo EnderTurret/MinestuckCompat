@@ -27,39 +27,93 @@ import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpr
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 
 /**
- * MinestuckCompat's interpreter types.
+ * Minestuck Compat's interpreter types.
  * @author EnderTurret
  */
 public final class MCInterpreterTypes {
 
+	/**
+	 * Minestuck Compat's {@link DeferredRegister}.
+	 */
 	@Internal
 	public static final DeferredRegister<MapCodec<? extends RecipeInterpreter>> REGISTRY = DeferredRegister.create(InterpreterTypes.REGISTRY, MinestuckCompat.MOD_ID);
 
+	/**
+	 * The codec for {@link SimpleRecipeInterpreter}.
+	 */
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> SIMPLE;
 
+	// ===== Applied Energistics 2 =====
+
+	/**
+	 * The codec for {@link ChargerInterpreter}. Will be {@code null} if AE2 is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> AE2_CHARGER;
+
+	/**
+	 * The codec for {@link InscriberInterpreter}. Will be {@code null} if AE2 is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> AE2_INSCRIBER;
 
+	// ===== Create =====
+
+	/**
+	 * The codec for {@link FluidProcessingInterpreter}. Will be {@code null} if Create is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_FLUID_PROCESSING;
+
+	/**
+	 * The codec for {@link SequencedAssemblyInterpreter}. Will be {@code null} if Create is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
 
+	// ===== Immersive Engineering =====
+
+	/**
+	 * The codec for {@link MultiblockInterpreter}. Will be {@code null} if Immersive Engineering is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_MULTIBLOCK;
+
+	/**
+	 * The codec for {@link IEShapedInterpreter}. Will be {@code null} if Immersive Engineering is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_SHAPED;
+
+	/**
+	 * The codec for {@link AlloySmelterInterpreter}. Will be {@code null} if Immersive Engineering is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_ALLOY_SMELTER;
+
+	/**
+	 * The codec for {@link CrusherInterpreter}. Will be {@code null} if Immersive Engineering is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_CRUSHER;
+
+	/**
+	 * The codec for {@link MetalPressInterpreter}. Will be {@code null} if Immersive Engineering is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> IE_METAL_PRESS;
 
+	// ===== Mekanism =====
+
+	/**
+	 * The codec for {@link ItemChemical2ItemInterpreter}. Will be {@code null} if Mekanism is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_CHEMICAL_TO_ITEM;
+
+	/**
+	 * The codec for {@link Item2ItemInterpreter}. Will be {@code null} if Mekanism is not present.
+	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_TO_ITEM;
 

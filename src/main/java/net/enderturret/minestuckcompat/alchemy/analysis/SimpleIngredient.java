@@ -13,6 +13,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
+/**
+ * {@code SimpleIngredient} represents the acceptable items in an {@link AnalyzedRecipe}.
+ * @param items The list of acceptable items for this ingredient.
+ * @author EnderTurret
+ */
 record SimpleIngredient(List<Item> items) {
 
 	static final SimpleIngredient INVALID = new SimpleIngredient(List.of(Items.AIR));

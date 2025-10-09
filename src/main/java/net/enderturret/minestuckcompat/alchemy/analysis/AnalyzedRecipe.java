@@ -7,6 +7,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
+/**
+ * {@code AnalyzedRecipe} represents recipes in a format the {@linkplain ObtainabilityAnalyzer obtainability analyzer} understands — as a simple input to output mapping.
+ * @param inputs A list of required input items to perform this recipe.
+ * @param outputs The list of items resulting from this recipe.
+ * @author EnderTurret
+ */
 record AnalyzedRecipe(List<SimpleIngredient> inputs, List<Item> outputs) {
 
 	static AnalyzedRecipe fromCodec(List<SimpleIngredient> inputs, List<Item> outputs) {

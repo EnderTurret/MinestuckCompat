@@ -28,6 +28,10 @@ import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInter
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
 
+/**
+ * A recipe interpreter for Create's {@linkplain SequencedAssemblyRecipe sequenced assembly recipes}.
+ * @author EnderTurret
+ */
 public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<SequencedAssemblyRecipe> implements AnalyzableRecipeInterpreter {
 
 	public static final MapCodec<SequencedAssemblyInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
@@ -39,6 +43,12 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	private final GristSet.Immutable deployCost;
 	private final GristSet.Immutable pressCost;
 
+	/**
+	 * Constructs a new {@code SequencedAssemblyInterpreter}.
+	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
+	 * @param deployCost The grist cost added for a deploy operation.
+	 * @param pressCost The grist cost added for a press operation.
+	 */
 	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost) {
 		super(SequencedAssemblyRecipe.class, addedCost);
 		this.deployCost = deployCost;
