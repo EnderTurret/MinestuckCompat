@@ -68,6 +68,7 @@ public final class MixinHooks {
 	public static void generateAdditionalGristCosts(GeneratorProcessAccess access) {
 		MinestuckCompat.LOGGER.info("Discovering additional grist cost providers!");
 		NeoForge.EVENT_BUS.post(new RegisterGristCostProvidersEvent(generatedCosts, access));
+		generatedCosts = null;
 	}
 
 	@SuppressWarnings("deprecation")
