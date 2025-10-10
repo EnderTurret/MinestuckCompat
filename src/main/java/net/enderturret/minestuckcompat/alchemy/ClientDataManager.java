@@ -1,20 +1,15 @@
 package net.enderturret.minestuckcompat.alchemy;
 
-import java.io.BufferedReader;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.Item;
 

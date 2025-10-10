@@ -51,6 +51,8 @@
   { "inputs": ["minestuck:shadewood_sapling"], "outputs": ["minestuck:rotted_shadewood_log", "minestuck:scarred_shadewood_log", "minestuck:shroomy_shadewood_leaves", "minestuck:glowing_mushroom_vines"] },
   { "inputs": ["minestuck:captcharoid_camera", "minestuck:katana"], "outputs": ["minestuck:unbreakable_katana"] },
   { "inputs": ["minestuck:completed_sburb_code", "minestuck:computer"], "outputs": ["minestuck:client_disk", "minestuck:server_disk"] },
+  { "inputs": ["minestuck:candy_cane"], "outputs": ["minestuck:sharp_candy_cane"] },
+  { "inputs": ["minestuck:frosttooth"], "outputs": ["minestuck:ice_shard"] },
 
   { "inputs": ["create:brown_toolbox", "minecraft:black_dye"], "outputs": ["create:black_toolbox"] },
   { "inputs": ["create:brown_toolbox", "minecraft:blue_dye"], "outputs": ["create:blue_toolbox"] },
