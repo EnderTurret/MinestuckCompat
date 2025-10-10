@@ -78,6 +78,7 @@ public final class ItemChemical2ItemInterpreter extends AbstractCostAddingRecipe
 	@Override
 	public void reportPreliminaryLookupsTyped(ItemStackChemicalToItemStackRecipe recipe, LookupTracker tracker) {
 		tracker.report(recipe.getItemInput().ingredient().ingredient());
+		ChemicalHelper.report(tracker, recipe.getChemicalInput().ingredient());
 	}
 
 	@Override

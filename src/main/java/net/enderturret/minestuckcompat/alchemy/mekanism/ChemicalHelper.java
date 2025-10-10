@@ -1,7 +1,9 @@
 package net.enderturret.minestuckcompat.alchemy.mekanism;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.jetbrains.annotations.Nullable;
@@ -10,11 +12,13 @@ import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
+import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.core.Holder;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
 
+import net.enderturret.minestuckcompat.alchemy.analysis.AnalyzingLookupTracker;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ChemicalConversionManager.ChemicalConversion;
 
 import mekanism.api.chemical.Chemical;
@@ -74,6 +78,31 @@ public final class ChemicalHelper {
 		if (conversion != null) conversion.setValue(minCon);
 
 		return minCost;
+	}
+
+	/**
+	 * Reports the specified chemical to the {@code LookupTracker}.
+	 * @param tracker The {@code LookupTracker} to report the chemical to.
+	 * @param chemical The chemical to report.
+	 */
+	public static void report(LookupTracker tracker, ChemicalIngredient chemical) {
+		final Set<Item> items = new HashSet<>();
+
+		for (Holder<Chemical> holder : chemical.getChemicalHolders()) {
+			final List<ChemicalConversion> conversions = ChemicalConversionManager.getConversions(holder);
+			if (conversions == null) continue;
+
+			for (ChemicalConversion con : conversions)
+				items.add(con.item().value());
+		}
+
+		// If the LookupTracker is for the obtainability analyzer, report the whole thing as one ingredient.
+		// (Otherwise report all of them separately so costs are looked up for them first.)
+		if (tracker instanceof AnalyzingLookupTracker analyzing)
+			analyzing.report(List.copyOf(items));
+		else
+			for (Item item : items)
+				tracker.report(item);
 	}
 
 	/**
