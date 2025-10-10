@@ -11,6 +11,7 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.withSourcesJar()
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
@@ -121,6 +122,12 @@ tasks.named('jar', Jar).configure {
     exclude '.cache'
     exclude 'net/enderturret/minestuckcompat/data/**'
     exclude 'net/enderturret/minestuckcompat/mixin/perf/small_grist_set/data/**'
+}
+
+tasks.named('sourcesJar', Jar).configure {
+    exclude '.cache'
+    exclude 'net/enderturret/minestuckcompat/data/**'
+    exclude 'data/minestuckcompat/recipe/**'
 }
 
 tasks.withType(JavaCompile).configureEach {
