@@ -27,9 +27,12 @@ record SimpleIngredient(List<Item> items) {
 	}
 
 	static SimpleIngredient of(TagKey<Item> tag) {
-		return new SimpleIngredient(BuiltInRegistries.ITEM.getTag(tag)
-				.map(named -> named.stream().map(Holder::value).toList())
-				.orElse(List.of()));
+		final var list = BuiltInRegistries.ITEM.getTag(tag)
+				.map(named -> named.stream().map(Holder::value).toList());
+
+		if (list.isEmpty() || list.get().isEmpty()) return INVALID;
+
+		return new SimpleIngredient(list.get());
 	}
 
 	static SimpleIngredient of(Ingredient ing) {

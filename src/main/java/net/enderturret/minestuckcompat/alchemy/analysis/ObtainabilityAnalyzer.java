@@ -8,7 +8,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -25,7 +24,6 @@ import com.mraof.minestuck.alchemy.recipe.RegularCombinationRecipe;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
-import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,9 +33,7 @@ import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MobBucketItem;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
@@ -240,25 +236,12 @@ public final class ObtainabilityAnalyzer {
 	}
 
 	private static List<SimpleIngredient> getInputs(Recipe<?> recipe, RecipeInterpreter interpreter) {
-		final Set<SimpleIngredient> ret = new LinkedHashSet<>();
-
-		final LookupTracker tracker = new LookupTracker() {
-			@Override
-			public void report(Item item) {
-				if (item == Items.AIR) return;
-				ret.add(SimpleIngredient.of(item));
-			}
-			@Override
-			public void report(Ingredient ingredient) {
-				if (ingredient == Ingredient.EMPTY) return;
-				ret.add(SimpleIngredient.of(ingredient));
-			}
-		};
+		final AnalyzingLookupTracker tracker = new AnalyzingLookupTracker();
 
 		interpreter.reportPreliminaryLookups(recipe, tracker);
 		if (interpreter instanceof AnalyzableRecipeInterpreter analyzable)
 			analyzable.reportCraftingStation(recipe, tracker);
 
-		return List.copyOf(ret);
+		return List.copyOf(tracker.getIngredients());
 	}
 }
