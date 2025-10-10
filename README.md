@@ -51,15 +51,22 @@ However, if certain features aren't to your liking, the `minestuckcompat-common.
 Minestuck Compat offers some optional features that can be turned on via the config.
 These features all generally aid efforts at integrating Minestuck with other mods.
 Modpack developers may find these useful for making other mods play nicely with Minestuck, and mod developers may find them useful for developing Minestuck addons.
-See the following section for details on the offered features.
+See the following sections for details on the offered features.
 
 Mod/modpack developers may also ship an `assets/yournamespace/minestuckcompat/swapping_weapons.json` file to supplement Minestuck Compat's swapping weapon list with additional such weapons. (For example, many of Alchemy Expanded's firearms.)
+
+#### Excluding items from `dumpGristlessItems` and the analyzer
+
+Minestuck Compat offers three tags for excluding items from the `dumpGristlessItems` config option and the obtainability analyzer:
+* `minestuckcompat:technical_items`, for "technical" items — items that only exist as an implementation detail (like item data holders or icon items)
+* `minestuckcompat:unobtainable_items`, for items that survival mode players cannot normally obtain
+	* `minestuckcompat:creative_items`, for items accessible exclusively to creative mode players (but excluding operator items)
 
 ## Debugging features
 
 Minestuck Compat provides a few debugging features, mainly involving Minestuck's grist cost generator. They can all be found in Minestuck Compat's config.
 
-#### dumpGristlessItems
+#### `dumpGristlessItems`
 
 This causes Minestuck Compat to dump a list of items that lack grist costs to the log.
 This is *invaluable* for finding unalchemizable things to write grist cost recipes for!
@@ -68,13 +75,13 @@ While Minestuck already has a config option to list every *ingredient* that lack
 Minestuck's option will only tell you about items that lack grist costs *that are also used in a recipe Minestuck knows about*.
 Thus, Minestuck Compat's option is more useful for the goal of assigning every item a grist cost.
 
-#### dumpUnhandledRecipeTypes
+#### `dumpUnhandledRecipeTypes`
 
 This causes Minestuck Compat to dump a list of unrecognized recipes to the log.
 Specifically, these are all the recipes that Minestuck can't process because they have no associated recipe interpreter.
 This can be useful for finding recipe types to add to the `grist_cost_generation_recipes.json` file, but in some cases it might be easier to manually assign grist costs instead (say, to avoid accidentally making vanilla items dirt cheap).
 
-#### debugDefaultInterpreterRecipeEligibility
+#### `debugDefaultInterpreterRecipeEligibility`
 
 This causes Minestuck Compat to detect recipes that have been passed to the `minestuck:default` interpreter but that cannot actually be handled by it.
 There are three conditions this option checks for:
@@ -84,7 +91,7 @@ There are three conditions this option checks for:
 
 In any of these cases, Minestuck Compat will print the offending recipe to the log, or rather its type and serializer as the recipe ID is lost at that stage.
 
-#### checkConflictingCombinationRecipes
+#### `checkConflictingCombinationRecipes`
 
 This causes Minestuck Compat to detect combination recipes (i.e. Punch Designix and Totem Lathe) that conflict with each other.
 Specifically, if any two recipes "overlap" such that a particular combination of items could result in two different outputs, Minestuck Compat will log it.
