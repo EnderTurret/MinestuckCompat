@@ -19,6 +19,7 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import net.enderturret.minestuckcompat.alchemy.mekanism.ChemicalConversionManager;
 import net.enderturret.minestuckcompat.alchemy.rechiseled.RechiseledGristCosts;
 import net.enderturret.minestuckcompat.api.init.MCInterpreterTypes;
 import net.enderturret.minestuckcompat.command.AnalyzerCommand;
@@ -44,6 +45,9 @@ public final class MinestuckCompat {
 
 		if (ModList.get().isLoaded("rechiseled"))
 			NeoForge.EVENT_BUS.register(RechiseledGristCosts.class);
+
+		if (ModList.get().isLoaded("mekanism"))
+			NeoForge.EVENT_BUS.register(ChemicalConversionManager.class);
 
 		NeoForge.EVENT_BUS.addListener(this::registerCommands);
 	}
