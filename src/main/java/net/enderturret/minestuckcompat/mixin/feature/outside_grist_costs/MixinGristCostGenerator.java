@@ -11,7 +11,10 @@ import com.mraof.minestuck.alchemy.recipe.generator.GristCostGenerator;
 
 import net.minecraft.world.item.crafting.RecipeManager;
 
+import net.neoforged.neoforge.common.NeoForge;
+
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
+import net.enderturret.minestuckcompat.api.alchemy.GenerateGristCostsEvent;
 
 @Mixin(GristCostGenerator.class)
 public abstract class MixinGristCostGenerator {
@@ -30,5 +33,15 @@ public abstract class MixinGristCostGenerator {
 		final GeneratorProcessAccess access = (GeneratorProcessAccess) minestuckcompat$process;
 		MixinHooks.generateAdditionalGristCosts(access);
 		minestuckcompat$process = null;
+	}
+
+	@Inject(at = @At("HEAD"), method = "run")
+	private static void minestuckcompat$firePreEvent(RecipeManager recipeManager, CallbackInfo ci) {
+		NeoForge.EVENT_BUS.post(new GenerateGristCostsEvent.Pre(recipeManager));
+	}
+
+	@Inject(at = @At("TAIL"), method = "run")
+	private static void minestuckcompat$firePostEvent(RecipeManager recipeManager, CallbackInfo ci) {
+		NeoForge.EVENT_BUS.post(new GenerateGristCostsEvent.Post(recipeManager));
 	}
 }

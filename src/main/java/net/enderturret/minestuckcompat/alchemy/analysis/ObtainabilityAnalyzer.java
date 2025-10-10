@@ -42,12 +42,14 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 import net.neoforged.neoforge.common.conditions.ICondition;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
+import net.enderturret.minestuckcompat.api.alchemy.GenerateGristCostsEvent;
 
 /**
  * The obtainability analyzer attempts to generate a list of unobtainable items given lists of root items and {@linkplain AnalyzedRecipe recipes}.
@@ -208,6 +210,8 @@ public final class ObtainabilityAnalyzer {
 	private Map<Item, List<AnalyzedRecipe>> buildRelevantRecipes() {
 		final Map<Item, List<AnalyzedRecipe>> ret = new HashMap<>();
 
+		NeoForge.EVENT_BUS.post(new GenerateGristCostsEvent.Pre(recipeManager));
+
 		for (RecipeHolder<?> recipe : recipeManager.getRecipes()) {
 			final RecipeInterpreter interpreter = findInterpreter(recipe.value());
 			if (interpreter == null) continue;
@@ -229,6 +233,8 @@ public final class ObtainabilityAnalyzer {
 			for (SimpleIngredient input : recipe.inputs())
 				for (Item item : input.items())
 					ret.computeIfAbsent(item, k -> new ArrayList<>()).add(recipe);
+
+		NeoForge.EVENT_BUS.post(new GenerateGristCostsEvent.Post(recipeManager));
 
 		return ret;
 	}
