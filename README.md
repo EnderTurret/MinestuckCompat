@@ -28,8 +28,8 @@ Additionally, Minestuck Compat fills out some missing grist costs and combinatio
 In particular, Minestuck Compat adds:
 * Grist costs for all vanilla content that lacks them
 * Combination recipes for pottery sherds, armor trims, banner patterns
-* Combination recipes for a few other odds and ends (e.g., sniffer egg, wind charge)
-* Combination recipes for Minestuck's wood sets (saplings, stairs, fence gates, trapdoors)
+* Combination recipes for other vanilla content
+* Combination recipes for Minestuck's wood sets (saplings, stairs, fence gates, trapdoors) among other things
 * Combination recipes for deepslate ores (ingot AND deepslate)
 * Corrected grist costs for suspicious sand and barriers (empty item tags)
 
