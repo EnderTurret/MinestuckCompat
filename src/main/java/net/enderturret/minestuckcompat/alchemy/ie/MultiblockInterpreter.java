@@ -116,7 +116,7 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 					if (tagToIeItem == null) buildTagMap();
 					final Item item = tagToIeItem.get(tag.tag().location());
 					if (item == null)
-						MinestuckCompat.LOGGER.info("Missing entry for TagOutput {}", tag.tag().location());
+						MinestuckCompat.LOGGER.warn("[Immersive Engineering] Missing entry for TagOutput {}", tag.tag().location());
 					else
 						ret.add(item);
 				}

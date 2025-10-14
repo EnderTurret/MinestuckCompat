@@ -1,7 +1,9 @@
 package net.enderturret.minestuckcompat.api.alchemy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -10,11 +12,14 @@ import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+
+import net.enderturret.minestuckcompat.alchemy.analysis.AnalyzingLookupTracker;
 
 /**
  * Utilities for calculating fluid grist costs.
@@ -98,5 +103,26 @@ public final class FluidHelper {
 	 */
 	public static void report(LookupTracker tracker, FluidStack fluid) {
 		tracker.report(fluid.getFluidType().getBucket(fluid));
+	}
+
+	/**
+	 * Reports the specified {@code FluidIngredient} to the {@code LookupTracker}.
+	 * @param tracker The {@code LookupTracker} to report the fluid to.
+	 * @param fluid The fluid to report.
+	 */
+	public static void report(LookupTracker tracker, FluidIngredient fluid) {
+		if (tracker instanceof AnalyzingLookupTracker t) {
+			final List<Item> ingredient = new ArrayList<>();
+
+			for (FluidStack stack : fluid.getStacks())
+				ingredient.add(stack.getFluidType().getBucket(stack).getItem());
+
+			t.report(ingredient);
+
+			return;
+		}
+
+		for (FluidStack stack : fluid.getStacks())
+			report(tracker, stack);
 	}
 }

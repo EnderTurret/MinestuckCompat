@@ -91,6 +91,7 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "expandedstorage", "Expanded Storage");
 		defineEnabledRecipes(builder, "framedblocks", "FramedBlocks");
 		defineEnabledRecipes(builder, "gravestone", "GraveStone Mod");
+		//defineEnabledRecipes(builder, "gtceu", "GregTech CEu");
 		defineEnabledRecipes(builder, "hostilenetworks", "Hostile Neural Networks");
 		defineEnabledRecipes(builder, "lootr", "Lootr");
 		defineEnabledRecipes(builder, "supplementaries", "Supplementaries");

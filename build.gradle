@@ -53,6 +53,8 @@ dependencies {
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}:generators"
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}:tools"
 
+    // implementation "com.gregtechceu:gtceu:${gtceu_version}"
+
     compileOnly "mezz.jei:jei-1.21.1-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-1.21.1-neoforge-api:${jei_version}"
 

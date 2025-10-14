@@ -117,6 +117,13 @@ public final class MCInterpreterTypes {
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> MEKANISM_ITEM_TO_ITEM;
 
+	// ===== GTCEu =====
+
+	/*
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> GTCEU_RECIPE;
+	*/
+
 	static {
 		SIMPLE = REGISTRY.register("simple", () -> SimpleRecipeInterpreter.CODEC);
 
@@ -157,5 +164,12 @@ public final class MCInterpreterTypes {
 			MEKANISM_ITEM_CHEMICAL_TO_ITEM = null;
 			MEKANISM_ITEM_TO_ITEM = null;
 		}
+
+		/*
+		if (ModList.get().isLoaded("gtceu")) {
+			GTCEU_RECIPE = REGISTRY.register("gtceu/recipe", () -> GTRecipeInterpreter.CODEC);
+		} else
+			GTCEU_RECIPE = null;
+		*/
 	}
 }

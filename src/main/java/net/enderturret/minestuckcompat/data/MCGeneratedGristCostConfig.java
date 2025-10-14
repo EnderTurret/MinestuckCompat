@@ -97,6 +97,40 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(IERecipeTypes.METAL_PRESS.get(), new MetalPressInterpreter(grist(RUST, 1)));
 		type(IERecipeTypes.CRUSHER.get(), new CrusherInterpreter(grist(MERCURY, 1)));
 		type(IERecipeTypes.ALLOY.get(), new AlloySmelterInterpreter(grist(TAR, 1)));
+
+		// GTCEu
+		/*
+		serializer(GTRecipeSerializers.CRAFTING_SHAPED_ENERGY_TRANSFER.get(), DefaultInterpreter.INSTANCE);
+		serializer(GTRecipeSerializers.CRAFTING_SHAPED_STRICT.get(), DefaultInterpreter.INSTANCE);
+		type(GTRecipeTypes.ALLOY_SMELTER_RECIPES, new GTRecipeInterpreter(grist(TAR, 1)));
+		type(GTRecipeTypes.ARC_FURNACE_RECIPES, new GTRecipeInterpreter(grist(TAR, 1)));
+		type(GTRecipeTypes.ASSEMBLER_RECIPES, new GTRecipeInterpreter(EMPTY));
+		type(GTRecipeTypes.ASSEMBLY_LINE_RECIPES, new GTRecipeInterpreter(EMPTY));
+		type(GTRecipeTypes.AUTOCLAVE_RECIPES, new GTRecipeInterpreter(EMPTY));
+		type(GTRecipeTypes.BENDER_RECIPES, new GTRecipeInterpreter(grist(SHALE, 1)));
+		type(GTRecipeTypes.BREWING_RECIPES, new GTRecipeInterpreter(grist(AMBER, 1)));
+		type(GTRecipeTypes.CANNER_RECIPES, new GTRecipeInterpreter(grist(RUST, 1)));
+		type(GTRecipeTypes.CENTRIFUGE_RECIPES, new GTRecipeInterpreter(grist(URANIUM, 1)));
+		type(GTRecipeTypes.CHEMICAL_BATH_RECIPES, new GTRecipeInterpreter(grist(COBALT, 1)));
+		type(GTRecipeTypes.CHEMICAL_RECIPES, new GTRecipeInterpreter(grist(CAULK, 1)));
+		type(GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES, new GTRecipeInterpreter(EMPTY));
+		type(GTRecipeTypes.COKE_OVEN_RECIPES, new GTRecipeInterpreter(grist(TAR, 4)));
+		type(GTRecipeTypes.COMPRESSOR_RECIPES, new GTRecipeInterpreter(grist(MERCURY, 1)));
+		type(GTRecipeTypes.CUTTER_RECIPES, new GTRecipeInterpreter(grist(RUST, 1)));
+		type(GTRecipeTypes.BLAST_RECIPES, new GTRecipeInterpreter(grist(TAR, 1)));
+		type(GTRecipeTypes.EXTRACTOR_RECIPES, new GTRecipeInterpreter(grist(SHALE, 1)));
+		type(GTRecipeTypes.EXTRUDER_RECIPES, new GTRecipeInterpreter(grist(SHALE, 1)));
+		type(GTRecipeTypes.FLUID_SOLIDFICATION_RECIPES, new GTRecipeInterpreter(grist(BUILD, 1)));
+		type(GTRecipeTypes.FORGE_HAMMER_RECIPES, new GTRecipeInterpreter(grist(MERCURY, 1)));
+		type(GTRecipeTypes.LARGE_CHEMICAL_RECIPES, new GTRecipeInterpreter(grist(CAULK, 2)));
+		type(GTRecipeTypes.LASER_ENGRAVER_RECIPES, new GTRecipeInterpreter(grist(RUBY, 1)));
+		type(GTRecipeTypes.LATHE_RECIPES, new GTRecipeInterpreter(grist(MERCURY, 1)));
+		type(GTRecipeTypes.MACERATOR_RECIPES, new GTRecipeInterpreter(grist(MERCURY, 1)));
+		type(GTRecipeTypes.MIXER_RECIPES, new GTRecipeInterpreter(grist(COBALT, 1)));
+		type(GTRecipeTypes.ORE_WASHER_RECIPES, new GTRecipeInterpreter(grist(COBALT, 1)));
+		type(GTRecipeTypes.PACKER_RECIPES, new GTRecipeInterpreter(grist(MERCURY, 1)));
+		type(GTRecipeTypes.WIREMILL_RECIPES, new GTRecipeInterpreter(grist(SHALE, 1)));
+		*/
 	}
 
 	@Override
