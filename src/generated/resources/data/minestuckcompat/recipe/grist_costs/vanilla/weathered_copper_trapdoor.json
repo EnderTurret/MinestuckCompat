@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:rust": 2
+  },
+  "ingredient": {
+    "item": "minecraft:weathered_copper_trapdoor"
+  },
+  "sources": [
+    "minecraft:copper_trapdoor"
+  ]
+}

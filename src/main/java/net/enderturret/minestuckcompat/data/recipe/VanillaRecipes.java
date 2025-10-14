@@ -51,10 +51,8 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		gristCost(CHIPPED_ANVIL).grist(RUST, 186).build(output);
 		gristCost(DAMAGED_ANVIL).grist(RUST, 93).build(output);
 
-		// Minestuck doesn't understand smithing recipes.
-		// I'd add an interpreter for them but then it'd (ideally) take into account the smithing template,
-		// which I think would inflate the costs significantly.
-		// Also, most smithing recipes only modify the data components, meaning there are no costs to calculate.
+		// Minestuck doesn't seem to understand smithing recipes, despite having an interpreter for them.
+		// I suspect it's some kind of circular dependency from the smithing template.
 		sourceGristCost(NETHERITE_AXE).source(DIAMOND_AXE).source(NETHERITE_INGOT).build(output);
 		sourceGristCost(NETHERITE_HOE).source(DIAMOND_HOE).source(NETHERITE_INGOT).build(output);
 		sourceGristCost(NETHERITE_PICKAXE).source(DIAMOND_PICKAXE).source(NETHERITE_INGOT).build(output);
@@ -120,6 +118,13 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		gristCost(TRIAL_KEY).grist(SHALE, 9).grist(TAR, 48).build(output);
 		sourceGristCost(OMINOUS_BOTTLE).grist(TAR, 16).source(GLASS_BOTTLE).build(output);
 		sourceGristCost(OMINOUS_TRIAL_KEY).source(OMINOUS_BOTTLE).source(TRIAL_KEY).build(output);
+
+		sourceGristCost(EXPOSED_COPPER_DOOR).grist(RUST, 1).source(COPPER_DOOR).build(output);
+		sourceGristCost(WEATHERED_COPPER_DOOR).grist(RUST, 2).source(COPPER_DOOR).build(output);
+		sourceGristCost(OXIDIZED_COPPER_DOOR).grist(RUST, 3).source(COPPER_DOOR).build(output);
+		sourceGristCost(EXPOSED_COPPER_TRAPDOOR).grist(RUST, 1).source(COPPER_TRAPDOOR).build(output);
+		sourceGristCost(WEATHERED_COPPER_TRAPDOOR).grist(RUST, 2).source(COPPER_TRAPDOOR).build(output);
+		sourceGristCost(OXIDIZED_COPPER_TRAPDOOR).grist(RUST, 3).source(COPPER_TRAPDOOR).build(output);
 
 		// Balm adds some of these to the c:stones tag, which gives them explicit grist costs.
 		gristCost(INFESTED_STONE).grist(BUILD, 2).build(output.withConditions(not(modLoaded("balm"))));
