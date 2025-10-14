@@ -61,6 +61,9 @@ public final class MCDatagen {
 
 		if (ModList.get().isLoaded("mekanism"))
 			e.getGenerator().addProvider(server, wrap(lookup, MekanismRecipes::new, "Mekanism Recipes"));
+
+		// Set indent back to 2 in case some other mod (GTCEu) messes with it.
+		DataProvider.INDENT_WIDTH.set(2);
 	}
 
 	private static Factory<WrappedDataProvider> wrap(CompletableFuture<HolderLookup.Provider> lookup, BiFunction<PackOutput, CompletableFuture<HolderLookup.Provider>, DataProvider> provider, String name) {
