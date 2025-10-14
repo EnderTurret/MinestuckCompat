@@ -21,6 +21,7 @@ import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 
@@ -88,12 +89,27 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	@Override
 	protected List<Item> getOutputItemsTyped(SequencedAssemblyRecipe recipe) {
 		final Item result = recipe.getResultItem(null).getItem();
+		final ItemStack transitionalItem = recipe.getTransitionalItem();
 
 		// If the input is the transitional item, avoid generating a cost for the transitional item.
-		if (recipe.getIngredient().getItems().length == 1 && recipe.getIngredient().test(recipe.getTransitionalItem()))
+		// Query the ingredient directly so we don't accidently resolve tags too early.
+		if (recipe.getIngredient().getValues().length == 1 && uncachedTest(recipe.getIngredient(), transitionalItem))
 			return List.of(result);
 
-		return List.of(result, recipe.getTransitionalItem().getItem());
+		return List.of(result, transitionalItem.getItem());
+	}
+
+	private static boolean uncachedTest(Ingredient ingredient, ItemStack input) {
+		// This may or may not be safe.
+		if (ingredient.isCustom()) return ingredient.test(input);
+
+		for (Ingredient.Value val : ingredient.getValues())
+			if (val instanceof Ingredient.ItemValue item && item.item().is(input.getItem()))
+				return true;
+			else if (val instanceof Ingredient.TagValue tag && input.is(tag.tag()))
+				return true;
+
+		return false;
 	}
 
 	@Override
