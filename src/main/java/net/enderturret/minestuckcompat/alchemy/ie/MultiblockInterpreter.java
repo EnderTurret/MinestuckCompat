@@ -155,17 +155,25 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 		tagToIeItem.put(c("wires/steel"), IEItems.Ingredients.WIRE_STEEL.asItem());
 
 		if (ModList.get().isLoaded("mekanism")) {
-			tagToIeItem.put(c("dusts/osmium"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "dust_osmium")));
-			tagToIeItem.put(c("dusts/tin"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "dust_tin")));
-			tagToIeItem.put(c("dusts/bronze"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "dust_bronze")));
-			tagToIeItem.put(c("dusts/coal"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "dust_coal")));
-			tagToIeItem.put(c("gems/fluorite"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "fluorite")));
-			tagToIeItem.put(c("ingots/bronze"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("mekanism", "ingot_bronze")));
+			tagToIeItem.put(c("dusts/osmium"), BuiltInRegistries.ITEM.get(mek("dust_osmium")));
+			tagToIeItem.put(c("dusts/tin"), BuiltInRegistries.ITEM.get(mek("dust_tin")));
+			tagToIeItem.put(c("dusts/bronze"), BuiltInRegistries.ITEM.get(mek("dust_bronze")));
+			tagToIeItem.put(c("dusts/coal"), BuiltInRegistries.ITEM.get(mek("dust_coal")));
+			tagToIeItem.put(c("gems/fluorite"), BuiltInRegistries.ITEM.get(mek("fluorite")));
+			tagToIeItem.put(c("ingots/bronze"), BuiltInRegistries.ITEM.get(mek("ingot_bronze")));
 		}
 		if (ModList.get().isLoaded("create")) {
-			tagToIeItem.put(c("ingots/brass"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("create", "brass_ingot")));
-			tagToIeItem.put(c("plates/brass"), BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("create", "brass_plate")));
+			tagToIeItem.put(c("ingots/brass"), BuiltInRegistries.ITEM.get(create("brass_ingot")));
+			tagToIeItem.put(c("plates/brass"), BuiltInRegistries.ITEM.get(create("brass_plate")));
 		}
+	}
+
+	private static ResourceLocation mek(String path) {
+		return ResourceLocation.fromNamespaceAndPath("mekanism", path);
+	}
+
+	private static ResourceLocation create(String path) {
+		return ResourceLocation.fromNamespaceAndPath("create", path);
 	}
 
 	private static ResourceLocation c(String path) {
