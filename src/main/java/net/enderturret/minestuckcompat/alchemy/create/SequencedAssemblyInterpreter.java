@@ -87,6 +87,10 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 
 	@Override
 	protected List<Item> getOutputItemsTyped(SequencedAssemblyRecipe recipe) {
+		// If the input is the transitional item, avoid generating a cost for the transitional item.
+		if (recipe.getIngredient().test(recipe.getTransitionalItem()))
+			return List.of(recipe.getResultItem(null).getItem());
+
 		return List.of(recipe.getResultItem(null).getItem(), recipe.getTransitionalItem().getItem());
 	}
 
