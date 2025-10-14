@@ -85,6 +85,7 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(AllRecipeTypes.MIXING.getType(), new FluidProcessingInterpreter(EMPTY, grist(TAR, 1)));
 		type(AllRecipeTypes.COMPACTING.getType(), new FluidProcessingInterpreter(grist(MERCURY, 1), grist(TAR, 1)));
 		type(AllRecipeTypes.FILLING.getType(), new FluidProcessingInterpreter(EMPTY, EMPTY));
+		type(AllRecipeTypes.CUTTING.getType(), new SimpleRecipeInterpreter(false, grist(RUST, 1)));
 
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());
