@@ -15,6 +15,7 @@ import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
+import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
@@ -38,12 +39,14 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::addedCost),
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("deploy_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::deployCost),
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("press_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::pressCost),
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("fill_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::fillCost)
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("fill_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::fillCost),
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("cut_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::cutCost)
 			).apply(instance, SequencedAssemblyInterpreter::new));
 
 	private final GristSet.Immutable deployCost;
 	private final GristSet.Immutable pressCost;
 	private final GristSet.Immutable fillCost;
+	private final GristSet.Immutable cutCost;
 
 	/**
 	 * Constructs a new {@code SequencedAssemblyInterpreter}.
@@ -51,12 +54,14 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	 * @param deployCost The grist cost added for a deploy operation.
 	 * @param pressCost The grist cost added for a press operation.
 	 * @param fillCost The grist cost added for a fill operation.
+	 * @param cutCost The grist cost added for a cut operation.
 	 */
-	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost, GristSet.Immutable fillCost) {
+	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost, GristSet.Immutable fillCost, GristSet.Immutable cutCost) {
 		super(SequencedAssemblyRecipe.class, addedCost);
 		this.deployCost = deployCost;
 		this.pressCost = pressCost;
 		this.fillCost = fillCost;
+		this.cutCost = cutCost;
 	}
 
 	public GristSet.Immutable deployCost() {
@@ -69,6 +74,10 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 
 	public GristSet.Immutable fillCost() {
 		return fillCost;
+	}
+
+	public GristSet.Immutable cutCost() {
+		return cutCost;
 	}
 
 	@Override
@@ -126,6 +135,8 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 					tracker.report(AllBlocks.MECHANICAL_PRESS.asItem());
 				else if (seq.getRecipe() instanceof FillingRecipe)
 					tracker.report(AllBlocks.SPOUT.asItem());
+				else if (seq.getRecipe() instanceof CuttingRecipe)
+					tracker.report(AllBlocks.MECHANICAL_SAW.asItem());
 	}
 
 	private boolean handleSequenceRecipe(SequencedAssemblyRecipe r, Recipe<?> seq, MutableGristSet sequenceCost, Item output, GeneratorCallback callback) {
@@ -137,9 +148,11 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 						return false;
 		}
 
-		else if (seq instanceof PressingRecipe r2) {
+		else if (seq instanceof PressingRecipe)
 			sequenceCost.add(pressCost);
-		}
+
+		else if (seq instanceof CuttingRecipe)
+			sequenceCost.add(cutCost);
 
 		else if (seq instanceof FillingRecipe r2) {
 			sequenceCost.add(fillCost);
