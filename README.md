@@ -221,7 +221,24 @@ This can be used for Mekanism's:
 * Enriching recipes (in the Enrichment Chamber)
 * Smelting recipes
 
-## Conditional Grist Cost Generation Recipes
+### Minestuck Compat APIs for recipe interpreters
+
+For modders implementing their own recipe interpreters, Minestuck Compat provides some useful APIs for doing just that.
+
+First, Minestuck Compat provides the following interpreter implementations:
+* `AbstractRecipeInterpreter`, which behaves like an extensible `DefaultRecipeInterpreter`
+* `AbstractCostAddingRecipeInterpreter`, which is the above plus an `added_cost` field built-in
+* `AbstractCostAddingRecipeInterpreter.Typed<T>`, which is the above but typed to a specific recipe class
+
+One can also implement `AnalyzableRecipeInterpreter` on their recipe interpreter for better obtainability analyzer support.
+
+Minestuck Compat also provides a `FluidHelper` class which contains helpers for working with fluid grist costs. (Internally it relies on bucket costs, so fluids that lack buckets and fluids whose buckets' costs aren't known won't work.)
+
+There are also `GenerateGristCostsEvent.Pre` and `Post`, which can be used to set up and release state for recipe interpreters — Minestuck Compat uses them to calculate Mekanism chemical grist costs, for example. The events are fired before and after `GristCostGenerator.run()`, respectively.
+
+Finally, there's also `RegisterGristCostProvidersEvent`, which allows registering effectively recipe interpreters that aren't bound to recipes. For example, Minestuck Compat uses the event to register grist costs for Rechiseled's blocks (as its chiseling recipes aren't `RecipeManager` recipes).
+
+## Conditional grist cost generation recipes
 
 Minestuck Compat also enhances Minestuck's `grist_cost_generation_recipes.json` with support for [NeoForge's conditions](https://docs.neoforged.net/docs/1.21.1/resources/server/conditions).
 This allows — among other things — loading "source entries" only when the requisite mod(s) are present.
