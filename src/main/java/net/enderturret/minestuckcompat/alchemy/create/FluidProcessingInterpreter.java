@@ -80,6 +80,12 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 	}
 
 	@Override
+	@Nullable
+	protected MutableGristSet ingredientCost(Recipe<?> recipe, GeneratorCallback callback) {
+		return MutableGristSet.newDefault();
+	}
+
+	@Override
 	protected void reportPreliminaryLookupsTyped(StandardProcessingRecipe<?> recipe, LookupTracker tracker) {
 		for (Ingredient ing : recipe.getIngredients())
 			tracker.report(ing);
