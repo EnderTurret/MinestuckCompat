@@ -115,7 +115,8 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	@Override
 	@Nullable
 	protected MutableGristSet generateCost(MutableGristSet totalCost, SequencedAssemblyRecipe recipe, Item output, GeneratorCallback callback) {
-		account(totalCost, callback, recipe.getIngredient());
+		if (!account(totalCost, callback, recipe.getIngredient()))
+			return null;
 
 		// If we're checking the incomplete item, stop here.
 		if (output == recipe.getTransitionalItem().getItem()) return totalCost;
