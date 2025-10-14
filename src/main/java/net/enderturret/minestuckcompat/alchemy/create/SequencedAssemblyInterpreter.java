@@ -37,22 +37,26 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	public static final MapCodec<SequencedAssemblyInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("added_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::addedCost),
 			GristSet.Codecs.MAP_CODEC.optionalFieldOf("deploy_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::deployCost),
-			GristSet.Codecs.MAP_CODEC.optionalFieldOf("press_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::pressCost)
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("press_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::pressCost),
+			GristSet.Codecs.MAP_CODEC.optionalFieldOf("fill_cost", GristSet.EMPTY).forGetter(SequencedAssemblyInterpreter::fillCost)
 			).apply(instance, SequencedAssemblyInterpreter::new));
 
 	private final GristSet.Immutable deployCost;
 	private final GristSet.Immutable pressCost;
+	private final GristSet.Immutable fillCost;
 
 	/**
 	 * Constructs a new {@code SequencedAssemblyInterpreter}.
 	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
 	 * @param deployCost The grist cost added for a deploy operation.
 	 * @param pressCost The grist cost added for a press operation.
+	 * @param fillCost The grist cost added for a fill operation.
 	 */
-	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost) {
+	public SequencedAssemblyInterpreter(GristSet.Immutable addedCost, GristSet.Immutable deployCost, GristSet.Immutable pressCost, GristSet.Immutable fillCost) {
 		super(SequencedAssemblyRecipe.class, addedCost);
 		this.deployCost = deployCost;
 		this.pressCost = pressCost;
+		this.fillCost = fillCost;
 	}
 
 	public GristSet.Immutable deployCost() {
@@ -61,6 +65,10 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 
 	public GristSet.Immutable pressCost() {
 		return pressCost;
+	}
+
+	public GristSet.Immutable fillCost() {
+		return fillCost;
 	}
 
 	@Override
@@ -134,6 +142,7 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 		}
 
 		else if (seq instanceof FillingRecipe r2) {
+			sequenceCost.add(fillCost);
 			final FluidIngredient fluid = r2.getRequiredFluid();
 			if (!FluidHelper.account(sequenceCost, callback, fluid.getMatchingFluidStacks(), fluid.getRequiredAmount()))
 				return false;

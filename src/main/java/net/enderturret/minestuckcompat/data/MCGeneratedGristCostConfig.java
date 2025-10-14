@@ -76,7 +76,7 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(AllRecipeTypes.PRESSING.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.MECHANICAL_CRAFTING.getType(), new SimpleRecipeInterpreter(false));
 		type(AllRecipeTypes.SANDPAPER_POLISHING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
-		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(EMPTY, grist(BUILD, 1), grist(MERCURY, 1)));
+		type(AllRecipeTypes.SEQUENCED_ASSEMBLY.getType(), new SequencedAssemblyInterpreter(EMPTY, grist(BUILD, 1), grist(MERCURY, 1), EMPTY));
 		type(AllRecipeTypes.HAUNTING.getType(), new SimpleRecipeInterpreter(false, grist(SHALE, 1)));
 		type(AllRecipeTypes.SPLASHING.getType(), new SimpleRecipeInterpreter(false, grist(COBALT, 1)));
 		type(AllRecipeTypes.MILLING.getType(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
