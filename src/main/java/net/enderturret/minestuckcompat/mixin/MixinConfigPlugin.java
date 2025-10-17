@@ -7,6 +7,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.loading.LoadingModList;
 
 public final class MixinConfigPlugin implements IMixinConfigPlugin {
@@ -19,6 +20,11 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 		if (mixinClassName.contains("jei_fixes"))
 			return LoadingModList.get().getModFileById("jei") != null;
 
+		if (mixinClassName.contains("data.")) {
+			if (mixinClassName.contains("extradelight"))
+				return LoadingModList.get().getModFileById("extradelight") != null;
+		}
+
 		return true;
 	}
 
@@ -28,8 +34,10 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 			return List.of(
 					"perf.small_grist_set.data.MixinContainerGristCostBuilder",
 					"perf.small_grist_set.data.MixinGristCostRecipeBuilder",
-					"perf.small_grist_set.data.MixinSourceGristCostBuilder"
+					"perf.small_grist_set.data.MixinSourceGristCostBuilder",
+					"data.extradelight.MixinDataGen"
 					);
+
 		return null;
 	}
 

@@ -48,6 +48,7 @@ dependencies {
     implementation "maven.modrinth:biomes-o-plenty:${biomesoplenty_version}"
     implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
     implementation "maven.modrinth:immersiveengineering:${immersiveengineering_version}"
+    implementation "maven.modrinth:extradelight:${extradelight_version}"
 
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}"
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}:generators"
