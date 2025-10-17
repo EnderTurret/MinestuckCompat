@@ -38,6 +38,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 
@@ -114,15 +115,18 @@ public final class MixinHooks {
 	public static Predicate<Item> getUnobtainableItemPredicate() {
 		final TagKey<Item> technicalItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "technical_items"));
 		final TagKey<Item> unobtainableItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "unobtainable_items"));
+		final TagKey<Item> extradelightButcherItemsTag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "extradelight_butchercraft_required"));
 
 		final var technicalItems = BuiltInRegistries.ITEM.getTag(technicalItemsTag).orElseThrow();
 		final var unobtainableItems = BuiltInRegistries.ITEM.getTag(unobtainableItemsTag).orElseThrow();
+		final var extradelightButcherItems = ModList.get().isLoaded("extradelight") && !ModList.get().isLoaded("butchercraft") ? BuiltInRegistries.ITEM.getTag(extradelightButcherItemsTag).orElseThrow() : null;
 
 		return item -> {
 			if (item instanceof GameMasterBlockItem || item instanceof SpawnEggItem) return true;
 
 			if (technicalItems.contains(item.builtInRegistryHolder())) return true;
 			if (unobtainableItems.contains(item.builtInRegistryHolder())) return true;
+			if (extradelightButcherItems != null && extradelightButcherItems.contains(item.builtInRegistryHolder())) return true;
 
 			return false;
 		};
