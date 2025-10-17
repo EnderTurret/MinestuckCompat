@@ -89,8 +89,9 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 	protected void reportPreliminaryLookupsTyped(StandardProcessingRecipe<?> recipe, LookupTracker tracker) {
 		for (Ingredient ing : recipe.getIngredients())
 			tracker.report(ing);
+
 		for (FluidIngredient ing : recipe.getFluidIngredients())
-			FluidHelper.report(tracker, ing.getMatchingFluidStacks().get(0));
+			FluidHelper.report(tracker, ing.getMatchingFluidStacks());
 	}
 
 	@Override

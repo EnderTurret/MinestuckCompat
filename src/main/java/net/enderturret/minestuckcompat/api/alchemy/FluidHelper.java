@@ -111,10 +111,19 @@ public final class FluidHelper {
 	 * @param fluid The fluid to report.
 	 */
 	public static void report(LookupTracker tracker, FluidIngredient fluid) {
+		report(tracker, Arrays.asList(fluid.getStacks()));
+	}
+
+	/**
+	 * Reports the specified fluid ingredient to the {@code LookupTracker}.
+	 * @param tracker The {@code LookupTracker} to report the fluid to.
+	 * @param fluid The fluids to report as a single ingredient.
+	 */
+	public static void report(LookupTracker tracker, Collection<FluidStack> fluid) {
 		if (tracker instanceof AnalyzingLookupTracker t) {
 			final List<Item> ingredient = new ArrayList<>();
 
-			for (FluidStack stack : fluid.getStacks())
+			for (FluidStack stack : fluid)
 				ingredient.add(stack.getFluidType().getBucket(stack).getItem());
 
 			t.report(ingredient);
@@ -122,7 +131,7 @@ public final class FluidHelper {
 			return;
 		}
 
-		for (FluidStack stack : fluid.getStacks())
+		for (FluidStack stack : fluid)
 			report(tracker, stack);
 	}
 }
