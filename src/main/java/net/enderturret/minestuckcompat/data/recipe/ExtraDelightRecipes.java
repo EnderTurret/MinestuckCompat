@@ -147,7 +147,7 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		cake(output, MSItems.COLD_CAKE, Items.BLUE_ICE);
 		cake(output, MSItems.RED_CAKE, Items.MELON_SLICE);
 		cake(output, MSItems.HOT_CAKE, Items.LAVA_BUCKET);
-		cake(output, MSItems.FUCHSIA_CAKE, Ingredient.of(ItemTags.FISHES), Ingredient.of(ItemTags.FISHES));
+		cake(output, MSItems.FUCHSIA_CAKE, Ingredient.of(Items.TRIDENT), Ingredient.of(ItemTags.FISHES));
 		cake(output, MSItems.NEGATIVE_CAKE, Items.FERMENTED_SPIDER_EYE);
 		cake(output, MSItems.CARROT_CAKE, Items.CARROT);
 		cake(output, MSItems.CHOCOLATEY_CAKE, MSItems.CHOCOLATE_BEETLE);

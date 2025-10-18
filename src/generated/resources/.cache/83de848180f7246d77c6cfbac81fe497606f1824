@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-18T01:39:51.001737812	ExtraDelight Recipes
+// 1.21.1	2025-10-18T01:49:20.51636604	ExtraDelight Recipes
 820c4fd4f1b3225b39661567b7ddee587f7f1a15 data/minestuckcompat/recipe/combinations/extradelight/apple_sapling.json
 c0f24ef9ceae032d113eb90e8016e9159b3c83db data/minestuckcompat/recipe/combinations/extradelight/apple_sapling_from_saplings.json
 6ab3a02be29a1856986cf62b61799fc514bd9784 data/minestuckcompat/recipe/combinations/extradelight/apple_sapling_from_stick.json
@@ -39,7 +39,7 @@ b0590122bf3ecbb17e6f0e659462878e2734a4b4 data/minestuckcompat/recipe/extradeligh
 735c012a9708786c7ed0b3162ce08690163e2705 data/minestuckcompat/recipe/extradelight/cooking/oven/carrot_cake.json
 1035eb4f76baba249657c228a1cef43b311a2fd9 data/minestuckcompat/recipe/extradelight/cooking/oven/chocolatey_cake.json
 1feba82c6c3e0e6bdcf0ec1cd2eb9507ac70709d data/minestuckcompat/recipe/extradelight/cooking/oven/cold_cake.json
-704bf4ac7f9223507bb0ef3d29cfa92709265f10 data/minestuckcompat/recipe/extradelight/cooking/oven/fuchsia_cake.json
+f5f45c43dc607d34b552e0d95e2020df84598a69 data/minestuckcompat/recipe/extradelight/cooking/oven/fuchsia_cake.json
 580fbb94d88cb79ab1ae736ab0f858fce77cf4d1 data/minestuckcompat/recipe/extradelight/cooking/oven/hot_cake.json
 bf8891337d0f0e4d0aab46e4d21b2cfdaf55259d data/minestuckcompat/recipe/extradelight/cooking/oven/moon_cake.json
 89d0cc36c7a1424580c1420b51714f4039b723c4 data/minestuckcompat/recipe/extradelight/cooking/oven/negative_cake.json
