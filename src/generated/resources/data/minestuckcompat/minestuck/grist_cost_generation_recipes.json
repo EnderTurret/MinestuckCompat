@@ -2,10 +2,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -20,10 +16,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
@@ -40,10 +32,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -58,10 +46,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
@@ -78,10 +62,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -97,10 +77,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -115,10 +91,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
@@ -138,10 +110,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanism"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -160,10 +128,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "mekanismtools"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "mekanism"
       }
@@ -178,10 +142,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "ae2"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "ae2"
@@ -201,10 +161,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "ae2"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "ae2"
       }
@@ -223,10 +179,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -242,10 +194,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -263,10 +211,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -282,10 +226,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -305,10 +245,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -334,10 +270,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -356,10 +288,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -380,10 +308,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -402,10 +326,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -426,10 +346,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -449,10 +365,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -470,10 +382,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -496,10 +404,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "create"
       }
@@ -514,10 +418,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "create"
@@ -538,10 +438,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "farmersdelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "farmersdelight"
       }
@@ -556,10 +452,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "farmersdelight"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "farmersdelight"
@@ -579,10 +471,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
       }
@@ -597,10 +485,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
@@ -617,10 +501,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
       }
@@ -635,10 +515,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
@@ -658,10 +534,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
       }
@@ -679,10 +551,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "immersiveengineering"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "immersiveengineering"
@@ -702,10 +570,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
       }
@@ -723,10 +587,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
@@ -747,10 +607,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
       }
@@ -769,10 +625,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
@@ -793,10 +645,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
       }
@@ -814,10 +662,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
@@ -837,10 +681,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
       }
@@ -855,10 +695,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
@@ -879,10 +715,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "extradelight"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "extradelight"
       }
@@ -898,10 +730,6 @@
   {
     "neoforge:conditions": [
       {
-        "type": "neoforge:mod_loaded",
-        "modid": "buildersaddition2"
-      },
-      {
         "type": "minestuckcompat:config",
         "modid": "buildersaddition2"
       }
@@ -916,10 +744,6 @@
   },
   {
     "neoforge:conditions": [
-      {
-        "type": "neoforge:mod_loaded",
-        "modid": "dankstorage"
-      },
       {
         "type": "minestuckcompat:config",
         "modid": "dankstorage"

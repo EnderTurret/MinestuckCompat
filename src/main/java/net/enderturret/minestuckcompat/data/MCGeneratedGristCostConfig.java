@@ -204,13 +204,6 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 
 		{
 			final JsonObject condition = new JsonObject();
-			condition.addProperty("type", "neoforge:mod_loaded");
-			condition.addProperty("modid", modId);
-			neoforgeConditions.add(condition);
-		}
-
-		{
-			final JsonObject condition = new JsonObject();
 			condition.addProperty("type", "minestuckcompat:config");
 			condition.addProperty("modid", "mekanismtools".equals(modId) ? "mekanism" : modId);
 			neoforgeConditions.add(condition);
