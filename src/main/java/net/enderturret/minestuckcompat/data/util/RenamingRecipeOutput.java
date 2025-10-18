@@ -30,8 +30,14 @@ public final class RenamingRecipeOutput implements RecipeOutput {
 	private ResourceLocation rename(ResourceLocation input) {
 		String path = input.getPath();
 
-		if (prefix != null)
-			path = path.contains("grist_costs") ? path.replace("grist_costs/", "grist_costs/" + prefix + "/") : path.replace("combinations/", "combinations/" + prefix + "/");
+		if (prefix != null) {
+			if (path.contains("grist_costs"))
+				path = path.replace("grist_costs/", "grist_costs/" + prefix + "/");
+			else if (path.contains("combinations"))
+				path = path.replace("combinations/", "combinations/" + prefix + "/");
+			else if (path.contains("cooking/oven"))
+				path = path.replace("cooking/oven/", prefix + "/cooking/oven/");
+		}
 
 		return ResourceLocation.fromNamespaceAndPath(modId, path);
 	}

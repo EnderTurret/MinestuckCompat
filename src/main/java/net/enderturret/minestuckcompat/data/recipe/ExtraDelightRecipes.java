@@ -7,14 +7,21 @@ import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
+import com.lance5057.extradelight.ExtraDelightTags;
+import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.modules.SummerCitrus;
+import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 
 import net.enderturret.minestuckcompat.ConfigCondition;
 import net.enderturret.minestuckcompat.MinestuckCompat;
@@ -130,5 +137,41 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		combination(SummerCitrus.LIME_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.LIME).build(output);
 		combination(SummerCitrus.ORANGE_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.ORANGE).build(output);
 		combination(SummerCitrus.GRAPEFRUIT_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.GRAPEFRUIT).build(output);
+
+		//
+		// Oven Recipes
+		//
+
+		cake(output, MSItems.APPLE_CAKE, Items.APPLE);
+		cake(output, MSItems.BLUE_CAKE, MSItems.GLOWING_MUSHROOM);
+		cake(output, MSItems.COLD_CAKE, Items.BLUE_ICE);
+		cake(output, MSItems.RED_CAKE, Items.MELON_SLICE);
+		cake(output, MSItems.HOT_CAKE, Items.LAVA_BUCKET);
+		cake(output, MSItems.FUCHSIA_CAKE, Ingredient.of(ItemTags.FISHES), Ingredient.of(ItemTags.FISHES));
+		cake(output, MSItems.NEGATIVE_CAKE, Items.FERMENTED_SPIDER_EYE);
+		cake(output, MSItems.CARROT_CAKE, Items.CARROT);
+		cake(output, MSItems.CHOCOLATEY_CAKE, MSItems.CHOCOLATE_BEETLE);
+		cake(output, MSItems.MOON_CAKE, Ingredient.of(MSItems.SBURB_CODE), Ingredient.of(MSItems.GRIMOIRE));
+
+		oven(MSItems.REVERSE_CAKE, SQUARE_PAN, false)
+		.addIngredient(Items.EGG).addIngredient(ExtraDelightTags.SWEETENER, 2)
+		.addIngredient(c("foods/milk"), 3).addIngredient(c("flour"), 3)
+		.save(output, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, "reverse_cake"));
+	}
+
+	private static void cake(RecipeOutput recipeOutput, ItemLike cake, ItemLike special) {
+		cake(recipeOutput, cake, Ingredient.of(special), Ingredient.of(special));
+	}
+
+	@SuppressWarnings("deprecation")
+	private static void cake(RecipeOutput recipeOutput, ItemLike cake, Ingredient special1, Ingredient special2) {
+		oven(cake, SQUARE_PAN, false)
+		.addIngredient(c("flour"), 3).addIngredient(special1).addIngredient(c("foods/milk")).addIngredient(special2)
+		.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.EGG).addIngredient(ExtraDelightTags.SWEETENER)
+		.save(recipeOutput, ResourceLocation.fromNamespaceAndPath(MinestuckCompat.MOD_ID, cake.asItem().builtInRegistryHolder().getKey().location().getPath()));
+	}
+
+	private static OvenRecipeBuilder oven(ItemLike output, ItemLike container, boolean consumeContainer) {
+		return OvenRecipeBuilder.OvenRecipe(new ItemStack(output), 800, 1, new ItemStack(container), consumeContainer);
 	}
 }
