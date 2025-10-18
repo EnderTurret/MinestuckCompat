@@ -27,6 +27,7 @@ import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.farmersdelight.CuttingBoardInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.IEShapedInterpreter;
@@ -89,7 +90,7 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 
 		// Farmers Delight
 		type(ModRecipeTypes.COOKING.get());
-		type(ModRecipeTypes.CUTTING.get(), new SimpleRecipeInterpreter(false, grist(RUST, 1)));
+		type(ModRecipeTypes.CUTTING.get(), new CuttingBoardInterpreter(grist(RUST, 1)));
 
 		// Immersive Engineering
 		type(IERecipeTypes.BLUEPRINT.get(), new MultiblockInterpreter(EMPTY));

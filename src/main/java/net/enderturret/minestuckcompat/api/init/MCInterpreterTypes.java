@@ -17,6 +17,7 @@ import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.farmersdelight.CuttingBoardInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.IEShapedInterpreter;
@@ -70,6 +71,14 @@ public final class MCInterpreterTypes {
 	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
+
+	// ===== Farmers Delight =====
+
+	/**
+	 * The codec for {@link CuttingBoardInterpreter}. Will be {@code null} if Farmers Delight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> FARMERSDELIGHT_CUTTING_BOARD;
 
 	// ===== Immersive Engineering =====
 
@@ -142,6 +151,11 @@ public final class MCInterpreterTypes {
 			CREATE_FLUID_PROCESSING = null;
 			CREATE_SEQUENCED_ASSEMBLY = null;
 		}
+
+		if (ModList.get().isLoaded("farmersdelight"))
+			FARMERSDELIGHT_CUTTING_BOARD = REGISTRY.register("farmersdelight/cutting_board", () -> CuttingBoardInterpreter.CODEC);
+		else
+			FARMERSDELIGHT_CUTTING_BOARD = null;
 
 		if (ModList.get().isLoaded("immersiveengineering")) {
 			IE_MULTIBLOCK = REGISTRY.register("immersiveengineering/multiblock", () -> MultiblockInterpreter.CODEC);
