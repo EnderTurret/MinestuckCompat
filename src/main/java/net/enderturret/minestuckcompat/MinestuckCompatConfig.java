@@ -25,6 +25,7 @@ public final class MinestuckCompatConfig {
 		COMMON_INSTANCE = pair.getLeft();
 	}
 
+	public final BooleanValue useExtraStuckInterpreters;
 	public final BooleanValue dumpGristlessItems;
 	public final BooleanValue dumpUnhandledRecipeTypes;
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
@@ -36,6 +37,12 @@ public final class MinestuckCompatConfig {
 
 	private MinestuckCompatConfig(ModConfigSpec.Builder builder) {
 		builder.comment("Settings related to grist costs.").push("grist");
+
+		useExtraStuckInterpreters = builder.comment(
+				"By default, when ExtraStuck is installed Minestuck Compat disables their interpreters in favor of its own.",
+				"Turning this config option on will make Minestuck Compat disable its overlapping interpreters and allow",
+				"ExtraStuck's interpreters to load."
+				).define("useExtraStuckInterpreters", false);
 
 		dumpGristlessItems = builder.comment(
 				"Whether or not to print a list of all items that lack grist costs to the log.",

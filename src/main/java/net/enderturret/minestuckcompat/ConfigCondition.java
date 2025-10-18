@@ -1,5 +1,7 @@
 package net.enderturret.minestuckcompat;
 
+import static net.enderturret.minestuckcompat.MinestuckCompatConfig.common;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -24,8 +26,10 @@ public record ConfigCondition(String option, String modId) implements ICondition
 
 	@Override
 	public boolean test(IContext context) {
+		final ModList ml = ModList.get();
 		return switch (option) {
-			case "" -> ModList.get().isLoaded(modId) && MinestuckCompatConfig.common().isModEnabled(modId);
+			case "" -> ml.isLoaded(modId) && common().isModEnabled(modId);
+			case "useExtraStuckInterpreters" -> ml.isLoaded("extrastuck") && common().useExtraStuckInterpreters.getAsBoolean() && ml.isLoaded(modId);
 			default -> {
 				MinestuckCompat.LOGGER.warn("Unknown config option: {}", option);
 				yield false;
