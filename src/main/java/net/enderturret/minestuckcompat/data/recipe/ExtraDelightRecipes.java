@@ -151,7 +151,7 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		cake(output, MSItems.NEGATIVE_CAKE, Items.FERMENTED_SPIDER_EYE);
 		cake(output, MSItems.CARROT_CAKE, Items.CARROT);
 		cake(output, MSItems.CHOCOLATEY_CAKE, MSItems.CHOCOLATE_BEETLE);
-		cake(output, MSItems.MOON_CAKE, Ingredient.of(MSItems.SBURB_CODE), Ingredient.of(MSItems.GRIMOIRE));
+		cake(output, MSItems.MOON_CAKE, Ingredient.of(FROSTING_YELLOW), Ingredient.of(FROSTING_PURPLE));
 
 		oven(MSItems.REVERSE_CAKE, SQUARE_PAN, false)
 		.addIngredient(Items.EGG).addIngredient(ExtraDelightTags.SWEETENER, 2)
