@@ -37,8 +37,9 @@ public final class OvenInterpreter extends AbstractCostAddingRecipeInterpreter {
 	@Nullable
 	protected MutableGristSet ingredientCost(Recipe<?> recipe, GeneratorCallback callback) {
 		final MutableGristSet ret = super.ingredientCost(recipe, callback);
+		if (ret == null) return null;
 
-		if (recipe instanceof OvenRecipe r && !account(ret, callback, r.getOutputContainer().getItem()))
+		if (recipe instanceof OvenRecipe r && !r.getOutputContainer().isEmpty() && !account(ret, callback, r.getOutputContainer().getItem()))
 			return null;
 
 		return ret;

@@ -23,6 +23,8 @@ import net.minecraft.world.level.block.Block;
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
+import vectorwing.farmersdelight.common.block.PieBlock;
+
 public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<FeastRecipe> {
 
 	public static final MapCodec<FeastInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
@@ -75,6 +77,8 @@ public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.
 				result = feast.getMaxServings();
 			else if (block instanceof RecipeFondueFeastBlock feast)
 				result = feast.getMaxServings();
+			else if (block instanceof PieBlock pie)
+				result = pie.getMaxBites();
 			else {
 				MinestuckCompat.LOGGER.warn("[ExtraDelight] Unknown feast block type {}", block.getClass());
 				result = 1;
