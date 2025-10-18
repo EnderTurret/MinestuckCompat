@@ -20,27 +20,27 @@ import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInter
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 
+import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
 import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 
 /**
- * A recipe interpreter intended for Farmers Delight's {@linkplain ModRecipeTypes#CUTTING cutting board} recipes.
- * While cutting board recipes can be read using the {@link SimpleRecipeInterpreter} (or the default one), these recipes can have multiple outputs.
+ * A recipe interpreter intended for Farmers Delight's {@linkplain ModRecipeTypes#COOKING cooking} recipes.
  * @author EnderTurret
  */
-public final class CuttingBoardInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CuttingBoardRecipe> implements AnalyzableRecipeInterpreter {
+public final class CookingInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<CookingPotRecipe> implements AnalyzableRecipeInterpreter {
 
-	public static final MapCodec<CuttingBoardInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-			COST_FIELD.forGetter(CuttingBoardInterpreter::addedCost)
-			).apply(instance, CuttingBoardInterpreter::new));
+	public static final MapCodec<CookingInterpreter> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+			COST_FIELD.forGetter(CookingInterpreter::addedCost)
+			).apply(instance, CookingInterpreter::new));
 
 	/**
-	 * Constructs a new {@code CuttingBoardInterpreter}.
+	 * Constructs a new {@code CookingInterpreter}.
 	 * @param addedCost The grist cost added for all recipes processed by this interpreter.
 	 */
-	public CuttingBoardInterpreter(GristSet.Immutable addedCost) {
-		super(CuttingBoardRecipe.class, addedCost);
+	public CookingInterpreter(GristSet.Immutable addedCost) {
+		super(CookingPotRecipe.class, addedCost);
 	}
 
 	@Override
@@ -49,21 +49,26 @@ public final class CuttingBoardInterpreter extends AbstractCostAddingRecipeInter
 	}
 
 	@Override
-	protected List<ItemStack> getOutputItemStacksTyped(CuttingBoardRecipe recipe) {
-		return List.copyOf(recipe.getResults());
+	protected List<ItemStack> getOutputItemStacksTyped(CookingPotRecipe recipe) {
+		return List.of(recipe.getResultItem(null));
 	}
 
 	@Override
 	@Nullable
-	protected MutableGristSet generateCost(MutableGristSet totalCost, CuttingBoardRecipe recipe, Item output, GeneratorCallback callback) {
+	protected MutableGristSet generateCost(MutableGristSet totalCost, CookingPotRecipe recipe, Item output, GeneratorCallback callback) {
+		if (!recipe.getOutputContainer().isEmpty() && !account(totalCost, callback, recipe.getOutputContainer().getItem()))
+			return null;
+
 		return totalCost;
 	}
 
 	@Override
-	protected void reportPreliminaryLookupsTyped(CuttingBoardRecipe recipe, LookupTracker tracker) {}
+	protected void reportPreliminaryLookupsTyped(CookingPotRecipe recipe, LookupTracker tracker) {
+		tracker.report(recipe.getOutputContainer());
+	}
 
 	@Override
 	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
-		tracker.report(ModItems.CUTTING_BOARD.get());
+		tracker.report(ModItems.COOKING_POT.get());
 	}
 }

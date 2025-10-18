@@ -22,6 +22,7 @@ import net.enderturret.minestuckcompat.alchemy.extradelight.FeastInterpreter;
 import net.enderturret.minestuckcompat.alchemy.extradelight.FermentingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.extradelight.OvenInterpreter;
 import net.enderturret.minestuckcompat.alchemy.extradelight.ToolOnBlockInterpreter;
+import net.enderturret.minestuckcompat.alchemy.farmersdelight.CookingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.farmersdelight.CuttingBoardInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
@@ -110,6 +111,12 @@ public final class MCInterpreterTypes {
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_TOOL_ON_BLOCK;
 
 	// ===== Farmers Delight =====
+
+	/**
+	 * The codec for {@link CookingInterpreter}. Will be {@code null} if Farmers Delight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> FARMERSDELIGHT_COOKING;
 
 	/**
 	 * The codec for {@link CuttingBoardInterpreter}. Will be {@code null} if Farmers Delight is not present.
@@ -203,10 +210,13 @@ public final class MCInterpreterTypes {
 			EXTRADELIGHT_OVEN = null;
 		}
 
-		if (ModList.get().isLoaded("farmersdelight"))
+		if (ModList.get().isLoaded("farmersdelight")) {
+			FARMERSDELIGHT_COOKING = REGISTRY.register("farmersdelight/cooking", () -> CookingInterpreter.CODEC);
 			FARMERSDELIGHT_CUTTING_BOARD = REGISTRY.register("farmersdelight/cutting_board", () -> CuttingBoardInterpreter.CODEC);
-		else
+		} else {
+			FARMERSDELIGHT_COOKING = null;
 			FARMERSDELIGHT_CUTTING_BOARD = null;
+		}
 
 		if (ModList.get().isLoaded("immersiveengineering")) {
 			IE_MULTIBLOCK = REGISTRY.register("immersiveengineering/multiblock", () -> MultiblockInterpreter.CODEC);

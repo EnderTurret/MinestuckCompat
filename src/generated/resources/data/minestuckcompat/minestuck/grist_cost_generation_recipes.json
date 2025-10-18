@@ -503,7 +503,10 @@
       }
     ],
     "interpreter": {
-      "type": "minestuck:default"
+      "type": "minestuckcompat:farmersdelight/cooking",
+      "added_cost": {
+        "minestuck:iodine": 1
+      }
     },
     "source": {
       "type": "recipe_type",
