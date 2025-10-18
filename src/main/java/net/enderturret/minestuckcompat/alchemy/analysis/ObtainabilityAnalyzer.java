@@ -43,6 +43,7 @@ import net.neoforged.neoforge.common.conditions.ConditionalOps;
 import net.neoforged.neoforge.common.conditions.ICondition;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
+import net.enderturret.minestuckcompat.MinestuckCompatConfig;
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.GenerateGristCostsEvent;
@@ -181,6 +182,7 @@ public final class ObtainabilityAnalyzer {
 		final ConditionalOps<JsonElement> ops = new ConditionalOps<>(RegistryOps.create(JsonOps.INSTANCE, VanillaRegistries.createLookup()), ICondition.IContext.EMPTY);
 
 		sources.addAll(BuiltinRecipeList.parseResource(resourceManager, "minestuck", RecipeGeneratedCostHandler.PATH,
+				MinestuckCompatConfig.common().useExtraStuckInterpreters.getAsBoolean() ? null : "extrastuck",
 				json -> MixinHooks.CONDITIONAL_SOURCE_ENTRY_LIST.parse(ops, json)
 				.getOrThrow(RuntimeException::new)
 				.stream()

@@ -40,7 +40,7 @@ public final class ClientDataManager {
 		e.registerReloadListener((ResourceManagerReloadListener) resourceManager -> {
 			SWAPPING_WEAPONS.clear();
 
-			BuiltinRecipeList.parseResource(resourceManager, "minestuckcompat", "minestuckcompat/swapping_weapons.json", elem -> {
+			BuiltinRecipeList.parseResource(resourceManager, "minestuckcompat", "minestuckcompat/swapping_weapons.json", null, elem -> {
 				SWAPPING_WEAPONS.putAll(CODEC.parse(JsonOps.INSTANCE, elem)
 						.getOrThrow(RuntimeException::new));
 				return List.of();

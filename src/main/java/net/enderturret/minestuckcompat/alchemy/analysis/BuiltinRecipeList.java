@@ -12,6 +12,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
+import org.jetbrains.annotations.Nullable;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -80,7 +81,7 @@ public final class BuiltinRecipeList {
 	private static final Codec<List<AnalyzedRecipe>> CODEC = RECIPE_CODEC.listOf();
 
 	static Set<Item> readRoots(ResourceManager resourceManager) {
-		return Set.copyOf(parseResource(resourceManager, "minestuckcompat/obtainability_analyzer", "minestuckcompat/obtainability_analyzer/roots.json", json -> {
+		return Set.copyOf(parseResource(resourceManager, "minestuckcompat/obtainability_analyzer", "minestuckcompat/obtainability_analyzer/roots.json", null, json -> {
 			final Set<Item> set = new HashSet<>();
 
 			for (JsonElement elem : json.getAsJsonObject().asMap().values())
@@ -94,7 +95,7 @@ public final class BuiltinRecipeList {
 	static List<AnalyzedRecipe> scanRecipes(ResourceManager resourceManager) {
 		final List<AnalyzedRecipe> ret = new ArrayList<>();
 
-		ret.addAll(parseResource(resourceManager, "minestuckcompat/obtainability_analyzer", "minestuckcompat/obtainability_analyzer/recipes.json",
+		ret.addAll(parseResource(resourceManager, "minestuckcompat/obtainability_analyzer", "minestuckcompat/obtainability_analyzer/recipes.json", null,
 				elem -> CODEC.parse(JsonOps.INSTANCE, elem).getOrThrow()));
 
 		// Remove any invalid recipes.
@@ -111,10 +112,11 @@ public final class BuiltinRecipeList {
 	 * @param resourceManager The resource manager to read from.
 	 * @param folder The folder that the desired file is in.
 	 * @param path The path to the desired file.
+	 * @param excludedNamespace A namespace to exclude, or {@code null} to not exclude any namespaces.
 	 * @param codec The {@link Function} to decode each resource.
 	 * @return The parsed resource list.
 	 */
-	public static <T> List<T> parseResource(ResourceManager resourceManager, String folder, String path, Function<JsonElement, Collection<T>> codec) {
+	public static <T> List<T> parseResource(ResourceManager resourceManager, String folder, String path, @Nullable String excludedNamespace, Function<JsonElement, Collection<T>> codec) {
 		final List<T> ret = new ArrayList<>();
 
 		for (var entry : resourceManager.listResources(folder, rl -> rl.getPath().equals(path)).entrySet()) {

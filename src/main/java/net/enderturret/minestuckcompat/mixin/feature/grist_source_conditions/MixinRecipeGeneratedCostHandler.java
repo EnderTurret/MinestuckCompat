@@ -1,13 +1,16 @@
 package net.enderturret.minestuckcompat.mixin.feature.grist_source_conditions;
 
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import com.google.gson.JsonElement;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
@@ -20,6 +23,7 @@ import net.minecraft.resources.RegistryOps;
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 import net.neoforged.neoforge.common.conditions.ICondition;
 
+import net.enderturret.minestuckcompat.MinestuckCompatConfig;
 import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 
 @Mixin(RecipeGeneratedCostHandler.class)
@@ -31,5 +35,15 @@ public abstract class MixinRecipeGeneratedCostHandler {
 		final JsonElement jsonInput = (JsonElement) input;
 		return MixinHooks.CONDITIONAL_SOURCE_ENTRY_LIST.parse(conOps, jsonInput)
 				.map(list -> list.stream().filter(Optional::isPresent).map(Optional::get).toList());
+	}
+
+	@ModifyExpressionValue(at = @At(value = "INVOKE", target = "Lnet/minecraft/server/packs/resources/ResourceManager;getNamespaces()Ljava/util/Set;"), method = "prepare")
+	private static Set<String> minestuckcompat$filterOutExtraStuckInterpreters(Set<String> original) {
+		if (!MinestuckCompatConfig.common().useExtraStuckInterpreters.getAsBoolean() && original.contains("extrastuck")) {
+			original = new LinkedHashSet<>(original);
+			original.remove("extrastuck");
+		}
+
+		return original;
 	}
 }
