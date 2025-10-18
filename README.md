@@ -7,6 +7,7 @@ Minestuck Compat has specific support for:
 * [Applied Energistics 2](https://modrinth.com/mod/ae2)
 * [Biomes O' Plenty](https://modrinth.com/mod/biomes-o-plenty)
 * [Create](https://modrinth.com/mod/create)
+* [Extra Delight](https://modrinth.com/mod/extradelight)
 * [Farmer's Delight](https://modrinth.com/mod/farmers-delight)
 * [Immersive Engineering](https://modrinth.com/mod/immersiveengineering)
 * [Mekanism](https://modrinth.com/mod/mekanism)
@@ -199,6 +200,22 @@ Here's a sample config:
 ```
 
 This interpreter type can be configured with a `deploy_cost` and `press_cost`, both optional.
+
+### `minestuckcompat:extradelight/feast`, `minestuckcompat:extradelight/fluid_recipe`, `minestuckcompat:extradelight/tool_on_block`, `minestuckcompat:extradelight/oven`
+
+All interpreter types for ExtraDelight recipes.
+
+### `minestuckcompat:extradelight/fermenting`
+
+An interpreter type for ExtraDelight's fermenting vat recipes.
+It can be configured with an `added_cost` as well as a `cost_per_day`. One can also specify a `cost_per_day_multiplier` to adjust the cumulative day cost, if desired.
+
+### `minestuckcompat:farmersdelight/cutting_board`
+
+An interpreter type for Farmers Delight's cutting board recipes.
+It can be configured with an `added_cost`.
+
+(It's just a version of `simple` that handles the cutting board's multiple outputs.)
 
 ### `minestuckcompat:mekanism/item_chemical_to_item`
 
