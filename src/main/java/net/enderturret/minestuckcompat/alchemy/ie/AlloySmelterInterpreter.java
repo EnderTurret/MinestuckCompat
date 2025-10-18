@@ -13,6 +13,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
@@ -45,7 +46,7 @@ public final class AlloySmelterInterpreter extends AbstractCostAddingRecipeInter
 	}
 
 	@Override
-	public List<Item> getOutputItemsTyped(AlloyRecipe recipe) {
+	public List<ItemStack> getOutputItemStacksTyped(AlloyRecipe recipe) {
 		return MultiblockInterpreter.safeResolve(recipe.output);
 	}
 

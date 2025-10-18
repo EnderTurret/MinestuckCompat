@@ -1,5 +1,6 @@
 package net.enderturret.minestuckcompat.api.alchemy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
@@ -25,9 +26,19 @@ import net.neoforged.neoforge.common.crafting.SizedIngredient;
 public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
+	public final List<Item> getOutputItems(Recipe<?> recipe) {
+		final List<ItemStack> stacks = getOutputItemStacks(recipe);
+		if (stacks.isEmpty()) return List.of();
+
+		final List<Item> ret = new ArrayList<>(stacks.size());
+		for (ItemStack stack : stacks) ret.add(stack.getItem());
+
+		return List.copyOf(ret);
+	}
+
+	public List<ItemStack> getOutputItemStacks(Recipe<?> recipe) {
 		final ItemStack stack = recipe.getResultItem(getLookupProvider());
-		return stack.isEmpty() ? List.of() : List.of(stack.getItem());
+		return stack.isEmpty() ? List.of() : List.of(stack);
 	}
 
 	@Override
@@ -36,7 +47,7 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		if (recipe.isSpecial())
 			return null;
 
-		return finalizeGristCosts(ingredientCost(recipe, callback), recipe.getResultItem(getLookupProvider()).getCount());
+		return finalizeGristCosts(ingredientCost(recipe, callback), recipe, output);
 	}
 
 	@Override
@@ -80,8 +91,12 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	}
 
 	@Nullable
-	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
-		return finalizeGristCosts(totalCost, recipe.getResultItem(getLookupProvider()).getCount());
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output) {
+		for (ItemStack out : getOutputItemStacks(recipe))
+			if (out.getItem() == output)
+				return finalizeGristCosts(totalCost, out.getCount());
+
+		return finalizeGristCosts(totalCost, 1);
 	}
 
 	/**
@@ -93,7 +108,7 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	@Nullable
 	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, int resultCount) {
 		if (totalCost != null)
-			// Do not round down because it's better to have something cost a little to much than it possibly costing nothing.
+			// Do not round down because it's better to have something cost a little too much than it possibly costing nothing.
 			totalCost.scale(1F / resultCount, false);
 
 		return totalCost;

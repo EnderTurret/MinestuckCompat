@@ -13,6 +13,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
@@ -35,8 +36,8 @@ public final class IEShapedInterpreter extends AbstractCostAddingRecipeInterpret
 	}
 
 	@Override
-	public List<Item> getOutputItems(Recipe<?> recipe) {
-		return super.getOutputItems(recipe instanceof AbstractShapedRecipe r ? r.toVanilla() : recipe);
+	public List<ItemStack> getOutputItemStacks(Recipe<?> recipe) {
+		return super.getOutputItemStacks(recipe instanceof AbstractShapedRecipe r ? r.toVanilla() : recipe);
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public final class IEShapedInterpreter extends AbstractCostAddingRecipeInterpret
 		final MutableGristSet totalCost = ingredientCost(recipe, callback);
 		if (totalCost == null) return null;
 
-		return finalizeGristCosts(totalCost, recipe);
+		return finalizeGristCosts(totalCost, recipe, output);
 	}
 
 	@Override

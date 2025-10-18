@@ -18,6 +18,7 @@ import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -61,8 +62,8 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 	}
 
 	@Override
-	protected List<Item> getOutputItemsTyped(StandardProcessingRecipe<?> recipe) {
-		return recipe.getRollableResults().stream().map(o -> o.getStack().getItem()).toList();
+	protected List<ItemStack> getOutputItemStacksTyped(StandardProcessingRecipe<?> recipe) {
+		return recipe.getRollableResults().stream().map(o -> o.getStack()).toList();
 	}
 
 	@Override

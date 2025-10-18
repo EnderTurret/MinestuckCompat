@@ -11,6 +11,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
 /**
@@ -73,7 +74,7 @@ public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipe
 		 * @param recipe The recipe to retrieve the output items of.
 		 * @return The list of output items from the recipe.
 		 */
-		protected abstract List<Item> getOutputItemsTyped(T recipe);
+		protected abstract List<ItemStack> getOutputItemStacksTyped(T recipe);
 
 		/**
 		 * Typed version of {@link #generateCost(Recipe, Item, GeneratorCallback)}.
@@ -95,11 +96,11 @@ public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipe
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public List<Item> getOutputItems(Recipe<?> recipe) {
+		public List<ItemStack> getOutputItemStacks(Recipe<?> recipe) {
 			if (recipeClass.isAssignableFrom(recipe.getClass()))
-				return getOutputItemsTyped((T) recipe);
+				return getOutputItemStacksTyped((T) recipe);
 
-			return super.getOutputItems(recipe);
+			return super.getOutputItemStacks(recipe);
 		}
 
 		@Override
@@ -114,7 +115,7 @@ public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipe
 
 			if (totalCost == null) return null;
 
-			return finalizeGristCosts(totalCost, recipe);
+			return finalizeGristCosts(totalCost, recipe, output);
 		}
 
 		@Override

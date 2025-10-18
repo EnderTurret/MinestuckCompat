@@ -59,7 +59,7 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 	private boolean warned = false;
 
 	@Override
-	public List<Item> getOutputItemsTyped(MultiblockRecipe recipe) {
+	public List<ItemStack> getOutputItemStacksTyped(MultiblockRecipe recipe) {
 		if (recipe instanceof BlueprintCraftingRecipe r)
 			return safeResolve(r.output);
 
@@ -68,7 +68,7 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 			warned = true;
 		}
 
-		return super.getOutputItems(recipe);
+		return super.getOutputItemStacks(recipe);
 	}
 
 	@Override
@@ -100,25 +100,25 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 			tracker.report(IEBlocks.WoodenDevices.CRAFTING_TABLE.asItem());
 	}
 
-	static List<Item> safeResolve(TagOutput output) {
+	static List<ItemStack> safeResolve(TagOutput output) {
 		if (output instanceof TagOutputAccess access) {
 			final Either<IngredientWithSize, ItemStack> either = access.minestuckcompat$getRawData();
 			if (either.right().isPresent())
-				return List.of(either.right().get().getItem());
+				return List.of(either.right().get());
 
 			final Ingredient ing = either.left().get().getBaseIngredient();
-			final List<Item> ret = new ArrayList<>();
+			final List<ItemStack> ret = new ArrayList<>();
 
 			for (Ingredient.Value val : ing.getValues()) {
 				if (val instanceof Ingredient.ItemValue item)
-					ret.add(item.item().getItem());
+					ret.add(item.item());
 				else if (val instanceof Ingredient.TagValue tag) {
 					if (tagToIeItem == null) buildTagMap();
 					final Item item = tagToIeItem.get(tag.tag().location());
 					if (item == null)
 						MinestuckCompat.LOGGER.warn("[Immersive Engineering] Missing entry for TagOutput {}", tag.tag().location());
 					else
-						ret.add(item);
+						ret.add(new ItemStack(item));
 				}
 			}
 

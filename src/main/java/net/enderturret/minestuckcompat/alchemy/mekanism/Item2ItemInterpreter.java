@@ -1,9 +1,6 @@
 package net.enderturret.minestuckcompat.alchemy.mekanism;
 
 import java.util.List;
-import java.util.Objects;
-
-import org.jetbrains.annotations.Nullable;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -49,11 +46,8 @@ public final class Item2ItemInterpreter extends AbstractCostAddingRecipeInterpre
 	}
 
 	@Override
-	public List<Item> getOutputItemsTyped(ItemStackToItemStackRecipe recipe) {
-		return recipe.getOutputDefinition().stream()
-				.map(ItemStack::getItem)
-				.filter(Objects::nonNull)
-				.toList();
+	public List<ItemStack> getOutputItemStacksTyped(ItemStackToItemStackRecipe recipe) {
+		return List.copyOf(recipe.getOutputDefinition());
 	}
 
 	@Override
@@ -62,14 +56,6 @@ public final class Item2ItemInterpreter extends AbstractCostAddingRecipeInterpre
 			return null;
 
 		return totalCost;
-	}
-
-	@Override
-	@Nullable
-	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe) {
-		return finalizeGristCosts(totalCost, recipe instanceof ItemStackToItemStackRecipe r
-				? r.getOutputDefinition().stream().mapToInt(ItemStack::getCount).max().orElse(1)
-				: recipe.getResultItem(getLookupProvider()).getCount());
 	}
 
 	@Override

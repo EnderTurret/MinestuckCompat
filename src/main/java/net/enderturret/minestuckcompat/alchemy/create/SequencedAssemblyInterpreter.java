@@ -87,8 +87,8 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 	}
 
 	@Override
-	protected List<Item> getOutputItemsTyped(SequencedAssemblyRecipe recipe) {
-		final Item result = recipe.getResultItem(null).getItem();
+	protected List<ItemStack> getOutputItemStacksTyped(SequencedAssemblyRecipe recipe) {
+		final ItemStack result = recipe.getResultItem(null);
 		final ItemStack transitionalItem = recipe.getTransitionalItem();
 
 		// If the input is the transitional item, avoid generating a cost for the transitional item.
@@ -96,7 +96,7 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 		if (recipe.getIngredient().getValues().length == 1 && uncachedTest(recipe.getIngredient(), transitionalItem))
 			return List.of(result);
 
-		return List.of(result, transitionalItem.getItem());
+		return List.of(result, transitionalItem);
 	}
 
 	private static boolean uncachedTest(Ingredient ingredient, ItemStack input) {
