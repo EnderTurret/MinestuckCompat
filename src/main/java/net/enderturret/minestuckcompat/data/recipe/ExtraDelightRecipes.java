@@ -1,0 +1,105 @@
+package net.enderturret.minestuckcompat.data.recipe;
+
+import static com.lance5057.extradelight.ExtraDelightItems.*;
+import static com.mraof.minestuck.api.alchemy.GristTypes.*;
+
+import java.util.concurrent.CompletableFuture;
+
+import org.jetbrains.annotations.ApiStatus.Internal;
+
+import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
+
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Items;
+
+import net.enderturret.minestuckcompat.ConfigCondition;
+import net.enderturret.minestuckcompat.MinestuckCompat;
+import net.enderturret.minestuckcompat.data.util.AbstractRecipeProvider;
+import net.enderturret.minestuckcompat.data.util.RenamingRecipeOutput;
+
+@Internal
+public final class ExtraDelightRecipes extends AbstractRecipeProvider {
+
+	public ExtraDelightRecipes(PackOutput output, CompletableFuture<Provider> registries) {
+		super(output, registries);
+	}
+
+	@Override
+	protected void buildRecipes(RecipeOutput _recipeOutput) {
+		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "extradelight")
+				.withConditions(new ConfigCondition("extradelight"));
+
+		containerGristCost(COCOA_BUTTER_FLUID_BUCKET).grist(AMBER, 20).grist(IODINE, 20 * 3).grist(TAR, 20).build(output);
+		containerGristCost(YEAST).grist(AMBER, 6).grist(IODINE, 6).build(output);
+		containerGristCost(COOKING_OIL).grist(AMBER, 4).build(output);
+		containerGristCost(PEANUT_BUTTER_BOTTLE).grist(IODINE, 4).build(output);
+		containerGristCost(MARSHMALLOW_FLUFF_BOTTLE).grist(AMBER, 3).grist(IODINE, 2).grist(COBALT, 1).grist(MERCURY, 1).build(output);
+		gristCost(Fermentation.SALT).grist(CHALK, 2).build(output);
+		gristCost(CORN_ON_COB).grist(AMBER, 2).grist(IODINE, 1).build(output);
+		gristCost(CORN_HUSK).grist(AMBER, 2).build(output);
+		gristCost(CORN_SILK).grist(IODINE, 1).build(output);
+		containerGristCost(SummerCitrus.EGG_WHITE).grist(AMBER, 2).build(output);
+		gristCost(SummerCitrus.EGG_YOLK).grist(AMBER, 3).build(output);
+		containerGristCost(CURRY_POWDER).grist(IODINE, 4).grist(RUST, 4).grist(GARNET, 4).build(output);
+
+		// Crops
+
+		gristCost(GINGER).grist(AMBER, 2).grist(IODINE, 2).build(output);
+		gristCost(PEANUTS_IN_SHELL).grist(AMBER, 1).grist(IODINE, 3).build(output);
+		gristCost(CHILI).grist(AMBER, 1).grist(GARNET, 3).build(output);
+		gristCost(MALLOW_ROOT).grist(AMBER, 2).grist(IODINE, 2).build(output);
+		gristCost(GARLIC).grist(AMBER, 1).grist(IODINE, 1).grist(CHALK, 2).build(output);
+		gristCost(Fermentation.CUCUMBER).grist(AMBER, 3).grist(IODINE, 1).build(output);
+		gristCost(Fermentation.SOYBEAN_POD).grist(AMBER, 1).grist(IODINE, 3).build(output);
+		gristCost(CORN_SEEDS).grist(AMBER, 2).grist(IODINE, 1).build(output);
+		gristCost(UNSHUCKED_CORN).grist(AMBER, 4).grist(IODINE, 1).build(output);
+
+		sourceGristCost(WILD_GINGER).grist(AMBER, 2).source(GINGER.asItem()).build(output);
+		sourceGristCost(WILD_PEANUT_BLOCK).grist(AMBER, 2).source(PEANUTS_IN_SHELL.asItem()).build(output);
+		sourceGristCost(WILD_CHILI_BLOCK).grist(AMBER, 2).source(CHILI.asItem()).build(output);
+		sourceGristCost(WILD_MALLOW_ROOT_BLOCK).grist(AMBER, 2).source(MALLOW_ROOT.asItem()).build(output);
+		sourceGristCost(WILD_GARLIC_BLOCK).grist(AMBER, 2).source(GARLIC.asItem()).build(output);
+		sourceGristCost(Fermentation.WILD_CUCUMBER_ITEM).grist(AMBER, 2).source(Fermentation.CUCUMBER.asItem()).build(output);
+		sourceGristCost(Fermentation.WILD_SOYBEAN_ITEM).grist(AMBER, 2).source(Fermentation.SOYBEAN_POD.asItem()).build(output);
+
+		gristCost(SummerCitrus.LEMON).grist(AMBER, 4).build(output);
+		gristCost(SummerCitrus.LIME).grist(AMBER, 3).grist(CAULK, 1).build(output);
+		gristCost(SummerCitrus.ORANGE).grist(AMBER, 3).grist(IODINE, 1).build(output);
+		gristCost(SummerCitrus.GRAPEFRUIT).grist(AMBER, 3).grist(SULFUR, 1).build(output);
+		gristCost(COFFEE_CHERRIES).grist(AMBER, 2).grist(GARNET, 2).build(output);
+		gristCost(MINT).grist(AMBER, 3).grist(IODINE, 1).build(output);
+		gristCost(HAZELNUTS_IN_SHELL).grist(AMBER, 1).grist(IODINE, 3).build(output);
+
+		containerGristCost(Fermentation.PICKLE_JUICE).grist(AMBER, 3).grist(IODINE, 2).build(output);
+		containerGristCost(SummerCitrus.LEMON_JUICE).grist(AMBER, 3).build(output);
+		containerGristCost(SummerCitrus.LIME_JUICE).grist(AMBER, 2).grist(CAULK, 1).build(output);
+		containerGristCost(SummerCitrus.ORANGE_JUICE).grist(AMBER, 2).grist(IODINE, 1).build(output);
+		containerGristCost(SummerCitrus.GRAPEFRUIT_JUICE).grist(AMBER, 2).grist(SULFUR, 1).build(output);
+
+		sourceGristCost(SummerCitrus.BAKED_ALASKA_ITEM).grist(TAR, 4).source(SummerCitrus.RAW_BAKED_ALASKA_ITEM.asItem()).build(output);
+		sourceGristCost(TARTE_TATIN).source(TARTE_TATIN_IN_PAN.asItem()).build(output);
+
+		// For whatever reason, these aren't in the leaves item tag.
+		gristCost(APPLE_LEAVES).grist(BUILD, 1).build(output);
+		gristCost(CINNAMON_LEAVES).grist(BUILD, 1).build(output);
+		gristCost(HAZELNUT_LEAVES).grist(BUILD, 1).build(output);
+		gristCost(SummerCitrus.LEMON_LEAVES_ITEM).grist(BUILD, 1).build(output);
+		gristCost(SummerCitrus.LIME_LEAVES_ITEM).grist(BUILD, 1).build(output);
+		gristCost(SummerCitrus.ORANGE_LEAVES_ITEM).grist(BUILD, 1).build(output);
+		gristCost(SummerCitrus.GRAPEFRUIT_LEAVES_ITEM).grist(BUILD, 1).build(output);
+
+		gristCost(HAZELNUT_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+		gristCost(APPLE_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+		gristCost(SummerCitrus.LEMON_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+		gristCost(SummerCitrus.LIME_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+		gristCost(SummerCitrus.ORANGE_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+		gristCost(SummerCitrus.GRAPEFRUIT_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+
+		// Miscellaneous
+		sourceGristCost(PESTLE_AMETHYST).source(Items.AMETHYST_SHARD).source(Items.STICK).build(output);
+		sourceGristCost(PESTLE_GILDED_BLACKSTONE).source(Items.GILDED_BLACKSTONE).source(Items.STICK).build(output);
+	}
+}

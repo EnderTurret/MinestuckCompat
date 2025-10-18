@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "ingredient": {
+    "item": "extradelight:tarte_tatin"
+  },
+  "sources": [
+    "extradelight:tarte_tatin_in_pan"
+  ]
+}

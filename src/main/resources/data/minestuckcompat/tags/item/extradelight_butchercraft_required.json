@@ -44,6 +44,25 @@
     { "id": "extradelight:blood_chocolate_syrup_bottle", "required": false },
     { "id": "extradelight:pork_and_apples_feast", "required": false },
     { "id": "extradelight:pork_and_apples", "required": false },
-    { "id": "extradelight:currywurst", "required": false }
+    { "id": "extradelight:currywurst", "required": false },
+
+    { "id": "extradelight:beef_bulgogi", "required": false },
+    { "id": "extradelight:caramel_chicken", "required": false },
+    { "id": "extradelight:chicken_kiev", "required": false },
+    { "id": "extradelight:devilled_sausages", "required": false },
+    { "id": "extradelight:fat_potatoes", "required": false },
+    { "id": "extradelight:honey_chili_chicken", "required": false },
+    { "id": "extradelight:hot_wings", "required": false },
+    { "id": "extradelight:melon_lime_glazed_chicken", "required": false },
+    { "id": "extradelight:naem_moo_item", "required": false },
+    { "id": "extradelight:orange_chicken", "required": false },
+    { "id": "extradelight:pickled_sausage_block_item", "required": false },
+    { "id": "extradelight:pickled_sausage_item", "required": false },
+    { "id": "extradelight:salami_item", "required": false },
+    { "id": "extradelight:salami_mix", "required": false },
+    { "id": "extradelight:sauerkraut_and_sausage", "required": false },
+    { "id": "extradelight:steak_pickled_onion_pie_item", "required": false },
+    { "id": "extradelight:steak_pickled_onion_pie_slice", "required": false },
+    { "id": "extradelight:unripe_salami_item", "required": false }
   ]
 }

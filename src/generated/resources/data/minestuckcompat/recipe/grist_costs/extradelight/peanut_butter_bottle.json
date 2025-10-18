@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:iodine": 4
+  },
+  "ingredient": {
+    "item": "extradelight:peanut_butter_bottle"
+  }
+}

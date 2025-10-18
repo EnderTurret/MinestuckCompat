@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "ingredient": {
+    "item": "extradelight:pestle_amethyst"
+  },
+  "sources": [
+    "minecraft:amethyst_shard",
+    "minecraft:stick"
+  ]
+}

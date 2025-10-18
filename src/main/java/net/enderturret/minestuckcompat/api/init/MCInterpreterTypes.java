@@ -17,6 +17,11 @@ import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.ExtraDelightFluidInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.FeastInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.FermentingInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.OvenInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.ToolOnBlockInterpreter;
 import net.enderturret.minestuckcompat.alchemy.farmersdelight.CuttingBoardInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
@@ -71,6 +76,38 @@ public final class MCInterpreterTypes {
 	 */
 	@Nullable
 	public static final Holder<MapCodec<? extends RecipeInterpreter>> CREATE_SEQUENCED_ASSEMBLY;
+
+	// ===== ExtraDelight =====
+
+	/**
+	 * The codec for {@link FeastInterpreter}. Will be {@code null} if ExtraDelight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_FEAST;
+
+	/**
+	 * The codec for {@link FermentingInterpreter}. Will be {@code null} if ExtraDelight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_FERMENTING;
+
+	/**
+	 * The codec for {@link ExtraDelightFluidInterpreter}. Will be {@code null} if ExtraDelight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_FLUID_RECIPE;
+
+	/**
+	 * The codec for {@link OvenInterpreter}. Will be {@code null} if ExtraDelight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_OVEN;
+
+	/**
+	 * The codec for {@link ToolOnBlockInterpreter}. Will be {@code null} if ExtraDelight is not present.
+	 */
+	@Nullable
+	public static final Holder<MapCodec<? extends RecipeInterpreter>> EXTRADELIGHT_TOOL_ON_BLOCK;
 
 	// ===== Farmers Delight =====
 
@@ -150,6 +187,20 @@ public final class MCInterpreterTypes {
 		} else {
 			CREATE_FLUID_PROCESSING = null;
 			CREATE_SEQUENCED_ASSEMBLY = null;
+		}
+
+		if (ModList.get().isLoaded("extradelight")) {
+			EXTRADELIGHT_FEAST = REGISTRY.register("extradelight/feast", () -> FeastInterpreter.CODEC);
+			EXTRADELIGHT_FERMENTING = REGISTRY.register("extradelight/fermenting", () -> FermentingInterpreter.CODEC);
+			EXTRADELIGHT_FLUID_RECIPE = REGISTRY.register("extradelight/fluid_recipe", () -> ExtraDelightFluidInterpreter.CODEC);
+			EXTRADELIGHT_TOOL_ON_BLOCK = REGISTRY.register("extradelight/tool_on_block", () -> ToolOnBlockInterpreter.CODEC);
+			EXTRADELIGHT_OVEN = REGISTRY.register("extradelight/oven", () -> OvenInterpreter.CODEC);
+		} else {
+			EXTRADELIGHT_FEAST = null;
+			EXTRADELIGHT_FERMENTING = null;
+			EXTRADELIGHT_FLUID_RECIPE = null;
+			EXTRADELIGHT_TOOL_ON_BLOCK = null;
+			EXTRADELIGHT_OVEN = null;
 		}
 
 		if (ModList.get().isLoaded("farmersdelight"))

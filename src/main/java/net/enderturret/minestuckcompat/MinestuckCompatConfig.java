@@ -78,6 +78,7 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "ae2", "Applied Energistics 2");
 		defineEnabledRecipes(builder, "biomesoplenty", "Biomes O' Plenty");
 		defineEnabledRecipes(builder, "create", "Create");
+		defineEnabledRecipes(builder, "extradelight", "ExtraDelight");
 		defineEnabledRecipes(builder, "farmersdelight", "Farmer's Delight");
 		defineEnabledRecipes(builder, "immersiveengineering", "Immersive Engineering");
 		defineEnabledRecipes(builder, "mekanism", "Mekanism");

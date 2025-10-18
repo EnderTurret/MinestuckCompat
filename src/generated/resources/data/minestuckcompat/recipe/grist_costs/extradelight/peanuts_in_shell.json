@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 1,
+    "minestuck:iodine": 3
+  },
+  "ingredient": {
+    "item": "extradelight:peanuts_in_shell"
+  }
+}

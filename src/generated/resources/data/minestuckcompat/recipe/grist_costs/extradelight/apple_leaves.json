@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 1
+  },
+  "ingredient": {
+    "item": "extradelight:apple_leaves"
+  }
+}

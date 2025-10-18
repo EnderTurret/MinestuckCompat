@@ -197,6 +197,12 @@
     { "id": "biomesoplenty:potted_wilted_lily", "required": false },
     { "id": "biomesoplenty:potted_yellow_maple_sapling", "required": false },
 
+    { "id": "extradelight:jam", "required": false },
+    { "id": "extradelight:glow_berry_jam", "required": false },
+    { "id": "extradelight:golden_apple_jam", "required": false },
+    { "id": "extradelight:mint_jelly", "required": false },
+    { "id": "extradelight:dynamic_toast", "required": false },
+
     { "id": "amendments:dye_bottle", "required": false },
     { "id": "bibliocraft:typewriter_page", "required": false },
     { "id": "bibliocraft:written_big_book", "required": false },

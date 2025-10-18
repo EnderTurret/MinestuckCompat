@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 3,
+    "minestuck:sulfur": 1
+  },
+  "ingredient": {
+    "item": "extradelight:grapefruit"
+  }
+}

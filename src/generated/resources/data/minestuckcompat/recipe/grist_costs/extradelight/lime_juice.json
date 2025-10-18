@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 2,
+    "minestuck:caulk": 1
+  },
+  "ingredient": {
+    "item": "extradelight:lime_juice"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 20,
+    "minestuck:iodine": 60,
+    "minestuck:tar": 20
+  },
+  "ingredient": {
+    "item": "extradelight:cocoa_butter_fluid_bucket"
+  }
+}

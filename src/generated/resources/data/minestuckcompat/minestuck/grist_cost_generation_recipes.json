@@ -566,11 +566,10 @@
       }
     ],
     "interpreter": {
-      "type": "minestuckcompat:simple",
+      "type": "minestuckcompat:farmersdelight/cutting_board",
       "added_cost": {
         "minestuck:rust": 1
-      },
-      "ignore_special": false
+      }
     },
     "source": {
       "type": "recipe_type",
@@ -698,6 +697,202 @@
     "source": {
       "type": "recipe_type",
       "recipe_type": "immersiveengineering:alloy"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/oven",
+      "added_cost": {
+        "minestuck:tar": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:oven"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:sulfur": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:drying_rack"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:mercury": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:mortar"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:simple",
+      "added_cost": {
+        "minestuck:chalk": 1
+      },
+      "ignore_special": false
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:dough_shaping"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/fluid_recipe",
+      "added_cost": {
+        "minestuck:cobalt": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:mixing_bowl"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/fluid_recipe",
+      "added_cost": {
+        "minestuck:quartz": 1
+      }
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:chiller"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/feast"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:feast"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/fermenting",
+      "cost_per_day": {
+        "minestuck:shale": 1
+      },
+      "cost_per_day_multiplier": 0.5
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:vat"
+    }
+  },
+  {
+    "neoforge:conditions": [
+      {
+        "type": "neoforge:mod_loaded",
+        "modid": "extradelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "modid": "extradelight"
+      }
+    ],
+    "interpreter": {
+      "type": "minestuckcompat:extradelight/tool_on_block"
+    },
+    "source": {
+      "type": "recipe_type",
+      "recipe_type": "extradelight:tool_on_block"
     }
   },
   {

@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus.Internal;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.DefaultInterpreter;
@@ -27,6 +28,11 @@ import net.enderturret.minestuckcompat.alchemy.ae2.ChargerInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ae2.InscriberInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.FluidProcessingInterpreter;
 import net.enderturret.minestuckcompat.alchemy.create.SequencedAssemblyInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.ExtraDelightFluidInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.FeastInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.FermentingInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.OvenInterpreter;
+import net.enderturret.minestuckcompat.alchemy.extradelight.ToolOnBlockInterpreter;
 import net.enderturret.minestuckcompat.alchemy.farmersdelight.CuttingBoardInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.AlloySmelterInterpreter;
 import net.enderturret.minestuckcompat.alchemy.ie.CrusherInterpreter;
@@ -99,6 +105,17 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 		type(IERecipeTypes.METAL_PRESS.get(), new MetalPressInterpreter(grist(RUST, 1)));
 		type(IERecipeTypes.CRUSHER.get(), new CrusherInterpreter(grist(MERCURY, 1)));
 		type(IERecipeTypes.ALLOY.get(), new AlloySmelterInterpreter(grist(TAR, 1)));
+
+		// ExtraDelight
+		type(ExtraDelightRecipes.OVEN.get(), new OvenInterpreter(grist(TAR, 1)));
+		type(ExtraDelightRecipes.DRYING_RACK.get(), new SimpleRecipeInterpreter(false, grist(SULFUR, 1)));
+		type(ExtraDelightRecipes.MORTAR.get(), new SimpleRecipeInterpreter(false, grist(MERCURY, 1)));
+		type(ExtraDelightRecipes.DOUGH_SHAPING.get(), new SimpleRecipeInterpreter(false, grist(CHALK, 1)));
+		type(ExtraDelightRecipes.MIXING_BOWL.get(), new ExtraDelightFluidInterpreter(grist(COBALT, 1)));
+		type(ExtraDelightRecipes.CHILLER.get(), new ExtraDelightFluidInterpreter(grist(QUARTZ, 1)));
+		type(ExtraDelightRecipes.FEAST.get(), new FeastInterpreter(EMPTY));
+		type(ExtraDelightRecipes.VAT.get(), new FermentingInterpreter(EMPTY, grist(SHALE, 1), 0.5f));
+		type(ExtraDelightRecipes.TOOL_ON_BLOCK.get(), new ToolOnBlockInterpreter(EMPTY));
 
 		// GTCEu
 		/*

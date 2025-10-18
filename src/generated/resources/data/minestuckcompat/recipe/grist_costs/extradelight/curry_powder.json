@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:garnet": 4,
+    "minestuck:iodine": 4,
+    "minestuck:rust": 4
+  },
+  "ingredient": {
+    "item": "extradelight:curry_powder"
+  }
+}

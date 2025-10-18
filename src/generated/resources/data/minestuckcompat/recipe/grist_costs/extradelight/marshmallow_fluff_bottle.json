@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 3,
+    "minestuck:cobalt": 1,
+    "minestuck:iodine": 2,
+    "minestuck:mercury": 1
+  },
+  "ingredient": {
+    "item": "extradelight:marshmallow_fluff_bottle"
+  }
+}
