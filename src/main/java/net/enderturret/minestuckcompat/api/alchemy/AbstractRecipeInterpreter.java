@@ -53,7 +53,8 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	@Override
 	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
 		for (Ingredient ing : recipe.getIngredients())
-			tracker.report(ing);
+			if (ing != null) // ExtraDelight drying recipes have null ingredients, for some reason.
+				tracker.report(ing);
 	}
 
 	/**
@@ -84,7 +85,8 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		final MutableGristSet totalCost = MutableGristSet.newDefault();
 
 		for (Ingredient ingredient : recipe.getIngredients())
-			if (!account(totalCost, callback, ingredient))
+			// ExtraDelight drying recipes have null ingredients, for some reason.
+			if (ingredient != null && !account(totalCost, callback, ingredient))
 				return null;
 
 		return totalCost;
