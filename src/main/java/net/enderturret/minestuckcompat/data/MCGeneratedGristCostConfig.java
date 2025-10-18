@@ -209,6 +209,13 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 			neoforgeConditions.add(condition);
 		}
 
+		if ("create".equals(modId) || "farmersdelight".equals(modId)) {
+			final JsonObject condition = new JsonObject();
+			condition.addProperty("type", "minestuckcompat:config");
+			condition.addProperty("option", "disableExtraStuckInterpreters");
+			neoforgeConditions.add(condition);
+		}
+
 		// Make sure the conditions are the first element, for readability.
 		final JsonObject interpreter = obj.getAsJsonObject("interpreter");
 		final JsonObject source = obj.getAsJsonObject("source");

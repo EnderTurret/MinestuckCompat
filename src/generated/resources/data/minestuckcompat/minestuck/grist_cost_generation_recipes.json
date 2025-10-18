@@ -181,6 +181,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -197,6 +201,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -213,6 +221,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -229,6 +241,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -248,6 +264,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -272,6 +292,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -291,6 +315,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -310,6 +338,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -329,6 +361,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -348,6 +384,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -367,6 +407,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -385,6 +429,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -406,6 +454,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -421,6 +473,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "create"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -440,6 +496,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "farmersdelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {
@@ -455,6 +515,10 @@
       {
         "type": "minestuckcompat:config",
         "modid": "farmersdelight"
+      },
+      {
+        "type": "minestuckcompat:config",
+        "option": "disableExtraStuckInterpreters"
       }
     ],
     "interpreter": {

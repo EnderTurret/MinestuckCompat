@@ -29,7 +29,7 @@ public record ConfigCondition(String option, String modId) implements ICondition
 		final ModList ml = ModList.get();
 		return switch (option) {
 			case "" -> ml.isLoaded(modId) && common().isModEnabled(modId);
-			case "useExtraStuckInterpreters" -> ml.isLoaded("extrastuck") && common().useExtraStuckInterpreters.getAsBoolean() && ml.isLoaded(modId);
+			case "disableExtraStuckInterpreters" -> !ml.isLoaded("extrastuck") || !common().useExtraStuckInterpreters.getAsBoolean();
 			default -> {
 				MinestuckCompat.LOGGER.warn("Unknown config option: {}", option);
 				yield false;
