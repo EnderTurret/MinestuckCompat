@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "tag": "minecraft:saplings"
+  },
+  "input2": {
+    "item": "extradelight:hazelnuts_in_shell"
+  },
+  "mode": "or",
+  "output": "extradelight:hazelnut_sapling"
+}

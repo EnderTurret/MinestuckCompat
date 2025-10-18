@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:short_grass"
+  },
+  "input2": {
+    "item": "extradelight:mallow_root"
+  },
+  "mode": "or",
+  "output": "extradelight:wild_mallow_root_block"
+}

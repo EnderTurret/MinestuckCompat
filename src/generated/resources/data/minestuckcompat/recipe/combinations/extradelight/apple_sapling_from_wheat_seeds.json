@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "input2": {
+    "item": "extradelight:apple_leaves"
+  },
+  "mode": "and",
+  "output": "extradelight:apple_sapling"
+}

@@ -13,6 +13,7 @@ import com.lance5057.extradelight.modules.SummerCitrus;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
 import net.enderturret.minestuckcompat.ConfigCondition;
@@ -101,5 +102,33 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		// Miscellaneous
 		sourceGristCost(PESTLE_AMETHYST).source(Items.AMETHYST_SHARD).source(Items.STICK).build(output);
 		sourceGristCost(PESTLE_GILDED_BLACKSTONE).source(Items.GILDED_BLACKSTONE).source(Items.STICK).build(output);
+
+		//
+		// Combination Recipes
+		//
+
+		combination(WILD_GINGER).or().input(Items.SHORT_GRASS).input(GINGER).build(output);
+		combination(WILD_PEANUT_BLOCK).or().input(Items.SHORT_GRASS).input(PEANUTS_IN_SHELL).build(output);
+		combination(WILD_CHILI_BLOCK).or().input(Items.SHORT_GRASS).input(CHILI).build(output);
+		combination(WILD_MALLOW_ROOT_BLOCK).or().input(Items.SHORT_GRASS).input(MALLOW_ROOT).build(output);
+		combination(WILD_GARLIC_BLOCK).or().input(Items.SHORT_GRASS).input(GARLIC).build(output);
+		combination(Fermentation.WILD_CUCUMBER_ITEM).or().input(Items.SHORT_GRASS).input(Fermentation.CUCUMBER).build(output);
+		combination(Fermentation.WILD_SOYBEAN_ITEM).or().input(Items.SHORT_GRASS).input(Fermentation.SOYBEAN_POD).build(output);
+
+		saplingCombinations(output, APPLE_SAPLING, FRUIT_LOG, APPLE_LEAVES);
+		saplingCombinations(output, CINNAMON_SAPLING, CINNAMON_LOG, CINNAMON_LEAVES);
+		saplingCombinations(output, HAZELNUT_SAPLING, FRUIT_LOG, HAZELNUT_LEAVES);
+		saplingCombinations(output, SummerCitrus.LEMON_SAPLING_ITEM, FRUIT_LOG, SummerCitrus.LEMON_LEAVES);
+		saplingCombinations(output, SummerCitrus.LIME_SAPLING_ITEM, FRUIT_LOG, SummerCitrus.LIME_LEAVES);
+		saplingCombinations(output, SummerCitrus.ORANGE_SAPLING_ITEM, FRUIT_LOG, SummerCitrus.ORANGE_LEAVES);
+		saplingCombinations(output, SummerCitrus.GRAPEFRUIT_SAPLING_ITEM, FRUIT_LOG, SummerCitrus.GRAPEFRUIT_LEAVES);
+
+		combination(APPLE_SAPLING).or().namedInput(ItemTags.SAPLINGS).input(Items.APPLE).build(output);
+		combination(CINNAMON_SAPLING).or().namedInput(ItemTags.SAPLINGS).input(CINNAMON_BARK).build(output);
+		combination(HAZELNUT_SAPLING).or().namedInput(ItemTags.SAPLINGS).input(HAZELNUTS_IN_SHELL).build(output);
+		combination(SummerCitrus.LEMON_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.LEMON).build(output);
+		combination(SummerCitrus.LIME_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.LIME).build(output);
+		combination(SummerCitrus.ORANGE_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.ORANGE).build(output);
+		combination(SummerCitrus.GRAPEFRUIT_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.GRAPEFRUIT).build(output);
 	}
 }

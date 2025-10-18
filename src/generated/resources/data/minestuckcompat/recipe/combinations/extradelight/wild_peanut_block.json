@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:short_grass"
+  },
+  "input2": {
+    "item": "extradelight:peanuts_in_shell"
+  },
+  "mode": "or",
+  "output": "extradelight:wild_peanut_block"
+}
