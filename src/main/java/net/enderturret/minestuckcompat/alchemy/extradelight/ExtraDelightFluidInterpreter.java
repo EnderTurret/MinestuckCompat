@@ -16,6 +16,7 @@ import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -63,6 +64,15 @@ public final class ExtraDelightFluidInterpreter extends AbstractCostAddingRecipe
 			if (!FluidHelper.account(totalCost, callback, ing))
 				return null;
 
+		return totalCost;
+	}
+
+	@Override
+	@Nullable
+	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
+		final GristSet ret = super.generateCost(recipe, output, callback);
+		if (ret == null) return null;
+
 		ItemStack container = ItemStack.EMPTY;
 
 		if (recipe instanceof MixingBowlRecipe r)
@@ -70,17 +80,10 @@ public final class ExtraDelightFluidInterpreter extends AbstractCostAddingRecipe
 		else if (recipe instanceof ChillerRecipe r)
 			container = r.getOutputContainer();
 
-		if (!container.isEmpty()) {
-			final GristSet ingredientCost = callback.lookupCostFor(container);
-			if (ingredientCost == null) return null;
+		if (!container.isEmpty() && !account((MutableGristSet) ret, callback, container.getItem()))
+			return null;
 
-			totalCost.add(ingredientCost);
-		}
-
-		//if (container.getItem() == Items.BOWL)
-		//MinestuckCompat.LOGGER.info("Ingredient cost {}", totalCost);
-
-		return totalCost;
+		return ret;
 	}
 
 	@Override
