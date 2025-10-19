@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 10,
+    "minestuck:chalk": 2,
+    "minestuck:tar": 1
+  },
+  "ingredient": {
+    "item": "extradelight:scrambled_eggs"
+  }
+}

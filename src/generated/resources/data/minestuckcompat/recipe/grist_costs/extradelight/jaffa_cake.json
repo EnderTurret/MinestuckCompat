@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 3,
+    "minestuck:chalk": 1,
+    "minestuck:cobalt": 1,
+    "minestuck:iodine": 4,
+    "minestuck:mercury": 1,
+    "minestuck:quartz": 1,
+    "minestuck:rust": 1,
+    "minestuck:shale": 1,
+    "minestuck:sulfur": 1,
+    "minestuck:tar": 1
+  },
+  "ingredient": {
+    "item": "extradelight:jaffa_cake"
+  }
+}

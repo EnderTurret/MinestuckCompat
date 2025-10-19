@@ -50,7 +50,8 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		gristCost(CORN_HUSK).grist(AMBER, 2).build(output);
 		gristCost(CORN_SILK).grist(IODINE, 1).build(output);
 		containerGristCost(SummerCitrus.EGG_WHITE).grist(AMBER, 2).build(output);
-		gristCost(SummerCitrus.EGG_YOLK).grist(AMBER, 3).build(output);
+		// Note: egg yolk has a crafting remainder of bone meal.
+		sourceGristCost(SummerCitrus.EGG_YOLK).grist(AMBER, 3).source(Items.BONE_MEAL).build(output);
 		containerGristCost(CURRY_POWDER).grist(IODINE, 4).grist(RUST, 4).grist(GARNET, 4).build(output);
 
 		// Crops
@@ -105,6 +106,16 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		gristCost(SummerCitrus.LIME_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
 		gristCost(SummerCitrus.ORANGE_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
 		gristCost(SummerCitrus.GRAPEFRUIT_PETAL_LITTER_ITEM).grist(CHALK, 1).grist(IODINE, 1).build(output);
+
+		// Fixes for interpreters not giving items their container costs when the container is secretly consumed by the result.
+		// E.g., bowl + food ==> bowl of food
+		// bowl of food + something else ==> bowl of fancier food + bowl (remainder from bowl of food)
+		// now bowl of fancier food doesn't have its container cost (bowl)
+		containerGristCost(OMELETTE_MIX).grist(AMBER, 12).grist(CHALK, 2).grist(RUST, 2).build(output);
+		containerGristCost(SCRAMBLED_EGGS).grist(AMBER, 10).grist(CHALK, 2).grist(TAR, 1).build(output);
+		containerGristCost(BREADING_MISANPLAS).grist(AMBER, 16).grist(CHALK, 2).grist(IODINE, 2).grist(TAR, 1).grist(COBALT, 1).grist(MERCURY, 2).grist(RUST, 1).build(output);
+		containerGristCost(SummerCitrus.JAFFA_CAKE).grist(AMBER, 3).grist(CHALK, 1).grist(IODINE, 4).grist(SHALE, 1).grist(TAR, 1).grist(COBALT, 1).grist(MERCURY, 1).grist(QUARTZ, 1).grist(SULFUR, 1).grist(RUST, 1).build(output);
+		containerGristCost(FISH_SALAD).grist(AMBER, 9).grist(CAULK, 3).grist(IODINE, 1).grist(SHALE, 1).grist(TAR, 1).grist(COBALT, 2).grist(RUST, 1).build(output);
 
 		// Miscellaneous
 		sourceGristCost(PESTLE_AMETHYST).source(Items.AMETHYST_SHARD).source(Items.STICK).build(output);

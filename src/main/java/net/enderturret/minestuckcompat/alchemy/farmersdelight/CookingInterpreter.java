@@ -18,10 +18,8 @@ import net.minecraft.world.item.crafting.Recipe;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
-import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 
 import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
-import vectorwing.farmersdelight.common.crafting.CuttingBoardRecipe;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
 

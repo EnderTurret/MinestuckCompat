@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 12,
+    "minestuck:chalk": 2,
+    "minestuck:rust": 2
+  },
+  "ingredient": {
+    "item": "extradelight:omelette_mix"
+  }
+}

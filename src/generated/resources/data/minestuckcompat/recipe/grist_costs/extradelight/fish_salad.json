@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 9,
+    "minestuck:caulk": 3,
+    "minestuck:cobalt": 2,
+    "minestuck:iodine": 1,
+    "minestuck:rust": 1,
+    "minestuck:shale": 1,
+    "minestuck:tar": 1
+  },
+  "ingredient": {
+    "item": "extradelight:fish_salad"
+  }
+}

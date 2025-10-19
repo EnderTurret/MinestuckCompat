@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:container_grist_cost",
+  "grist_cost": {
+    "minestuck:amber": 16,
+    "minestuck:chalk": 2,
+    "minestuck:cobalt": 1,
+    "minestuck:iodine": 2,
+    "minestuck:mercury": 2,
+    "minestuck:rust": 1,
+    "minestuck:tar": 1
+  },
+  "ingredient": {
+    "item": "extradelight:breading_misanplas"
+  }
+}
