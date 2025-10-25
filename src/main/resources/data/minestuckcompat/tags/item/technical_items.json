@@ -260,6 +260,7 @@
     { "id": "extrastuck:card_ore", "required": false },
     { "id": "extrastuck:fortune_cookie", "required": false },
     { "id": "extrastuck:luck_token", "required": false },
+    { "id": "extrastuck:mastermind_card", "required": false },
     { "id": "msuportmodi:captcha_book", "required": false },
     { "id": "msuportmodi:wallet_entity_item", "required": false },
     { "id": "msuportmodi:operandi_axe", "required": false },
@@ -267,6 +268,9 @@
     { "id": "msuportmodi:operandi_pickaxe", "required": false },
     { "id": "msuportmodi:operandi_shovel", "required": false },
     { "id": "minestuck_extended:mechanical_chainsaw_lipstick", "required": false },
-    { "id": "minestuck_extended:zip_bundle", "required": false }
+    { "id": "minestuck_extended:zip_bundle", "required": false },
+    { "id": "ms_extras:blacksmiths_note", "required": false },
+    { "id": "ms_extras:byrllysg_disclaimer", "required": false },
+    { "id": "ms_extras:helpful_note_1", "required": false }
   ]
 }
