@@ -3,6 +3,13 @@
     {
       "type": "minestuckcompat:config",
       "modid": "minecraft"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "ms_extras"
+      }
     }
   ],
   "type": "minestuck:source_grist_cost",
@@ -13,7 +20,7 @@
   "ingredient": {
     "item": "minecraft:netherite_upgrade_smithing_template"
   },
-  "multiplier": 5.0,
+  "multiplier": 7.0,
   "sources": [
     "minecraft:diamond"
   ]

@@ -103,7 +103,7 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		sourceGristCost(WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE).grist(BUILD, 4).grist(SHALE, 4).source(Items.DIAMOND).multiplier(5).build(output);
 		sourceGristCost(WILD_ARMOR_TRIM_SMITHING_TEMPLATE).grist(BUILD, 2).source(Items.DIAMOND).multiplier(5).build(output);
 		// This one isn't visual, but people end up needing infinite of them anyway.
-		sourceGristCost(NETHERITE_UPGRADE_SMITHING_TEMPLATE).grist(BUILD, 1).grist(TAR, 1).source(Items.DIAMOND).multiplier(5).build(output);
+		sourceGristCost(NETHERITE_UPGRADE_SMITHING_TEMPLATE).grist(BUILD, 1).grist(TAR, 1).source(Items.DIAMOND).multiplier(7).build(output.withConditions(not(modLoaded("ms_extras"))));
 
 		gristCost(ARMADILLO_SCUTE).grist(IODINE, 6).grist(SHALE, 5).grist(COBALT, 3).build(output);
 		gristCost(BEE_NEST).grist(BUILD, 15).grist(AMBER, 6).grist(GOLD, 6).build(output);

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-14T18:21:51.924024604	Vanilla Recipes
+// 1.21.1	2025-10-24T21:50:59.206735058	Vanilla Recipes
 0099357e0c43f6126ce48f01bd96461c53ce9c0d data/minestuckcompat/recipe/combinations/vanilla/allium.json
 7e4a2be9c0f2bce836643a3f9d928a57a90b3dea data/minestuckcompat/recipe/combinations/vanilla/angler_pottery_sherd.json
 f64944c9b485abfecd033c00d68d2c4f1c849106 data/minestuckcompat/recipe/combinations/vanilla/archer_pottery_sherd.json
@@ -253,7 +253,7 @@ cc96a2a9c4ca8a574296d4622e81337054a84226 data/minestuckcompat/recipe/grist_costs
 141d7857b27cbb6056d003976d6fd65ee9291f99 data/minestuckcompat/recipe/grist_costs/vanilla/netherite_pickaxe.json
 7a7889204aa35e3d98c2f581ef0c853de7f9b415 data/minestuckcompat/recipe/grist_costs/vanilla/netherite_shovel.json
 ac5f4315b7c23c356ebbebd11b6e9f9d35f1a7d1 data/minestuckcompat/recipe/grist_costs/vanilla/netherite_sword.json
-a530a62cdc14a85d759011e4bea6c29711505c13 data/minestuckcompat/recipe/grist_costs/vanilla/netherite_upgrade_smithing_template.json
+fb31f084df7aee5b1b97596f5333ed78357c6f07 data/minestuckcompat/recipe/grist_costs/vanilla/netherite_upgrade_smithing_template.json
 ccd6fab066fc88cbdc912c77102083b3ddcb8206 data/minestuckcompat/recipe/grist_costs/vanilla/ominous_bottle.json
 73aad4285a269b06f186ea2c2d146b8c2e34924e data/minestuckcompat/recipe/grist_costs/vanilla/ominous_trial_key.json
 ddc6afe47641281acec41e9669fa74e7ff3b5570 data/minestuckcompat/recipe/grist_costs/vanilla/orange_shulker_box.json
