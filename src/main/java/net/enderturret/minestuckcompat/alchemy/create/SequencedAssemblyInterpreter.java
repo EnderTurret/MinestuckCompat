@@ -18,12 +18,13 @@ import com.simibubi.create.content.kinetics.press.PressingRecipe;
 import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
@@ -145,7 +146,7 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 					if (!ing.test(recipe.getTransitionalItem()))
 						tracker.report(ing);
 			} else if (seq.getRecipe() instanceof FillingRecipe r2)
-				FluidHelper.report(tracker, r2.getRequiredFluid().getMatchingFluidStacks().get(0));
+				FluidHelper.report(tracker, r2.getRequiredFluid().ingredient());
 	}
 
 	@Override
@@ -179,8 +180,8 @@ public final class SequencedAssemblyInterpreter extends AbstractCostAddingRecipe
 
 		else if (seq instanceof FillingRecipe r2) {
 			sequenceCost.add(fillCost);
-			final FluidIngredient fluid = r2.getRequiredFluid();
-			if (!FluidHelper.account(sequenceCost, callback, fluid.getMatchingFluidStacks(), fluid.getRequiredAmount()))
+			final SizedFluidIngredient fluid = r2.getRequiredFluid();
+			if (!FluidHelper.account(sequenceCost, callback, fluid))
 				return false;
 		}
 

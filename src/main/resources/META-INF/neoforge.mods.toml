@@ -68,6 +68,43 @@ issueTrackerURL="https://github.com/EnderTurret/MinestuckCompat/issues"
     side="BOTH"
 
 [[dependencies.minestuckcompat]]
+    modId="ae2"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="biomesoplenty"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="create"
+    type="optional"
+    versionRange="[6.0.7,)"
+
+[[dependencies.minestuckcompat]]
+    modId="extradelight"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="farmersdelight"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="immersiveengineering"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="mekanism"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="rechiseled"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="supplementaries"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
     modId="extrastuck"
     type="optional"
     ordering="AFTER"

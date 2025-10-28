@@ -15,13 +15,14 @@ import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
+
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
@@ -73,8 +74,8 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 			if (!account(totalCost, callback, ing))
 				return null;
 
-		for (FluidIngredient ing : recipe.getFluidIngredients())
-			if (!FluidHelper.account(totalCost, callback, ing.getMatchingFluidStacks(), ing.getRequiredAmount()))
+		for (SizedFluidIngredient ing : recipe.getFluidIngredients())
+			if (!FluidHelper.account(totalCost, callback, ing))
 				return null;
 
 		return totalCost;
@@ -91,8 +92,8 @@ public final class FluidProcessingInterpreter extends AbstractCostAddingRecipeIn
 		for (Ingredient ing : recipe.getIngredients())
 			tracker.report(ing);
 
-		for (FluidIngredient ing : recipe.getFluidIngredients())
-			FluidHelper.report(tracker, ing.getMatchingFluidStacks());
+		for (SizedFluidIngredient ing : recipe.getFluidIngredients())
+			FluidHelper.report(tracker, ing.ingredient());
 	}
 
 	@Override
