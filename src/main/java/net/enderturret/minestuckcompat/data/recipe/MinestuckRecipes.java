@@ -43,21 +43,21 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		gristCost(RAZOR_BLADE).grist(RUST, 14).build(output);
 		gristCost(SUSHROOM).grist(IODINE, 3).grist(GARNET, 1).build(output);
 		gristCost(CRYPTID_PHOTO).grist(BUILD, 160).grist(AMETHYST, 80).grist(GARNET, 33).build(output);
-		gristCost(CUEBALL).grist(BUILD, 4130).grist(RUST, 4130).grist(GOLD, 273).build(output);
+		gristCost(CUEBALL).grist(BUILD, 4130).grist(RUST, 4130).grist(GOLD, 273).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
 
-		gristCost(ALLWEDDOL).grist(BUILD, 24913).grist(RUST, 2750).grist(GOLD, 5188).build(output);
-		gristCost(ACTION_CLAWS_DRAWN).grist(BUILD, 2944).grist(RUST, 1732).grist(COBALT, 3140).grist(DIAMOND, 5600).build(output);
+		gristCost(ALLWEDDOL).grist(BUILD, 24913).grist(RUST, 2750).grist(GOLD, 5188).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
+		gristCost(ACTION_CLAWS_DRAWN).grist(BUILD, 2944).grist(RUST, 1732).grist(COBALT, 3140).grist(DIAMOND, 5600).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
 
 		gristCost(MINI_TYPHEUS_STATUE).grist(BUILD, 30).build(output);
 		gristCost(NAKAGATOR_STATUE).grist(BUILD, 30).build(output);
 
-		containerGristCost(LIGHT_WATER_BUCKET).grist(GristTypes.CHALK, 6).grist(TAR, 4).build(output);
+		containerGristCost(LIGHT_WATER_BUCKET).grist(GristTypes.CHALK, 6).grist(TAR, 4).build(output); // TODO Remove
 
 		sourceGristCost(TALL_DEAD_BUSH).multiplier(2).source(Items.DEAD_BUSH).build(output);
 		sourceGristCost(TALL_END_GRASS).grist(CAULK, 1).grist(IODINE, 2).build(output);
 		sourceGristCost(TALL_SANDY_GRASS).grist(IODINE, 1).multiplier(2).source(SANDY_GRASS.asItem()).build(output);
 		gristCost(DESERT_BUSH).grist(BUILD, 1).grist(IODINE, 2).build(output);
-		gristCost(MAGMATIC_IGNEOUS_STONE).grist(BUILD, 2).grist(CAULK, 4).grist(TAR, 4).build(output);
+		gristCost(MAGMATIC_IGNEOUS_STONE).grist(BUILD, 2).grist(CAULK, 4).grist(TAR, 4).build(output); // TODO Remove
 		gristCost(METEORIC_STONE).grist(BUILD, 2).build(output);
 
 		gristCost(AND_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);

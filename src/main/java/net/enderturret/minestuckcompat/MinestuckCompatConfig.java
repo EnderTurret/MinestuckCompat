@@ -26,6 +26,7 @@ public final class MinestuckCompatConfig {
 	}
 
 	public final BooleanValue useExtraStuckInterpreters;
+	public final BooleanValue enableDangerousGristCosts;
 	public final BooleanValue dumpGristlessItems;
 	public final BooleanValue dumpUnhandledRecipeTypes;
 	public final BooleanValue dumpUnhandledRecipeTypesFiltering;
@@ -43,6 +44,14 @@ public final class MinestuckCompatConfig {
 				"Turning this config option on will make Minestuck Compat disable its overlapping interpreters and allow",
 				"ExtraStuck's interpreters to load."
 				).define("useExtraStuckInterpreters", false);
+
+		enableDangerousGristCosts = builder.comment(
+				"In an effort to add grist costs for every obtainable item, Minestuck Compat adds some grist costs for some 'dangerous' items.",
+				"These costs are disabled by default, but when enabled define costs for:",
+				"- Action Claws",
+				"- Allweddol",
+				"- Magic Cueball"
+				).define("enableDangerousGristCosts", false);
 
 		dumpGristlessItems = builder.comment(
 				"Whether or not to print a list of all items that lack grist costs to the log.",

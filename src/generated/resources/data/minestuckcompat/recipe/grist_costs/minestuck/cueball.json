@@ -3,6 +3,10 @@
     {
       "type": "minestuckcompat:config",
       "modid": "minestuck"
+    },
+    {
+      "type": "minestuckcompat:config",
+      "option": "enableDangerousGristCosts"
     }
   ],
   "type": "minestuck:grist_cost",
