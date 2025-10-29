@@ -11,9 +11,10 @@
   ],
   "type": "minestuck:grist_cost",
   "grist_cost": {
-    "minestuck:build": 4130,
-    "minestuck:gold": 273,
-    "minestuck:rust": 4130
+    "minestuck:build": 12363,
+    "minestuck:gold": 3388,
+    "minestuck:rust": 8250,
+    "minestuck:zillium": 2
   },
   "ingredient": {
     "item": "minestuck:cueball"

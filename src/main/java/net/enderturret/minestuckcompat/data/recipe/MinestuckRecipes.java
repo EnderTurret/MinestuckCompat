@@ -43,10 +43,11 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		gristCost(RAZOR_BLADE).grist(RUST, 14).build(output);
 		gristCost(SUSHROOM).grist(IODINE, 3).grist(GARNET, 1).build(output);
 		gristCost(CRYPTID_PHOTO).grist(BUILD, 160).grist(AMETHYST, 80).grist(GARNET, 33).build(output);
-		gristCost(CUEBALL).grist(BUILD, 4130).grist(RUST, 4130).grist(GOLD, 273).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
 
-		gristCost(ALLWEDDOL).grist(BUILD, 24913).grist(RUST, 2750).grist(GOLD, 5188).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
-		gristCost(ACTION_CLAWS_DRAWN).grist(BUILD, 2944).grist(RUST, 1732).grist(COBALT, 3140).grist(DIAMOND, 5600).build(output.withConditions(new ConfigCondition("enableDangerousGristCosts", "")));
+		final var dangerous = output.withConditions(new ConfigCondition("enableDangerousGristCosts", ""));
+		gristCost(CUEBALL).grist(BUILD, 12363).grist(RUST, 8250).grist(GOLD, 3388).grist(ZILLIUM, 2).build(dangerous);
+		gristCost(ALLWEDDOL).grist(BUILD, 9263).grist(RUST, 2750).grist(GOLD, 5188).build(dangerous);
+		gristCost(ACTION_CLAWS_DRAWN).grist(BUILD, 9733).grist(RUST, 1833).grist(COBALT, 7133).grist(DIAMOND, 5633).build(dangerous);
 
 		gristCost(MINI_TYPHEUS_STATUE).grist(BUILD, 30).build(output);
 		gristCost(NAKAGATOR_STATUE).grist(BUILD, 30).build(output);
