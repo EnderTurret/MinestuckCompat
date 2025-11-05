@@ -30,6 +30,7 @@
     "perf.small_grist_set.MixinCodecs",
     "perf.small_grist_set.MixinDefaultImmutableGristSet",
     "perf.small_grist_set.MixinGristSet",
+    "perf.small_grist_set.MixinGristSetArgument",
     "perf.small_grist_set.MixinMutableGristSet",
     "perf.small_recipes.MixinSourceGristCostSerializer"
   ]
