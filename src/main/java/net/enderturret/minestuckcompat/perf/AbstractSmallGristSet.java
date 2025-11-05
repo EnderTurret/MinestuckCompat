@@ -11,6 +11,8 @@ import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
+import net.enderturret.minestuckcompat.MinestuckCompat;
+
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 
@@ -30,7 +32,7 @@ abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImm
 			final GristType type = GristTypeHelper.type(i);
 			if (set.hasType(type)) {
 				empty = false;
-				gristByType[i] = (int) set.getGrist(type);
+				gristByType[i] = checkCast(set.getGrist(type));
 			}
 		}
 
@@ -45,7 +47,7 @@ abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImm
 			final GristType type = GristTypeHelper.type(i);
 			if (map.containsKey(type)) {
 				empty = false;
-				gristByType[i] = map.get(type).intValue();
+				gristByType[i] = checkCast(map.get(type));
 			}
 		}
 
@@ -56,7 +58,7 @@ abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImm
 		final int[] gristByType = new int[GristTypeHelper.size()];
 		for (GristAmount amt : list) {
 			final int index = GristTypeHelper.id(amt.type());
-			gristByType[index] = (int) amt.amount();
+			gristByType[index] = checkCast(amt.amount());
 		}
 
 		return gristByType;
@@ -126,5 +128,10 @@ abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImm
 
 		sb.append(" }");
 		return sb.toString();
+	}
+
+	private static int checkCast(long cost) {
+		if (cost > Integer.MAX_VALUE) MinestuckCompat.LOGGER.warn("Grist cost is larger than max allowed ({}): {}", Integer.MAX_VALUE, cost, new Throwable("stacktrace"));
+		return (int) cost;
 	}
 }

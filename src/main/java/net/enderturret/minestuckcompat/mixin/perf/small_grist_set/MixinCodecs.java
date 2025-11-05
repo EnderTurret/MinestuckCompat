@@ -1,14 +1,20 @@
 package net.enderturret.minestuckcompat.mixin.perf.small_grist_set;
 
+import java.util.List;
+import java.util.Map;
+
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Slice;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
+import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.GristTypes;
 
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -19,6 +25,24 @@ import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
 
 @Mixin(GristSet.Codecs.class)
 public abstract class MixinCodecs {
+
+	@Unique
+	private static DataResult<List<GristAmount>> minestuckcompat$validateWithinLimit(List<GristAmount> list) {
+		for (GristAmount amount : list)
+			if (amount.amount() > Integer.MAX_VALUE)
+				return DataResult.error(() -> "Grist amount exceeds maximum possible (" + Integer.MAX_VALUE + "): " + amount);
+
+		return DataResult.success(list);
+	}
+
+	@Unique
+	private static DataResult<Map<GristType, Long>> minestuckcompat$validateWithinLimit(Map<GristType, Long> map) {
+		for (var entry : map.entrySet())
+			if (entry.getValue() > Integer.MAX_VALUE)
+				return DataResult.error(() -> "Grist amount exceeds maximum possible (" + Integer.MAX_VALUE + "): " + entry.getKey() + " = " + entry.getValue());
+
+		return DataResult.success(map);
+	}
 
 	@ModifyExpressionValue(
 			at = @At(
@@ -32,7 +56,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapNonNegativeCodec(Codec<GristSet.Immutable> old) {
-		return GristAmount.NON_NEGATIVE_LIST_CODEC.xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
+		return GristAmount.NON_NEGATIVE_LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
 	}
 
 	@ModifyExpressionValue(
@@ -53,7 +77,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapMapCodec(Codec<GristSet.Immutable> old) {
-		return Codec.unboundedMap(GristTypes.REGISTRY.byNameCodec(), Codec.LONG).xmap(SmallImmutableGristSet::create, GristSet::asMap);
+		return Codec.unboundedMap(GristTypes.REGISTRY.byNameCodec(), Codec.LONG).validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asMap);
 	}
 
 	@ModifyExpressionValue(
@@ -74,7 +98,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapListCodec(Codec<GristSet.Immutable> old) {
-		return GristAmount.LIST_CODEC.xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
+		return GristAmount.LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
 	}
 
 	@ModifyExpressionValue(
