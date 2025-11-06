@@ -3,6 +3,13 @@
     {
       "type": "minestuckcompat:config",
       "modid": "minestuck"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "ms_extras"
+      }
     }
   ],
   "type": "minestuck:grist_cost",

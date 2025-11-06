@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-28T20:29:55.206819441	Minestuck Recipes
+// 1.21.1	2025-11-05T21:03:01.789919503	Minestuck Recipes
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/clock_from_redstone.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/lightning_rod.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/coarse_end_stone.json
@@ -207,7 +207,7 @@ e363beabe73afaa637682da857067325e29be440 data/minestuckcompat/recipe/grist_costs
 39f2c50d1cbe7e2acbfd990a773b20a9447f61af data/minestuckcompat/recipe/grist_costs/minestuck/nand_gate_block.json
 da168a7898368ef45b500bb7d22b38b212c82e33 data/minestuckcompat/recipe/grist_costs/minestuck/nor_gate_block.json
 cfd1e41872bc6838a0729e75d1662c4e0bf3c572 data/minestuckcompat/recipe/grist_costs/minestuck/or_gate_block.json
-ce7cc12fe481ef203ee53b238b0befe712538278 data/minestuckcompat/recipe/grist_costs/minestuck/razor_blade.json
+d5157f3c2599b5180b2962588bdf97dd5e1f0629 data/minestuckcompat/recipe/grist_costs/minestuck/razor_blade.json
 9b378e67ee579e062bcbe3f6facb250866acfc24 data/minestuckcompat/recipe/grist_costs/minestuck/sushroom.json
 8ed71bfae779bcbd1a679fa456cf31ddd2c4a3fd data/minestuckcompat/recipe/grist_costs/minestuck/tall_dead_bush.json
 5526ab4007a20b2d53f57efd0ee092f319cf766f data/minestuckcompat/recipe/grist_costs/minestuck/tall_end_grass.json

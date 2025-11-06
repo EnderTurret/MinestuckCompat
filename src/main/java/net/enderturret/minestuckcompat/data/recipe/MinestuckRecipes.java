@@ -40,7 +40,7 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		gristCost(ACE_OF_DIAMONDS).grist(BUILD, 4).grist(MERCURY, 4).grist(TAR, 4).build(output);
 		gristCost(ACE_OF_HEARTS).grist(BUILD, 4).grist(MERCURY, 4).grist(GARNET, 4).build(output);
 		gristCost(ACE_OF_SPADES).grist(BUILD, 4).grist(MERCURY, 4).grist(TAR, 4).build(output);
-		gristCost(RAZOR_BLADE).grist(RUST, 14).build(output);
+		gristCost(RAZOR_BLADE).grist(RUST, 14).build(output.withConditions(not(modLoaded("ms_extras"))));
 		gristCost(SUSHROOM).grist(IODINE, 3).grist(GARNET, 1).build(output);
 		gristCost(CRYPTID_PHOTO).grist(BUILD, 160).grist(AMETHYST, 80).grist(GARNET, 33).build(output);
 
