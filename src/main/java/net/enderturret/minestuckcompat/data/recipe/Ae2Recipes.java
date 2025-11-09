@@ -56,7 +56,7 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		gristCost(LARGE_QUARTZ_BUD).grist(COBALT, 7).grist(QUARTZ, 7).build(output);
 		gristCost(QUARTZ_CLUSTER).grist(COBALT, 9).grist(QUARTZ, 9).build(output);
 
-		gristCost(FLAWLESS_BUDDING_QUARTZ).grist(COBALT, 32).grist(QUARTZ, 32).build(output);
+		//gristCost(FLAWLESS_BUDDING_QUARTZ)
 		gristCost(FLAWED_BUDDING_QUARTZ).grist(COBALT, 28).grist(QUARTZ, 28).build(output);
 		gristCost(CHIPPED_BUDDING_QUARTZ).grist(COBALT, 24).grist(QUARTZ, 24).build(output);
 		gristCost(DAMAGED_BUDDING_QUARTZ).grist(COBALT, 20).grist(QUARTZ, 20).build(output);
@@ -78,7 +78,7 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 
 		// Miscellaneous
 
-		sourceGristCost(MYSTERIOUS_CUBE).source(NOT_SO_MYSTERIOUS_CUBE.block().asItem()).build(output);
+		//sourceGristCost(MYSTERIOUS_CUBE).source(NOT_SO_MYSTERIOUS_CUBE.block().asItem()).build(output);
 		gristCost(AEParts.CABLE_ANCHOR.get()).grist(BUILD, 2).build(output);
 		sourceGristCost(FACADE).grist(BUILD, 2).source(AEParts.CABLE_ANCHOR.get()).build(output);
 		gristCost(NAME_PRESS).grist(RUST, 9).build(output);
