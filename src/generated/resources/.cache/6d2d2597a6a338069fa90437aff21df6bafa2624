@@ -1,11 +1,9 @@
-// 1.21.1	2025-10-14T00:26:03.176792796	AE2 Recipes
-5547f0944b1fd30f8f2dd80c48cbeb2618f3d62d data/minestuckcompat/recipe/combinations/ae2/chipped_budding_quartz.json
-8a52e3d13e88b71114665f4c64cc0390f96e4df5 data/minestuckcompat/recipe/combinations/ae2/damaged_budding_quartz.json
-b5a7dc7caa2554b216af19ba8bba1a01ad2006b4 data/minestuckcompat/recipe/combinations/ae2/flawed_budding_quartz.json
-6299c5e19118412763f1fc4af305ef230b061e46 data/minestuckcompat/recipe/combinations/ae2/flawless_budding_quartz.json
+// 1.21.1	2025-11-09T16:51:23.746962384	AE2 Recipes
+58fe7e821a718f222c9e780e94cbcd5a3930695d data/minestuckcompat/recipe/combinations/ae2/damaged_budding_quartz.json
 c41fa7b9f6bdbd474bb98d05e44897a38bfbe5cd data/minestuckcompat/recipe/combinations/ae2/large_quartz_bud.json
 f869c782526afb8dee5c98c1e0d909304b5f6560 data/minestuckcompat/recipe/combinations/ae2/medium_quartz_bud.json
 2010900aa7ab2ca662da27d0e5ef777dd7a03783 data/minestuckcompat/recipe/combinations/ae2/mysterious_cube.json
+c28a274fbc441d98e5363e9cb35359b8e4a9d012 data/minestuckcompat/recipe/combinations/ae2/quartz_block.json
 60a9d7215599d227e984fc855561f6c8b4c96e73 data/minestuckcompat/recipe/combinations/ae2/quartz_cluster.json
 59f2b8ef25b8d613b0d5647b49043e8ef33a89ba data/minestuckcompat/recipe/combinations/ae2/sky_stone_block.json
 2842470b06daffbbfe3c3954ae463bbad447bf48 data/minestuckcompat/recipe/combinations/ae2/small_quartz_bud.json

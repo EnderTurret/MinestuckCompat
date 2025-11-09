@@ -49,7 +49,7 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		gristCost(SINGULARITY).grist(BUILD, 256000).build(output);
 		sourceGristCost(QUANTUM_ENTANGLED_SINGULARITY).multiplier(0.5F).source(SINGULARITY.get()).source(ENDER_DUST.get()).build(output);
 
-		// Certus Quarts Buds / Budding Blocks
+		// Certus Quartz Buds / Budding Blocks
 
 		gristCost(SMALL_QUARTZ_BUD).grist(COBALT, 3).grist(QUARTZ, 3).build(output);
 		gristCost(MEDIUM_QUARTZ_BUD).grist(COBALT, 5).grist(QUARTZ, 5).build(output);
@@ -90,10 +90,11 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		combination(SKY_STONE_BLOCK).or().input(Items.BASALT).input(lookup("minestuck", "space_aspect_planks")).build(output);
 		combination(MYSTERIOUS_CUBE).and().input(SKY_STONE_BLOCK).input(CERTUS_QUARTZ_CRYSTAL).build(output);
 
-		combination(FLAWLESS_BUDDING_QUARTZ).or().input(MSItems.CRUXITE_BLOCK).input(ItemTags.SWORDS).build(output);
-		combination(FLAWED_BUDDING_QUARTZ).or().input(FLAWLESS_BUDDING_QUARTZ).input(ItemTags.SWORDS).build(output);
-		combination(CHIPPED_BUDDING_QUARTZ).or().input(FLAWED_BUDDING_QUARTZ).input(ItemTags.SWORDS).build(output);
-		combination(DAMAGED_BUDDING_QUARTZ).or().input(CHIPPED_BUDDING_QUARTZ).input(ItemTags.SWORDS).build(output);
+		//combination(FLAWLESS_BUDDING_QUARTZ)
+		//combination(FLAWED_BUDDING_QUARTZ)
+		//combination(CHIPPED_BUDDING_QUARTZ)
+		combination(DAMAGED_BUDDING_QUARTZ).or().input(QUARTZ_BLOCK).input(Items.WHEAT_SEEDS).build(output);
+		combination(QUARTZ_BLOCK).or().input(Items.AMETHYST_BLOCK).input(SKY_STONE_BLOCK).build(output);
 
 		combination(SMALL_QUARTZ_BUD).or().input(CERTUS_QUARTZ_CRYSTAL).input(Items.BONE_MEAL).build(output);
 		combination(MEDIUM_QUARTZ_BUD).or().input(SMALL_QUARTZ_BUD).input(Items.BONE_MEAL).build(output);
