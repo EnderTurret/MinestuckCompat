@@ -7,6 +7,7 @@
   ],
   "type": "minestuck:grist_cost",
   "grist_cost": {
+    "minestuck:amethyst": 8,
     "minestuck:cobalt": 20,
     "minestuck:quartz": 20
   },

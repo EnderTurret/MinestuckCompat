@@ -57,9 +57,9 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		gristCost(QUARTZ_CLUSTER).grist(COBALT, 9).grist(QUARTZ, 9).build(output);
 
 		//gristCost(FLAWLESS_BUDDING_QUARTZ)
-		gristCost(FLAWED_BUDDING_QUARTZ).grist(COBALT, 28).grist(QUARTZ, 28).build(output);
-		gristCost(CHIPPED_BUDDING_QUARTZ).grist(COBALT, 24).grist(QUARTZ, 24).build(output);
-		gristCost(DAMAGED_BUDDING_QUARTZ).grist(COBALT, 20).grist(QUARTZ, 20).build(output);
+		gristCost(FLAWED_BUDDING_QUARTZ).grist(COBALT, 28).grist(QUARTZ, 28).grist(AMETHYST, 24).build(output);
+		gristCost(CHIPPED_BUDDING_QUARTZ).grist(COBALT, 24).grist(QUARTZ, 24).grist(AMETHYST, 16).build(output);
+		gristCost(DAMAGED_BUDDING_QUARTZ).grist(COBALT, 20).grist(QUARTZ, 20).grist(AMETHYST, 8).build(output);
 
 		// Patterns
 
