@@ -88,7 +88,6 @@ public final class Ae2Recipes extends AbstractRecipeProvider {
 		//
 
 		combination(SKY_STONE_BLOCK).or().input(Items.BASALT).input(lookup("minestuck", "space_aspect_planks")).build(output);
-		combination(MYSTERIOUS_CUBE).and().input(SKY_STONE_BLOCK).input(CERTUS_QUARTZ_CRYSTAL).build(output);
 
 		//combination(FLAWLESS_BUDDING_QUARTZ)
 		//combination(FLAWED_BUDDING_QUARTZ)
