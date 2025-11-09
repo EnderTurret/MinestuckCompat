@@ -120,6 +120,7 @@
   { "inputs": ["ae2:flawed_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
   { "inputs": ["ae2:chipped_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
   { "inputs": ["ae2:damaged_budding_quartz"], "outputs": ["ae2:certus_quartz_crystal"] },
+  { "inputs": ["ae2:charged_certus_quartz_crystal"], "outputs": ["ae2:damaged_budding_quartz", "ae2:chipped_budding_quartz", "ae2:flawed_budding_quartz"] },
   { "inputs": ["#ae2:knife", "#ae2:metal_ingots"], "outputs": ["ae2:cable_anchor", "ae2:facade"] },
   { "inputs": ["ae2:condenser", "ae2:cell_component_1k"], "outputs": ["ae2:matter_ball"] },
   { "inputs": ["ae2:condenser", "ae2:cell_component_64k"], "outputs": ["ae2:singularity"] },
