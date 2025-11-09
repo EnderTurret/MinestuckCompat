@@ -5,13 +5,15 @@
       "modid": "ae2"
     }
   ],
-  "type": "minestuck:grist_cost",
+  "type": "minestuck:source_grist_cost",
   "grist_cost": {
-    "minestuck:amethyst": 24,
-    "minestuck:cobalt": 28,
-    "minestuck:quartz": 28
+    "minestuck:amethyst": 24
   },
   "ingredient": {
     "item": "ae2:flawed_budding_quartz"
-  }
+  },
+  "sources": [
+    "ae2:chipped_budding_quartz",
+    "ae2:certus_quartz_crystal"
+  ]
 }
