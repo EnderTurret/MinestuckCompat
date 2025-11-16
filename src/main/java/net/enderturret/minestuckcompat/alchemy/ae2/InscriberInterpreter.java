@@ -51,7 +51,7 @@ public final class InscriberInterpreter extends AbstractCostAddingRecipeInterpre
 		else
 			totalCost = ingredientCost(recipe, callback);
 
-		return finalizeGristCosts(totalCost, recipe, output);
+		return finalizeGristCosts(totalCost, recipe, output, callback);
 	}
 
 	@Override

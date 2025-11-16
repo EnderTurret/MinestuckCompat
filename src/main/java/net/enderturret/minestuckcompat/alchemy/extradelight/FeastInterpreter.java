@@ -17,6 +17,7 @@ import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Block;
 
@@ -24,6 +25,7 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.Typed<FeastRecipe> {
 
@@ -61,15 +63,12 @@ public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.
 		if (!account(totalCost, callback, recipe.getFeastStack().getItem()))
 			return null;
 
-		if (!account(totalCost, callback, recipe.getContainer()))
-			return null;
-
 		return totalCost;
 	}
 
 	@Override
 	@Nullable
-	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output) {
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
 		if (recipe instanceof FeastRecipe r) {
 			final Block block = r.getFeast().getBlock();
 			final int result;
@@ -84,10 +83,20 @@ public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.
 				result = 1;
 			}
 
-			return finalizeGristCosts(totalCost, result);
+			totalCost = (MutableGristSet) finalizeGristCosts(totalCost, result);
+			if (totalCost == null) return null;
+
+			if (!account(totalCost, callback, r.getContainer()))
+				return null;
+
+			// HACK: Add back the bowl container cost for cooked rice, since it's removed by the grist cost generator.
+			if (r.getContainer().test(new ItemStack(ModItems.COOKED_RICE.get())) && !account(totalCost, callback, Items.BOWL))
+				return null;
+
+			return totalCost;
 		}
 
-		return super.finalizeGristCosts(totalCost, recipe, output);
+		return super.finalizeGristCosts(totalCost, recipe, output, callback);
 	}
 
 	@Override

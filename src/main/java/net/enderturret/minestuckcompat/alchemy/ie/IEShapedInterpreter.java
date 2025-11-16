@@ -49,7 +49,7 @@ public final class IEShapedInterpreter extends AbstractCostAddingRecipeInterpret
 		final MutableGristSet totalCost = ingredientCost(recipe, callback);
 		if (totalCost == null) return null;
 
-		return finalizeGristCosts(totalCost, recipe, output);
+		return finalizeGristCosts(totalCost, recipe, output, callback);
 	}
 
 	@Override

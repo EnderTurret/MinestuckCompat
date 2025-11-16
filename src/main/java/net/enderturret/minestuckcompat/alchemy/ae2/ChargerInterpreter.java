@@ -53,7 +53,7 @@ public final class ChargerInterpreter extends AbstractCostAddingRecipeInterprete
 
 		//totalCost.add(scale(addedCost, energyScale, false));
 
-		return finalizeGristCosts(totalCost, recipe, output);
+		return finalizeGristCosts(totalCost, recipe, output, callback);
 	}
 
 	@Override

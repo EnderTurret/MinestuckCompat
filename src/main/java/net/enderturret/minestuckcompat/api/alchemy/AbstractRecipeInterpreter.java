@@ -47,7 +47,7 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 		if (recipe.isSpecial())
 			return null;
 
-		return finalizeGristCosts(ingredientCost(recipe, callback), recipe, output);
+		return finalizeGristCosts(ingredientCost(recipe, callback), recipe, output, callback);
 	}
 
 	@Override
@@ -93,12 +93,14 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 	}
 
 	@Nullable
-	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output) {
+	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
+		if (totalCost == null) return null;
+
 		for (ItemStack out : getOutputItemStacks(recipe))
 			if (out.getItem() == output)
-				return finalizeGristCosts(totalCost, out.getCount());
+				return containerCost((MutableGristSet) finalizeGristCosts(totalCost, out.getCount()), recipe, output, callback);
 
-		return finalizeGristCosts(totalCost, 1);
+		return containerCost((MutableGristSet) finalizeGristCosts(totalCost, 1), recipe, output, callback);
 	}
 
 	/**
