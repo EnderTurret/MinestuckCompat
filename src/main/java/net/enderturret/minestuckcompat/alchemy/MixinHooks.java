@@ -13,6 +13,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
+import org.slf4j.event.Level;
 
 import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.RegularCombinationRecipe;
@@ -39,6 +40,7 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 
@@ -67,7 +69,7 @@ public final class MixinHooks {
 	 * @param access The access to pass to the event.
 	 */
 	public static void generateAdditionalGristCosts(GeneratorProcessAccess access) {
-		MinestuckCompat.LOGGER.info("Discovering additional grist cost providers!");
+		MinestuckCompat.LOGGER.atLevel(FMLEnvironment.production ? Level.DEBUG : Level.INFO).log("Discovering additional grist cost providers!");
 		NeoForge.EVENT_BUS.post(new RegisterGristCostProvidersEvent(generatedCosts, access));
 		generatedCosts = null;
 	}

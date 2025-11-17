@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.event.Level;
 
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.MapCodec;
@@ -27,6 +28,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import net.enderturret.minestuckcompat.MinestuckCompat;
+import net.enderturret.minestuckcompat.MinestuckCompatConfig;
 import net.enderturret.minestuckcompat.api.alchemy.AbstractCostAddingRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.AnalyzableRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.FluidHelper;
@@ -116,7 +118,7 @@ public final class MultiblockInterpreter extends AbstractCostAddingRecipeInterpr
 					if (tagToIeItem == null) buildTagMap();
 					final Item item = tagToIeItem.get(tag.tag().location());
 					if (item == null)
-						MinestuckCompat.LOGGER.warn("[Immersive Engineering] Missing entry for TagOutput {}", tag.tag().location());
+						MinestuckCompat.LOGGER.atLevel(MinestuckCompatConfig.common().dumpGristlessItems.get() ? Level.WARN : Level.DEBUG).log("[Immersive Engineering] Missing entry for TagOutput {}", tag.tag().location());
 					else
 						ret.add(new ItemStack(item));
 				}
