@@ -115,7 +115,7 @@ public abstract class AbstractCostAddingRecipeInterpreter extends AbstractRecipe
 
 			if (totalCost == null) return null;
 
-			return finalizeGristCosts(totalCost, recipe, output);
+			return finalizeGristCosts(totalCost, recipe, output, callback);
 		}
 
 		@Override
