@@ -68,6 +68,21 @@ public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.
 
 	@Override
 	@Nullable
+	protected MutableGristSet containerCost(MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
+		if (recipe instanceof FeastRecipe r) {
+			if (!account(totalCost, callback, r.getContainer()))
+				return null;
+
+			// HACK: Add back the bowl container cost for cooked rice, since it's removed by the grist cost generator.
+			if (r.getContainer().test(new ItemStack(ModItems.COOKED_RICE.get())) && !account(totalCost, callback, Items.BOWL))
+				return null;
+		}
+
+		return totalCost;
+	}
+
+	@Override
+	@Nullable
 	protected GristSet finalizeGristCosts(@Nullable MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
 		if (recipe instanceof FeastRecipe r) {
 			final Block block = r.getFeast().getBlock();
@@ -83,17 +98,7 @@ public final class FeastInterpreter extends AbstractCostAddingRecipeInterpreter.
 				result = 1;
 			}
 
-			totalCost = (MutableGristSet) finalizeGristCosts(totalCost, result);
-			if (totalCost == null) return null;
-
-			if (!account(totalCost, callback, r.getContainer()))
-				return null;
-
-			// HACK: Add back the bowl container cost for cooked rice, since it's removed by the grist cost generator.
-			if (r.getContainer().test(new ItemStack(ModItems.COOKED_RICE.get())) && !account(totalCost, callback, Items.BOWL))
-				return null;
-
-			return totalCost;
+			return containerCost((MutableGristSet) finalizeGristCosts(totalCost, result), recipe, output, callback);
 		}
 
 		return super.finalizeGristCosts(totalCost, recipe, output, callback);

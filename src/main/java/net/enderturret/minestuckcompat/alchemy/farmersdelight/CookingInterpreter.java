@@ -53,10 +53,16 @@ public final class CookingInterpreter extends AbstractCostAddingRecipeInterprete
 
 	@Override
 	@Nullable
-	protected MutableGristSet generateCost(MutableGristSet totalCost, CookingPotRecipe recipe, Item output, GeneratorCallback callback) {
-		if (!recipe.getOutputContainer().isEmpty() && !account(totalCost, callback, recipe.getOutputContainer().getItem()))
+	protected MutableGristSet containerCost(MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
+		if (recipe instanceof CookingPotRecipe r && !r.getOutputContainer().isEmpty() && !account(totalCost, callback, r.getOutputContainer().getItem()))
 			return null;
 
+		return totalCost;
+	}
+
+	@Override
+	@Nullable
+	protected MutableGristSet generateCost(MutableGristSet totalCost, CookingPotRecipe recipe, Item output, GeneratorCallback callback) {
 		return totalCost;
 	}
 

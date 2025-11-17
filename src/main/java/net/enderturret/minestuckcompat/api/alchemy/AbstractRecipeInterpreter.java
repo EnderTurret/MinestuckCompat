@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeInterpreter;
 import com.mraof.minestuck.api.alchemy.GristSet;
+import com.mraof.minestuck.api.alchemy.GristType;
+import com.mraof.minestuck.api.alchemy.GristTypes;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 import com.mraof.minestuck.api.alchemy.recipe.generator.GeneratorCallback;
 import com.mraof.minestuck.api.alchemy.recipe.generator.LookupTracker;
@@ -88,6 +90,25 @@ public abstract class AbstractRecipeInterpreter implements RecipeInterpreter {
 			// ExtraDelight drying recipes have null ingredients, for some reason.
 			if (ingredient != null && !account(totalCost, callback, ingredient))
 				return null;
+
+		return totalCost;
+	}
+
+	@Nullable
+	@SuppressWarnings("deprecation")
+	protected MutableGristSet containerCost(MutableGristSet totalCost, Recipe<?> recipe, Item output, GeneratorCallback callback) {
+		if (!output.hasCraftingRemainingItem()) return totalCost;
+
+		final Item remainder = output.getCraftingRemainingItem();
+		final GristSet remainderCost = callback.lookupCostFor(remainder);
+		if (remainderCost == null) return null;
+
+		// HACK: If the total cost doesn't satisfy the remainder cost, add it back in.
+		for (GristType type : GristTypes.REGISTRY)
+			if (totalCost.getGrist(type) < remainderCost.getGrist(type)) {
+				totalCost.add(remainderCost);
+				break;
+			}
 
 		return totalCost;
 	}
