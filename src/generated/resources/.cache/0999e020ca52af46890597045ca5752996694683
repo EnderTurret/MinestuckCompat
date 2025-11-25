@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-14T00:26:03.173756558	Biomes O' Plenty Recipes
+// 1.21.1	2025-11-25T03:30:46.725419337	Biomes O' Plenty Recipes
 74dfb6449aed3a6ed9b300f87817201251172522 data/minestuckcompat/recipe/combinations/biomesoplenty/anomaly.json
 c96a16b5168743c8cba7dee3ea7211c8f468d9bf data/minestuckcompat/recipe/combinations/biomesoplenty/barley.json
 b3419894c112b180c609a5eb49dbde2ef0e003b6 data/minestuckcompat/recipe/combinations/biomesoplenty/barnacles.json
@@ -204,7 +204,6 @@ f86da838a51eedf77dafed0727fae0f7b5a2b580 data/minestuckcompat/recipe/grist_costs
 695d7f0f01ff74c14c2fa383aaf73d73b082654c data/minestuckcompat/recipe/grist_costs/biomesoplenty/blood.json
 c9d479c8d1d03e8475fba94444df200c3a6a2131 data/minestuckcompat/recipe/grist_costs/biomesoplenty/blood_bucket.json
 5c40ad32394cd073969a0f57362dde25463fd1e7 data/minestuckcompat/recipe/grist_costs/biomesoplenty/blue_hydrangea.json
-c0fc4bbd657aed99a46340bdb67fd631d3237b3f data/minestuckcompat/recipe/grist_costs/biomesoplenty/bop_icon.json
 b60f054e4e558fa56f39eb0f650e5ed12b013fbd data/minestuckcompat/recipe/grist_costs/biomesoplenty/bramble.json
 ce1bf8e2d489e7298b86b40e3d375ec5fc48d910 data/minestuckcompat/recipe/grist_costs/biomesoplenty/bramble_leaves.json
 e5fc472b9fdcc55cd2b3b02763168a3273e3b499 data/minestuckcompat/recipe/grist_costs/biomesoplenty/brimstone.json

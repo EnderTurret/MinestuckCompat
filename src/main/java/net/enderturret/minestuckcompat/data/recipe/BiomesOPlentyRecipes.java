@@ -185,8 +185,6 @@ public final class BiomesOPlentyRecipes extends AbstractRecipeProvider {
 		sourceGristCost(POTTED_WILTED_LILY).source(WILTED_LILY).source(Items.FLOWER_POT).build(output);
 		sourceGristCost(POTTED_YELLOW_MAPLE_SAPLING).source(YELLOW_MAPLE_SAPLING).source(Items.FLOWER_POT).build(output);
 
-		gristCost(BOP_ICON).grist(BUILD, 1000).grist(ZILLIUM, 3).build(output);
-
 		//
 		// Combination Recipes
 		//
