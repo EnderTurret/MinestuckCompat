@@ -3,6 +3,10 @@
     {
       "type": "minestuckcompat:config",
       "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:myalite_crystal"
     }
   ],
   "type": "minestuck:grist_cost",

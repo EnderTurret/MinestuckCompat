@@ -3,6 +3,10 @@
     {
       "type": "minestuckcompat:config",
       "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:egg_parrot_green"
     }
   ],
   "type": "minestuck:grist_cost",

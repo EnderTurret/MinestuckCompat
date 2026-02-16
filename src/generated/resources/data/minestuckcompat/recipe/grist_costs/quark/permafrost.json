@@ -3,6 +3,10 @@
     {
       "type": "minestuckcompat:config",
       "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:permafrost"
     }
   ],
   "type": "minestuck:grist_cost",

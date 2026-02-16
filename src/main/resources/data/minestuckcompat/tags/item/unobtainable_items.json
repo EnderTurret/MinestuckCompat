@@ -67,6 +67,8 @@
     { "id": "farmersdelight:rich_soil_farmland", "required": false },
 
     { "id": "bibliocraft:soul_fancy_gold_lantern", "required": false },
-    { "id": "bibliocraft:soul_fancy_iron_lantern", "required": false }
+    { "id": "bibliocraft:soul_fancy_iron_lantern", "required": false },
+
+    { "id": "quark:hammer", "required": false }
   ]
 }
