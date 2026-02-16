@@ -235,6 +235,7 @@
     { "id": "quark:crab_bucket", "required": false },
     { "id": "quark:monster_box", "required": false },
     { "id": "quark:slime_in_a_bucket", "required": false },
+    { "id": "quark:pathfinders_quill", "required": false },
 
     { "id": "alchemyexpanded:dummy_black_dragon_death_whirler", "required": false },
     { "id": "alchemyexpanded:dummy_carbon_oracle", "required": false },

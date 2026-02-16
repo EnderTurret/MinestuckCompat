@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:crab_shell"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 9,
+    "minestuck:iodine": 8,
+    "minestuck:shale": 9
+  },
+  "ingredient": {
+    "item": "quark:crab_shell"
+  }
+}

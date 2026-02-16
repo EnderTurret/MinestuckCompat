@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "quark:diamond_heart", "required": false },
+    { "id": "quark:dragon_scale", "required": false },
+    { "id": "quark:ravager_hide", "required": false }
+  ]
+}

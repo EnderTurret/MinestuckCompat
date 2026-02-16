@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:glow_lichen_growth"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:sulfur": 5
+  },
+  "ingredient": {
+    "item": "quark:glow_lichen_growth"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:bottled_cloud"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:chalk": 8
+  },
+  "ingredient": {
+    "item": "quark:bottled_cloud"
+  },
+  "sources": [
+    "minecraft:glass_bottle"
+  ]
+}

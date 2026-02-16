@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:ravager_hide"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:iodine": 6,
+    "minestuck:mercury": 3,
+    "minestuck:tar": 6
+  },
+  "ingredient": {
+    "item": "quark:ravager_hide"
+  }
+}

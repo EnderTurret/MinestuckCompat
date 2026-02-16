@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:diamond_heart"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4,
+    "minestuck:diamond": 18,
+    "minestuck:quartz": 4
+  },
+  "ingredient": {
+    "item": "quark:diamond_heart"
+  }
+}

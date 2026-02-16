@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:smithing_template_rune"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amethyst": 84,
+    "minestuck:build": 4,
+    "minestuck:caulk": 28
+  },
+  "ingredient": {
+    "item": "quark:smithing_template_rune"
+  }
+}

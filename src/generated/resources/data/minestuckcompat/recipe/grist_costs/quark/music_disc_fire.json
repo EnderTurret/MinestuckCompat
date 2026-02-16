@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:music_disc_drips"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 15,
+    "minestuck:garnet": 5,
+    "minestuck:quartz": 8,
+    "minestuck:rust": 5
+  },
+  "ingredient": {
+    "item": "quark:music_disc_fire"
+  }
+}

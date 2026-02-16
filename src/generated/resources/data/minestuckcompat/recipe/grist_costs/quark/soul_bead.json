@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:soul_bead"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:cobalt": 7,
+    "minestuck:diamond": 2,
+    "minestuck:tar": 12
+  },
+  "ingredient": {
+    "item": "quark:soul_bead"
+  }
+}

@@ -84,6 +84,42 @@ public final class QuarkRecipes extends AbstractRecipeProvider {
 		gristCost(q("egg_parrot_green")).grist(AMBER, 5).build(output.withConditions(itemExists("quark", "egg_parrot_green")));
 		gristCost(q("egg_parrot_red_blue")).grist(AMBER, 5).build(output.withConditions(itemExists("quark", "egg_parrot_red_blue")));
 		gristCost(q("egg_parrot_yellow_blue")).grist(AMBER, 5).build(output.withConditions(itemExists("quark", "egg_parrot_yellow_blue")));
+
+		// Plants
+
+		gristCost(q("glow_lichen_growth")).grist(SULFUR, 5).build(output.withConditions(itemExists("quark", "glow_lichen_growth")));
+		gristCost(q("chorus_twist")).grist(SHALE, 2).grist(AMETHYST, 1).grist(CAULK, 1).build(output.withConditions(itemExists("quark", "chorus_twist")));
+		gristCost(q("chorus_weeds")).grist(SHALE, 2).grist(AMETHYST, 1).grist(CAULK, 1).build(output.withConditions(itemExists("quark", "chorus_weeds")));
+		gristCost(q("ancient_fruit")).grist(AMBER, 7).grist(IODINE, 2).build(output.withConditions(itemExists("quark", "ancient_fruit")));
+		gristCost(q("glow_shroom")).grist(IODINE, 3).grist(COBALT, 1).build(output.withConditions(itemExists("quark", "glow_shroom")));
+		gristCost(q("glow_shroom_block")).grist(BUILD, 2).grist(IODINE, 3).grist(COBALT, 1).build(output.withConditions(itemExists("quark", "glow_shroom")));
+		gristCost(q("glow_shroom_stem")).grist(BUILD, 4).grist(IODINE, 3).grist(COBALT, 1).build(output.withConditions(itemExists("quark", "glow_shroom")));
+		gristCost(q("glow_shroom_ring")).grist(IODINE, 2).grist(COBALT, 1).build(output.withConditions(itemExists("quark", "glow_shroom")));
+
+		// Ambience Discs
+
+		// Format: 15 build, 8 record grist, 5 center grist A, 5 center grist B
+		gristCost(q("music_disc_drips")).grist(BUILD, 15).grist(QUARTZ, 8).grist(COBALT, 5).grist(DIAMOND, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_ocean")).grist(BUILD, 15).grist(QUARTZ, 8).grist(COBALT, 5).grist(CAULK, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_rain")).grist(BUILD, 15).grist(QUARTZ, 8).grist(COBALT, 5).grist(CHALK, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_wind")).grist(BUILD, 15).grist(QUARTZ, 8).grist(AMBER, 5).grist(SULFUR, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_fire")).grist(BUILD, 15).grist(QUARTZ, 8).grist(RUST, 5).grist(GARNET, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_clock")).grist(BUILD, 15).grist(QUARTZ, 8).grist(SULFUR, 5).grist(GOLD, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_crickets")).grist(BUILD, 15).grist(QUARTZ, 8).grist(AMBER, 5).grist(URANIUM, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		gristCost(q("music_disc_chatter")).grist(BUILD, 15).grist(QUARTZ, 8).grist(SHALE, 5).grist(AMETHYST, 5).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+
+		// Miscellaneous
+
+		gristCost(q("diamond_heart")).grist(DIAMOND, 18).grist(BUILD, 4).grist(QUARTZ, 4).build(output.withConditions(itemExists("quark", "diamond_heart"))); // A diamond, two stone, and some quartz to make the stone cost more exciting.
+		gristCost(q("dragon_scale")).grist(TAR, 50).grist(URANIUM, 50).grist(ZILLIUM, 1).build(output.withConditions(itemExists("quark", "dragon_scale")));
+		gristCost(q("music_disc_endermosh")).grist(BUILD, 15).grist(SHALE, 8).grist(GARNET, 5).grist(RUBY, 5).build(output.withConditions(itemExists("quark", "music_disc_endermosh")));
+		gristCost(q("crab_leg")).grist(IODINE, 10).build(output.withConditions(itemExists("quark", "crab_leg")));
+		gristCost(q("crab_shell")).grist(IODINE, 8).grist(SHALE, 9).grist(COBALT, 9).build(output.withConditions(itemExists("quark", "crab_shell")));
+		sourceGristCost(q("bottled_cloud")).grist(CHALK, 8).source(Items.GLASS_BOTTLE).build(output.withConditions(itemExists("quark", "bottled_cloud")));
+		gristCost(q("ravager_hide")).grist(IODINE, 6).grist(TAR, 6).grist(MERCURY, 3).build(output.withConditions(itemExists("quark", "ravager_hide")));
+		gristCost(q("soul_bead")).grist(TAR, 12).grist(COBALT, 7).grist(DIAMOND, 2).build(output.withConditions(itemExists("quark", "soul_bead")));
+		gristCost(q("smithing_template_rune")).grist(BUILD, 4).grist(CAULK, 4 * 7).grist(AMETHYST, 12 * 7).build(output.withConditions(itemExists("quark", "smithing_template_rune")));
+		gristCost(q("forgotten_hat")).grist(IODINE, 15).grist(CHALK, 9).build(output.withConditions(itemExists("quark", "forgotten_hat")));
 	}
 
 	private static Item q(String id) {

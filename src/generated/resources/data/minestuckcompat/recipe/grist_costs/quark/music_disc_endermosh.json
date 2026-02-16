@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:music_disc_endermosh"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 15,
+    "minestuck:garnet": 5,
+    "minestuck:ruby": 5,
+    "minestuck:shale": 8
+  },
+  "ingredient": {
+    "item": "quark:music_disc_endermosh"
+  }
+}

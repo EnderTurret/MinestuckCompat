@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:chorus_twist"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amethyst": 1,
+    "minestuck:caulk": 1,
+    "minestuck:shale": 2
+  },
+  "ingredient": {
+    "item": "quark:chorus_twist"
+  }
+}
