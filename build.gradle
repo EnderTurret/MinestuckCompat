@@ -16,8 +16,20 @@ java.withSourcesJar()
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
-    maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
+    maven { // Create, Ponder, Flywheel
+        url = "https://maven.createmod.net"
+        content {
+            includeGroup 'com.simibubi.create'
+            includeGroup 'net.createmod.ponder'
+            includeGroup 'dev.engine-room.flywheel'
+        }
+    }
+    maven { // Registrate
+        url = "https://maven.ithundxr.dev/snapshots"
+        content {
+            includeGroup 'com.tterrag.registrate'
+        }
+    }
     maven {
         url = 'https://api.modrinth.com/maven'
         content {
