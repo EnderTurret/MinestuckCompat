@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 
 import net.neoforged.bus.api.SubscribeEvent;
 
+import net.enderturret.minestuckcompat.MinestuckCompat;
 import net.enderturret.minestuckcompat.api.alchemy.RegisterGristCostProvidersEvent;
 
 /**
@@ -23,6 +24,14 @@ public final class RechiseledGristCosts {
 
 	@SubscribeEvent
 	static void registerProviders(RegisterGristCostProvidersEvent event) {
+		try {
+			register0(event);
+		} catch (Exception e) {
+			MinestuckCompat.LOGGER.error("Exception registering grist cost providers for Rechiseled:", e);
+		}
+	}
+
+	private static void register0(RegisterGristCostProvidersEvent event) {
 		final ChiselingBlockShape[] shapes = ChiselingBlockShape.values();
 
 		for (ChiselingRecipe recipe : ChiselingRecipeManager.get(false).getAllRecipes()) {
