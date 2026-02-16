@@ -66,7 +66,7 @@ dependencies {
     runtimeOnly "maven.modrinth:supermartijn642s-config-lib:${supermartijn_config_lib_version}"
     runtimeOnly "maven.modrinth:supermartijn642s-core-lib:${supermartijn_core_lib_version}"
     runtimeOnly "maven.modrinth:guideme:${guideme_version}"
-    runtimeOnly "net.createmod.ponder:Ponder-NeoForge-1.21.1:${ponder_version}"
+    runtimeOnly "net.createmod.ponder:ponder-neoforge:${ponder_version}"
     runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-1.21.1:${flywheel_version}"
     implementation "com.tterrag.registrate:Registrate:${registrate_version}"
     runtimeOnly "maven.modrinth:terrablender:${terrablender_version}"
