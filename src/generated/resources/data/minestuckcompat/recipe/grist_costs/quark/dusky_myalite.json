@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 4,
+    "minestuck:shale": 3,
+    "minestuck:tar": 2
+  },
+  "ingredient": {
+    "item": "quark:dusky_myalite"
+  }
+}

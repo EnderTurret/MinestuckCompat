@@ -100,6 +100,7 @@ public final class MinestuckCompatConfig {
 		defineEnabledRecipes(builder, "mekanism", "Mekanism");
 		defineEnabledRecipes(builder, "minestuck", "Minestuck");
 		defineEnabledRecipes(builder, "minecraft", "Minecraft");
+		defineEnabledRecipes(builder, "quark", "Quark");
 
 		defineEnabledRecipes(builder, "appmek", "Applied Mekanistics");
 		defineEnabledRecipes(builder, "buildersaddition2", "Builders Crafts & Additions 2");

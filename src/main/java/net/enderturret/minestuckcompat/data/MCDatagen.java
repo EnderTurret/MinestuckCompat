@@ -26,6 +26,7 @@ import net.enderturret.minestuckcompat.data.recipe.ImmersiveEngineeringRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckAddonRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
+import net.enderturret.minestuckcompat.data.recipe.QuarkRecipes;
 import net.enderturret.minestuckcompat.data.recipe.VanillaRecipes;
 import net.enderturret.minestuckcompat.data.util.WrappedDataProvider;
 
@@ -65,6 +66,9 @@ public final class MCDatagen {
 
 		if (ModList.get().isLoaded("mekanism"))
 			e.getGenerator().addProvider(server, wrap(lookup, MekanismRecipes::new, "Mekanism Recipes"));
+
+		if (ModList.get().isLoaded("quark"))
+			e.getGenerator().addProvider(server, wrap(lookup, QuarkRecipes::new, "Quark Recipes"));
 
 		// Set indent back to 2 in case some other mod (GTCEu) messes with it.
 		DataProvider.INDENT_WIDTH.set(2);

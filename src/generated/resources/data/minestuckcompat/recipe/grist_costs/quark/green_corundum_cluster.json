@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:amethyst": 9,
+    "minestuck:uranium": 3
+  },
+  "ingredient": {
+    "item": "quark:green_corundum_cluster"
+  }
+}

@@ -61,6 +61,7 @@ dependencies {
     implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
     implementation "maven.modrinth:immersiveengineering:${immersiveengineering_version}"
     implementation "maven.modrinth:extradelight:${extradelight_version}"
+    implementation "maven.modrinth:quark:${quark_version}"
 
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}"
     implementation "mekanism:Mekanism:1.21.1-${mekanism_version}:generators"
@@ -73,6 +74,7 @@ dependencies {
 
     implementation ("com.simibubi.create:create-1.21.1:${create_version}:slim") { transitive = false }
 
+    runtimeOnly "maven.modrinth:zeta:${zeta_version}"
     runtimeOnly "maven.modrinth:geckolib:${geckolib_version}"
     runtimeOnly "maven.modrinth:fusion-connected-textures:${fusion_version}"
     runtimeOnly "maven.modrinth:supermartijn642s-config-lib:${supermartijn_config_lib_version}"
