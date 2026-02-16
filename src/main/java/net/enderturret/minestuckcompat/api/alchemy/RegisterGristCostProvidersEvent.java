@@ -57,11 +57,26 @@ public final class RegisterGristCostProvidersEvent extends Event {
 	 * @param source The source item to inherit the grist cost from.
 	 */
 	public void registerGristCostProvider(Item item, Item source) {
+		registerGristCostProvider(item, source, 1);
+	}
+
+	/**
+	 * Registers a source grist cost for the given item.
+	 * In other words, makes {@code item} inherit its grist cost from {@code source}.
+	 * @param item The item to register the grist cost for.
+	 * @param source The source item to inherit the grist cost from.
+	 * @param multiplier A multiplier to scale the generated cost by.
+	 */
+	public void registerGristCostProvider(Item item, Item source, float multiplier) {
 		registerGristCostProvider(item, new GristCostProvider() {
 			@Override
 			@Nullable
 			public GristSet generate(Item item, GeneratorCallback callback) {
-				return callback.lookupCostFor(source);
+				GristSet ret = callback.lookupCostFor(source);
+				if (multiplier != 1)
+					ret = ret.mutableCopy().scale(multiplier, false);
+
+				return ret;
 			}
 
 			@Override
