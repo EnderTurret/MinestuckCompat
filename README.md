@@ -11,6 +11,7 @@ Minestuck Compat has specific support for:
 * [Farmer's Delight](https://modrinth.com/mod/farmers-delight)
 * [Immersive Engineering](https://modrinth.com/mod/immersiveengineering)
 * [Mekanism](https://modrinth.com/mod/mekanism)
+* [Quark](https://modrinth.com/mod/quark)
 * [Rechiseled](https://modrinth.com/mod/rechiseled)
 * [Supplementaries](https://modrinth.com/mod/supplementaries)
 

@@ -15,6 +15,7 @@ issueTrackerURL="https://github.com/EnderTurret/MinestuckCompat/issues"
     * Immersive Engineering
     * Mekanism
     * Minestuck
+    * Quark
     * Rechiseled
     * Supplementaries
     * Vanilla (trims, sherds, 1.21.1 content, among other things)
@@ -94,6 +95,10 @@ issueTrackerURL="https://github.com/EnderTurret/MinestuckCompat/issues"
 
 [[dependencies.minestuckcompat]]
     modId="mekanism"
+    type="optional"
+
+[[dependencies.minestuckcompat]]
+    modId="quark"
     type="optional"
 
 [[dependencies.minestuckcompat]]
