@@ -36,6 +36,9 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 	protected void buildRecipes(RecipeOutput _recipeOutput) {
 		final RecipeOutput output = new RenamingRecipeOutput(_recipeOutput, MinestuckCompat.MOD_ID, "minestuck").withConditions(new ConfigCondition("minestuck"));
 
+		// Detect older versions of Minestuck by checking whether the array modus card exists.
+		final var oldMinestuck = output.withConditions(not(itemExists("minestuck", "array_modus_card")));
+
 		gristCost(ACE_OF_CLUBS).grist(BUILD, 4).grist(MERCURY, 4).grist(GARNET, 4).build(output);
 		gristCost(ACE_OF_DIAMONDS).grist(BUILD, 4).grist(MERCURY, 4).grist(TAR, 4).build(output);
 		gristCost(ACE_OF_HEARTS).grist(BUILD, 4).grist(MERCURY, 4).grist(GARNET, 4).build(output);
@@ -52,10 +55,13 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		gristCost(MINI_TYPHEUS_STATUE).grist(BUILD, 30).build(output);
 		gristCost(NAKAGATOR_STATUE).grist(BUILD, 30).build(output);
 
+		containerGristCost(LIGHT_WATER_BUCKET).grist(GristTypes.CHALK, 6).grist(TAR, 4).build(oldMinestuck);
+
 		sourceGristCost(TALL_DEAD_BUSH).multiplier(2).source(Items.DEAD_BUSH).build(output);
 		sourceGristCost(TALL_END_GRASS).grist(CAULK, 1).grist(IODINE, 2).build(output);
 		sourceGristCost(TALL_SANDY_GRASS).grist(IODINE, 1).multiplier(2).source(SANDY_GRASS.asItem()).build(output);
 		gristCost(DESERT_BUSH).grist(BUILD, 1).grist(IODINE, 2).build(output);
+		gristCost(MAGMATIC_IGNEOUS_STONE).grist(BUILD, 2).grist(CAULK, 4).grist(TAR, 4).build(oldMinestuck);
 		gristCost(METEORIC_STONE).grist(BUILD, 2).build(output);
 
 		gristCost(AND_GATE_BLOCK).grist(BUILD, 4).grist(RUST, 81).grist(GARNET, 12).build(output);

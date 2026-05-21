@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minestuck"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:item_exists",
+        "item": "minestuck:array_modus_card"
+      }
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 2,
+    "minestuck:caulk": 4,
+    "minestuck:tar": 4
+  },
+  "ingredient": {
+    "item": "minestuck:magmatic_igneous_stone"
+  }
+}

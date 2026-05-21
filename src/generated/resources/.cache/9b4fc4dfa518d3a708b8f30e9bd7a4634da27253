@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-15T00:44:02.659844376	Minestuck Recipes
+// 1.21.1	2026-05-21T18:37:37.482470599	Minestuck Recipes
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/clock_from_redstone.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/lightning_rod.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/coarse_end_stone.json
@@ -199,6 +199,8 @@ f924bee0324c17ed9c017cb4f855cc3148b550fd data/minestuckcompat/recipe/grist_costs
 3c0d6e822c9f966f85b67bfcaeee822799b4ebbd data/minestuckcompat/recipe/grist_costs/minestuck/cryptid_photo.json
 79da798c7a4db5cdead28929be6cbb3dd0df1c1e data/minestuckcompat/recipe/grist_costs/minestuck/cueball.json
 bd4e9b0a4e0bb5fe3dbed45f71656e07207ffa89 data/minestuckcompat/recipe/grist_costs/minestuck/desert_bush.json
+0848f26aa917f599fef9b970d6ef26fdac03239d data/minestuckcompat/recipe/grist_costs/minestuck/light_water_bucket.json
+1654ca4d851a804cf197c5e593c6d5d16b9c3044 data/minestuckcompat/recipe/grist_costs/minestuck/magmatic_igneous_stone.json
 e363beabe73afaa637682da857067325e29be440 data/minestuckcompat/recipe/grist_costs/minestuck/meteoric_stone.json
 6efc4f19480fba273bf5a9710216c622aca29891 data/minestuckcompat/recipe/grist_costs/minestuck/mini_typheus_statue.json
 09f3c704036beb800098f07cc39903ad70c4578c data/minestuckcompat/recipe/grist_costs/minestuck/nakagator_statue.json
