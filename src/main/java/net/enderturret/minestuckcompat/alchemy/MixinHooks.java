@@ -18,7 +18,9 @@ import org.slf4j.event.Level;
 import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.RegularCombinationRecipe;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedGristCost;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeSource;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.recipe.GristCostRecipe;
 import com.mraof.minestuck.api.alchemy.recipe.combination.CombinationMode;
@@ -290,5 +292,16 @@ public final class MixinHooks {
 				ret.add(elem);
 
 		return ret;
+	}
+
+	public static boolean isExcludedExtraStuckInterpreter(RecipeGeneratedCostHandler.SourceEntry entry) {
+		if (!(entry.source() instanceof RecipeSource.BySerializer src)) return false;
+
+		final ResourceLocation id = BuiltInRegistries.RECIPE_SERIALIZER.getKeyOrNull(src.serializer());
+
+		return switch (id.getNamespace()) {
+			case "create", "farmersdelight" -> true;
+			default -> false;
+		};
 	}
 }

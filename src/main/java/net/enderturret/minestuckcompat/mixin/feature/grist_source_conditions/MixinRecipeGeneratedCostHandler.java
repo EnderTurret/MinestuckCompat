@@ -19,6 +19,7 @@ import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHa
 
 import net.minecraft.data.registries.VanillaRegistries;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.server.packs.resources.Resource;
 
 import net.neoforged.neoforge.common.conditions.ConditionalOps;
 import net.neoforged.neoforge.common.conditions.ICondition;
@@ -30,20 +31,18 @@ import net.enderturret.minestuckcompat.alchemy.MixinHooks;
 public abstract class MixinRecipeGeneratedCostHandler {
 
 	@Redirect(at = @At(value = "INVOKE", target = "Lcom/mojang/serialization/Codec;parse(Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;"), method = "lambda$prepare$0")
-	private static DataResult<List<SourceEntry>> minestuckcompat$useConditionalSources(Codec<List<SourceEntry>> codec, DynamicOps<JsonElement> ops, Object input) {
+	private static DataResult<List<SourceEntry>> minestuckcompat$useConditionalSources(Codec<List<SourceEntry>> codec, DynamicOps<JsonElement> ops, Object input, List<?> _list, Resource resource) {
+		final boolean isExtraStuck = !MinestuckCompatConfig.common().useExtraStuckInterpreters.getAsBoolean()
+				&& resource.sourcePackId().contains("extrastuck");
+
 		final ConditionalOps<JsonElement> conOps = new ConditionalOps<>(RegistryOps.create(ops, VanillaRegistries.createLookup()), ICondition.IContext.EMPTY);
 		final JsonElement jsonInput = (JsonElement) input;
+
 		return MixinHooks.CONDITIONAL_SOURCE_ENTRY_LIST.parse(conOps, jsonInput)
-				.map(list -> list.stream().filter(Optional::isPresent).map(Optional::get).toList());
-	}
-
-	@ModifyExpressionValue(at = @At(value = "INVOKE", target = "Lnet/minecraft/server/packs/resources/ResourceManager;getNamespaces()Ljava/util/Set;"), method = "prepare")
-	private static Set<String> minestuckcompat$filterOutExtraStuckInterpreters(Set<String> original) {
-		if (!MinestuckCompatConfig.common().useExtraStuckInterpreters.getAsBoolean() && original.contains("extrastuck")) {
-			original = new LinkedHashSet<>(original);
-			original.remove("extrastuck");
-		}
-
-		return original;
+				.map(list -> list.stream()
+						.filter(Optional::isPresent)
+						.map(Optional::get)
+						.filter(entry -> !isExtraStuck || !MixinHooks.isExcludedExtraStuckInterpreter(entry))
+						.toList());
 	}
 }
