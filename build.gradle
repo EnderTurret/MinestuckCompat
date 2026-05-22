@@ -4,7 +4,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.137'
 }
 
-version = '1.4.0+1.21.1'
+version = '1.4.1+1.21.1'
 group = 'net.enderturret'
 base {
     archivesName = 'MinestuckCompat'
