@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-16T18:13:55.177351977	Quark Recipes
+// 1.21.1	2026-10-01T12:31:02.529025754	Quark Recipes
 833103ce4bf4a18fc669f4b14fde3536dad0181a data/minestuckcompat/recipe/grist_costs/quark/ancient_fruit.json
 47a4decf3bbc88cae5a10b6c89e74d7128a795a1 data/minestuckcompat/recipe/grist_costs/quark/black_corundum.json
 8df2c82a5844e769f5c2e04dd7631a715fa130de data/minestuckcompat/recipe/grist_costs/quark/black_corundum_cluster.json
@@ -19,6 +19,7 @@ eb4f76e7f649df3f5afb290da1cabf0c0d3d7147 data/minestuckcompat/recipe/grist_costs
 d9b19836baf67ad4af622d1a70882706b32ef553 data/minestuckcompat/recipe/grist_costs/quark/egg_parrot_red_blue.json
 11c98fe10d5ab81a59edd2c9d0f202819a4a6b9a data/minestuckcompat/recipe/grist_costs/quark/egg_parrot_yellow_blue.json
 fb2bc767b14cf2b5c1477807d7a0d4ab3379c38a data/minestuckcompat/recipe/grist_costs/quark/forgotten_hat.json
+b0063e0572c5ea20654479fa0c7f9e80bc7e822e data/minestuckcompat/recipe/grist_costs/quark/framed_glass.json
 fc4e56abb0d73bd0d788fa823fb43352f2e67704 data/minestuckcompat/recipe/grist_costs/quark/glow_lichen_growth.json
 4ed297667abdba76d87f08684ee83edd0b5ec9df data/minestuckcompat/recipe/grist_costs/quark/glow_shroom.json
 6843afcf94ec3661becfa66ea53aa911da9e9bb4 data/minestuckcompat/recipe/grist_costs/quark/glow_shroom_block.json

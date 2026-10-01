@@ -110,6 +110,7 @@ public final class QuarkRecipes extends AbstractRecipeProvider {
 
 		// Miscellaneous
 
+		sourceGristCost(q("framed_glass")).multiplier(4).source(Items.GLASS).source(Items.IRON_INGOT).build(output.withConditions(itemExists("quark", "framed_glass")));
 		gristCost(q("diamond_heart")).grist(DIAMOND, 18).grist(BUILD, 4).grist(QUARTZ, 4).build(output.withConditions(itemExists("quark", "diamond_heart"))); // A diamond, two stone, and some quartz to make the stone cost more exciting.
 		gristCost(q("dragon_scale")).grist(TAR, 50).grist(URANIUM, 50).grist(ZILLIUM, 1).build(output.withConditions(itemExists("quark", "dragon_scale")));
 		gristCost(q("music_disc_endermosh")).grist(BUILD, 15).grist(SHALE, 8).grist(GARNET, 5).grist(RUBY, 5).build(output.withConditions(itemExists("quark", "music_disc_endermosh")));

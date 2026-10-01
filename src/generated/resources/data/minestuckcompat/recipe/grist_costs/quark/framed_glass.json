@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:framed_glass"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "ingredient": {
+    "item": "quark:framed_glass"
+  },
+  "multiplier": 4.0,
+  "sources": [
+    "minecraft:glass",
+    "minecraft:iron_ingot"
+  ]
+}
