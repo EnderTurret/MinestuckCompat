@@ -50,6 +50,7 @@ public final class FarmersDelightRecipes extends AbstractRecipeProvider {
 		sourceGristCost(HONEY_GLAZED_HAM.get()).grist(BUILD, 1).multiplier(0.25F).source(HONEY_GLAZED_HAM_BLOCK.get()).build(output);
 		sourceGristCost(SHEPHERDS_PIE.get()).grist(BUILD, 1).multiplier(0.25F).source(SHEPHERDS_PIE_BLOCK.get()).build(output);
 		sourceGristCost(STUFFED_PUMPKIN.get()).grist(BUILD, 1).multiplier(0.25F).source(STUFFED_PUMPKIN_BLOCK.get()).build(output);
+		sourceGristCost(GLEAMING_SALAD.get()).grist(BUILD, 1).multiplier(0.25F).source(GLEAMING_SALAD_BLOCK.get()).build(output);
 
 		sourceGristCost(WILD_CABBAGES.get()).grist(AMBER, 2).source(CABBAGE_SEEDS.get()).build(output);
 		sourceGristCost(WILD_TOMATOES.get()).grist(AMBER, 2).source(TOMATO_SEEDS.get()).build(output);

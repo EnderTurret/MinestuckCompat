@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "minestuck:source_grist_cost",
+  "grist_cost": {
+    "minestuck:build": 1
+  },
+  "ingredient": {
+    "item": "farmersdelight:gleaming_salad"
+  },
+  "multiplier": 0.25,
+  "sources": [
+    "farmersdelight:gleaming_salad_block"
+  ]
+}
