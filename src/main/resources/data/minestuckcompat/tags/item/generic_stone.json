@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#c:stones"
+  ],
+  "remove": [
+    { "id": "quark:jasper", "required": false },
+    { "id": "quark:limestone", "required": false },
+    { "id": "quark:myalite", "required": false },
+    { "id": "quark:permafrost", "required": false },
+    { "id": "quark:shale", "required": false }
+  ]
+}
