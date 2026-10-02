@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:limestone"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stone"
+  },
+  "input2": {
+    "item": "minecraft:mangrove_log"
+  },
+  "mode": "and",
+  "output": "quark:limestone"
+}

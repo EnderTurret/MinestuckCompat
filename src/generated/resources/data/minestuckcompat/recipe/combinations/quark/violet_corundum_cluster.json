@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:violet_corundum"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:amethyst_cluster"
+  },
+  "input2": {
+    "item": "minecraft:magenta_stained_glass"
+  },
+  "mode": "and",
+  "output": "quark:violet_corundum_cluster"
+}

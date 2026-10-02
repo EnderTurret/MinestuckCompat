@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:music_disc_ocean"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:music_disc_cat"
+  },
+  "input2": {
+    "item": "minecraft:water_bucket"
+  },
+  "mode": "or",
+  "output": "quark:music_disc_ocean"
+}

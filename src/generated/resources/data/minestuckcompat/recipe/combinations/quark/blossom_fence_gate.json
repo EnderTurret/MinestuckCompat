@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:blossom_planks"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "quark:blossom_door"
+  },
+  "input2": {
+    "item": "quark:blossom_fence"
+  },
+  "mode": "or",
+  "output": "quark:blossom_fence_gate"
+}

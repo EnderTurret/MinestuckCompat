@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:shale"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stone"
+  },
+  "input2": {
+    "item": "minecraft:cyan_terracotta"
+  },
+  "mode": "and",
+  "output": "quark:shale"
+}

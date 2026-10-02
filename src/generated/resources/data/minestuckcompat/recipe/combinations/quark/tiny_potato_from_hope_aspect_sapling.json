@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:tiny_potato"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:potato"
+  },
+  "input2": {
+    "item": "minestuck:hope_aspect_sapling"
+  },
+  "mode": "or",
+  "output": "quark:tiny_potato"
+}

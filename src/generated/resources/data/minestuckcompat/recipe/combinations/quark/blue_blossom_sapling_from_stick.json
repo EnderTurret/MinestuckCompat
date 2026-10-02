@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:blue_blossom_sapling"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:stick"
+  },
+  "input2": {
+    "item": "quark:blue_blossom_leaves"
+  },
+  "mode": "and",
+  "output": "quark:blue_blossom_sapling"
+}

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:music_disc_drips"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:music_disc_cat"
+  },
+  "input2": {
+    "item": "minecraft:fire_charge"
+  },
+  "mode": "or",
+  "output": "quark:music_disc_fire"
+}

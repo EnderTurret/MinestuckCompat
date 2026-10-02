@@ -2,10 +2,12 @@ package net.enderturret.minestuckcompat.data.recipe;
 
 import static com.mraof.minestuck.api.alchemy.GristTypes.*;
 
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 import org.jetbrains.annotations.ApiStatus.Internal;
 
+import com.mraof.minestuck.block.AspectTreeBlocks;
 import com.mraof.minestuck.item.MSItems;
 
 import net.minecraft.core.HolderLookup.Provider;
@@ -121,6 +123,81 @@ public final class QuarkRecipes extends AbstractRecipeProvider {
 		gristCost(q("soul_bead")).grist(TAR, 12).grist(COBALT, 7).grist(DIAMOND, 2).build(output.withConditions(itemExists("quark", "soul_bead")));
 		gristCost(q("smithing_template_rune")).grist(BUILD, 4).grist(CAULK, 4 * 7).grist(AMETHYST, 12 * 7).build(output.withConditions(itemExists("quark", "smithing_template_rune")));
 		gristCost(q("forgotten_hat")).grist(IODINE, 15).grist(CHALK, 9).build(output.withConditions(itemExists("quark", "forgotten_hat")));
+
+		//
+		// Combination Recipes
+		//
+
+		saplingCombinations(output.withConditions(itemExists("quark", "ancient_sapling")), q("ancient_sapling"), q("ancient_log"), q("ancient_leaves"));
+		saplingCombinations(output.withConditions(itemExists("quark", "blue_blossom_sapling")), q("blue_blossom_sapling"), null, q("blue_blossom_leaves"), false);
+		saplingCombinations(output.withConditions(itemExists("quark", "lavender_blossom_sapling")), q("lavender_blossom_sapling"), null, q("lavender_blossom_leaves"), false);
+		saplingCombinations(output.withConditions(itemExists("quark", "orange_blossom_sapling")), q("orange_blossom_sapling"), null, q("orange_blossom_leaves"), false);
+		saplingCombinations(output.withConditions(itemExists("quark", "yellow_blossom_sapling")), q("yellow_blossom_sapling"), null, q("yellow_blossom_leaves"), false);
+		saplingCombinations(output.withConditions(itemExists("quark", "red_blossom_sapling")), q("red_blossom_sapling"), null, q("red_blossom_leaves"), false);
+
+		woodCombinations(output.withConditions(itemExists("quark", "ancient_planks")), q("ancient_planks"), q("ancient_planks_slab"), q("ancient_planks_stairs"), q("ancient_door"), q("ancient_fence"), q("ancient_fence_gate"), q("ancient_trapdoor"));
+		woodCombinations(output.withConditions(itemExists("quark", "azalea_planks")), q("azalea_planks"), q("azalea_planks_slab"), q("azalea_planks_stairs"), q("azalea_door"), q("azalea_fence"), q("azalea_fence_gate"), q("azalea_trapdoor"));
+		woodCombinations(output.withConditions(itemExists("quark", "blossom_planks")), q("blossom_planks"), q("blossom_planks_slab"), q("blossom_planks_stairs"), q("blossom_door"), q("blossom_fence"), q("blossom_fence_gate"), q("blossom_trapdoor"));
+
+		// Saplings:
+		combination(q("blue_blossom_sapling")).or().input(Items.DARK_OAK_SAPLING).input(Items.SNOWBALL).build(output.withConditions(itemExists("quark", "blue_blossom_sapling")));
+		combination(q("lavender_blossom_sapling")).or().input(Items.DARK_OAK_SAPLING).input(Items.LILY_PAD).build(output.withConditions(itemExists("quark", "lavender_blossom_sapling")));
+		combination(q("orange_blossom_sapling")).or().input(Items.DARK_OAK_SAPLING).input(Items.ACACIA_SAPLING).build(output.withConditions(itemExists("quark", "orange_blossom_sapling")));
+		combination(q("yellow_blossom_sapling")).or().input(Items.DARK_OAK_SAPLING).input(Items.OAK_SAPLING).build(output.withConditions(itemExists("quark", "yellow_blossom_sapling")));
+		combination(q("red_blossom_sapling")).or().input(Items.DARK_OAK_SAPLING).input(Items.RED_TERRACOTTA).build(output.withConditions(itemExists("quark", "red_blossom_sapling")));
+
+		// Corundum:
+		combination(q("red_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.RED_STAINED_GLASS).build(output.withConditions(itemExists("quark", "red_corundum")));
+		combination(q("orange_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.ORANGE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "orange_corundum")));
+		combination(q("yellow_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.YELLOW_STAINED_GLASS).build(output.withConditions(itemExists("quark", "yellow_corundum")));
+		combination(q("green_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.LIME_STAINED_GLASS).build(output.withConditions(itemExists("quark", "green_corundum")));
+		combination(q("blue_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.LIGHT_BLUE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "blue_corundum")));
+		combination(q("indigo_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.BLUE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "indigo_corundum")));
+		combination(q("violet_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.MAGENTA_STAINED_GLASS).build(output.withConditions(itemExists("quark", "violet_corundum")));
+		combination(q("white_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.WHITE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "white_corundum")));
+		combination(q("black_corundum")).and().input(Items.AMETHYST_BLOCK).input(Items.GRAY_STAINED_GLASS).build(output.withConditions(itemExists("quark", "black_corundum")));
+
+		combination(q("red_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.RED_STAINED_GLASS).build(output.withConditions(itemExists("quark", "red_corundum")));
+		combination(q("orange_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.ORANGE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "orange_corundum")));
+		combination(q("yellow_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.YELLOW_STAINED_GLASS).build(output.withConditions(itemExists("quark", "yellow_corundum")));
+		combination(q("green_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.LIME_STAINED_GLASS).build(output.withConditions(itemExists("quark", "green_corundum")));
+		combination(q("blue_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.LIGHT_BLUE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "blue_corundum")));
+		combination(q("indigo_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.BLUE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "indigo_corundum")));
+		combination(q("violet_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.MAGENTA_STAINED_GLASS).build(output.withConditions(itemExists("quark", "violet_corundum")));
+		combination(q("white_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.WHITE_STAINED_GLASS).build(output.withConditions(itemExists("quark", "white_corundum")));
+		combination(q("black_corundum_cluster")).and().input(Items.AMETHYST_CLUSTER).input(Items.GRAY_STAINED_GLASS).build(output.withConditions(itemExists("quark", "black_corundum")));
+
+		// Stones
+
+		combination(q("jasper")).and().input(Items.QUARTZ_BLOCK).input(Items.RAW_IRON).build(output.withConditions(itemExists("quark", "jasper")));
+		combination(q("limestone")).and().input(Items.STONE).input(Items.MANGROVE_LOG).build(output.withConditions(itemExists("quark", "limestone")));
+		combination(q("shale")).and().input(Items.STONE).input(Items.CYAN_TERRACOTTA).build(output.withConditions(itemExists("quark", "shale")));
+		combination(q("permafrost")).and().input(Items.STONE).input(Items.BLUE_ICE).build(output.withConditions(itemExists("quark", "permafrost")));
+		combination(q("myalite")).or().input(Items.STONE).input(Items.CHORUS_FRUIT).build(output.withConditions(itemExists("quark", "myalite")));
+		combination(q("myalite_crystal")).or().input(q("myalite")).namedInput(Items.ENDER_PEARL).build(output.withConditions(itemExists("quark", "myalite")));
+		combination(q("myalite_crystal")).and().input(q("myalite")).namedInput(Items.GLASS).build(output.withConditions(itemExists("quark", "myalite")));
+		combination(q("dusky_myalite")).or().input(q("myalite")).input(Items.INK_SAC).build(output.withConditions(itemExists("quark", "myalite")));
+
+		// There's no regular cat plush, so this will have to do.
+		combination(q("jasper")).or().input(Items.STONE).namedInput(MSItems.PLUSH_MUTATED_CAT).build(output.withConditions(itemExists("quark", "jasper")));
+		combination(q("limestone")).or().input(Items.STONE).namedInput(Items.LIME_DYE).build(output.withConditions(itemExists("quark", "limestone")));
+		combination(q("dusky_myalite")).and().input(q("myalite")).namedInput(Items.CLOCK).build(output.withConditions(itemExists("quark", "myalite")));
+
+		// Music Discs
+		combination(q("music_disc_drips")).or().input(Items.MUSIC_DISC_CAT).input(Items.POTION).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_ocean")).or().input(Items.MUSIC_DISC_CAT).input(Items.WATER_BUCKET).build(output.withConditions(itemExists("quark", "music_disc_ocean")));
+		combination(q("music_disc_rain")).or().input(Items.MUSIC_DISC_CAT).input(Items.POINTED_DRIPSTONE).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_wind")).or().input(Items.MUSIC_DISC_CAT).input(Items.WIND_CHARGE).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_fire")).or().input(Items.MUSIC_DISC_CAT).input(Items.FIRE_CHARGE).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_clock")).or().input(Items.MUSIC_DISC_CAT).input(Items.CLOCK).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_crickets")).or().input(Items.MUSIC_DISC_CAT).input(MSItems.GRASSHOPPER).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+		combination(q("music_disc_chatter")).or().input(Items.MUSIC_DISC_CAT).input(Items.NOTE_BLOCK).build(output.withConditions(itemExists("quark", "music_disc_drips")));
+
+		// Miscellaneous
+
+		combination(q("pickarang")).and().input(MSItems.SHURIKEN).input(Items.DIAMOND_PICKAXE).build(output.withConditions(itemExists("quark", "pickarang")));
+		combination(q("tiny_potato")).or().input(Items.POTATO).namedInput(MSItems.WAND).build(output.withConditions(itemExists("quark", "tiny_potato")));
+		combination(q("tiny_potato")).or().input(Items.POTATO).namedInput(AspectTreeBlocks.HOPE_ASPECT_SAPLING).build(output.withConditions(itemExists("quark", "tiny_potato")));
 	}
 
 	private static Item q(String id) {

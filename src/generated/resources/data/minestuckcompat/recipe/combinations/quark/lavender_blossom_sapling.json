@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:lavender_blossom_sapling"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:dark_oak_sapling"
+  },
+  "input2": {
+    "item": "minecraft:lily_pad"
+  },
+  "mode": "or",
+  "output": "quark:lavender_blossom_sapling"
+}

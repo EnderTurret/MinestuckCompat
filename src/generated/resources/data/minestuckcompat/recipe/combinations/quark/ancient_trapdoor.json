@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:ancient_planks"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "quark:ancient_door"
+  },
+  "input2": {
+    "item": "quark:ancient_planks_slab"
+  },
+  "mode": "or",
+  "output": "quark:ancient_trapdoor"
+}

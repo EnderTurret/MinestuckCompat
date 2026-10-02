@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:pickarang"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:shuriken"
+  },
+  "input2": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+  "mode": "and",
+  "output": "quark:pickarang"
+}
