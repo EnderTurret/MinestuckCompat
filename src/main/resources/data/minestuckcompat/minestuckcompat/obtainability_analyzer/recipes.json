@@ -186,8 +186,25 @@
   { "inputs": ["minecraft:glass_bottle"], "outputs": ["quark:bottled_cloud"] },
 
   { "inputs": ["extradelight:evaporator"], "outputs": ["extradelight:salt"] },
+  { "inputs": ["extradelight:mixing_bowl", "minecraft:egg"], "outputs": ["extradelight:egg_yolk", "extradelight:egg_white"] },
+  { "inputs": ["extradelight:melting_pot", "extradelight:marshmallow", "minecraft:glass_bottle"], "outputs": ["extradelight:marshmallow_fluff_bottle"] },
   { "inputs": ["extradelight:hazelnut_sapling"], "outputs": ["extradelight:hazelnuts_in_shell", "extradelight:fruit_log"] },
   { "inputs": ["extradelight:unshucked_corn"], "outputs": ["extradelight:corn_husk", "extradelight:corn_silk", "extradelight:corn_on_cob"] },
+  { "inputs": ["extradelight:raw_baked_alaska_item", "minecraft:flint_and_steel"], "outputs": ["extradelight:baked_alaska_item"] },
+  { "inputs": ["extradelight:tarte_tatin_in_pan"], "outputs": ["extradelight:tarte_tatin"] },
   { "inputs": ["extradelight:mortar_stone", "minecraft:wheat_seeds", "minecraft:glass_bottle"], "outputs": ["extradelight:cooking_oil"] },
-  { "inputs": ["extradelight:mortar_stone", "extradelight:roasted_cocoa_beans", "minecraft:glass_bottle"], "outputs": ["extradelight:cocoa_butter_bottle"] }
+  { "inputs": ["extradelight:mortar_stone", "extradelight:roasted_cocoa_beans", "minecraft:glass_bottle"], "outputs": ["extradelight:cocoa_butter_bottle"] },
+  { "inputs": ["extradelight:mortar_stone", "extradelight:roasted_hazelnuts", "minecraft:glass_bottle"], "outputs": ["extradelight:peanut_butter_bottle"] },
+  { "inputs": ["extradelight:mortar_stone", "extradelight:milk_chocolate_bar", "extradelight:peanut_butter_bottle", "minecraft:glass_bottle"], "outputs": ["extradelight:hazelnut_spread_bottle"] },
+  { "inputs": ["extradelight:juicer", "extradelight:lime"], "outputs": ["extradelight:lime_juice"] },
+  { "inputs": ["extradelight:juicer", "extradelight:orange"], "outputs": ["extradelight:orange_juice"] },
+  { "inputs": ["extradelight:juicer", "extradelight:lemon"], "outputs": ["extradelight:lemon_juice"] },
+  { "inputs": ["extradelight:juicer", "extradelight:grapefruit"], "outputs": ["extradelight:grapefruit_juice"] },
+  { "inputs": ["extradelight:juicer", "extradelight:gherkin_item"], "outputs": ["extradelight:pickle_juice"] },
+  { "inputs": ["extradelight:apple_sapling"], "outputs": ["extradelight:apple_petal_litter_item"] },
+  { "inputs": ["extradelight:lime_sapling"], "outputs": ["extradelight:lime_petal_litter_item"] },
+  { "inputs": ["extradelight:orange_sapling"], "outputs": ["extradelight:orange_petal_litter_item"] },
+  { "inputs": ["extradelight:lemon_sapling"], "outputs": ["extradelight:lemon_petal_litter_item"] },
+  { "inputs": ["extradelight:grapefruit_sapling"], "outputs": ["extradelight:grapefruit_petal_litter_item"] },
+  { "inputs": ["extradelight:hazelnut_sapling"], "outputs": ["extradelight:hazelnut_petal_litter_item"] }
 ]

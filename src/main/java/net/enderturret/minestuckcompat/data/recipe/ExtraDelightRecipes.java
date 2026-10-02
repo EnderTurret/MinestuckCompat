@@ -164,6 +164,9 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		combination(Fermentation.CUCUMBER).and().input(Items.VINE).input(Items.SEA_PICKLE).build(output);
 		combination(CHILI).or().input(Fermentation.CUCUMBER).input(Items.FIRE_CHARGE).build(output);
 		combination(UNSHUCKED_CORN).and().input(Fermentation.CUCUMBER).input(Items.TALL_GRASS).build(output);
+		combination(Fermentation.SOYBEAN_POD).or().input(Items.COCOA_BEANS).input(Items.WHEAT).build(output);
+		combination(MINT).or().input(Items.SHORT_GRASS).input(ItemTags.LEAVES).build(output);
+		combination(COFFEE_CHERRIES).or().input(Items.SWEET_BERRIES).input(Items.SUGAR).build(output);
 
 		//
 		// Oven Recipes

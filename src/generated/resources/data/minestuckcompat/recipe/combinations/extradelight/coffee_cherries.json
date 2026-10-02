@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:sweet_berries"
+  },
+  "input2": {
+    "item": "minecraft:sugar"
+  },
+  "mode": "or",
+  "output": "extradelight:coffee_cherries"
+}
