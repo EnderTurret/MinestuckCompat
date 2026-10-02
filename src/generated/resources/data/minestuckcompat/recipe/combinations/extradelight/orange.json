@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:apple"
+  },
+  "input2": {
+    "item": "minecraft:orange_dye"
+  },
+  "mode": "and",
+  "output": "extradelight:orange"
+}

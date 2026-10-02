@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:jungle_sapling"
+  },
+  "input2": {
+    "item": "minecraft:sugar"
+  },
+  "mode": "or",
+  "output": "extradelight:cinnamon_sapling"
+}

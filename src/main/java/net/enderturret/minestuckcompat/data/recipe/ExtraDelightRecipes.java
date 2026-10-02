@@ -149,6 +149,22 @@ public final class ExtraDelightRecipes extends AbstractRecipeProvider {
 		combination(SummerCitrus.ORANGE_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.ORANGE).build(output);
 		combination(SummerCitrus.GRAPEFRUIT_SAPLING_ITEM).or().namedInput(ItemTags.SAPLINGS).input(SummerCitrus.GRAPEFRUIT).build(output);
 
+		combination(CINNAMON_SAPLING).or().input(Items.JUNGLE_SAPLING).namedInput(Items.SUGAR).build(output);
+		combination(SummerCitrus.LIME).and().input(Items.APPLE).input(Items.LIME_DYE).build(output);
+		combination(SummerCitrus.ORANGE).and().input(Items.APPLE).input(Items.ORANGE_DYE).build(output);
+		combination(SummerCitrus.LEMON).and().input(Items.APPLE).input(Items.YELLOW_DYE).build(output);
+		// The "Chorus Fruit = Grape" thing comes from base Minestuck. See Grape Faygo.
+		combination(SummerCitrus.GRAPEFRUIT).or().input(Items.APPLE).input(Items.CHORUS_FRUIT).build(output);
+		combination(HAZELNUT_SAPLING).or().input(Items.OAK_SAPLING).namedInput(Items.COCOA_BEANS).build(output);
+		combination(WILD_PEANUT_BLOCK).or().input(Items.FERN).namedInput(Items.COCOA_BEANS).build(output);
+		combination(GINGER).and().input(Items.HANGING_ROOTS).input(GROUND_CINNAMON).build(output);
+		combination(MALLOW_ROOT).or().input(GINGER).input(Items.LILY_PAD).build(output);
+		combination(GRASSHOPPER_PIE).or().input(Items.PUMPKIN_PIE).input(MSItems.GRASSHOPPER).build(output);
+		combination(GARLIC).or().input(MSItems.ONION).namedInput(MSItems.POINTY_STICK).build(output);
+		combination(Fermentation.CUCUMBER).and().input(Items.VINE).input(Items.SEA_PICKLE).build(output);
+		combination(CHILI).or().input(Fermentation.CUCUMBER).input(Items.FIRE_CHARGE).build(output);
+		combination(UNSHUCKED_CORN).and().input(Fermentation.CUCUMBER).input(Items.TALL_GRASS).build(output);
+
 		//
 		// Oven Recipes
 		//

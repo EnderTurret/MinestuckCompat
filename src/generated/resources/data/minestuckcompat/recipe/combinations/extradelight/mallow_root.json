@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "extradelight:ginger"
+  },
+  "input2": {
+    "item": "minecraft:lily_pad"
+  },
+  "mode": "or",
+  "output": "extradelight:mallow_root"
+}

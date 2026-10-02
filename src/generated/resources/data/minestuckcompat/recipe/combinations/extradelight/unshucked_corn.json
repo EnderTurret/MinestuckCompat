@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "extradelight:cucumber"
+  },
+  "input2": {
+    "item": "minecraft:tall_grass"
+  },
+  "mode": "and",
+  "output": "extradelight:unshucked_corn"
+}

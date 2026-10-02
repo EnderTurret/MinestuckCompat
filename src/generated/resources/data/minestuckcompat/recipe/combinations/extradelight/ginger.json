@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:hanging_roots"
+  },
+  "input2": {
+    "item": "extradelight:ground_cinnamon"
+  },
+  "mode": "and",
+  "output": "extradelight:ginger"
+}

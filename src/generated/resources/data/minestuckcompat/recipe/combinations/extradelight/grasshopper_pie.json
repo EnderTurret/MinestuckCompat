@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:pumpkin_pie"
+  },
+  "input2": {
+    "item": "minestuck:grasshopper"
+  },
+  "mode": "or",
+  "output": "extradelight:grasshopper_pie"
+}

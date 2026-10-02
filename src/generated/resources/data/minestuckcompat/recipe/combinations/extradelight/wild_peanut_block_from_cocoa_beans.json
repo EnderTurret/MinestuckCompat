@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:fern"
+  },
+  "input2": {
+    "item": "minecraft:cocoa_beans"
+  },
+  "mode": "or",
+  "output": "extradelight:wild_peanut_block"
+}

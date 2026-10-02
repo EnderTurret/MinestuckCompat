@@ -183,5 +183,11 @@
   { "inputs": ["quark:orange_blossom_sapling"], "outputs": ["quark:blossom_log"] },
   { "inputs": ["quark:yellow_blossom_sapling"], "outputs": ["quark:blossom_log"] },
   { "inputs": ["quark:red_blossom_sapling"], "outputs": ["quark:blossom_log"] },
-  { "inputs": ["minecraft:glass_bottle"], "outputs": ["quark:bottled_cloud"] }
+  { "inputs": ["minecraft:glass_bottle"], "outputs": ["quark:bottled_cloud"] },
+
+  { "inputs": ["extradelight:evaporator"], "outputs": ["extradelight:salt"] },
+  { "inputs": ["extradelight:hazelnut_sapling"], "outputs": ["extradelight:hazelnuts_in_shell", "extradelight:fruit_log"] },
+  { "inputs": ["extradelight:unshucked_corn"], "outputs": ["extradelight:corn_husk", "extradelight:corn_silk", "extradelight:corn_on_cob"] },
+  { "inputs": ["extradelight:mortar_stone", "minecraft:wheat_seeds", "minecraft:glass_bottle"], "outputs": ["extradelight:cooking_oil"] },
+  { "inputs": ["extradelight:mortar_stone", "extradelight:roasted_cocoa_beans", "minecraft:glass_bottle"], "outputs": ["extradelight:cocoa_butter_bottle"] }
 ]

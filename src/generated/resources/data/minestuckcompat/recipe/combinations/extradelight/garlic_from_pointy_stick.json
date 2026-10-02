@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "extradelight"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:onion"
+  },
+  "input2": {
+    "item": "minestuck:pointy_stick"
+  },
+  "mode": "or",
+  "output": "extradelight:garlic"
+}
