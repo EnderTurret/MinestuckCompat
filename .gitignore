@@ -1,16 +1,17 @@
 # Gradle
-.gradle/
-build/
+/.gradle/
+/build/
 
 # Forge
-logs/
-run/
+/logs/
+/run/
 
 # Eclipse
 *.launch
-.classpath
-.project
-.settings/
-bin/
+/.classpath
+/.project
+/.settings/
+/bin/
 
-libs/
+/libs/
+/assets/
