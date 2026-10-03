@@ -88,7 +88,7 @@ dependencies {
 }
 
 neoForge {
-    version = '21.1.234'
+    version = '21.1.252'
 
     mods {
         minestuckcompat {
@@ -108,6 +108,9 @@ neoForge {
             client()
             ideName = 'runMinestuckCompatClient'
             systemProperty('foxfilter.dev', 'true')
+            if (rootProject.findProperty('minecraft_username') != null) {
+                programArguments.addAll('--uuid', rootProject.findProperty('minecraft_uuid'), '--username', rootProject.findProperty('minecraft_username'))
+            }
         }
 
         server {
