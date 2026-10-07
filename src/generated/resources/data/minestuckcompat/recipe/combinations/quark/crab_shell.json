@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:crab_shell"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "quark:crab_leg"
+  },
+  "input2": {
+    "item": "minecraft:turtle_scute"
+  },
+  "mode": "or",
+  "output": "quark:crab_shell"
+}

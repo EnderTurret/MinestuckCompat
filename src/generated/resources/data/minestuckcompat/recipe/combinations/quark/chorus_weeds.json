@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:chorus_weeds"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "input2": {
+    "item": "minecraft:short_grass"
+  },
+  "mode": "and",
+  "output": "quark:chorus_weeds"
+}

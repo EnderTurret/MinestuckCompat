@@ -198,6 +198,12 @@ public final class QuarkRecipes extends AbstractRecipeProvider {
 		combination(q("pickarang")).and().input(MSItems.SHURIKEN).input(Items.DIAMOND_PICKAXE).build(output.withConditions(itemExists("quark", "pickarang")));
 		combination(q("tiny_potato")).or().input(Items.POTATO).namedInput(MSItems.WAND).build(output.withConditions(itemExists("quark", "tiny_potato")));
 		combination(q("tiny_potato")).or().input(Items.POTATO).namedInput(AspectTreeBlocks.HOPE_ASPECT_SAPLING).build(output.withConditions(itemExists("quark", "tiny_potato")));
+		combination(q("crab_leg")).or().input(Items.BEEF).input(MSItems.CLAW_SICKLE).build(output.withConditions(itemExists("quark", "crab_leg")));
+		combination(q("crab_shell")).or().input(q("crab_leg")).input(Items.TURTLE_SCUTE).build(output.withConditions(itemExists("quark", "crab_shell")));
+		combination(q("glow_lichen_growth")).and().input(Items.GLOW_LICHEN).input(Items.SHORT_GRASS).build(output.withConditions(itemExists("quark", "glow_lichen_growth")));
+		combination(q("chorus_weeds")).and().input(Items.CHORUS_FRUIT).input(Items.SHORT_GRASS).build(output.withConditions(itemExists("quark", "chorus_weeds")));
+		combination(q("chorus_twist")).and().input(q("chorus_weeds")).input(Items.NAUTILUS_SHELL).build(output.withConditions(itemExists("quark", "chorus_twist")));
+		combination(q("glow_shroom")).or().input(MSItems.GLOWING_MUSHROOM).input(Items.DEEPSLATE).build(output.withConditions(itemExists("quark", "glow_shroom")));
 	}
 
 	private static Item q(String id) {

@@ -184,6 +184,7 @@
   { "inputs": ["quark:yellow_blossom_sapling"], "outputs": ["quark:blossom_log"] },
   { "inputs": ["quark:red_blossom_sapling"], "outputs": ["quark:blossom_log"] },
   { "inputs": ["minecraft:glass_bottle"], "outputs": ["quark:bottled_cloud"] },
+  { "inputs": ["quark:glow_shroom", "minecraft:bone_meal"], "outputs": ["quark:glow_shroom_block", "quark:glow_shroom_stem", "quark:glow_shroom_ring"] },
 
   { "inputs": ["extradelight:evaporator"], "outputs": ["extradelight:salt"] },
   { "inputs": ["extradelight:mixing_bowl", "minecraft:egg"], "outputs": ["extradelight:egg_yolk", "extradelight:egg_white"] },

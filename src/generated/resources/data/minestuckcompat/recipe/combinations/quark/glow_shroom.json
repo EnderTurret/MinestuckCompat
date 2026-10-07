@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:glow_shroom"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:glowing_mushroom"
+  },
+  "input2": {
+    "item": "minecraft:deepslate"
+  },
+  "mode": "or",
+  "output": "quark:glow_shroom"
+}

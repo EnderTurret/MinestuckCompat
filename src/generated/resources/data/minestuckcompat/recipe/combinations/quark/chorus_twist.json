@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "quark"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "quark:chorus_twist"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "quark:chorus_weeds"
+  },
+  "input2": {
+    "item": "minecraft:nautilus_shell"
+  },
+  "mode": "and",
+  "output": "quark:chorus_twist"
+}
