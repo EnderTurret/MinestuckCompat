@@ -13,6 +13,7 @@ import com.mraof.minestuck.api.alchemy.MutableGristSet;
 @Mixin(MutableGristSet.class)
 public interface MixinMutableGristSet {
 
+	// Avoid the asAmounts() call.
 	@Overwrite
 	public default MutableGristSet add(GristSet set) {
 		final MutableGristSet self = (MutableGristSet) this;
@@ -23,6 +24,7 @@ public interface MixinMutableGristSet {
 		return self;
 	}
 
+	// Avoid the asAmounts() call.
 	@Overwrite
 	public default MutableGristSet scale(float scale, boolean roundDown) {
 		final MutableGristSet self = (MutableGristSet) this;

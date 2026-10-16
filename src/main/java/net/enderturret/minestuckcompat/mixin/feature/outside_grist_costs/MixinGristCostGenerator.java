@@ -22,8 +22,7 @@ public abstract class MixinGristCostGenerator {
 	private static Object minestuckcompat$process;
 
 	@ModifyExpressionValue(at = @At(value = "NEW", target = "com/mraof/minestuck/alchemy/recipe/generator/GristCostGenerator$GeneratorProcess"), method = "run")
-	@Coerce
-	private static Object minestuckcompat$captureProcess(@Coerce Object process) {
+	private static @Coerce Object minestuckcompat$captureProcess(@Coerce Object process) {
 		minestuckcompat$process = process;
 		return process;
 	}

@@ -14,6 +14,7 @@ import com.mraof.minestuck.api.alchemy.GristType;
 @Mixin(GristSet.class)
 public interface MixinGristSet {
 
+	// Avoid setting up a stream for this.
 	@Overwrite
 	public default boolean isEmpty() {
 		final GristSet self = (GristSet) this;
@@ -25,6 +26,7 @@ public interface MixinGristSet {
 		return true;
 	}
 
+	// Avoid allocating tons of GristAmounts via asAmounts().
 	@Overwrite
 	public default double getValue() {
 		final GristSet self = (GristSet) this;
@@ -36,6 +38,7 @@ public interface MixinGristSet {
 		return ret;
 	}
 
+	// Avoid using streams to compute the list.
 	@Overwrite
 	public default List<GristAmount> asAmounts() {
 		final GristSet self = (GristSet) this;

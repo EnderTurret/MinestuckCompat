@@ -35,6 +35,7 @@ public abstract class MixinSmithingInterpreter implements RecipeInterpreter, Ana
 	@Final
 	private static Field additionField;
 
+	// Replace the original with a cleaner version using account().
 	@Overwrite
 	@Override
 	public GristSet generateCost(Recipe<?> recipe, Item output, GeneratorCallback callback) {
@@ -58,6 +59,7 @@ public abstract class MixinSmithingInterpreter implements RecipeInterpreter, Ana
 		}
 	}
 
+	// Fix the interpreter not overriding reportPreliminaryLookups().
 	@Override
 	public void reportPreliminaryLookups(Recipe<?> recipe, LookupTracker tracker) {
 		try {
@@ -69,6 +71,7 @@ public abstract class MixinSmithingInterpreter implements RecipeInterpreter, Ana
 		}
 	}
 
+	// Implement a Minestuck Compat extension.
 	@Override
 	public void reportCraftingStation(Recipe<?> recipe, LookupTracker tracker) {
 		tracker.report(Items.SMITHING_TABLE);
