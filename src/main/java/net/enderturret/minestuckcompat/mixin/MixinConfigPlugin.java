@@ -7,6 +7,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.loading.LoadingModList;
 
 public final class MixinConfigPlugin implements IMixinConfigPlugin {
@@ -24,6 +25,9 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 				return LoadingModList.get().getModFileById("extradelight") != null;
 		}
 
+		if (mixinClassName.contains("ali_glms"))
+			return LoadingModList.get().getModFileById("ali") != null;
+
 		return true;
 	}
 
@@ -36,6 +40,9 @@ public final class MixinConfigPlugin implements IMixinConfigPlugin {
 					"perf.small_grist_set.data.MixinSourceGristCostBuilder",
 					"data.extradelight.MixinDataGen"
 					);
+
+		if (Boolean.getBoolean("minestuckcompat.fixAli") && !FMLEnvironment.production)
+			return List.of("perf.ali_glms.MixinLootContextProbe");
 
 		return null;
 	}

@@ -108,6 +108,7 @@ neoForge {
             client()
             ideName = 'runMinestuckCompatClient'
             systemProperty('foxfilter.dev', 'true')
+            systemProperty('minestuckcompat.fixAli', 'true')
             if (rootProject.findProperty('minecraft_username') != null) {
                 programArguments.addAll('--uuid', rootProject.findProperty('minecraft_uuid'), '--username', rootProject.findProperty('minecraft_username'))
             }
