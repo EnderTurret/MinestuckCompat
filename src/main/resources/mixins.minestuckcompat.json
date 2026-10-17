@@ -8,8 +8,6 @@
     "minVersion": "0.5.0"
   },
   "mixins": [
-    "feature.immersiveengineering.MixinTagOutput",
-    "feature.immersiveengineering.TagOutputAccess",
     "feature.debug.MixinDefaultInterpreter",
     "feature.debug.MixinGristCostGenerator",
     "feature.debug.MixinRecipeGeneratedCostHandler",
@@ -24,6 +22,8 @@
     "feature.outside_grist_costs.GeneratorProcessAccess",
     "feature.outside_grist_costs.MixinGristCostGenerator",
     "feature.outside_grist_costs.MixinRecipeGeneratedCostProcess",
+    "feature.result_tag_fix.MixinRecipeGeneratedCostHandler",
+    "feature.result_tag_fix.MixinRecipeGeneratedCostProcess",
     "feature.smithing_fix.MixinSmithingInterpreter",
     "perf.allocations.MixinGristSet",
     "perf.allocations.MixinMutableGristSet",
