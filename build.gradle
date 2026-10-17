@@ -2,6 +2,7 @@
 plugins {
     id 'eclipse'
     id 'net.neoforged.moddev' version '2.0.147'
+    id 'me.modmuss50.mod-publish-plugin' version '2.2.0'
 }
 
 version = '1.4.1+1.21.1'
@@ -125,6 +126,68 @@ neoForge {
             programArguments.addAll '--mod', 'minestuckcompat', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
             systemProperty('minestuckcompat.datagen', 'true')
         }
+    }
+}
+
+publishMods {
+    changelog = providers.fileContents(rootProject.getLayout().projectDirectory.file("changelog.md")).asText
+    type = STABLE
+    modLoaders.add("neoforge")
+    displayName = "${project.version}"
+
+    dryRun = true
+
+    curseforge {
+        accessToken = providers.gradleProperty('CURSEFORGE_API_KEY')
+        projectId = '1369297'
+        changelogType = 'markdown'
+
+        additionalFiles.from(sourcesJar.archiveFile)
+
+        minecraftVersionList('1.21.1')
+        javaVersions.add(JavaVersion.VERSION_21)
+
+        requires('minestuck')
+        optional('applied-energistics-2')
+        optional('biomes-o-plenty')
+        optional('create')
+        optional('extradelight')
+        optional('farmers-delight')
+        optional('immersive-engineering')
+        optional('jei')
+        optional('mekanism')
+        optional('rechiseled')
+        optional('supplementaries')
+        optional('quark')
+
+        client = true
+        server = true
+    }
+
+    modrinth {
+        accessToken = providers.gradleProperty('MODRINTH_API_KEY')
+        projectId = 'APRUHHlE'
+
+        additionalFile(sourcesJar) {
+            type = SOURCES_JAR
+        }
+
+        minecraftVersionList('1.21.1')
+
+        //requires('minestuck')
+        optional('ae2')
+        optional('biomes-o-plenty')
+        optional('create')
+        optional('extradelight')
+        optional('farmers-delight')
+        optional('immersiveengineering')
+        optional('jei')
+        optional('mekanism')
+        optional('rechiseled')
+        optional('supplementaries')
+        optional('quark')
+
+        environment = CLIENT_OR_SERVER_PREFERS_BOTH
     }
 }
 
