@@ -191,6 +191,8 @@ publishMods {
     }
 }
 
+publishMods.file = jar.archiveFile
+
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([
