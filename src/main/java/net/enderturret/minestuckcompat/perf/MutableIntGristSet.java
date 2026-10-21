@@ -99,7 +99,7 @@ public final class MutableIntGristSet extends AbstractIntGristSet implements Mut
 
 	@Override
 	public Immutable asImmutable() {
-		return ImmutableIntGristSet.from(gristByType.clone());
+		return ImmutableShortGristSet.isSmall(gristByType) ? ImmutableShortGristSet.from(gristByType) : ImmutableIntGristSet.from(gristByType.clone());
 	}
 
 	private static int roundToNonZero(float value) {

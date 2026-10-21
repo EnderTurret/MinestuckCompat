@@ -40,7 +40,11 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 				break;
 			}
 
-		return empty ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
+		return empty ? EmptyGristSet.INSTANCE : smallImmutable(gristByType);
+	}
+
+	private static GristSet.Immutable smallImmutable(int[] gristByType) {
+		return ImmutableShortGristSet.isSmall(gristByType) ? ImmutableShortGristSet.from(gristByType) : new ImmutableIntGristSet(gristByType);
 	}
 
 	/**
@@ -50,7 +54,7 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	 */
 	public static GristSet.Immutable create(GristSet set) {
 		final int[] gristByType = gristByType(set, true);
-		return gristByType == null ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
+		return gristByType == null ? EmptyGristSet.INSTANCE : smallImmutable(gristByType);
 	}
 
 	/**
@@ -60,7 +64,7 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	 */
 	public static GristSet.Immutable create(Map<GristType, Long> map) {
 		final int[] gristByType = gristByType(map, true);
-		return gristByType == null ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
+		return gristByType == null ? EmptyGristSet.INSTANCE : smallImmutable(gristByType);
 	}
 
 	/**
@@ -71,7 +75,7 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	public static GristSet.Immutable create(List<GristAmount> list) {
 		if (list.isEmpty()) return EmptyGristSet.INSTANCE;
 		if (list.size() == 1) return list.get(0);
-		return new ImmutableIntGristSet(gristByType(list));
+		return smallImmutable(gristByType(list));
 	}
 
 	@Override
