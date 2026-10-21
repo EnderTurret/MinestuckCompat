@@ -8,6 +8,8 @@ import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.GristType;
 
+import net.enderturret.minestuckcompat.alchemy.MixinHooks;
+
 /**
  * <p>
  * {@code ImmutableIntGristSet} is a more memory-efficient {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set}.
@@ -44,7 +46,7 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	}
 
 	private static GristSet.Immutable smallImmutable(int[] gristByType) {
-		return ImmutableShortGristSet.isSmall(gristByType) ? ImmutableShortGristSet.from(gristByType) : new ImmutableIntGristSet(gristByType);
+		return ImmutableShortGristSet.isSmall(gristByType) ? MixinHooks.intern(ImmutableShortGristSet.from(gristByType)) : MixinHooks.intern(new ImmutableIntGristSet(gristByType));
 	}
 
 	/**
@@ -74,7 +76,7 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	 */
 	public static GristSet.Immutable create(List<GristAmount> list) {
 		if (list.isEmpty()) return EmptyGristSet.INSTANCE;
-		if (list.size() == 1) return list.get(0);
+		if (list.size() == 1) return MixinHooks.intern(list.get(0));
 		return smallImmutable(gristByType(list));
 	}
 

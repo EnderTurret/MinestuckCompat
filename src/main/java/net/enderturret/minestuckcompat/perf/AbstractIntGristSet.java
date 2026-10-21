@@ -1,6 +1,7 @@
 package net.enderturret.minestuckcompat.perf;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -128,6 +129,18 @@ abstract sealed class AbstractIntGristSet implements GristSet permits ImmutableI
 
 		sb.append(" }");
 		return sb.toString();
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other) return true;
+		if (!(other instanceof AbstractIntGristSet set)) return false;
+		return getClass() == set.getClass() && equalContent(set);
+	}
+
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(asAmounts().toArray());
 	}
 
 	private static int checkCast(long cost) {

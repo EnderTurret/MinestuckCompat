@@ -10,6 +10,8 @@ import com.mraof.minestuck.api.alchemy.GristType;
 import com.mraof.minestuck.api.alchemy.GristTypes;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
+import net.enderturret.minestuckcompat.alchemy.MixinHooks;
+
 /**
  * <p>
  * {@code MutableIntGristSet} is the mutable version of {@link ImmutableIntGristSet}.
@@ -99,7 +101,7 @@ public final class MutableIntGristSet extends AbstractIntGristSet implements Mut
 
 	@Override
 	public Immutable asImmutable() {
-		return ImmutableShortGristSet.isSmall(gristByType) ? ImmutableShortGristSet.from(gristByType) : ImmutableIntGristSet.from(gristByType.clone());
+		return ImmutableShortGristSet.isSmall(gristByType) ? MixinHooks.intern(ImmutableShortGristSet.from(gristByType)) : MixinHooks.intern(ImmutableIntGristSet.from(gristByType.clone()));
 	}
 
 	private static int roundToNonZero(float value) {

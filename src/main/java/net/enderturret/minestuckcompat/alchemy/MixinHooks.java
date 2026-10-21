@@ -15,10 +15,12 @@ import java.util.stream.Collectors;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.slf4j.event.Level;
 
+import com.google.common.collect.Interner;
+import com.google.common.collect.Interners;
 import com.mojang.serialization.Codec;
 import com.mraof.minestuck.alchemy.recipe.RegularCombinationRecipe;
-import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler;
+import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedCostHandler.SourceEntry;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeGeneratedGristCost;
 import com.mraof.minestuck.alchemy.recipe.generator.recipe.RecipeSource;
 import com.mraof.minestuck.api.alchemy.GristSet;
@@ -61,6 +63,8 @@ public final class MixinHooks {
 	public static final Codec<Optional<SourceEntry>> CONDITIONAL_SOURCE_ENTRY = ConditionalOps.createConditionalCodec(SourceEntry.CODEC);
 	public static final Codec<List<Optional<SourceEntry>>> CONDITIONAL_SOURCE_ENTRY_LIST = CONDITIONAL_SOURCE_ENTRY.listOf();
 
+	private static Interner<GristSet.Immutable> IMMUTABLE_GRIST_SET_INTERNER;
+
 	/**
 	 * The {@code generatedCosts} map from {@code RecipeGeneratedCostProcess}.
 	 */
@@ -74,6 +78,17 @@ public final class MixinHooks {
 		MinestuckCompat.LOGGER.atLevel(FMLEnvironment.production ? Level.DEBUG : Level.INFO).log("Discovering additional grist cost providers!");
 		NeoForge.EVENT_BUS.post(new RegisterGristCostProvidersEvent(generatedCosts, access));
 		generatedCosts = null;
+	}
+
+	public static GristSet.Immutable intern(GristSet.Immutable set) {
+		if (IMMUTABLE_GRIST_SET_INTERNER == null)
+			IMMUTABLE_GRIST_SET_INTERNER = Interners.newStrongInterner();
+
+		return IMMUTABLE_GRIST_SET_INTERNER.intern(set);
+	}
+
+	public static void wipeInterner() {
+		IMMUTABLE_GRIST_SET_INTERNER = null;
 	}
 
 	@SuppressWarnings("deprecation")
