@@ -14,7 +14,7 @@ public interface MixinMutableGristSet {
 
 	@Overwrite
 	public static MutableGristSet newDefault() {
-		return new MutableIntGristSet();
+		return /* !MinestuckCompatConfig.common().shrinkGristSets.getAsBoolean() ? new DefaultMutableGristSet() : */ new MutableIntGristSet();
 	}
 
 	@Overwrite

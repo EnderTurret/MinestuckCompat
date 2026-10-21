@@ -34,6 +34,12 @@ public final class MinestuckCompatConfig {
 	public final BooleanValue debugDefaultInterpreterRecipeEligibility;
 	public final BooleanValue mysteriousConversionRecipes;
 
+	/*
+	public final BooleanValue shrinkGristSets;
+	public final BooleanValue shortGristSets;
+	public final BooleanValue internGristSets;
+	*/
+
 	private final Map<String, BooleanValue> enabledRecipes = new HashMap<>();
 
 	private MinestuckCompatConfig(ModConfigSpec.Builder builder) {
@@ -124,6 +130,20 @@ public final class MinestuckCompatConfig {
 				"Whether or not to add \"Mysterious Conversions\" for Minestuck's transforming weapons to JEI when Create is installed.",
 				"Mods and resource packs can add their own such weapons by adding a mymod:minestuckcompat/swapping_weapons.json file."
 				).define("mysteriousConversionRecipes", true);
+
+		/*
+		builder.comment("Settings related to Minestuck Compat's optimizations.").push("performance");
+
+		shrinkGristSets = builder.comment(
+				"Whether or not to use vastly more efficient GristSet implementations to reduce memory usage."
+				).define("shrinkGristSets", true);
+		shortGristSets = builder.comment(
+				"Whether or not to use an even smaller GristSet implementation where applicable."
+				).define("shortGristSets", true);
+		internGristSets = builder.comment(
+				"Whether or not to intern (deduplicate) GristSets."
+				).define("internGristSets", true);
+		*/
 	}
 
 	private void defineEnabledRecipes(ModConfigSpec.Builder builder, String modId, String name) {

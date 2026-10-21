@@ -81,6 +81,8 @@ public final class MixinHooks {
 	}
 
 	public static GristSet.Immutable intern(GristSet.Immutable set) {
+		//if (!MinestuckCompatConfig.common().internGristSets.getAsBoolean()) return set;
+
 		if (IMMUTABLE_GRIST_SET_INTERNER == null)
 			IMMUTABLE_GRIST_SET_INTERNER = Interners.newStrongInterner();
 

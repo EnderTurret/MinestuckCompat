@@ -47,6 +47,7 @@ public final class MutableIntGristSet extends AbstractIntGristSet implements Mut
 	 * @return The new mutable grist set.
 	 */
 	public static MutableGristSet create(GristSet set) {
+		//if (!MinestuckCompatConfig.common().shrinkGristSets.getAsBoolean()) return new DefaultMutableGristSet(set);
 		final int[] gristByType = gristByType(set, false);
 		return new MutableIntGristSet(gristByType);
 	}
@@ -57,6 +58,7 @@ public final class MutableIntGristSet extends AbstractIntGristSet implements Mut
 	 * @return The new mutable grist set.
 	 */
 	public static MutableGristSet create(List<GristAmount> list) {
+		//if (!MinestuckCompatConfig.common().shrinkGristSets.getAsBoolean()) return new DefaultMutableGristSet(list);
 		return new MutableIntGristSet(gristByType(list));
 	}
 
@@ -101,7 +103,10 @@ public final class MutableIntGristSet extends AbstractIntGristSet implements Mut
 
 	@Override
 	public Immutable asImmutable() {
-		return ImmutableShortGristSet.isSmall(gristByType) ? MixinHooks.intern(ImmutableShortGristSet.from(gristByType)) : MixinHooks.intern(ImmutableIntGristSet.from(gristByType.clone()));
+		if (/* MinestuckCompatConfig.common().shortGristSets.getAsBoolean() && */ ImmutableShortGristSet.isSmall(gristByType))
+			return MixinHooks.intern(ImmutableShortGristSet.from(gristByType));
+
+		return MixinHooks.intern(ImmutableIntGristSet.from(gristByType.clone()));
 	}
 
 	private static int roundToNonZero(float value) {

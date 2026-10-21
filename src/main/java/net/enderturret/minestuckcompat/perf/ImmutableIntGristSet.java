@@ -46,7 +46,21 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	}
 
 	private static GristSet.Immutable smallImmutable(int[] gristByType) {
-		return ImmutableShortGristSet.isSmall(gristByType) ? MixinHooks.intern(ImmutableShortGristSet.from(gristByType)) : MixinHooks.intern(new ImmutableIntGristSet(gristByType));
+		/*
+		if (!MinestuckCompatConfig.common().shrinkGristSets.getAsBoolean()) {
+			final Map<GristType, Long> types = new LinkedHashMap<>();
+			for (int i = 0; i < gristByType.length; i++)
+				if (gristByType[i] != 0)
+					types.put(GristTypeHelper.type(i), (long) gristByType[i]);
+
+			return new DefaultImmutableGristSet(types);
+		}
+		*/
+
+		if (/* MinestuckCompatConfig.common().shortGristSets.getAsBoolean() && */ ImmutableShortGristSet.isSmall(gristByType))
+			return MixinHooks.intern(ImmutableShortGristSet.from(gristByType));
+
+		return MixinHooks.intern(new ImmutableIntGristSet(gristByType));
 	}
 
 	/**
@@ -76,7 +90,8 @@ public final class ImmutableIntGristSet extends AbstractIntGristSet implements G
 	 */
 	public static GristSet.Immutable create(List<GristAmount> list) {
 		if (list.isEmpty()) return EmptyGristSet.INSTANCE;
-		if (list.size() == 1) return MixinHooks.intern(list.get(0));
+		if (list.size() == 1 /* && MinestuckCompatConfig.common().shrinkGristSets.getAsBoolean() */)
+			return MixinHooks.intern(list.get(0));
 		return smallImmutable(gristByType(list));
 	}
 
