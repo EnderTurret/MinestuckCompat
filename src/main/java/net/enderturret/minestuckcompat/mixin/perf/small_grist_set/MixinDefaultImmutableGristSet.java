@@ -9,13 +9,13 @@ import com.mraof.minestuck.api.alchemy.DefaultImmutableGristSet;
 import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
 
 @Mixin(DefaultImmutableGristSet.class)
 public abstract class MixinDefaultImmutableGristSet {
 
 	@Overwrite
 	public static GristSet.Immutable create(List<GristAmount> amounts) {
-		return SmallImmutableGristSet.create(amounts);
+		return ImmutableIntGristSet.create(amounts);
 	}
 }

@@ -13,14 +13,14 @@ import com.mraof.minestuck.api.alchemy.GristAmount;
 import com.mraof.minestuck.api.alchemy.GristSet;
 
 import net.enderturret.minestuckcompat.perf.EmptyGristSet;
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
 
 @Mixin(GristSet.class)
 public interface MixinGristSet {
 
 	@Overwrite
 	public static GristSet.Immutable of(GristAmount... amounts) {
-		return SmallImmutableGristSet.create(Arrays.asList(amounts));
+		return ImmutableIntGristSet.create(Arrays.asList(amounts));
 	}
 
 	@Definition(id = "emptyMap", method = "Ljava/util/Collections;emptyMap()Ljava/util/Map;")

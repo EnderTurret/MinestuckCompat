@@ -21,7 +21,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
 
 @Mixin(GristSet.Codecs.class)
 public abstract class MixinCodecs {
@@ -56,7 +56,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapNonNegativeCodec(Codec<GristSet.Immutable> old) {
-		return GristAmount.NON_NEGATIVE_LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
+		return GristAmount.NON_NEGATIVE_LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(ImmutableIntGristSet::create, GristSet::asAmounts);
 	}
 
 	@ModifyExpressionValue(
@@ -77,7 +77,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapMapCodec(Codec<GristSet.Immutable> old) {
-		return Codec.unboundedMap(GristTypes.REGISTRY.byNameCodec(), Codec.LONG).validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asMap);
+		return Codec.unboundedMap(GristTypes.REGISTRY.byNameCodec(), Codec.LONG).validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(ImmutableIntGristSet::create, GristSet::asMap);
 	}
 
 	@ModifyExpressionValue(
@@ -98,7 +98,7 @@ public abstract class MixinCodecs {
 							opcode = Opcodes.PUTSTATIC
 					)))
 	private static Codec<GristSet.Immutable> minestuckcompat$wrapListCodec(Codec<GristSet.Immutable> old) {
-		return GristAmount.LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(SmallImmutableGristSet::create, GristSet::asAmounts);
+		return GristAmount.LIST_CODEC.validate(MixinCodecs::minestuckcompat$validateWithinLimit).xmap(ImmutableIntGristSet::create, GristSet::asAmounts);
 	}
 
 	@ModifyExpressionValue(
@@ -111,7 +111,7 @@ public abstract class MixinCodecs {
 		return StreamCodec.composite(
 				GristAmount.STREAM_CODEC.apply(ByteBufCodecs.list()),
 				GristSet::asAmounts,
-				SmallImmutableGristSet::create
+				ImmutableIntGristSet::create
 		);
 	}
 }

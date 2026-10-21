@@ -6,19 +6,19 @@ import org.spongepowered.asm.mixin.Overwrite;
 import com.mraof.minestuck.api.alchemy.GristSet;
 import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
-import net.enderturret.minestuckcompat.perf.SmallMutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
+import net.enderturret.minestuckcompat.perf.MutableIntGristSet;
 
 @Mixin(MutableGristSet.class)
 public interface MixinMutableGristSet {
 
 	@Overwrite
 	public static MutableGristSet newDefault() {
-		return new SmallMutableGristSet();
+		return new MutableIntGristSet();
 	}
 
 	@Overwrite
 	public default GristSet.Immutable asImmutable() {
-		return SmallImmutableGristSet.create((MutableGristSet) this);
+		return ImmutableIntGristSet.create((MutableGristSet) this);
 	}
 }

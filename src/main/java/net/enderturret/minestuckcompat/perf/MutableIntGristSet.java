@@ -12,7 +12,7 @@ import com.mraof.minestuck.api.alchemy.MutableGristSet;
 
 /**
  * <p>
- * {@code SmallMutableGristSet} is the mutable version of {@link SmallImmutableGristSet}.
+ * {@code MutableIntGristSet} is the mutable version of {@link ImmutableIntGristSet}.
  * </p>
  * <p>
  * The default mutable grist set is somehow more expensive than the immutable version,
@@ -24,18 +24,18 @@ import com.mraof.minestuck.api.alchemy.MutableGristSet;
  * Just call {@link MutableGristSet#newDefault()} or {@link GristSet#mutableCopy()} as normal.
  * </p>
  * @author EnderTurret
- * @see SmallImmutableGristSet
+ * @see ImmutableIntGristSet
  */
-public final class SmallMutableGristSet extends AbstractSmallGristSet implements MutableGristSet {
+public final class MutableIntGristSet extends AbstractIntGristSet implements MutableGristSet {
 
-	SmallMutableGristSet(int[] gristByType) {
+	MutableIntGristSet(int[] gristByType) {
 		super(gristByType);
 	}
 
 	/**
 	 * Constructs a new, empty {@code SmallMutableGristSet}.
 	 */
-	public SmallMutableGristSet() {
+	public MutableIntGristSet() {
 		this(new int[GristTypes.REGISTRY.size()]);
 	}
 
@@ -46,7 +46,7 @@ public final class SmallMutableGristSet extends AbstractSmallGristSet implements
 	 */
 	public static MutableGristSet create(GristSet set) {
 		final int[] gristByType = gristByType(set, false);
-		return new SmallMutableGristSet(gristByType);
+		return new MutableIntGristSet(gristByType);
 	}
 
 	/**
@@ -55,7 +55,7 @@ public final class SmallMutableGristSet extends AbstractSmallGristSet implements
 	 * @return The new mutable grist set.
 	 */
 	public static MutableGristSet create(List<GristAmount> list) {
-		return new SmallMutableGristSet(gristByType(list));
+		return new MutableIntGristSet(gristByType(list));
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public final class SmallMutableGristSet extends AbstractSmallGristSet implements
 
 	@Override
 	public MutableGristSet add(GristSet set) {
-		if (set instanceof SmallImmutableGristSet smol) {
+		if (set instanceof ImmutableIntGristSet smol) {
 			for (int i = 0; i < gristByType.length; i++)
 				gristByType[i] += smol.gristByType[i];
 
@@ -99,7 +99,7 @@ public final class SmallMutableGristSet extends AbstractSmallGristSet implements
 
 	@Override
 	public Immutable asImmutable() {
-		return SmallImmutableGristSet.from(gristByType.clone());
+		return ImmutableIntGristSet.from(gristByType.clone());
 	}
 
 	private static int roundToNonZero(float value) {

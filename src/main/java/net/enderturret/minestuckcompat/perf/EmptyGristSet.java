@@ -10,7 +10,7 @@ import com.mraof.minestuck.api.alchemy.GristType;
 /**
  * Empty implementation of {@link com.mraof.minestuck.api.alchemy.GristSet.Immutable}.
  * @author EnderTurret
- * @see SmallImmutableGristSet
+ * @see ImmutableIntGristSet
  */
 public final class EmptyGristSet implements GristSet.Immutable {
 
@@ -28,7 +28,7 @@ public final class EmptyGristSet implements GristSet.Immutable {
 
 	@Override
 	public List<GristAmount> asAmounts() {
-		return List.of(); // Base uses Steam#toList, so the contract implies immutability.
+		return List.of(); // Base uses Stream#toList, so the contract implies immutability.
 	}
 
 	@Override

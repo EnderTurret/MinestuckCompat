@@ -44,7 +44,7 @@ import net.enderturret.minestuckcompat.alchemy.mekanism.Item2ItemInterpreter;
 import net.enderturret.minestuckcompat.alchemy.mekanism.ItemChemical2ItemInterpreter;
 import net.enderturret.minestuckcompat.api.alchemy.SimpleRecipeInterpreter;
 import net.enderturret.minestuckcompat.api.data.IGeneratedGristCostConfigProviderExtensions;
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
 
 import appeng.recipes.AERecipeTypes;
 import blusunrize.immersiveengineering.api.crafting.IERecipeTypes;
@@ -228,6 +228,6 @@ public final class MCGeneratedGristCostConfig extends GeneratedGristCostConfigPr
 	}
 
 	private static GristSet.Immutable grist(Supplier<GristType> type, int count) {
-		return SmallImmutableGristSet.create(new GristAmount(type.get(), count));
+		return ImmutableIntGristSet.create(new GristAmount(type.get(), count));
 	}
 }

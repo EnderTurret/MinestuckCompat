@@ -16,11 +16,11 @@ import net.enderturret.minestuckcompat.MinestuckCompat;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 
-abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImmutableGristSet, SmallMutableGristSet {
+abstract sealed class AbstractIntGristSet implements GristSet permits ImmutableIntGristSet, MutableIntGristSet {
 
 	final int[] gristByType;
 
-	AbstractSmallGristSet(int[] gristByType) {
+	AbstractIntGristSet(int[] gristByType) {
 		this.gristByType = gristByType;
 	}
 
@@ -109,7 +109,7 @@ abstract sealed class AbstractSmallGristSet implements GristSet permits SmallImm
 
 	@Override
 	public MutableGristSet mutableCopy() {
-		return new SmallMutableGristSet(gristByType.clone());
+		return new MutableIntGristSet(gristByType.clone());
 	}
 
 	@Override

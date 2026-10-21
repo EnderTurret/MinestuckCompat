@@ -14,7 +14,7 @@ import com.mraof.minestuck.api.alchemy.recipe.SourceGristCostBuilder;
 
 import net.minecraft.world.item.crafting.Ingredient;
 
-import net.enderturret.minestuckcompat.perf.SmallImmutableGristSet;
+import net.enderturret.minestuckcompat.perf.ImmutableIntGristSet;
 
 @Mixin(SourceGristCostBuilder.class)
 public abstract class MixinSourceGristCostBuilder {
@@ -23,6 +23,6 @@ public abstract class MixinSourceGristCostBuilder {
 			at = @At(value = "NEW", target = "com/mraof/minestuck/alchemy/recipe/generator/SourceGristCost"),
 			method = "build(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/ResourceLocation;)V")
 	private SourceGristCost minestuckcompat$shrinkSetForSourceCost(Ingredient ingredient, List<Source> sources, float multiplier, GristSet.Immutable addedCost, Optional<Integer> priority) {
-		return new SourceGristCost(ingredient, sources, multiplier, SmallImmutableGristSet.create(addedCost), priority);
+		return new SourceGristCost(ingredient, sources, multiplier, ImmutableIntGristSet.create(addedCost), priority);
 	}
 }

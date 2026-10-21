@@ -10,7 +10,7 @@ import com.mraof.minestuck.api.alchemy.GristType;
 
 /**
  * <p>
- * {@code SmallImmutableGristSet} is a more memory-efficient {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set}.
+ * {@code ImmutableIntGristSet} is a more memory-efficient {@linkplain com.mraof.minestuck.api.alchemy.GristSet.Immutable immutable grist set}.
  * While {@linkplain DefaultImmutableGristSet the default} stores the grist data in a {@link Map}, this implementation uses an {@code int} array.
  * This ends up shrinking the memory footprint of an immutable grist set by around 3/4ths (i.e., a small immutable grist set is ~1/4 the size of a default one).
  * </p>
@@ -24,11 +24,11 @@ import com.mraof.minestuck.api.alchemy.GristType;
  * Just call {@link GristSet#asImmutable()}, {@link GristSet#of(GristAmount...)}, or {@link DefaultImmutableGristSet#create(List)} as normal.
  * </p>
  * @author EnderTurret
- * @see SmallMutableGristSet
+ * @see MutableIntGristSet
  */
-public final class SmallImmutableGristSet extends AbstractSmallGristSet implements GristSet.Immutable {
+public final class ImmutableIntGristSet extends AbstractIntGristSet implements GristSet.Immutable {
 
-	private SmallImmutableGristSet(int[] gristByType) {
+	private ImmutableIntGristSet(int[] gristByType) {
 		super(gristByType);
 	}
 
@@ -40,7 +40,7 @@ public final class SmallImmutableGristSet extends AbstractSmallGristSet implemen
 				break;
 			}
 
-		return empty ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
+		return empty ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
 	}
 
 	/**
@@ -50,7 +50,7 @@ public final class SmallImmutableGristSet extends AbstractSmallGristSet implemen
 	 */
 	public static GristSet.Immutable create(GristSet set) {
 		final int[] gristByType = gristByType(set, true);
-		return gristByType == null ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
+		return gristByType == null ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public final class SmallImmutableGristSet extends AbstractSmallGristSet implemen
 	 */
 	public static GristSet.Immutable create(Map<GristType, Long> map) {
 		final int[] gristByType = gristByType(map, true);
-		return gristByType == null ? EmptyGristSet.INSTANCE : new SmallImmutableGristSet(gristByType);
+		return gristByType == null ? EmptyGristSet.INSTANCE : new ImmutableIntGristSet(gristByType);
 	}
 
 	/**
@@ -71,7 +71,7 @@ public final class SmallImmutableGristSet extends AbstractSmallGristSet implemen
 	public static GristSet.Immutable create(List<GristAmount> list) {
 		if (list.isEmpty()) return EmptyGristSet.INSTANCE;
 		if (list.size() == 1) return list.get(0);
-		return new SmallImmutableGristSet(gristByType(list));
+		return new ImmutableIntGristSet(gristByType(list));
 	}
 
 	@Override
