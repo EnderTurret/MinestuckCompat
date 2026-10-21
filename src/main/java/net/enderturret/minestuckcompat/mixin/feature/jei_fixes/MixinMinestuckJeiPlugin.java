@@ -26,10 +26,16 @@ import net.enderturret.minestuckcompat.alchemy.jei.FrogSubtypeInterpreter;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.registration.IIngredientAliasRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
 
 @Mixin(MinestuckJeiPlugin.class)
 public abstract class MixinMinestuckJeiPlugin implements IModPlugin {
+
+	@Inject(at = @At("HEAD"), method = "registerRecipes")
+	private static void minestuckcompat$wipeOldIds(IRecipeRegistration registration, CallbackInfo ci) {
+		JeiHooks.wipeIds();
+	}
 
 	@ModifyExpressionValue(at = @At(value = "INVOKE", target = "Lcom/mraof/minestuck/api/alchemy/recipe/GristCostRecipe;getJeiCosts(Lnet/minecraft/world/level/Level;)Ljava/util/List;"), method = "lambda$registerRecipes$1")
 	private static List<JeiGristCost> minestuckcompat$findCostIds(List<JeiGristCost> original, Level level, RecipeHolder<?> holder) {

@@ -71,6 +71,12 @@ public final class JeiHooks {
 		GRIST_IDS.put(cost, id);
 	}
 
+	public static void wipeIds() {
+		GRIST_IDS.clear();
+		AND_IDS.clear();
+		OR_IDS.clear();
+	}
+
 	private static boolean registered = false;
 
 	/**
