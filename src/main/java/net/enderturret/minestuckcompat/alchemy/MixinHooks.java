@@ -293,7 +293,8 @@ public final class MixinHooks {
 					final Combination combo = new Combination(stack1.getItem(), stack2.getItem(), recipe.mode() == CombinationMode.AND);
 					ResourceLocation conflict;
 					if ((conflict = usedCombinations.put(combo, holder.id())) != null)
-						MinestuckCompat.LOGGER.warn("Combination recipe {} conflicts with {}!", holder.id(), conflict);
+						MinestuckCompat.LOGGER.warn("Combination recipe {} conflicts with {} via ({},{})!",
+								holder.id(), conflict, stack1.getItemHolder().getKey().location(), stack2.getItemHolder().getKey().location());
 				}
 			}
 		}
