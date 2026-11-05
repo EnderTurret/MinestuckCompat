@@ -1,4 +1,4 @@
-// 1.21.1	2026-10-01T12:51:58.297716092	Minestuck Recipes
+// 1.21.1	2026-11-04T21:35:43.312082672	Minestuck Recipes
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/clock_from_redstone.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/combinations/lightning_rod.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/coarse_end_stone.json
@@ -47,6 +47,8 @@ e8994dd5f5eba0b1abdbf06b17884421829fbc8f data/minestuck/recipe/grist_costs/raw_m
 46ecf03ac8af74e720b87d84f1566304001ae102 data/minestuck/recipe/grist_costs/stones_tag.json
 b24dabacf1df2fa7c37b02f50368b3ce556a1566 data/minestuck/recipe/grist_costs/uncarved_wood.json
 e95248f8a86d6267a62605a308d2de567fed2198 data/minestuckcompat/recipe/combinations/minestuck/and_gate_block.json
+ad1acd02621c81bc20a238bdce22b9815127e359 data/minestuckcompat/recipe/combinations/minestuck/battery_from_hdpe_stick.json
+cfe7e3db874410a5f9f3570627ddb952ee2c3f54 data/minestuckcompat/recipe/combinations/minestuck/battery_from_redstone_torch.json
 2ea1bae3a17f7f5746d97fd2e5dd28ba0d8148c9 data/minestuckcompat/recipe/combinations/minestuck/bisickle_from_chain.json
 201d658665c466251096f96576f89522740a47e8 data/minestuckcompat/recipe/combinations/minestuck/bisickle_from_cogwheel.json
 4d6342880480adb61b749a7f955da8a295d3498f data/minestuckcompat/recipe/combinations/minestuck/blood_aspect_fence_gate.json

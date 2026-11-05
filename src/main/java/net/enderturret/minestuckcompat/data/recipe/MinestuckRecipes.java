@@ -162,6 +162,10 @@ public final class MinestuckRecipes extends AbstractRecipeProvider {
 		combination(BISICKLE).and().input(SICKLE).namedInput(Items.CHAIN).build(output);
 		combination(BISICKLE).and().input(SICKLE).namedInput(AllBlocks.COGWHEEL).build(output.withConditions(modLoaded("create")));
 
+		combination(BATTERY).or().input(ENERGY_CORE).namedInput(Items.REDSTONE_TORCH).build(output);
+		// Okay, so for the rationale behind this one, uhhh... it's funny?
+		combination(BATTERY).and().input(ENERGY_CORE).namedInput(lookup("mekanism", "hdpe_stick")).build(output.withConditions(modLoaded("mekanism")));
+
 		combination(AND_GATE_BLOCK).and().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
 		combination(OR_GATE_BLOCK).or().input(Items.IRON_BLOCK).input(Items.REDSTONE).build(output);
 		combination(NAND_GATE_BLOCK).or().input(AND_GATE_BLOCK).input(Items.REDSTONE_TORCH).build(output);
