@@ -1,4 +1,4 @@
-// 1.21.1	2026-11-04T22:06:53.862458268	Vanilla Recipes
+// 1.21.1	2026-11-04T22:12:54.777675765	Vanilla Recipes
 0099357e0c43f6126ce48f01bd96461c53ce9c0d data/minestuckcompat/recipe/combinations/vanilla/allium.json
 7e4a2be9c0f2bce836643a3f9d928a57a90b3dea data/minestuckcompat/recipe/combinations/vanilla/angler_pottery_sherd.json
 f64944c9b485abfecd033c00d68d2c4f1c849106 data/minestuckcompat/recipe/combinations/vanilla/archer_pottery_sherd.json
@@ -195,7 +195,8 @@ dc28d34a79137d8f17da777a7fb6f493a4b044bf data/minestuckcompat/recipe/combination
 ca7161f8cba361b0445a665d2326649afe8e45c0 data/minestuckcompat/recipe/combinations/vanilla/vex_armor_trim_smithing_template.json
 73702f0d257d71aa1b8a3c8e3ef1a4febf6d5fb4 data/minestuckcompat/recipe/combinations/vanilla/ward_armor_trim_smithing_template.json
 91899edbb7d672ea284a8fcd290c0f49803f1c31 data/minestuckcompat/recipe/combinations/vanilla/warped_fungus.json
-7ad837d0b47e72ef32a5528c518c196611c5d27b data/minestuckcompat/recipe/combinations/vanilla/water_bucket.json
+7ad837d0b47e72ef32a5528c518c196611c5d27b data/minestuckcompat/recipe/combinations/vanilla/water_bucket_from_ice.json
+711baeee02bb4772090c9eb8b58d44c4aef9e0d9 data/minestuckcompat/recipe/combinations/vanilla/water_bucket_from_pointed_dripstone.json
 f0518f087950f47c61948bb11e55aa4db9e4675e data/minestuckcompat/recipe/combinations/vanilla/wayfinder_armor_trim_smithing_template.json
 36c94d7aa016ae67185980c9d264e0957b4855f3 data/minestuckcompat/recipe/combinations/vanilla/wheat_seeds.json
 0d14b05c80f7f227baa7ec4b640245e513c63b4e data/minestuckcompat/recipe/combinations/vanilla/white_tulip.json

@@ -371,7 +371,10 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(SAND).or().input(Tags.Items.GRAVELS).input(ItemTags.PICKAXES).build(output);
 		combination(GRAVEL).or().input(Tags.Items.COBBLESTONES).input(ItemTags.PICKAXES).build(output);
 		// Technically we don't *need* this recipe, but it might help players who forget that ice creates water source blocks.
-		combination(WATER_BUCKET).or().input(Items.BUCKET).input(Items.ICE).build(output);
+		combination(WATER_BUCKET).or().input(Items.BUCKET).namedInput(Items.ICE).build(output);
+		// This one is not actually possible without already having water buckets (for dripleaves).
+		// However, maybe someone's terrain comes with dripstone blocks?
+		combination(WATER_BUCKET).or().input(Items.BUCKET).namedInput(Items.POINTED_DRIPSTONE).build(output);
 		// If you forgot a lava bucket, you can now get them via Campfire ==> Netherrack ==> Lava Bucket.
 		combination(LAVA_BUCKET).or().input(Items.WATER_BUCKET).input(Items.NETHERRACK).build(output);
 		// This recipe single-handedly makes IE content obtainable.
