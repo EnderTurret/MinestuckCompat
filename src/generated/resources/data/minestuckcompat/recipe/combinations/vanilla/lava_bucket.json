@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:water_bucket"
+  },
+  "input2": {
+    "item": "minecraft:netherrack"
+  },
+  "mode": "or",
+  "output": "minecraft:lava_bucket"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "minecraft"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minecraft:cobblestone"
+  },
+  "input2": {
+    "item": "minecraft:campfire"
+  },
+  "mode": "or",
+  "output": "minecraft:netherrack"
+}

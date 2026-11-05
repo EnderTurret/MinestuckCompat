@@ -1,7 +1,6 @@
 {
   "land_features": [
-    "minecraft:stone", "minestuck:raw_cruxite", "minestuck:raw_uranium", "minecraft:coal",
-    "minecraft:water_bucket", "minecraft:lava_bucket"
+    "minecraft:stone", "minestuck:raw_cruxite", "minestuck:raw_uranium", "minecraft:coal"
   ],
   "enter_requirements": [
     "minestuck:computer_parts", "minestuck:sburb_code", "minestuck:completed_sburb_code",

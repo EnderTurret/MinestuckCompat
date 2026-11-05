@@ -318,6 +318,10 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(SHULKER_SHELL).and().input(POPPED_CHORUS_FRUIT).input(ItemTags.HEAD_ARMOR).build(output);
 		combination(ENDER_PEARL).and().input(Items.SLIME_BALL).input(Items.ECHO_SHARD).build(output);
 		combination(PHANTOM_MEMBRANE).and().input(Items.LEATHER).input(Items.ENDER_PEARL).build(output);
+		// Potatoes are the fruit of the Earth, or so sayeth our ancestors.
+		combination(POTATO).or().input(Items.APPLE).input(Items.DIRT).build(output);
+		// A bit more interesting than a Flint and Steel.
+		combination(NETHERRACK).or().input(Items.COBBLESTONE).input(Items.CAMPFIRE).build(output);
 
 		// Recor- sorry, "music discs"
 		combination(MUSIC_DISC_11).or().input(MUSIC_DISC_CAT).input(PLAYER_HEAD).build(output);
@@ -362,10 +366,14 @@ public final class VanillaRecipes extends AbstractRecipeProvider {
 		combination(SUSPICIOUS_SAND).and().input(MSItems.SUSHROOM).input(SAND).build(output);
 		combination(GILDED_BLACKSTONE).and().input(Items.BLACKSTONE).input(Items.GOLD_NUGGET).build(output);
 
-		// These recipe are single-handedly making like 3000+ items obtainable.
+		// These recipes are single-handedly making like 3000+ items obtainable.
 		combination(DIRT).and().input(Tags.Items.STONES).input(ItemTags.SAPLINGS).build(output);
 		combination(SAND).or().input(Tags.Items.GRAVELS).input(ItemTags.PICKAXES).build(output);
 		combination(GRAVEL).or().input(Tags.Items.COBBLESTONES).input(ItemTags.PICKAXES).build(output);
+		// Technically we don't *need* this recipe, but it might help players who forget that ice creates water source blocks.
+		combination(WATER_BUCKET).or().input(Items.BUCKET).input(Items.ICE).build(output);
+		// If you forgot a lava bucket, you can now get them via Campfire ==> Netherrack ==> Lava Bucket.
+		combination(LAVA_BUCKET).or().input(Items.WATER_BUCKET).input(Items.NETHERRACK).build(output);
 		// This recipe single-handedly makes IE content obtainable.
 		combination(PODZOL).and().input(Items.GRASS_BLOCK).input(Items.SPRUCE_SAPLING).build(output);
 
