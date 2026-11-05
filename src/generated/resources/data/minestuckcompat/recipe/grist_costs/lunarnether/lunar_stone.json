@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "lunarnether"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:build": 2,
+    "minestuck:mercury": 1
+  },
+  "ingredient": {
+    "item": "lunarnether:lunar_stone"
+  }
+}

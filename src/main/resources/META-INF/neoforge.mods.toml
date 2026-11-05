@@ -38,6 +38,7 @@ issueTrackerURL="https://github.com/EnderTurret/MinestuckCompat/issues"
     * GraveStone Mod
     * Hostile Neural Networks
     * Lootr
+    * Lunar Nether
     '''
     version="${file.jarVersion}"
     authors="EnderTurret"

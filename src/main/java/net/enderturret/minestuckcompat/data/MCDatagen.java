@@ -23,6 +23,7 @@ import net.enderturret.minestuckcompat.data.recipe.CreateRecipes;
 import net.enderturret.minestuckcompat.data.recipe.ExtraDelightRecipes;
 import net.enderturret.minestuckcompat.data.recipe.FarmersDelightRecipes;
 import net.enderturret.minestuckcompat.data.recipe.ImmersiveEngineeringRecipes;
+import net.enderturret.minestuckcompat.data.recipe.LunarNetherRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MekanismRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckAddonRecipes;
 import net.enderturret.minestuckcompat.data.recipe.MinestuckRecipes;
@@ -69,6 +70,9 @@ public final class MCDatagen {
 
 		if (ModList.get().isLoaded("quark"))
 			e.getGenerator().addProvider(server, wrap(lookup, QuarkRecipes::new, "Quark Recipes"));
+
+		if (ModList.get().isLoaded("lunarnether"))
+			e.getGenerator().addProvider(server, wrap(lookup, LunarNetherRecipes::new, "Lunar Nether Recipes"));
 
 		// Set indent back to 2 in case some other mod (GTCEu) messes with it.
 		DataProvider.INDENT_WIDTH.set(2);

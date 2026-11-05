@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "lunarnether"
+    }
+  ],
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "lunarnether:raw_ilmenite"
+  },
+  "input2": {
+    "item": "lunarnether:lunar_stone"
+  },
+  "mode": "and",
+  "output": "lunarnether:raw_ilmenite_block"
+}

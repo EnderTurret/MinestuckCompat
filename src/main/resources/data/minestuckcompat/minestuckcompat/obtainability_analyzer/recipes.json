@@ -131,6 +131,7 @@
 
   { "inputs": ["hostilenetworks:sim_chamber"], "outputs": ["hostilenetworks:overworld_prediction", "hostilenetworks:nether_prediction", "hostilenetworks:end_prediction"] },
   { "inputs": ["framedblocks:framed_cube"], "outputs": ["framedblocks:framed_chain", "framedblocks:framed_corner_slope_edge", "framedblocks:framed_elev_double_corner_slope_edge", "framedblocks:framed_elev_double_inner_corner_slope_edge", "framedblocks:framed_elevated_corner_slope_edge", "framedblocks:framed_elevated_inner_corner_slope_edge", "framedblocks:framed_hopper", "framedblocks:framed_inner_corner_slope_edge", "framedblocks:framed_inner_threeway_corner_slope_edge", "framedblocks:framed_layered_cube", "framedblocks:framed_lightning_rod", "framedblocks:framed_path", "framedblocks:framed_stacked_corner_slope_edge", "framedblocks:framed_stacked_inner_corner_slope_edge", "framedblocks:framed_threeway_corner_slope_edge"] },
+  { "inputs": ["lunarnether:ilmenite_ore"], "outputs": ["lunarnether:raw_ilmenite", "lunarnether:titanium_nugget"] },
 
   { "inputs": ["supplementaries:flax_seeds"], "outputs": ["supplementaries:flax"] },
   { "inputs": ["minecraft:arrow", "supplementaries:rope"], "outputs": ["supplementaries:rope_arrow"] },

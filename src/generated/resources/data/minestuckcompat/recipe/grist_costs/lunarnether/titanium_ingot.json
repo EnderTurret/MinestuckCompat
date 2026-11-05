@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "minestuckcompat:config",
+      "modid": "lunarnether"
+    }
+  ],
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:mercury": 9,
+    "minestuck:rust": 9
+  },
+  "ingredient": {
+    "item": "lunarnether:titanium_ingot"
+  }
+}

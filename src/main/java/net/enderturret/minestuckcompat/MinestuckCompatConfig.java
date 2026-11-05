@@ -118,6 +118,7 @@ public final class MinestuckCompatConfig {
 		//defineEnabledRecipes(builder, "gtceu", "GregTech CEu");
 		defineEnabledRecipes(builder, "hostilenetworks", "Hostile Neural Networks");
 		defineEnabledRecipes(builder, "lootr", "Lootr");
+		defineEnabledRecipes(builder, "lunarnether", "Lunar Nether");
 		defineEnabledRecipes(builder, "supplementaries", "Supplementaries");
 
 		builder.pop(2);

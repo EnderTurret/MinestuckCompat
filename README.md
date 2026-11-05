@@ -25,6 +25,7 @@ Minestuck Compat also has partial (or full) support for:
 * [GraveStone Mod](https://modrinth.com/mod/gravestone-mod)
 * [Hostile Neural Networks](https://www.curseforge.com/minecraft/mc-mods/hostile-neural-networks)
 * [Lootr](https://modrinth.com/mod/lootr)
+* [Lunar Nether](https://modrinth.com/mod/lunar-nether-neo)
 
 Additionally, Minestuck Compat fills out some missing grist costs and combinations of both vanilla Minecraft as well as Minestuck itself.
 In particular, Minestuck Compat adds:
