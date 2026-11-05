@@ -5,7 +5,10 @@
   ],
   "enter_requirements": [
     "minestuck:computer_parts", "minestuck:sburb_code", "minestuck:completed_sburb_code",
-    "minestuck:cruxtruder_lid", "minestuck:cruxite_apple", "minestuck:cruxite_potion"
+    "minestuck:cruxtruder_lid", "#minestuck:cruxite_artifacts"
+  ],
+  "deployables": [
+    "minestuck:torrent_disk"
   ],
   "space_aspect": [
     "minestuck:frog", "minestuck:space_aspect_log", "minestuck:space_aspect_sapling"
